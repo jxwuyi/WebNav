@@ -1,6 +1,7 @@
 import urllib2
 import re
 import myparser
+import time
 
 root = 'http://schools-wikipedia.org/wp/index/subject.htm'
 #f = urllib2.urlopen(url)
@@ -11,6 +12,9 @@ ptr = 0
 que = [root]
 vis = {root}
 ps = myparser.MyParser()
+
+start_time = time.time()
+report_gap = 100
 
 while (ptr < len(que)):
     url = que[ptr]
@@ -24,7 +28,9 @@ while (ptr < len(que)):
             if (not tar in vis):
                 vis.add(tar)
                 que += [tar]
-    if (ptr % 10 == 0):
+    if (ptr % 100 == 0):
         print ' >> %d pages processed ....' % ptr
+        elapsed = time.time() - start_time
+        print '    Time Elapsed %f s' % elapsed
 
 out.write('total number of pages = ' + ptr)
