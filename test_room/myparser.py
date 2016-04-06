@@ -11,6 +11,10 @@ class MyParser():
             return None
         if ('/images' in target):
             return None
+
+        pos = target.find('#')
+        if (pos > -1):
+            target = target[:pos]
         
         #remove html
         pos = cur.rfind('/');
