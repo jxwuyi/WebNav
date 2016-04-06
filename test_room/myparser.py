@@ -45,6 +45,9 @@ class MyParser():
 
     def parse(self, url):
         f = urllib2.urlopen(url)
+	if (not 'schools-wikipedia.org' in f.geturl()):
+	    return None
+
         text = ''
         links = set()
         toRem = {'<!--del_lnk-->','<b>','</b>','<i>','</i>'}
