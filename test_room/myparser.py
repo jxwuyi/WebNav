@@ -1,10 +1,22 @@
 import urllib2
 import re
+import myparameters as prm
 
 class MyParser():
     
     def __init__(self):
-        pass
+        self.page_dat = {}
+        f = open(prm.content_path,'r')
+        p = 0
+        last = ''
+        for line in f:
+            p = p + 1
+            if (p % 2 == 0):
+                now = line.replace('\n','')
+                self.page_dat[now] = last
+            else:
+                last = line.replace('\n','')
+        f.close()
 
     def gen_full_url(self, cur, target):
         if (not target.startswith('../')):
@@ -25,7 +37,11 @@ class MyParser():
                 cur = cur[:pos]
                 target = target[3:]
             else:
-                return cur + '/' + target 
+                now = cur + '/' + target
+                if (now in self.page_dat):
+                    return now
+                else:
+                    return None
         return None
     
     def extract_links(self, links, text, cur):
@@ -79,4 +95,7 @@ class MyParser():
                     cur = cur.replace(pat,'') # remove tags
                 text += ' ' + self.filter_links(links, cur, url)
 
+        text = re.sub(r'\&lt\;ref.*?\&lt\;\/ref\&gt\;', '', text, flags=re.DOTALL)
+        text = re.sub(r'\&lt\;ref.*?\/\&gt\;', '', text, flags=re.DOTALL)
+        text = text.replace('\n','')
         return title, text, links
