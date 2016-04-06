@@ -2554,16 +2554,14 @@ tropical cyclone
 http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm
 wind
 http://schools-wikipedia.org/wp/w/Wind.htm
-mars
-http://schools-wikipedia.org/wp/m/Mars.htm#Climate
 ocean
 http://schools-wikipedia.org/wp/o/Ocean.htm
 sunlight
 http://schools-wikipedia.org/wp/s/Sunlight.htm
 british isles
 http://schools-wikipedia.org/wp/b/British_Isles.htm
-season
-http://schools-wikipedia.org/wp/s/Season.htm#Ecological_seasons
+mars
+http://schools-wikipedia.org/wp/m/Mars.htm
 afghanistan
 http://schools-wikipedia.org/wp/a/Afghanistan.htm
 distilled beverage
@@ -2620,8 +2618,6 @@ stock
 http://schools-wikipedia.org/wp/s/Stock.htm
 great britain
 http://schools-wikipedia.org/wp/g/Great_Britain.htm
-pottery
-http://schools-wikipedia.org/wp/p/Pottery.htm#Decorating_and_glazing
 mali
 http://schools-wikipedia.org/wp/m/Mali.htm
 iron
@@ -2706,8 +2702,6 @@ animal rights
 http://schools-wikipedia.org/wp/a/Animal_rights.htm
 whale
 http://schools-wikipedia.org/wp/w/Whale.htm
-beekeeping
-http://schools-wikipedia.org/wp/b/Beekeeping.htm#Protective_clothing
 georgia (country)
 http://schools-wikipedia.org/wp/g/Georgia_%2528country%2529.htm
 sri lanka
@@ -3000,8 +2994,6 @@ ant &amp; dec's saturday night takeaway
 http://schools-wikipedia.org/wp/a/Ant_%2526_Dec%2527s_Saturday_Night_Takeaway.htm
 inca empire
 http://schools-wikipedia.org/wp/i/Inca_Empire.htm
-abacus
-http://schools-wikipedia.org/wp/a/Abacus.htm#Japanese_abacus
 1st century
 http://schools-wikipedia.org/wp/1/1st_century.htm
 5th century
@@ -5234,8 +5226,6 @@ nuclear power
 http://schools-wikipedia.org/wp/n/Nuclear_power.htm
 netherlands
 http://schools-wikipedia.org/wp/n/Netherlands.htm
-modern history
-http://schools-wikipedia.org/wp/m/Modern_history.htm#Western_transformations
 deity
 http://schools-wikipedia.org/wp/d/Deity.htm
 scramble for africa
@@ -5572,8 +5562,6 @@ amber
 http://schools-wikipedia.org/wp/a/Amber.htm
 alternating current
 http://schools-wikipedia.org/wp/a/Alternating_current.htm
-centre of mass
-http://schools-wikipedia.org/wp/c/Center_of_mass.htm#Center_of_gravity
 quantum field theory
 http://schools-wikipedia.org/wp/q/Quantum_field_theory.htm
 nitric acid
@@ -5646,8 +5634,6 @@ nuclear physics
 http://schools-wikipedia.org/wp/n/Nuclear_physics.htm
 radium
 http://schools-wikipedia.org/wp/r/Radium.htm
-aristotle
-http://schools-wikipedia.org/wp/a/Aristotle.htm#Causality.2C_The_Four_Causes
 mecca
 http://schools-wikipedia.org/wp/m/Mecca.htm
 milky way
@@ -5916,12 +5902,8 @@ pygmy peoples
 http://schools-wikipedia.org/wp/p/Pygmy_peoples.htm
 lagos
 http://schools-wikipedia.org/wp/l/Lagos.htm
-iron
-http://schools-wikipedia.org/wp/i/Iron.htm#History
 algeria
 http://schools-wikipedia.org/wp/a/Algeria.htm
-1881
-http://schools-wikipedia.org/wp/1/1881.htm
 central africa
 http://schools-wikipedia.org/wp/c/Central_Africa.htm
 southern africa
@@ -5962,6 +5944,8 @@ ruvuma river
 http://schools-wikipedia.org/wp/r/Ruvuma_River.htm
 guinea
 http://schools-wikipedia.org/wp/g/Guinea.htm
+1881
+http://schools-wikipedia.org/wp/1/1881.htm
 brussels
 http://schools-wikipedia.org/wp/b/Brussels.htm
 liberia
@@ -6044,30 +6028,28 @@ league of nations
 http://schools-wikipedia.org/wp/l/League_of_Nations.htm
 pony
 http://schools-wikipedia.org/wp/p/Pony.htm
-history of china
-http://schools-wikipedia.org/wp/h/History_of_China.htm#The_Jin_Period
+turkmenistan
+http://schools-wikipedia.org/wp/t/Turkmenistan.htm
 macedonia (ancient kingdom)
 http://schools-wikipedia.org/wp/m/Macedonia_%2528ancient_kingdom%2529.htm
 quran
 http://schools-wikipedia.org/wp/q/Quran.htm
-turkmenistan
-http://schools-wikipedia.org/wp/t/Turkmenistan.htm
+kazakhstan
+http://schools-wikipedia.org/wp/k/Kazakhstan.htm
 american civil war
 http://schools-wikipedia.org/wp/a/American_Civil_War.htm
 kyrgyzstan
 http://schools-wikipedia.org/wp/k/Kyrgyzstan.htm
 horse
 http://schools-wikipedia.org/wp/h/Horse.htm
+saudi arabia
+http://schools-wikipedia.org/wp/s/Saudi_Arabia.htm
 mosque
 http://schools-wikipedia.org/wp/m/Mosque.htm
 geography of asia
 http://schools-wikipedia.org/wp/g/Geography_of_Asia.htm
 tashkent
 http://schools-wikipedia.org/wp/t/Tashkent.htm
-saudi arabia
-http://schools-wikipedia.org/wp/s/Saudi_Arabia.htm
-kazakhstan
-http://schools-wikipedia.org/wp/k/Kazakhstan.htm
 greco-buddhism
 http://schools-wikipedia.org/wp/g/Greco-Buddhism.htm
 history of benin
@@ -6550,8 +6532,6 @@ anatomy
 http://schools-wikipedia.org/wp/a/Anatomy.htm
 soil science
 http://schools-wikipedia.org/wp/s/Soil_science.htm
-alchemy
-http://schools-wikipedia.org/wp/a/Alchemy.htm#History
 radar
 http://schools-wikipedia.org/wp/r/Radar.htm
 crystal
@@ -7124,12 +7104,10 @@ order of st. patrick
 http://schools-wikipedia.org/wp/o/Order_of_St._Patrick.htm
 bermuda
 http://schools-wikipedia.org/wp/b/Bermuda.htm
-invasion
-http://schools-wikipedia.org/wp/i/Invasion.htm#Magyar_invasions_of_Europe
 longship
 http://schools-wikipedia.org/wp/l/Longship.htm
 infectious disease
-http://schools-wikipedia.org/wp/i/Infectious_disease.htm#Mortality_from_infectious_diseases
+http://schools-wikipedia.org/wp/i/Infectious_disease.htm
 cyprus
 http://schools-wikipedia.org/wp/c/Cyprus.htm
 basque people
@@ -7138,8 +7116,6 @@ great moravia
 http://schools-wikipedia.org/wp/g/Great_Moravia.htm
 republic of macedonia
 http://schools-wikipedia.org/wp/r/Republic_of_Macedonia.htm
-history of slavery
-http://schools-wikipedia.org/wp/h/History_of_slavery.htm#The_Americas
 bosnia and herzegovina
 http://schools-wikipedia.org/wp/b/Bosnia_and_Herzegovina.htm
 belarus
@@ -7222,8 +7198,6 @@ clock
 http://schools-wikipedia.org/wp/c/Clock.htm
 kilogram
 http://schools-wikipedia.org/wp/k/Kilogram.htm
-angle
-http://schools-wikipedia.org/wp/a/Angle.htm#Conventions_on_measurement
 tuberculosis
 http://schools-wikipedia.org/wp/t/Tuberculosis.htm
 alice's adventures in wonderland
@@ -7234,10 +7208,6 @@ i ching
 http://schools-wikipedia.org/wp/i/I_Ching.htm
 turtle
 http://schools-wikipedia.org/wp/t/Turtle.htm
-absolute value
-http://schools-wikipedia.org/wp/a/Absolute_value.htm#Complex_numbers
-manifold
-http://schools-wikipedia.org/wp/m/Manifold.htm#Differentiable_manifolds
 surface tension
 http://schools-wikipedia.org/wp/s/Surface_tension.htm
 action potential
@@ -7256,36 +7226,20 @@ arcadia (play)
 http://schools-wikipedia.org/wp/a/Arcadia_%2528play%2529.htm
 princeton university
 http://schools-wikipedia.org/wp/p/Princeton_University.htm
-multiplication
-http://schools-wikipedia.org/wp/m/Multiplication.htm#Multiplication_with_different_kinds_of_numbers
 atomic number
 http://schools-wikipedia.org/wp/a/Atomic_number.htm
 kelvin
 http://schools-wikipedia.org/wp/k/Kelvin.htm
-roman numerals
-http://schools-wikipedia.org/wp/r/Roman_numerals.htm#Zero
 chemical element
 http://schools-wikipedia.org/wp/c/Chemical_element.htm
 typewriter
 http://schools-wikipedia.org/wp/t/Typewriter.htm
-natural number
-http://schools-wikipedia.org/wp/n/Natural_number.htm#History_of_natural_numbers_and_the_status_of_zero
-mandelbrot set
-http://schools-wikipedia.org/wp/m/Mandelbrot_set.htm#Basic_properties
-mandelbrot set
-http://schools-wikipedia.org/wp/m/Mandelbrot_set.htm#Optimizations
 molecule
 http://schools-wikipedia.org/wp/m/Molecule.htm
-function (mathematics)
-http://schools-wikipedia.org/wp/f/Function_%2528mathematics%2529.htm#Restrictions_and_extensions
 italian language
 http://schools-wikipedia.org/wp/i/Italian_language.htm
 angular momentum
 http://schools-wikipedia.org/wp/a/Angular_momentum.htm
-newton's laws of motion
-http://schools-wikipedia.org/wp/n/Newton%2527s_laws_of_motion.htm#Newton.27s_third_law:_law_of_reciprocal_actions
-momentum
-http://schools-wikipedia.org/wp/m/Momentum.htm#Modern_definitions_of_momentum
 english law
 http://schools-wikipedia.org/wp/e/English_law.htm
 trinity college, cambridge
@@ -7294,8 +7248,6 @@ trinity
 http://schools-wikipedia.org/wp/t/Trinity.htm
 westminster abbey
 http://schools-wikipedia.org/wp/w/Westminster_Abbey.htm
-isaac newton
-http://schools-wikipedia.org/wp/i/Isaac_Newton.htm#Laws_of_motion
 asperger syndrome
 http://schools-wikipedia.org/wp/a/Asperger_syndrome.htm
 chromatic aberration
@@ -7312,46 +7264,16 @@ pyramid
 http://schools-wikipedia.org/wp/p/Pyramid.htm
 introduction to quantum mechanics
 http://schools-wikipedia.org/wp/i/Introduction_to_quantum_mechanics.htm
-history of physics
-http://schools-wikipedia.org/wp/h/History_of_physics.htm#Modern_physics
 sound
 http://schools-wikipedia.org/wp/s/Sound.htm
 dog
 http://schools-wikipedia.org/wp/d/Dog.htm
 apollo
 http://schools-wikipedia.org/wp/a/Apollo.htm
-cross product
-http://schools-wikipedia.org/wp/c/Cross_product.htm#Cross_product_and_handedness
 hydrogen
 http://schools-wikipedia.org/wp/h/Hydrogen.htm
-binomial distribution
-http://schools-wikipedia.org/wp/b/Binomial_distribution.htm#Symmetric_binomial_distribution_.28p_.3D_0.5.29
-exponentiation
-http://schools-wikipedia.org/wp/e/Exponentiation.htm#Failure_of_power_and_logarithm_identities
-mars
-http://schools-wikipedia.org/wp/m/Mars.htm
-quadratic equation
-http://schools-wikipedia.org/wp/q/Quadratic_equation.htm#Quadratic_formula
-exponentiation
-http://schools-wikipedia.org/wp/e/Exponentiation.htm#Exponentiation_of_cardinal_and_ordinal_numbers
-exponentiation
-http://schools-wikipedia.org/wp/e/Exponentiation.htm#Exponentiation_over_sets
-exponentiation
-http://schools-wikipedia.org/wp/e/Exponentiation.htm#Combinatorial_interpretation
-exponentiation
-http://schools-wikipedia.org/wp/e/Exponentiation.htm#Generalizations_of_exponentiation
-exponentiation
-http://schools-wikipedia.org/wp/e/Exponentiation.htm#Powers_of_e
-complex number
-http://schools-wikipedia.org/wp/c/Complex_number.htm#Geometric_interpretation_of_the_operations_on_complex_numbers
-complex number
-http://schools-wikipedia.org/wp/c/Complex_number.htm#polar_form
 dutch language
 http://schools-wikipedia.org/wp/d/Dutch_language.htm
-matrix (mathematics)
-http://schools-wikipedia.org/wp/m/Matrix_%2528mathematics%2529.htm#Square_matrices_and_related_definitions
-matrix multiplication
-http://schools-wikipedia.org/wp/m/Matrix_multiplication.htm#Hadamard_product
 secondary education
 http://schools-wikipedia.org/wp/s/Secondary_education.htm
 alligator
@@ -7362,8 +7284,6 @@ density
 http://schools-wikipedia.org/wp/d/Density.htm
 work (physics)
 http://schools-wikipedia.org/wp/w/Work_%2528physics%2529.htm
-euclid
-http://schools-wikipedia.org/wp/e/Euclid.htm#Other_works
 democratic republic of the congo
 http://schools-wikipedia.org/wp/d/Democratic_Republic_of_the_Congo.htm
 evolutionarily stable strategy
@@ -7376,16 +7296,10 @@ geology
 http://schools-wikipedia.org/wp/g/Geology.htm
 bee
 http://schools-wikipedia.org/wp/b/Bee.htm
-polygon
-http://schools-wikipedia.org/wp/p/Polygon.htm#Polygons_in_computer_graphics
 giant's causeway
 http://schools-wikipedia.org/wp/g/Giant%2527s_Causeway.htm
 lava
 http://schools-wikipedia.org/wp/l/Lava.htm
-greatest common divisor
-http://schools-wikipedia.org/wp/g/Greatest_common_divisor.htm#Calculating_the_gcd
-0 (number)
-http://schools-wikipedia.org/wp/0/0_%2528number%2529.htm#Etymology
 belfast
 http://schools-wikipedia.org/wp/b/Belfast.htm
 portuguese language
@@ -7394,38 +7308,18 @@ jupiter (mythology)
 http://schools-wikipedia.org/wp/j/Jupiter_%2528mythology%2529.htm
 spanish language
 http://schools-wikipedia.org/wp/s/Spanish_language.htm
-paul dirac
-http://schools-wikipedia.org/wp/p/Paul_Dirac.htm#Personality
-euclidean vector
-http://schools-wikipedia.org/wp/e/Euclidean_vector.htm#Addition_and_subtraction
 james a. garfield
 http://schools-wikipedia.org/wp/j/James_A._Garfield.htm
-taylor's theorem
-http://schools-wikipedia.org/wp/t/Taylor%2527s_theorem.htm#Estimates_of_the_remainder
-theorem
-http://schools-wikipedia.org/wp/t/Theorem.htm#Converse
-complex number
-http://schools-wikipedia.org/wp/c/Complex_number.htm#History
-imaginary unit
-http://schools-wikipedia.org/wp/i/Imaginary_unit.htm#Proper_use
-complex number
-http://schools-wikipedia.org/wp/c/Complex_number.htm#The_field_of_complex_numbers
-combinatorics
-http://schools-wikipedia.org/wp/c/Combinatorics.htm#set_sizes_motivate_a_naming_convention
 petroleum reservoir
 http://schools-wikipedia.org/wp/p/Petroleum_reservoir.htm
 persian literature
 http://schools-wikipedia.org/wp/p/Persian_literature.htm
 moldova
 http://schools-wikipedia.org/wp/m/Moldova.htm
-gold
-http://schools-wikipedia.org/wp/g/Gold.htm#Commercial_chemistry
 prime minister of the united kingdom
 http://schools-wikipedia.org/wp/p/Prime_Minister_of_the_United_Kingdom.htm
 saint vincent and the grenadines
 http://schools-wikipedia.org/wp/s/Saint_Vincent_and_the_Grenadines.htm
-enigma machine
-http://schools-wikipedia.org/wp/e/Enigma_machine.htm#Indicator
 warsaw
 http://schools-wikipedia.org/wp/w/Warsaw.htm
 king's college, cambridge
@@ -7452,38 +7346,22 @@ mechanical engineering
 http://schools-wikipedia.org/wp/m/Mechanical_engineering.htm
 electric field
 http://schools-wikipedia.org/wp/e/Electric_field.htm
-golden ratio
-http://schools-wikipedia.org/wp/g/Golden_ratio.htm#Applications_and_observations
 mona lisa
 http://schools-wikipedia.org/wp/m/Mona_Lisa.htm
 comet
 http://schools-wikipedia.org/wp/c/Comet.htm
 eris (dwarf planet)
 http://schools-wikipedia.org/wp/e/Eris_%2528dwarf_planet%2529.htm
-newton's laws of motion
-http://schools-wikipedia.org/wp/n/Newton%2527s_laws_of_motion.htm#Weak_and_Strong_Forms_of_Newton.27s_Third_Law
 basel
 http://schools-wikipedia.org/wp/b/Basel.htm
 fever
 http://schools-wikipedia.org/wp/f/Fever.htm
 appendicitis
 http://schools-wikipedia.org/wp/a/Appendicitis.htm
-exponential function
-http://schools-wikipedia.org/wp/e/Exponential_function.htm#On_the_complex_plane
 cataract
 http://schools-wikipedia.org/wp/c/Cataract.htm
-matrix multiplication
-http://schools-wikipedia.org/wp/m/Matrix_multiplication.htm#Common_properties
 philosophy of mind
 http://schools-wikipedia.org/wp/p/Philosophy_of_mind.htm
-derivative
-http://schools-wikipedia.org/wp/d/Derivative.htm#Definition_via_difference_quotients
-variance
-http://schools-wikipedia.org/wp/v/Variance.htm#Properties.2C_formal
-binomial distribution
-http://schools-wikipedia.org/wp/b/Binomial_distribution.htm#Probability_mass_function
-cross product
-http://schools-wikipedia.org/wp/c/Cross_product.htm#Matrix_notation
 thomas jefferson
 http://schools-wikipedia.org/wp/t/Thomas_Jefferson.htm
 automated teller machine
@@ -7494,38 +7372,24 @@ federal bureau of investigation
 http://schools-wikipedia.org/wp/f/Federal_Bureau_of_Investigation.htm
 tunisia
 http://schools-wikipedia.org/wp/t/Tunisia.htm
-complex plane
-http://schools-wikipedia.org/wp/c/Complex_plane.htm#Stereographic_projections
-nash equilibrium
-http://schools-wikipedia.org/wp/n/Nash_equilibrium.htm#Stability
-integral
-http://schools-wikipedia.org/wp/i/Integral.htm#Terminology_and_notation
 effect of sun angle on climate
 http://schools-wikipedia.org/wp/e/Effect_of_sun_angle_on_climate.htm
 limerick (poetry)
 http://schools-wikipedia.org/wp/l/Limerick_%2528poetry%2529.htm
 john quincy adams
 http://schools-wikipedia.org/wp/j/John_Quincy_Adams.htm
-permutation
-http://schools-wikipedia.org/wp/p/Permutation.htm#Special_permutations
 sand
 http://schools-wikipedia.org/wp/s/Sand.htm
 the curious incident of the dog in the night-time
 http://schools-wikipedia.org/wp/t/The_Curious_Incident_of_the_Dog_in_the_Night-Time.htm
 primary education
 http://schools-wikipedia.org/wp/p/Primary_education.htm
-complex plane
-http://schools-wikipedia.org/wp/c/Complex_plane.htm#Cutting_the_plane
 theory of relativity
 http://schools-wikipedia.org/wp/t/Theory_of_relativity.htm
 turin
 http://schools-wikipedia.org/wp/t/Turin.htm
-complex number
-http://schools-wikipedia.org/wp/c/Complex_number.htm#Polar_form
 fern
 http://schools-wikipedia.org/wp/f/Fern.htm
-fibonacci number
-http://schools-wikipedia.org/wp/f/Fibonacci_number.htm#Matrix_form
 bicycle
 http://schools-wikipedia.org/wp/b/Bicycle.htm
 sydney opera house
@@ -7546,10 +7410,6 @@ mouse
 http://schools-wikipedia.org/wp/m/Mouse.htm
 elephant
 http://schools-wikipedia.org/wp/e/Elephant.htm
-correlation and dependence
-http://schools-wikipedia.org/wp/c/Correlation_and_dependence.htm#correlation_matrices
-combinatorics
-http://schools-wikipedia.org/wp/c/Combinatorics.htm#Set_sizes_motivate_a_naming_convention
 budapest
 http://schools-wikipedia.org/wp/b/Budapest.htm
 pyrite
@@ -7564,76 +7424,34 @@ monarchy
 http://schools-wikipedia.org/wp/m/Monarchy.htm
 apocrypha
 http://schools-wikipedia.org/wp/a/Apocrypha.htm
-roman numerals
-http://schools-wikipedia.org/wp/r/Roman_numerals.htm#zero
 chemical formula
 http://schools-wikipedia.org/wp/c/Chemical_formula.htm
-torus
-http://schools-wikipedia.org/wp/t/Torus.htm#topology
-bessel function
-http://schools-wikipedia.org/wp/b/Bessel_function.htm#Properties
-cartesian coordinate system
-http://schools-wikipedia.org/wp/c/Cartesian_coordinate_system.htm#In_three_dimensions
 copper
 http://schools-wikipedia.org/wp/c/Copper.htm
 vowel
 http://schools-wikipedia.org/wp/v/Vowel.htm
 seattle
 http://schools-wikipedia.org/wp/s/Seattle.htm
-derivative
-http://schools-wikipedia.org/wp/d/Derivative.htm#Notation_for_the_derivative
-derivative
-http://schools-wikipedia.org/wp/d/Derivative.htm#The_Jacobian_and_the_differential
-derivative
-http://schools-wikipedia.org/wp/d/Derivative.htm#Computing_the_derivative
-tangent
-http://schools-wikipedia.org/wp/t/Tangent.htm#Geometry
 abdomen
 http://schools-wikipedia.org/wp/a/Abdomen.htm
 wheel
 http://schools-wikipedia.org/wp/w/Wheel.htm
-least squares
-http://schools-wikipedia.org/wp/l/Least_squares.htm#linear_least_squares
-group (mathematics)
-http://schools-wikipedia.org/wp/g/Group_%2528mathematics%2529.htm#Notation_for_groups
-group (mathematics)
-http://schools-wikipedia.org/wp/g/Group_%2528mathematics%2529.htm#Simple_theorems
 iranian peoples
 http://schools-wikipedia.org/wp/i/Iranian_peoples.htm
 mind
 http://schools-wikipedia.org/wp/m/Mind.htm
 dorset
 http://schools-wikipedia.org/wp/d/Dorset.htm
-linear regression
-http://schools-wikipedia.org/wp/l/Linear_regression.htm#example
-least squares
-http://schools-wikipedia.org/wp/l/Least_squares.htm#Differences_between_linear_and_non-linear_least_squares
-ordinal number
-http://schools-wikipedia.org/wp/o/Ordinal_number.htm#Von_Neumann_definition_of_ordinals
-angular momentum
-http://schools-wikipedia.org/wp/a/Angular_momentum.htm#Conservation_of_angular_momentum
-polar coordinate system
-http://schools-wikipedia.org/wp/p/Polar_coordinate_system.htm#Vector_calculus
 pluto
 http://schools-wikipedia.org/wp/p/Pluto.htm
 avogadro constant
 http://schools-wikipedia.org/wp/a/Avogadro_constant.htm
-linear regression
-http://schools-wikipedia.org/wp/l/Linear_regression.htm#Example
-hexadecimal
-http://schools-wikipedia.org/wp/h/Hexadecimal.htm#Uses
-cartesian coordinate system
-http://schools-wikipedia.org/wp/c/Cartesian_coordinate_system.htm#Orientation_and_handedness
-immanuel kant
-http://schools-wikipedia.org/wp/i/Immanuel_Kant.htm#Kant.27s_theory_of_perception
 thermodynamic temperature
 http://schools-wikipedia.org/wp/t/Thermodynamic_temperature.htm
 ultimate fate of the universe
 http://schools-wikipedia.org/wp/u/Ultimate_fate_of_the_universe.htm
 blood pressure
 http://schools-wikipedia.org/wp/b/Blood_pressure.htm
-system of linear equations
-http://schools-wikipedia.org/wp/s/System_of_linear_equations.htm#Solving_a_linear_system
 athena
 http://schools-wikipedia.org/wp/a/Athena.htm
 names of god in islam
@@ -7774,8 +7592,6 @@ shroud of turin
 http://schools-wikipedia.org/wp/s/Shroud_of_Turin.htm
 tamil language
 http://schools-wikipedia.org/wp/t/Tamil_language.htm
-buddhahood
-http://schools-wikipedia.org/wp/b/Buddhahood.htm#Samyaksambuddha
 nepal
 http://schools-wikipedia.org/wp/n/Nepal.htm
 sadaqah
@@ -7848,14 +7664,10 @@ noah's ark
 http://schools-wikipedia.org/wp/n/Noah%2527s_Ark.htm
 english folklore
 http://schools-wikipedia.org/wp/e/English_folklore.htm
-swastika
-http://schools-wikipedia.org/wp/s/Swastika.htm#Hinduism
 tamil people
 http://schools-wikipedia.org/wp/t/Tamil_people.htm
 varanasi
 http://schools-wikipedia.org/wp/v/Varanasi.htm
-hinduism
-http://schools-wikipedia.org/wp/h/Hinduism.htm#Objectives_of_human_life
 himalayas
 http://schools-wikipedia.org/wp/h/Himalayas.htm
 pig
@@ -8044,8 +7856,6 @@ cameroon
 http://schools-wikipedia.org/wp/c/Cameroon.htm
 crocodile
 http://schools-wikipedia.org/wp/c/Crocodile.htm
-aral sea
-http://schools-wikipedia.org/wp/a/Aral_Sea.htm#Bioweapons_facility_on_the_Vozrozhdeniya_Island
 carp
 http://schools-wikipedia.org/wp/c/Carp.htm
 precambrian
@@ -8312,12 +8122,8 @@ metamorphic rock
 http://schools-wikipedia.org/wp/m/Metamorphic_rock.htm
 las vegas
 http://schools-wikipedia.org/wp/l/Las_Vegas.htm
-circle of latitude
-http://schools-wikipedia.org/wp/c/Circle_of_latitude.htm#Movement_of_the_Tropics_and_the_Arctic_and_Antarctic_circles
 manganese
 http://schools-wikipedia.org/wp/m/Manganese.htm
-soil
-http://schools-wikipedia.org/wp/s/Soil.htm#Biological_processes_in_soil
 sulfur
 http://schools-wikipedia.org/wp/s/Sulfur.htm
 chemical equilibrium
@@ -8677,7 +8483,7 @@ http://schools-wikipedia.org/wp/h/Hydrology.htm
 vegetation
 http://schools-wikipedia.org/wp/v/Vegetation.htm
 meander
-http://schools-wikipedia.org/wp/m/Meander.htm#Incised_meanders
+http://schools-wikipedia.org/wp/m/Meander.htm
 lake mead
 http://schools-wikipedia.org/wp/l/Lake_Mead.htm
 water content
@@ -8722,8 +8528,6 @@ batholith
 http://schools-wikipedia.org/wp/b/Batholith.htm
 decade volcanoes
 http://schools-wikipedia.org/wp/d/Decade_Volcanoes.htm
-meander
-http://schools-wikipedia.org/wp/m/Meander.htm
 uluru
 http://schools-wikipedia.org/wp/u/Uluru.htm
 bog
@@ -8780,10 +8584,6 @@ nauru
 http://schools-wikipedia.org/wp/n/Nauru.htm
 south sudan
 http://schools-wikipedia.org/wp/s/South_Sudan.htm
-google maps
-http://schools-wikipedia.org/wp/g/Google_Maps.htm#Development
-map projection
-http://schools-wikipedia.org/wp/m/Map_projection.htm#Cylindrical
 wikipedia for schools : subject index : geography / cities / central and south america
 http://schools-wikipedia.org/wp/index/subject.Geography.Cities.Central_and_South_America.htm
 wikipedia for schools : subject index : geography / cities / europe
@@ -8990,8 +8790,6 @@ guernsey
 http://schools-wikipedia.org/wp/g/Guernsey.htm
 isle of wight
 http://schools-wikipedia.org/wp/i/Isle_of_Wight.htm
-glorious revolution
-http://schools-wikipedia.org/wp/g/Glorious_Revolution.htm#William.27s_landing
 mars reconnaissance orbiter
 http://schools-wikipedia.org/wp/m/Mars_Reconnaissance_Orbiter.htm
 jan mayen
@@ -9034,8 +8832,6 @@ northern ireland
 http://schools-wikipedia.org/wp/n/Northern_Ireland.htm
 irish free state
 http://schools-wikipedia.org/wp/i/Irish_Free_State.htm
-spice girls
-http://schools-wikipedia.org/wp/s/Spice_Girls.htm#Other_brand_ventures
 somaliland
 http://schools-wikipedia.org/wp/s/Somaliland.htm
 kingdom of ireland
@@ -9090,16 +8886,8 @@ the hague
 http://schools-wikipedia.org/wp/t/The_Hague.htm
 adelaide
 http://schools-wikipedia.org/wp/a/Adelaide.htm
-spain
-http://schools-wikipedia.org/wp/s/Spain.htm#Imperial_Spain
-portugal
-http://schools-wikipedia.org/wp/p/Portugal.htm#Exploration.2C_colonization_and_trade
-history of the netherlands
-http://schools-wikipedia.org/wp/h/History_of_the_Netherlands.htm#The_Dutch_in_the_Americas
 haiti
 http://schools-wikipedia.org/wp/h/Haiti.htm
-england
-http://schools-wikipedia.org/wp/e/England.htm#Early_Modern
 fair isle
 http://schools-wikipedia.org/wp/f/Fair_Isle.htm
 boltysh crater
@@ -9266,16 +9054,12 @@ stonehenge
 http://schools-wikipedia.org/wp/s/Stonehenge.htm
 government of india
 http://schools-wikipedia.org/wp/g/Government_of_India.htm
-history of india
-http://schools-wikipedia.org/wp/h/History_of_India.htm#Early_middle_kingdoms_-_the_golden_age
 barracuda
 http://schools-wikipedia.org/wp/b/Barracuda.htm
 bhutan
 http://schools-wikipedia.org/wp/b/Bhutan.htm
 chennai
 http://schools-wikipedia.org/wp/c/Chennai.htm
-history of india
-http://schools-wikipedia.org/wp/h/History_of_India.htm#Chola_empire
 yeast
 http://schools-wikipedia.org/wp/y/Yeast.htm
 collective farming
@@ -9354,8 +9138,6 @@ species
 http://schools-wikipedia.org/wp/s/Species.htm
 blue whale
 http://schools-wikipedia.org/wp/b/Blue_whale.htm
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#Categories_and_ranking
 the bahamas
 http://schools-wikipedia.org/wp/t/The_Bahamas.htm
 bangui
@@ -9378,8 +9160,6 @@ analytical chemistry
 http://schools-wikipedia.org/wp/a/Analytical_chemistry.htm
 lanthanide
 http://schools-wikipedia.org/wp/l/Lanthanide.htm
-science
-http://schools-wikipedia.org/wp/s/Science.htm#History_and_etymology
 roche limit
 http://schools-wikipedia.org/wp/r/Roche_limit.htm
 comet shoemaker&ndash;levy 9
@@ -9470,8 +9250,6 @@ inflation (cosmology)
 http://schools-wikipedia.org/wp/i/Inflation_%2528cosmology%2529.htm
 bridge
 http://schools-wikipedia.org/wp/b/Bridge.htm
-magnet
-http://schools-wikipedia.org/wp/m/Magnet.htm#Magnetic_poles
 hubble space telescope
 http://schools-wikipedia.org/wp/h/Hubble_Space_Telescope.htm
 multiple sequence alignment
@@ -9624,18 +9402,12 @@ drosophila melanogaster
 http://schools-wikipedia.org/wp/d/Drosophila_melanogaster.htm
 eukaryote
 http://schools-wikipedia.org/wp/e/Eukaryote.htm
-chemistry
-http://schools-wikipedia.org/wp/c/Chemistry.htm#Energy
 insulin
 http://schools-wikipedia.org/wp/i/Insulin.htm
 the scream
 http://schools-wikipedia.org/wp/t/The_Scream.htm
 abraham lincoln
 http://schools-wikipedia.org/wp/a/Abraham_Lincoln.htm
-art
-http://schools-wikipedia.org/wp/a/Art.htm#Art_forms
-piccadilly circus
-http://schools-wikipedia.org/wp/p/Piccadilly_Circus.htm#Shaftesbury_Memorial_and_Eros
 welding
 http://schools-wikipedia.org/wp/w/Welding.htm
 chartres cathedral
@@ -9650,8 +9422,6 @@ opera
 http://schools-wikipedia.org/wp/o/Opera.htm
 palladian architecture
 http://schools-wikipedia.org/wp/p/Palladian_architecture.htm
-solar eclipse
-http://schools-wikipedia.org/wp/s/Solar_eclipse.htm#Photography
 the starry night
 http://schools-wikipedia.org/wp/t/The_Starry_Night.htm
 the last supper (leonardo da vinci)
@@ -9666,8 +9436,6 @@ the hobbit
 http://schools-wikipedia.org/wp/t/The_Hobbit.htm
 the lord of the rings
 http://schools-wikipedia.org/wp/t/The_Lord_of_the_Rings.htm
-munich
-http://schools-wikipedia.org/wp/m/Munich.htm#Capital_of_reunited_Bavaria
 novel
 http://schools-wikipedia.org/wp/n/Novel.htm
 haiku
@@ -9704,16 +9472,8 @@ deconstructivism
 http://schools-wikipedia.org/wp/d/Deconstructivism.htm
 bethlehem
 http://schools-wikipedia.org/wp/b/Bethlehem.htm
-sistine chapel ceiling
-http://schools-wikipedia.org/wp/s/Sistine_Chapel_ceiling.htm#Quotations
-sistine chapel ceiling
-http://schools-wikipedia.org/wp/s/Sistine_Chapel_ceiling.htm#Ignudi
 safflower
 http://schools-wikipedia.org/wp/s/Safflower.htm
-brush
-http://schools-wikipedia.org/wp/b/Brush.htm#Paintbrushes
-latin alphabet
-http://schools-wikipedia.org/wp/l/Latin_alphabet.htm#Stroke_order
 tortoise
 http://schools-wikipedia.org/wp/t/Tortoise.htm
 st paul's cathedral
@@ -10024,8 +9784,6 @@ united states constitution
 http://schools-wikipedia.org/wp/u/United_States_Constitution.htm
 donation
 http://schools-wikipedia.org/wp/d/Donation.htm
-donation
-http://schools-wikipedia.org/wp/d/Donation.htm#Donating_statistics
 charity (practice)
 http://schools-wikipedia.org/wp/c/Charity_%2528practice%2529.htm
 directive principles in india
@@ -10628,8 +10386,6 @@ crow
 http://schools-wikipedia.org/wp/c/Crow.htm
 space station
 http://schools-wikipedia.org/wp/s/Space_station.htm
-sailing
-http://schools-wikipedia.org/wp/s/Sailing.htm#Beating_or_.22working.22
 norwich
 http://schools-wikipedia.org/wp/n/Norwich.htm
 carbon tetrachloride
@@ -10644,10 +10400,6 @@ multiple sclerosis
 http://schools-wikipedia.org/wp/m/Multiple_sclerosis.htm
 cobra
 http://schools-wikipedia.org/wp/c/Cobra.htm
-fertilizer
-http://schools-wikipedia.org/wp/f/Fertilizer.htm#Inorganic_fertilizers_.28mineral_fertilizer.29
-nitrogen fixation
-http://schools-wikipedia.org/wp/n/Nitrogen_fixation.htm#Root_nodule_symbioses
 song thrush
 http://schools-wikipedia.org/wp/s/Song_Thrush.htm
 hedgehog
@@ -10674,24 +10426,18 @@ red giant
 http://schools-wikipedia.org/wp/r/Red_giant.htm
 lunar eclipse
 http://schools-wikipedia.org/wp/l/Lunar_eclipse.htm
-aluminium
-http://schools-wikipedia.org/wp/a/Aluminium.htm#Isotopes
 death
 http://schools-wikipedia.org/wp/d/Death.htm
 bumblebee
 http://schools-wikipedia.org/wp/b/Bumblebee.htm
 honey bee
 http://schools-wikipedia.org/wp/h/Honey_bee.htm
-polystyrene
-http://schools-wikipedia.org/wp/p/Polystyrene.htm#Expanded_polystyrene
 lavandula
 http://schools-wikipedia.org/wp/l/Lavandula.htm
 beech
 http://schools-wikipedia.org/wp/b/Beech.htm
 holly
 http://schools-wikipedia.org/wp/h/Holly.htm
-horse
-http://schools-wikipedia.org/wp/h/Horse.htm#Horses_in_sport_today
 goose
 http://schools-wikipedia.org/wp/g/Goose.htm
 cassowary
@@ -10704,12 +10450,8 @@ beetle
 http://schools-wikipedia.org/wp/b/Beetle.htm
 anaconda
 http://schools-wikipedia.org/wp/a/Anaconda.htm
-cartesian coordinate system
-http://schools-wikipedia.org/wp/c/Cartesian_coordinate_system.htm#Two-dimensional_coordinate_system
 influenza
 http://schools-wikipedia.org/wp/i/Influenza.htm
-alexander the great
-http://schools-wikipedia.org/wp/a/Alexander_the_Great.htm#Period_of_conquests
 weed
 http://schools-wikipedia.org/wp/w/Weed.htm
 hippopotamus
@@ -10728,46 +10470,18 @@ wren
 http://schools-wikipedia.org/wp/w/Wren.htm
 armadillo
 http://schools-wikipedia.org/wp/a/Armadillo.htm
-anthropology
-http://schools-wikipedia.org/wp/a/Anthropology.htm#branches_of_anthropology
-law
-http://schools-wikipedia.org/wp/l/Law.htm#Further_disciplines
-game theory
-http://schools-wikipedia.org/wp/g/Game_theory.htm#Philosophy
-political economy
-http://schools-wikipedia.org/wp/p/Political_economy.htm#Current_approaches
-game theory
-http://schools-wikipedia.org/wp/g/Game_theory.htm#Political_science
-macroeconomics
-http://schools-wikipedia.org/wp/m/Macroeconomics.htm#Macroeconomic_policies
 myers-briggs type indicator
 http://schools-wikipedia.org/wp/m/Myers-Briggs_Type_Indicator.htm
-organism
-http://schools-wikipedia.org/wp/o/Organism.htm#History_of_life
-international relations
-http://schools-wikipedia.org/wp/i/International_relations.htm#History
-universe
-http://schools-wikipedia.org/wp/u/Universe.htm#History_of_the_Universe
-aristotle
-http://schools-wikipedia.org/wp/a/Aristotle.htm#Universals_and_particulars
 termite
 http://schools-wikipedia.org/wp/t/Termite.htm
 eye
 http://schools-wikipedia.org/wp/e/Eye.htm
 antibacterial
 http://schools-wikipedia.org/wp/a/Antibacterial.htm
-puritan
-http://schools-wikipedia.org/wp/p/Puritan.htm#Beliefs
 pneumonia
 http://schools-wikipedia.org/wp/p/Pneumonia.htm
-max weber
-http://schools-wikipedia.org/wp/m/Max_Weber.htm#Economics
-civilization
-http://schools-wikipedia.org/wp/c/Civilization.htm#Future
 folic acid
 http://schools-wikipedia.org/wp/f/Folic_acid.htm
-infectious disease
-http://schools-wikipedia.org/wp/i/Infectious_disease.htm
 mitochondrial eve
 http://schools-wikipedia.org/wp/m/Mitochondrial_Eve.htm
 military dictatorship
@@ -10788,12 +10502,8 @@ mole (animal)
 http://schools-wikipedia.org/wp/m/Mole_%2528animal%2529.htm
 birth control
 http://schools-wikipedia.org/wp/b/Birth_control.htm
-roman empire
-http://schools-wikipedia.org/wp/r/Roman_Empire.htm#Taxation
 mercia
 http://schools-wikipedia.org/wp/m/Mercia.htm
-tram
-http://schools-wikipedia.org/wp/t/Tram.htm#South_America
 vancouver
 http://schools-wikipedia.org/wp/v/Vancouver.htm
 bogot&aacute;
@@ -10808,36 +10518,24 @@ calgary
 http://schools-wikipedia.org/wp/c/Calgary.htm
 calvin coolidge
 http://schools-wikipedia.org/wp/c/Calvin_Coolidge.htm
-gender
-http://schools-wikipedia.org/wp/g/Gender.htm#Gender_taxonomy
 roman roads
 http://schools-wikipedia.org/wp/r/Roman_roads.htm
 edema
 http://schools-wikipedia.org/wp/e/Edema.htm
 roman villa
 http://schools-wikipedia.org/wp/r/Roman_villa.htm
-google
-http://schools-wikipedia.org/wp/g/Google.htm#Acquisitions_and_partnerships
 android (operating system)
 http://schools-wikipedia.org/wp/a/Android_%2528operating_system%2529.htm
-charitable organization
-http://schools-wikipedia.org/wp/c/Charitable_organization.htm#United_Kingdom
 city status in the united kingdom
 http://schools-wikipedia.org/wp/c/City_status_in_the_United_Kingdom.htm
 10 downing street
 http://schools-wikipedia.org/wp/1/10_Downing_Street.htm
-london
-http://schools-wikipedia.org/wp/l/London.htm#Sports
 headache
 http://schools-wikipedia.org/wp/h/Headache.htm
 colour blindness
 http://schools-wikipedia.org/wp/c/Color_blindness.htm
 retina
 http://schools-wikipedia.org/wp/r/Retina.htm
-colour
-http://schools-wikipedia.org/wp/c/Color.htm#Relation_to_spectral_colors
-eastern front (world war ii)
-http://schools-wikipedia.org/wp/e/Eastern_Front_%2528World_War_II%2529.htm#Don.2C_Volga.2C_and_Caucasus:_Summer_1942
 arsenic
 http://schools-wikipedia.org/wp/a/Arsenic.htm
 bangalore
@@ -10846,44 +10544,20 @@ mobile app
 http://schools-wikipedia.org/wp/m/Mobile_app.htm
 magpie
 http://schools-wikipedia.org/wp/m/Magpie.htm
-association football
-http://schools-wikipedia.org/wp/a/Association_football.htm#Duration_and_tie-breaking_methods
 dhaka
 http://schools-wikipedia.org/wp/d/Dhaka.htm
 kingston, jamaica
 http://schools-wikipedia.org/wp/k/Kingston%252C_Jamaica.htm
-history of the west indian cricket team
-http://schools-wikipedia.org/wp/h/History_of_the_West_Indian_cricket_team.htm#World_dominance_.281970s.29
 dundee
 http://schools-wikipedia.org/wp/d/Dundee.htm
 denver
 http://schools-wikipedia.org/wp/d/Denver.htm
 quito
 http://schools-wikipedia.org/wp/q/Quito.htm
-basketball
-http://schools-wikipedia.org/wp/b/Basketball.htm#Violations
-football
-http://schools-wikipedia.org/wp/f/Football.htm#History
-football
-http://schools-wikipedia.org/wp/f/Football.htm#The_establishment_of_modern_codes_of_football
-volleyball
-http://schools-wikipedia.org/wp/v/Volleyball.htm#Formations
-volleyball
-http://schools-wikipedia.org/wp/v/Volleyball.htm#Player_specialization
-volleyball
-http://schools-wikipedia.org/wp/v/Volleyball.htm#Rules_of_the_game
-volleyball
-http://schools-wikipedia.org/wp/v/Volleyball.htm#Skills
 gothenburg
 http://schools-wikipedia.org/wp/g/Gothenburg.htm
 san jose, california
 http://schools-wikipedia.org/wp/s/San_Jose%252C_California.htm
-netball
-http://schools-wikipedia.org/wp/n/Netball.htm#Fastnet
-football
-http://schools-wikipedia.org/wp/f/Football.htm#Other_developments_in_the_1850s
-football
-http://schools-wikipedia.org/wp/f/Football.htm#Surviving_UK_school_games
 cactus
 http://schools-wikipedia.org/wp/c/Cactus.htm
 ivy
@@ -10906,14 +10580,8 @@ prehistoric settlement of the british isles
 http://schools-wikipedia.org/wp/p/Prehistoric_settlement_of_the_British_Isles.htm
 local government in england
 http://schools-wikipedia.org/wp/l/Local_government_in_England.htm
-wales
-http://schools-wikipedia.org/wp/w/Wales.htm#Medieval_Wales
-british empire
-http://schools-wikipedia.org/wp/b/British_Empire.htm#Cape_to_Cairo
 liberal democrats
 http://schools-wikipedia.org/wp/l/Liberal_Democrats.htm
-royal navy
-http://schools-wikipedia.org/wp/r/Royal_Navy.htm#1815.E2.80.931914
 robin hood
 http://schools-wikipedia.org/wp/r/Robin_Hood.htm
 local government in northern ireland
@@ -10926,12 +10594,6 @@ caesium
 http://schools-wikipedia.org/wp/c/Caesium.htm
 red panda
 http://schools-wikipedia.org/wp/r/Red_panda.htm
-genetics
-http://schools-wikipedia.org/wp/g/Genetics.htm#molecular
-society
-http://schools-wikipedia.org/wp/s/Society.htm#Evolution_of_societies
-wi-fi
-http://schools-wikipedia.org/wp/w/Wi-Fi.htm#Internet_access
 deafness
 http://schools-wikipedia.org/wp/d/Deafness.htm
 chickenpox
@@ -10948,8 +10610,6 @@ properties of water
 http://schools-wikipedia.org/wp/p/Properties_of_water.htm
 pharmacology
 http://schools-wikipedia.org/wp/p/Pharmacology.htm
-energy
-http://schools-wikipedia.org/wp/e/Energy.htm#chemical_energy
 mentha
 http://schools-wikipedia.org/wp/m/Mentha.htm
 bamako
@@ -10962,14 +10622,10 @@ crohn's disease
 http://schools-wikipedia.org/wp/c/Crohn%2527s_disease.htm
 water buffalo
 http://schools-wikipedia.org/wp/w/Water_buffalo.htm
-fruit
-http://schools-wikipedia.org/wp/f/Fruit.htm#Fruit_development
 liquid crystal
 http://schools-wikipedia.org/wp/l/Liquid_crystal.htm
 pregnancy
 http://schools-wikipedia.org/wp/p/Pregnancy.htm
-life
-http://schools-wikipedia.org/wp/l/Life.htm#Range_of_tolerance
 zirconium
 http://schools-wikipedia.org/wp/z/Zirconium.htm
 gallium
@@ -11000,26 +10656,16 @@ oat
 http://schools-wikipedia.org/wp/o/Oat.htm
 algol
 http://schools-wikipedia.org/wp/a/Algol.htm
-ethanol
-http://schools-wikipedia.org/wp/e/Ethanol.htm#Ethylene_hydration
 phenol
 http://schools-wikipedia.org/wp/p/Phenol.htm
 antimony
 http://schools-wikipedia.org/wp/a/Antimony.htm
-alcohol
-http://schools-wikipedia.org/wp/a/Alcohol.htm#Reactions
 leprosy
 http://schools-wikipedia.org/wp/l/Leprosy.htm
 gray wolf
 http://schools-wikipedia.org/wp/g/Gray_wolf.htm
-athena
-http://schools-wikipedia.org/wp/a/Athena.htm#Cult_and_attributes
-moon
-http://schools-wikipedia.org/wp/m/Moon.htm#Formation
 pollinator
 http://schools-wikipedia.org/wp/p/Pollinator.htm
-heracles
-http://schools-wikipedia.org/wp/h/Heracles.htm#The_Twelve_Labours
 seoul
 http://schools-wikipedia.org/wp/s/Seoul.htm
 european pine marten
@@ -11028,8 +10674,6 @@ cabbage
 http://schools-wikipedia.org/wp/c/Cabbage.htm
 golden eagle
 http://schools-wikipedia.org/wp/g/Golden_Eagle.htm
-north sea oil
-http://schools-wikipedia.org/wp/n/North_Sea_oil.htm#West_of_Shetland
 robert peel
 http://schools-wikipedia.org/wp/r/Robert_Peel.htm
 red deer
@@ -11048,12 +10692,8 @@ antelope
 http://schools-wikipedia.org/wp/a/Antelope.htm
 moon landing
 http://schools-wikipedia.org/wp/m/Moon_landing.htm
-history of china
-http://schools-wikipedia.org/wp/h/History_of_China.htm#Ancient_era
 typhoid fever
 http://schools-wikipedia.org/wp/t/Typhoid_fever.htm
-world population
-http://schools-wikipedia.org/wp/w/World_population.htm#Global_demographics
 tianjin
 http://schools-wikipedia.org/wp/t/Tianjin.htm
 taipei
@@ -11062,44 +10702,20 @@ exploration of mars
 http://schools-wikipedia.org/wp/e/Exploration_of_Mars.htm
 libreville
 http://schools-wikipedia.org/wp/l/Libreville.htm
-french language
-http://schools-wikipedia.org/wp/f/French_language.htm#Vocabulary
 european space agency
 http://schools-wikipedia.org/wp/e/European_Space_Agency.htm
-lebanon
-http://schools-wikipedia.org/wp/l/Lebanon.htm#Language
-syria
-http://schools-wikipedia.org/wp/s/Syria.htm#Languages
 abidjan
 http://schools-wikipedia.org/wp/a/Abidjan.htm
-multiculturalism
-http://schools-wikipedia.org/wp/m/Multiculturalism.htm#Origins_in_Canada
 canada goose
 http://schools-wikipedia.org/wp/c/Canada_Goose.htm
 porpoise
 http://schools-wikipedia.org/wp/p/Porpoise.htm
-solomon islands
-http://schools-wikipedia.org/wp/s/Solomon_Islands.htm#Civil_war
 kakapo
 http://schools-wikipedia.org/wp/k/Kakapo.htm
-poverty
-http://schools-wikipedia.org/wp/p/Poverty.htm#Poverty_reduction
-food
-http://schools-wikipedia.org/wp/f/Food.htm#Prices
 anaemia
 http://schools-wikipedia.org/wp/a/Anemia.htm
-microsoft windows
-http://schools-wikipedia.org/wp/m/Microsoft_Windows.htm#lipso
-microsoft windows
-http://schools-wikipedia.org/wp/m/Microsoft_Windows.htm#lipsw
-microsoft windows
-http://schools-wikipedia.org/wp/m/Microsoft_Windows.htm#ime
-solvent
-http://schools-wikipedia.org/wp/s/Solvent.htm#Polarity.2C_solubility.2C_and_miscibility
 andrew johnson
 http://schools-wikipedia.org/wp/a/Andrew_Johnson.htm
-separation of powers under the united states constitution
-http://schools-wikipedia.org/wp/s/Separation_of_powers_under_the_United_States_Constitution.htm#Checks_and_balances
 poliomyelitis
 http://schools-wikipedia.org/wp/p/Poliomyelitis.htm
 lens (anatomy)
@@ -11126,8 +10742,6 @@ rat
 http://schools-wikipedia.org/wp/r/Rat.htm
 dimetrodon
 http://schools-wikipedia.org/wp/d/Dimetrodon.htm
-rat
-http://schools-wikipedia.org/wp/r/Rat.htm#Intelligence
 weasel
 http://schools-wikipedia.org/wp/w/Weasel.htm
 pterosaur
@@ -11140,60 +10754,38 @@ sequoia sempervirens
 http://schools-wikipedia.org/wp/s/Sequoia_sempervirens.htm
 corylus avellana
 http://schools-wikipedia.org/wp/c/Corylus_avellana.htm
-natural gas
-http://schools-wikipedia.org/wp/n/Natural_gas.htm#Uses
 nairobi
 http://schools-wikipedia.org/wp/n/Nairobi.htm
 windows phone
 http://schools-wikipedia.org/wp/w/Windows_Phone.htm
-list of best-selling video games
-http://schools-wikipedia.org/wp/l/List_of_best-selling_video_games.htm#PC
 space shuttle program
 http://schools-wikipedia.org/wp/s/Space_Shuttle_program.htm
 meteoroid
 http://schools-wikipedia.org/wp/m/Meteoroid.htm
-new testament
-http://schools-wikipedia.org/wp/n/New_Testament.htm#Books_of_the_New_Testament
 york
 http://schools-wikipedia.org/wp/y/York.htm
 gaza strip
 http://schools-wikipedia.org/wp/g/Gaza_Strip.htm
-first council of nicaea
-http://schools-wikipedia.org/wp/f/First_Council_of_Nicaea.htm#The_biblical_canon
 algiers
 http://schools-wikipedia.org/wp/a/Algiers.htm
-cyrus the great
-http://schools-wikipedia.org/wp/c/Cyrus_the_Great.htm#Neo-Babylonian_Empire
 whale vocalization
-http://schools-wikipedia.org/wp/w/Whale_vocalization.htm#Toothed_Whale_Sound_Levels
-tiger shark
-http://schools-wikipedia.org/wp/t/Tiger_shark.htm
+http://schools-wikipedia.org/wp/w/Whale_vocalization.htm
 garlic
 http://schools-wikipedia.org/wp/g/Garlic.htm
 horseradish
 http://schools-wikipedia.org/wp/h/Horseradish.htm
 great white shark
 http://schools-wikipedia.org/wp/g/Great_white_shark.htm
-the salvation army
-http://schools-wikipedia.org/wp/t/The_Salvation_Army.htm#Uniform
-recycling
-http://schools-wikipedia.org/wp/r/Recycling.htm#sorting
-lockheed martin f-35 lightning ii
-http://schools-wikipedia.org/wp/l/Lockheed_Martin_F-35_Lightning_II.htm#F-35B
-tehran
-http://schools-wikipedia.org/wp/t/Tehran.htm#Air_pollution
+tiger shark
+http://schools-wikipedia.org/wp/t/Tiger_shark.htm
 chestnut
 http://schools-wikipedia.org/wp/c/Chestnut.htm
 willow
 http://schools-wikipedia.org/wp/w/Willow.htm
 fraxinus
 http://schools-wikipedia.org/wp/f/Fraxinus.htm
-playing card
-http://schools-wikipedia.org/wp/p/Playing_card.htm#Anglo-American
 abac&aacute;
 http://schools-wikipedia.org/wp/a/Abac%25C3%25A1.htm
-ancient greece
-http://schools-wikipedia.org/wp/a/Ancient_Greece.htm#Science_and_technology
 roe deer
 http://schools-wikipedia.org/wp/r/Roe_deer.htm
 space shuttle endeavour
@@ -11204,14 +10796,6 @@ barbary macaque
 http://schools-wikipedia.org/wp/b/Barbary_macaque.htm
 mustard plant
 http://schools-wikipedia.org/wp/m/Mustard_plant.htm
-biofuel
-http://schools-wikipedia.org/wp/b/Biofuel.htm#Energy_efficiency_and_energy_balance_of_biofuels
-petroleum
-http://schools-wikipedia.org/wp/p/Petroleum.htm#formation
-biodiesel
-http://schools-wikipedia.org/wp/b/Biodiesel.htm#Use
-nut (fruit)
-http://schools-wikipedia.org/wp/n/Nut_%2528fruit%2529.htm#Botanical_definition
 mold
 http://schools-wikipedia.org/wp/m/Mold.htm
 halfbeak
@@ -11220,12 +10804,8 @@ whale shark
 http://schools-wikipedia.org/wp/w/Whale_shark.htm
 angel shark
 http://schools-wikipedia.org/wp/a/Angel_shark.htm
-brain
-http://schools-wikipedia.org/wp/b/Brain.htm#Brain_energy_consumption
 pernicious anaemia
 http://schools-wikipedia.org/wp/p/Pernicious_anemia.htm
-attribution of recent climate change
-http://schools-wikipedia.org/wp/a/Attribution_of_recent_climate_change.htm#Scientific_literature_and_opinion
 osteomalacia
 http://schools-wikipedia.org/wp/o/Osteomalacia.htm
 blood type
@@ -11234,8 +10814,6 @@ kuru (disease)
 http://schools-wikipedia.org/wp/k/Kuru_%2528disease%2529.htm
 mumps
 http://schools-wikipedia.org/wp/m/Mumps.htm
-prion
-http://schools-wikipedia.org/wp/p/Prion.htm#Prion_disease
 hepatocellular carcinoma
 http://schools-wikipedia.org/wp/h/Hepatocellular_carcinoma.htm
 common cold
@@ -11248,36 +10826,20 @@ rubella
 http://schools-wikipedia.org/wp/r/Rubella.htm
 tungsten
 http://schools-wikipedia.org/wp/t/Tungsten.htm
-germany
-http://schools-wikipedia.org/wp/g/Germany.htm#Society
-louis xiv of france
-http://schools-wikipedia.org/wp/l/Louis_XIV_of_France.htm#Patronage_o_the_arts
-food energy
-http://schools-wikipedia.org/wp/f/Food_energy.htm#Food_labels
-nitrogen
-http://schools-wikipedia.org/wp/n/Nitrogen.htm#Biological_role
 wasp
 http://schools-wikipedia.org/wp/w/Wasp.htm
 nephron
 http://schools-wikipedia.org/wp/n/Nephron.htm
 pathology
 http://schools-wikipedia.org/wp/p/Pathology.htm
-robert owen
-http://schools-wikipedia.org/wp/r/Robert_Owen.htm#Philanthropy_in_New_Lanark_.281800.29
 despotism
 http://schools-wikipedia.org/wp/d/Despotism.htm
 derby
 http://schools-wikipedia.org/wp/d/Derby.htm
-british empire
-http://schools-wikipedia.org/wp/b/British_Empire.htm#Colonization
-ion
-http://schools-wikipedia.org/wp/i/Ion.htm#Anions_and_cations
 noble gas
 http://schools-wikipedia.org/wp/n/Noble_gas.htm
 alkaline earth metal
 http://schools-wikipedia.org/wp/a/Alkaline_earth_metal.htm
-chemical synapse
-http://schools-wikipedia.org/wp/c/Chemical_synapse.htm#Neurotransmitter_release
 barium
 http://schools-wikipedia.org/wp/b/Barium.htm
 beriberi
@@ -11292,16 +10854,10 @@ kabul
 http://schools-wikipedia.org/wp/k/Kabul.htm
 tirana
 http://schools-wikipedia.org/wp/t/Tirana.htm
-greenhouse gas
-http://schools-wikipedia.org/wp/g/Greenhouse_gas.htm#Greenhouse_gas_emissions
-fertilizer
-http://schools-wikipedia.org/wp/f/Fertilizer.htm#History
 acne vulgaris
 http://schools-wikipedia.org/wp/a/Acne_vulgaris.htm
 parrot
 http://schools-wikipedia.org/wp/p/Parrot.htm
-gas giant
-http://schools-wikipedia.org/wp/g/Gas_giant.htm#Uranus_and_Neptune
 einsteinium
 http://schools-wikipedia.org/wp/e/Einsteinium.htm
 fluorine
@@ -11312,10 +10868,6 @@ actinium
 http://schools-wikipedia.org/wp/a/Actinium.htm
 berkelium
 http://schools-wikipedia.org/wp/b/Berkelium.htm
-agriculture
-http://schools-wikipedia.org/wp/a/Agriculture.htm#List_of_countries_by_agricultural_output
-plough
-http://schools-wikipedia.org/wp/p/Plough.htm#Mouldboard_plough
 toad
 http://schools-wikipedia.org/wp/t/Toad.htm
 swallow
@@ -11348,32 +10900,22 @@ morphine
 http://schools-wikipedia.org/wp/m/Morphine.htm
 vanadium
 http://schools-wikipedia.org/wp/v/Vanadium.htm
-energy
-http://schools-wikipedia.org/wp/e/Energy.htm#Biology
 tetanus
 http://schools-wikipedia.org/wp/t/Tetanus.htm
 lyme disease
 http://schools-wikipedia.org/wp/l/Lyme_disease.htm
 helicobacter pylori
 http://schools-wikipedia.org/wp/h/Helicobacter_pylori.htm
-photosynthesis
-http://schools-wikipedia.org/wp/p/Photosynthesis.htm#Bacterial_variations
 meningitis
 http://schools-wikipedia.org/wp/m/Meningitis.htm
-milk
-http://schools-wikipedia.org/wp/m/Milk.htm#Physical_and_chemical_structure
 fallow deer
 http://schools-wikipedia.org/wp/f/Fallow_deer.htm
 staphylococcus aureus
 http://schools-wikipedia.org/wp/s/Staphylococcus_aureus.htm
-immune system
-http://schools-wikipedia.org/wp/i/Immune_system.htm#Innate
 analgesic
 http://schools-wikipedia.org/wp/a/Analgesic.htm
 gynostemma pentaphyllum
 http://schools-wikipedia.org/wp/g/Gynostemma_pentaphyllum.htm
-atherosclerosis
-http://schools-wikipedia.org/wp/a/Atherosclerosis.htm#Atherogenesis
 eczema
 http://schools-wikipedia.org/wp/e/Eczema.htm
 cobalt
@@ -11384,8 +10926,6 @@ mallard
 http://schools-wikipedia.org/wp/m/Mallard.htm
 potassium iodide
 http://schools-wikipedia.org/wp/p/Potassium_iodide.htm
-carbohydrate
-http://schools-wikipedia.org/wp/c/Carbohydrate.htm#Ring-straight_chain_isomerism
 melissa officinalis
 http://schools-wikipedia.org/wp/m/Melissa_officinalis.htm
 dysphania ambrosioides
@@ -11396,10 +10936,6 @@ ethane
 http://schools-wikipedia.org/wp/e/Ethane.htm
 propane
 http://schools-wikipedia.org/wp/p/Propane.htm
-meat
-http://schools-wikipedia.org/wp/m/Meat.htm#Environmental_impact
-hinduism
-http://schools-wikipedia.org/wp/h/Hinduism.htm#Vegetarian_Hindus
 zebra
 http://schools-wikipedia.org/wp/z/Zebra.htm
 domesticated turkey
@@ -11410,96 +10946,46 @@ lion
 http://schools-wikipedia.org/wp/l/Lion.htm
 yerevan
 http://schools-wikipedia.org/wp/y/Yerevan.htm
-history of islam
-http://schools-wikipedia.org/wp/h/History_of_Islam.htm#Abbasids_-_.22Islamic_Golden_Age.22
 police state
 http://schools-wikipedia.org/wp/p/Police_state.htm
-berlin
-http://schools-wikipedia.org/wp/b/Berlin.htm#Museums
 brachiosaurus
 http://schools-wikipedia.org/wp/b/Brachiosaurus.htm
 influenza a virus subtype h5n1
 http://schools-wikipedia.org/wp/i/Influenza_A_virus_subtype_H5N1.htm
-song dynasty
-http://schools-wikipedia.org/wp/s/Song_Dynasty.htm#Technology.2C_science.2C_and_engineering
-otto von bismarck
-http://schools-wikipedia.org/wp/o/Otto_von_Bismarck.htm#Bismarck.27s_social_legislation
-the holocaust
-http://schools-wikipedia.org/wp/t/The_Holocaust.htm#The_political_left
 saturn v
 http://schools-wikipedia.org/wp/s/Saturn_V.htm
 esox
 http://schools-wikipedia.org/wp/e/Esox.htm
-danube
-http://schools-wikipedia.org/wp/d/Danube.htm#Drainage_basin
 principality
 http://schools-wikipedia.org/wp/p/Principality.htm
 worm
 http://schools-wikipedia.org/wp/w/Worm.htm
-nato
-http://schools-wikipedia.org/wp/n/NATO.htm#French_withdrawal
-calvin and hobbes
-http://schools-wikipedia.org/wp/c/Calvin_and_Hobbes.htm#Art_and_academia
 tyrannosaurus
 http://schools-wikipedia.org/wp/t/Tyrannosaurus.htm
-calvin and hobbes
-http://schools-wikipedia.org/wp/c/Calvin_and_Hobbes.htm#Calvinball
 stegosaurus
 http://schools-wikipedia.org/wp/s/Stegosaurus.htm
 vulture
 http://schools-wikipedia.org/wp/v/Vulture.htm
 down syndrome
 http://schools-wikipedia.org/wp/d/Down_syndrome.htm
-vatican city
-http://schools-wikipedia.org/wp/v/Vatican_City.htm#Head_of_state
-english language
-http://schools-wikipedia.org/wp/e/English_language.htm#Words_of_Old_Norse_origin
-english language
-http://schools-wikipedia.org/wp/e/English_language.htm#Words_of_Dutch_and_Low_German_origin
 pupil
 http://schools-wikipedia.org/wp/p/Pupil.htm
 franklin pierce
 http://schools-wikipedia.org/wp/f/Franklin_Pierce.htm
-trojan war
-http://schools-wikipedia.org/wp/t/Trojan_War.htm#Ajax_and_a_game_of_petteia
-observable universe
-http://schools-wikipedia.org/wp/o/Observable_universe.htm#Matter_content
-card game
-http://schools-wikipedia.org/wp/c/Card_game.htm#Fishing_games
-pok&eacute;mon trading card game
-http://schools-wikipedia.org/wp/p/Pok%25C3%25A9mon_Trading_Card_Game.htm#Basic_Pok.C3.A9mon
 sparrow
 http://schools-wikipedia.org/wp/s/Sparrow.htm
-tide
-http://schools-wikipedia.org/wp/t/Tide.htm#Tides_and_navigation
-centre of mass
-http://schools-wikipedia.org/wp/c/Center_of_mass.htm#Animations
-tide
-http://schools-wikipedia.org/wp/t/Tide.htm#Intertidal_ecology
-tide
-http://schools-wikipedia.org/wp/t/Tide.htm#Other_tides
-atmosphere of earth
-http://schools-wikipedia.org/wp/a/Atmosphere_of_Earth.htm#Temperature_and_speed_of_sound
 aristarchus (crater)
 http://schools-wikipedia.org/wp/a/Aristarchus_%2528crater%2529.htm
 apollo 8
 http://schools-wikipedia.org/wp/a/Apollo_8.htm
 apollo 11
 http://schools-wikipedia.org/wp/a/Apollo_11.htm
-moon
-http://schools-wikipedia.org/wp/m/Moon.htm#Name_and_etymology
 radon
 http://schools-wikipedia.org/wp/r/Radon.htm
-red giant
-http://schools-wikipedia.org/wp/r/Red_giant.htm#The_Sun_as_a_red_giant
 4 vesta
 http://schools-wikipedia.org/wp/4/4_Vesta.htm
-chocolate
-http://schools-wikipedia.org/wp/c/Chocolate.htm#Tempering
 anteater
 http://schools-wikipedia.org/wp/a/Anteater.htm
-rio de janeiro
-http://schools-wikipedia.org/wp/r/Rio_de_Janeiro.htm#Climate
 s&atilde;o paulo
 http://schools-wikipedia.org/wp/s/S%25C3%25A3o_Paulo.htm
 tellurium
@@ -11526,46 +11012,24 @@ john adams
 http://schools-wikipedia.org/wp/j/John_Adams.htm
 cs gas
 http://schools-wikipedia.org/wp/c/CS_gas.htm
-benjamin franklin
-http://schools-wikipedia.org/wp/b/Benjamin_Franklin.htm#Postmaster
 khartoum
 http://schools-wikipedia.org/wp/k/Khartoum.htm
 victoria, seychelles
 http://schools-wikipedia.org/wp/v/Victoria%252C_Seychelles.htm
 autism
 http://schools-wikipedia.org/wp/a/Autism.htm
-tofu
-http://schools-wikipedia.org/wp/t/Tofu.htm#Fermented
 pear
 http://schools-wikipedia.org/wp/p/Pear.htm
-history of agriculture
-http://schools-wikipedia.org/wp/h/History_of_agriculture.htm#Eastern_North_America
 vicia faba
 http://schools-wikipedia.org/wp/v/Vicia_faba.htm
-asparagus
-http://schools-wikipedia.org/wp/a/Asparagus.htm#Cultivation
 dill
 http://schools-wikipedia.org/wp/d/Dill.htm
 oenothera
 http://schools-wikipedia.org/wp/o/Oenothera.htm
-list of vegetable oils
-http://schools-wikipedia.org/wp/l/List_of_vegetable_oils.htm#Major_oils
-iron
-http://schools-wikipedia.org/wp/i/Iron.htm#Nutrition_and_dietary_sources
-coconut oil
-http://schools-wikipedia.org/wp/c/Coconut_oil.htm#Effects_on_health
-tofu
-http://schools-wikipedia.org/wp/t/Tofu.htm#Firm_tofu
 tarragon
 http://schools-wikipedia.org/wp/t/Tarragon.htm
 thrush (bird)
 http://schools-wikipedia.org/wp/t/Thrush_%2528bird%2529.htm
-biodiesel
-http://schools-wikipedia.org/wp/b/Biodiesel.htm#Yields_of_common_crops
-chicken
-http://schools-wikipedia.org/wp/c/Chicken.htm#Food_sharing_and_courting
-potato
-http://schools-wikipedia.org/wp/p/Potato.htm#Toxic_compounds_in_potatoes
 lovage
 http://schools-wikipedia.org/wp/l/Lovage.htm
 trade and use of saffron
@@ -11578,18 +11042,10 @@ wasabi
 http://schools-wikipedia.org/wp/w/Wasabi.htm
 pandanus
 http://schools-wikipedia.org/wp/p/Pandanus.htm
-ethylene
-http://schools-wikipedia.org/wp/e/Ethylene.htm#Ethylene_as_a_plant_hormone
 bird migration
 http://schools-wikipedia.org/wp/b/Bird_migration.htm
-fatty acid
-http://schools-wikipedia.org/wp/f/Fatty_acid.htm#Free_fatty_acids
 earwax
 http://schools-wikipedia.org/wp/e/Earwax.htm
-climate model
-http://schools-wikipedia.org/wp/c/Climate_model.htm#Box_models
-greenhouse gas
-http://schools-wikipedia.org/wp/g/Greenhouse_gas.htm#Atmospheric_lifetime
 william howard taft
 http://schools-wikipedia.org/wp/w/William_Howard_Taft.htm
 bobcat
@@ -11604,16 +11060,6 @@ eagle
 http://schools-wikipedia.org/wp/e/Eagle.htm
 great red spot
 http://schools-wikipedia.org/wp/g/Great_Red_Spot.htm
-archimedes
-http://schools-wikipedia.org/wp/a/Archimedes.htm#Discoveries_and_inventions
-archimedes
-http://schools-wikipedia.org/wp/a/Archimedes.htm#.22Death_ray.22
-alliterative verse
-http://schools-wikipedia.org/wp/a/Alliterative_verse.htm#Dr.C3.B3ttkv.C3.A6tt
-agriculture
-http://schools-wikipedia.org/wp/a/Agriculture.htm#History
-nature
-http://schools-wikipedia.org/wp/n/Nature.htm#Ecosystems
 red dwarf
 http://schools-wikipedia.org/wp/r/Red_dwarf.htm
 vampire bat
@@ -11622,12 +11068,8 @@ capacitance
 http://schools-wikipedia.org/wp/c/Capacitance.htm
 inductance
 http://schools-wikipedia.org/wp/i/Inductance.htm
-history of the earth
-http://schools-wikipedia.org/wp/h/History_of_the_Earth.htm#Hadean_and_Archaean
 sirius
 http://schools-wikipedia.org/wp/s/Sirius.htm
-mercury (planet)
-http://schools-wikipedia.org/wp/m/Mercury_%2528planet%2529.htm#Spin.E2.80.93orbit_resonance
 caloris basin
 http://schools-wikipedia.org/wp/c/Caloris_Basin.htm
 krill
@@ -11642,60 +11084,30 @@ dry ice
 http://schools-wikipedia.org/wp/d/Dry_ice.htm
 earless seal
 http://schools-wikipedia.org/wp/e/Earless_seal.htm
-australia
-http://schools-wikipedia.org/wp/a/Australia.htm#Etymology
 neon
 http://schools-wikipedia.org/wp/n/Neon.htm
 space shuttle challenger
 http://schools-wikipedia.org/wp/s/Space_Shuttle_Challenger.htm
-sun
-http://schools-wikipedia.org/wp/s/Sun.htm#External_links
 proxima centauri
 http://schools-wikipedia.org/wp/p/Proxima_Centauri.htm
 transit of venus
 http://schools-wikipedia.org/wp/t/Transit_of_Venus.htm
-civilization
-http://schools-wikipedia.org/wp/c/Civilization.htm#History
-centre of mass
-http://schools-wikipedia.org/wp/c/Center_of_mass.htm#Barycenter_in_astronomy
-mars
-http://schools-wikipedia.org/wp/m/Mars.htm#Viewing
 santiago
 http://schools-wikipedia.org/wp/s/Santiago.htm
 binary star
 http://schools-wikipedia.org/wp/b/Binary_star.htm
 47 ursae majoris
 http://schools-wikipedia.org/wp/4/47_Ursae_Majoris.htm
-earth
-http://schools-wikipedia.org/wp/e/Earth.htm#Moon
 16 cygni
 http://schools-wikipedia.org/wp/1/16_Cygni.htm
 fermi paradox
 http://schools-wikipedia.org/wp/f/Fermi_paradox.htm
-liberalism
-http://schools-wikipedia.org/wp/l/Liberalism.htm#Classical_and_modern
-solar system
-http://schools-wikipedia.org/wp/s/Solar_System.htm#Outer_planets
-milankovitch cycles
-http://schools-wikipedia.org/wp/m/Milankovitch_cycles.htm#Orbital_shape_.28eccentricity.29
 gerbil
 http://schools-wikipedia.org/wp/g/Gerbil.htm
 krypton
 http://schools-wikipedia.org/wp/k/Krypton.htm
 astatine
 http://schools-wikipedia.org/wp/a/Astatine.htm
-greek mythology
-http://schools-wikipedia.org/wp/g/Greek_mythology.htm#Cosmogony_and_cosmology
-abacus
-http://schools-wikipedia.org/wp/a/Abacus.htm#Mesopotamian
-fungus
-http://schools-wikipedia.org/wp/f/Fungus.htm#Morphology
-bread
-http://schools-wikipedia.org/wp/b/Bread.htm#Leavening
-species
-http://schools-wikipedia.org/wp/s/Species.htm#The_isolation_species_concept_in_more_detail
-wood
-http://schools-wikipedia.org/wp/w/Wood.htm#Heartwood_and_sapwood
 europium
 http://schools-wikipedia.org/wp/e/Europium.htm
 strontium
@@ -11722,66 +11134,26 @@ blue shark
 http://schools-wikipedia.org/wp/b/Blue_shark.htm
 basking shark
 http://schools-wikipedia.org/wp/b/Basking_shark.htm
-home alone
-http://schools-wikipedia.org/wp/h/Home_Alone.htm#Home_Alone_4:_Taking_Back_the_House
 plymouth
 http://schools-wikipedia.org/wp/p/Plymouth.htm
-j. r. r. tolkien
-http://schools-wikipedia.org/wp/j/J._R._R._Tolkien.htm#Writing
-avatar (2009 film)
-http://schools-wikipedia.org/wp/a/Avatar_%25282009_film%2529.htm#Extended_theatrical_re-release
 minneapolis
 http://schools-wikipedia.org/wp/m/Minneapolis.htm
 wildebeest
 http://schools-wikipedia.org/wp/w/Wildebeest.htm
-avatar (2009 film)
-http://schools-wikipedia.org/wp/a/Avatar_%25282009_film%2529.htm#Commercial_analysis
-leonardo dicaprio
-http://schools-wikipedia.org/wp/l/Leonardo_DiCaprio.htm#1996.E2.80.932001
-suicide
-http://schools-wikipedia.org/wp/s/Suicide.htm#Dutiful_suicide
-shark
-http://schools-wikipedia.org/wp/s/Shark.htm#Respiration
-star wars
-http://schools-wikipedia.org/wp/s/Star_Wars.htm#Original_trilogy
-genetic code
-http://schools-wikipedia.org/wp/g/Genetic_code.htm#Variations_to_the_standard_genetic_code
-dna
-http://schools-wikipedia.org/wp/d/DNA.htm#Uses_in_technology
-weather forecasting
-http://schools-wikipedia.org/wp/w/Weather_forecasting.htm#Nowcasting
-eye (cyclone)
-http://schools-wikipedia.org/wp/e/Eye_%2528cyclone%2529.htm#Stadium_effect
-eye (cyclone)
-http://schools-wikipedia.org/wp/e/Eye_%2528cyclone%2529.htm#Eyewall_replacement_cycles
-exploration of mars
-http://schools-wikipedia.org/wp/e/Exploration_of_Mars.htm#Mars_Curse
-plate tectonics
-http://schools-wikipedia.org/wp/p/Plate_tectonics.htm#Explanation_of_magnetic_striping
 mars exploration rover
 http://schools-wikipedia.org/wp/m/Mars_Exploration_Rover.htm
-phoenix (spacecraft)
-http://schools-wikipedia.org/wp/p/Phoenix_%2528spacecraft%2529.htm
 90377 sedna
 http://schools-wikipedia.org/wp/9/90377_Sedna.htm
-marseille
-http://schools-wikipedia.org/wp/m/Marseille.htm#Prehistory_and_classical_antiquity
 common chaffinch
 http://schools-wikipedia.org/wp/c/Common_Chaffinch.htm
 house sparrow
 http://schools-wikipedia.org/wp/h/House_Sparrow.htm
 woodlouse
 http://schools-wikipedia.org/wp/w/Woodlouse.htm
-ethanol
-http://schools-wikipedia.org/wp/e/Ethanol.htm#Purification
+phoenix (spacecraft)
+http://schools-wikipedia.org/wp/p/Phoenix_%2528spacecraft%2529.htm
 tooth enamel
 http://schools-wikipedia.org/wp/t/Tooth_enamel.htm
-history of islam
-http://schools-wikipedia.org/wp/h/History_of_Islam.htm#Early_Caliphate
-king arthur
-http://schools-wikipedia.org/wp/k/King_Arthur.htm#The_Arthurian_romance
-tao te ching
-http://schools-wikipedia.org/wp/t/Tao_Te_Ching.htm#Translations_of_the_title
 ipswich
 http://schools-wikipedia.org/wp/i/Ipswich.htm
 politics of the united kingdom
@@ -11806,22 +11178,10 @@ narcissus (plant)
 http://schools-wikipedia.org/wp/n/Narcissus_%2528plant%2529.htm
 swan
 http://schools-wikipedia.org/wp/s/Swan.htm
-iron
-http://schools-wikipedia.org/wp/i/Iron.htm#Biological_role
 mongoose
 http://schools-wikipedia.org/wp/m/Mongoose.htm
-popular culture
-http://schools-wikipedia.org/wp/p/Popular_culture.htm#Folklore
-wheel
-http://schools-wikipedia.org/wp/w/Wheel.htm#History
-coal
-http://schools-wikipedia.org/wp/c/Coal.htm#World_coal_reserves
-coal
-http://schools-wikipedia.org/wp/c/Coal.htm#Industrial_processes
 berbera
 http://schools-wikipedia.org/wp/b/Berbera.htm
-jet engine
-http://schools-wikipedia.org/wp/j/Jet_engine.htm#Combustors
 aluminium chloride
 http://schools-wikipedia.org/wp/a/Aluminium_chloride.htm
 rhodium
@@ -11830,14 +11190,12 @@ red kite
 http://schools-wikipedia.org/wp/r/Red_Kite.htm
 common nightingale
 http://schools-wikipedia.org/wp/c/Common_Nightingale.htm
-bird of prey
-http://schools-wikipedia.org/wp/b/Bird_of_prey.htm
 blue tit
 http://schools-wikipedia.org/wp/b/Blue_Tit.htm
+bird of prey
+http://schools-wikipedia.org/wp/b/Bird_of_prey.htm
 indian peafowl
 http://schools-wikipedia.org/wp/i/Indian_Peafowl.htm
-saurischia
-http://schools-wikipedia.org/wp/s/Saurischia.htm
 microraptor
 http://schools-wikipedia.org/wp/m/Microraptor.htm
 swift
@@ -11852,8 +11210,8 @@ anatidae
 http://schools-wikipedia.org/wp/a/Anatidae.htm
 great cormorant
 http://schools-wikipedia.org/wp/g/Great_Cormorant.htm
-ostrich
-http://schools-wikipedia.org/wp/o/Ostrich.htm#Description
+saurischia
+http://schools-wikipedia.org/wp/s/Saurischia.htm
 ornithischia
 http://schools-wikipedia.org/wp/o/Ornithischia.htm
 treecreeper
@@ -11864,16 +11222,10 @@ kestrel
 http://schools-wikipedia.org/wp/k/Kestrel.htm
 ichthyosaur
 http://schools-wikipedia.org/wp/i/Ichthyosaur.htm
-seed
-http://schools-wikipedia.org/wp/s/Seed.htm#Seed_dispersal
 gazelle
 http://schools-wikipedia.org/wp/g/Gazelle.htm
-phosphoric acid
-http://schools-wikipedia.org/wp/p/Phosphoric_acid.htm#pH_and_composition_of_a_phosphoric_acid_solution
 red squirrel
 http://schools-wikipedia.org/wp/r/Red_squirrel.htm
-space suit
-http://schools-wikipedia.org/wp/s/Space_suit.htm#Operating_pressure
 hyena
 http://schools-wikipedia.org/wp/h/Hyena.htm
 kano
@@ -11882,14 +11234,8 @@ african buffalo
 http://schools-wikipedia.org/wp/a/African_buffalo.htm
 cheetah
 http://schools-wikipedia.org/wp/c/Cheetah.htm
-list of environmental organizations
-http://schools-wikipedia.org/wp/l/List_of_environmental_organizations.htm#Private_Organizations_.28.27.27Environmental_NGOs.29
 humpback whale
 http://schools-wikipedia.org/wp/h/Humpback_whale.htm
-whale vocalization
-http://schools-wikipedia.org/wp/w/Whale_vocalization.htm
-nato
-http://schools-wikipedia.org/wp/n/NATO.htm#International_Partnership_Action_Plans
 colombo
 http://schools-wikipedia.org/wp/c/Colombo.htm
 cerium
@@ -11900,34 +11246,12 @@ bed bug
 http://schools-wikipedia.org/wp/b/Bed_bug.htm
 european hornet
 http://schools-wikipedia.org/wp/e/European_hornet.htm
-abraham lincoln
-http://schools-wikipedia.org/wp/a/Abraham_Lincoln.htm#Assassination
 niobium
 http://schools-wikipedia.org/wp/n/Niobium.htm
-bible
-http://schools-wikipedia.org/wp/b/Bible.htm#Christian_canons
-chicago
-http://schools-wikipedia.org/wp/c/Chicago.htm#Demographics
 martin van buren
 http://schools-wikipedia.org/wp/m/Martin_Van_Buren.htm
-chicago
-http://schools-wikipedia.org/wp/c/Chicago.htm#Neighborhoods
 grover cleveland
 http://schools-wikipedia.org/wp/g/Grover_Cleveland.htm
-milky way
-http://schools-wikipedia.org/wp/m/Milky_Way.htm#Sun.27s_location
-nationalism
-http://schools-wikipedia.org/wp/n/Nationalism.htm#Cultural_nationalism
-taoism
-http://schools-wikipedia.org/wp/t/Taoism.htm#Spelling_and_pronunciation
-edward vi of england
-http://schools-wikipedia.org/wp/e/Edward_VI_of_England.htm#Reformation
-history
-http://schools-wikipedia.org/wp/h/History.htm#Etymology
-helium
-http://schools-wikipedia.org/wp/h/Helium.htm#Helium_II
-history of china
-http://schools-wikipedia.org/wp/h/History_of_China.htm#Imperial_era
 aberystwyth
 http://schools-wikipedia.org/wp/a/Aberystwyth.htm
 ruthenium
@@ -11937,7 +11261,7 @@ http://schools-wikipedia.org/wp/i/Iridium.htm
 tantalum
 http://schools-wikipedia.org/wp/t/Tantalum.htm
 history of gwynedd during the high middle ages
-http://schools-wikipedia.org/wp/h/History_of_Gwynedd_during_the_High_Middle_Ages.htm#Llywelyn.2C_John.2C_and_the_Magna_Carta
+http://schools-wikipedia.org/wp/h/History_of_Gwynedd_during_the_High_Middle_Ages.htm
 peregrine falcon
 http://schools-wikipedia.org/wp/p/Peregrine_Falcon.htm
 benjamin harrison
@@ -11952,10 +11276,6 @@ soweto
 http://schools-wikipedia.org/wp/s/Soweto.htm
 stellenbosch
 http://schools-wikipedia.org/wp/s/Stellenbosch.htm
-harold wilson
-http://schools-wikipedia.org/wp/h/Harold_Wilson.htm#Europe
-harold wilson
-http://schools-wikipedia.org/wp/h/Harold_Wilson.htm#Social_issues
 trades union congress
 http://schools-wikipedia.org/wp/t/Trades_Union_Congress.htm
 james buchanan
@@ -11964,16 +11284,12 @@ james k. polk
 http://schools-wikipedia.org/wp/j/James_K._Polk.htm
 william mckinley
 http://schools-wikipedia.org/wp/w/William_McKinley.htm
-fidel castro
-http://schools-wikipedia.org/wp/f/Fidel_Castro.htm#Assassination_attempts
 cubeb
 http://schools-wikipedia.org/wp/c/Cubeb.htm
 pharyngitis
 http://schools-wikipedia.org/wp/p/Pharyngitis.htm
 oran
 http://schools-wikipedia.org/wp/o/Oran.htm
-myocardial infarction
-http://schools-wikipedia.org/wp/m/Myocardial_infarction.htm#Pathophysiology
 bleeding
 http://schools-wikipedia.org/wp/b/Bleeding.htm
 maputo
@@ -11988,8 +11304,6 @@ puffin
 http://schools-wikipedia.org/wp/p/Puffin.htm
 angelica
 http://schools-wikipedia.org/wp/a/Angelica.htm
-greenland
-http://schools-wikipedia.org/wp/g/Greenland.htm#Early_Paleo-Eskimo_cultures
 eurasian eagle-owl
 http://schools-wikipedia.org/wp/e/Eurasian_Eagle-Owl.htm
 redwing
@@ -11998,108 +11312,34 @@ caracas
 http://schools-wikipedia.org/wp/c/Caracas.htm
 managua
 http://schools-wikipedia.org/wp/m/Managua.htm
-allergy
-http://schools-wikipedia.org/wp/a/Allergy.htm#Diagnosis
-asthma
-http://schools-wikipedia.org/wp/a/Asthma.htm#Rapid_relief
-history of europe
-http://schools-wikipedia.org/wp/h/History_of_Europe.htm#Renaissance
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#.22Tom_shows.22
-itv (tv network)
-http://schools-wikipedia.org/wp/i/ITV_%2528TV_network%2529.htm#ITV_companies:_Past_and_Present
-comic relief
-http://schools-wikipedia.org/wp/c/Comic_Relief.htm#Red_Nose_Day_history
-the west wing
-http://schools-wikipedia.org/wp/t/The_West_Wing.htm#The_Bahji
-the west wing
-http://schools-wikipedia.org/wp/t/The_West_Wing.htm#2006_presidential_election
-multiple sclerosis
-http://schools-wikipedia.org/wp/m/Multiple_sclerosis.htm#Disease_course_and_clinical_subtypes
 gerald ford
 http://schools-wikipedia.org/wp/g/Gerald_Ford.htm
 mongrel
 http://schools-wikipedia.org/wp/m/Mongrel.htm
-still game
-http://schools-wikipedia.org/wp/s/Still_Game.htm#History
 salford, greater manchester
 http://schools-wikipedia.org/wp/s/Salford%252C_Greater_Manchester.htm
 meteor shower
 http://schools-wikipedia.org/wp/m/Meteor_shower.htm
-doctor (doctor who)
-http://schools-wikipedia.org/wp/d/Doctor_%2528Doctor_Who%2529.htm#Changing_faces
-squash (sport)
-http://schools-wikipedia.org/wp/s/Squash_%2528sport%2529.htm#The_court
-doctor who
-http://schools-wikipedia.org/wp/d/Doctor_Who.htm#Spin-offs
-black hole
-http://schools-wikipedia.org/wp/b/Black_hole.htm#Singularity
-doctor who
-http://schools-wikipedia.org/wp/d/Doctor_Who.htm#Adaptations_and_other_appearances
-comic relief
-http://schools-wikipedia.org/wp/c/Comic_Relief.htm#2011_event
-dalek
-http://schools-wikipedia.org/wp/d/Dalek.htm#Computer_games
-2008 summer paralympics
-http://schools-wikipedia.org/wp/2/2008_Summer_Paralympics.htm#Participating_NPCs
 bangkok
 http://schools-wikipedia.org/wp/b/Bangkok.htm
-philanthropy
-http://schools-wikipedia.org/wp/p/Philanthropy.htm#Modern_vernacular_uses_of_the_word
-judo
-http://schools-wikipedia.org/wp/j/Judo.htm#Judoka_.28practitioner.29
-greg lemond
-http://schools-wikipedia.org/wp/g/Greg_LeMond.htm#UCI_and_Pat_McQuaid
-lance armstrong
-http://schools-wikipedia.org/wp/l/Lance_Armstrong.htm#USADA_Investigation_2011-2012
-mickey mouse
-http://schools-wikipedia.org/wp/m/Mickey_Mouse.htm#Pejorative_use_of_Mickey.27s_name
-lottie dod
-http://schools-wikipedia.org/wp/l/Lottie_Dod.htm#Notes
-grand slam (tennis)
-http://schools-wikipedia.org/wp/g/Grand_Slam_%2528tennis%2529.htm#Career_Grand_Slam
 bouak&eacute;
 http://schools-wikipedia.org/wp/b/Bouak%25C3%25A9.htm
-wayne rooney
-http://schools-wikipedia.org/wp/w/Wayne_Rooney.htm#Personal_life
-video game
-http://schools-wikipedia.org/wp/v/Video_game.htm#Platforms
 minsk
 http://schools-wikipedia.org/wp/m/Minsk.htm
-fred perry
-http://schools-wikipedia.org/wp/f/Fred_Perry.htm#Clothing_label
 bulawayo
 http://schools-wikipedia.org/wp/b/Bulawayo.htm
-lyndon b. johnson
-http://schools-wikipedia.org/wp/l/Lyndon_B._Johnson.htm#Presidency_1963.E2.80.931969
 durham
 http://schools-wikipedia.org/wp/d/Durham.htm
-john vanbrugh
-http://schools-wikipedia.org/wp/j/John_Vanbrugh.htm#The_Provoked_Wife
-nazism
-http://schools-wikipedia.org/wp/n/Nazism.htm#German_nationalism_and_antisemitism
 hamster
 http://schools-wikipedia.org/wp/h/Hamster.htm
 kite (bird)
 http://schools-wikipedia.org/wp/k/Kite_%2528bird%2529.htm
-laozi
-http://schools-wikipedia.org/wp/l/Laozi.htm#Names
-mummy
-http://schools-wikipedia.org/wp/m/Mummy.htm#Modern_mummies
-tangent
-http://schools-wikipedia.org/wp/t/Tangent.htm#Analytical_approach
-philosophy
-http://schools-wikipedia.org/wp/p/Philosophy.htm#Main_theories
 trichinosis
 http://schools-wikipedia.org/wp/t/Trichinosis.htm
 tsetse fly
 http://schools-wikipedia.org/wp/t/Tsetse_fly.htm
 chester a. arthur
 http://schools-wikipedia.org/wp/c/Chester_A._Arthur.htm
-apollo 11
-http://schools-wikipedia.org/wp/a/Apollo_11.htm#Lunar_surface_operations
-history of alaska
-http://schools-wikipedia.org/wp/h/History_of_Alaska.htm#District_of_Alaska_.281884-1912.29
 magellanic penguin
 http://schools-wikipedia.org/wp/m/Magellanic_Penguin.htm
 rutherford b. hayes
@@ -12110,128 +11350,34 @@ william henry harrison
 http://schools-wikipedia.org/wp/w/William_Henry_Harrison.htm
 england expects that every man will do his duty
 http://schools-wikipedia.org/wp/e/England_expects_that_every_man_will_do_his_duty.htm
-american revolutionary war
-http://schools-wikipedia.org/wp/a/American_Revolutionary_War.htm#San_Juan_expedition.2C_1780
 benghazi
 http://schools-wikipedia.org/wp/b/Benghazi.htm
-buddhahood
-http://schools-wikipedia.org/wp/b/Buddhahood.htm#Nine_characteristics
-pope
-http://schools-wikipedia.org/wp/p/Pope.htm#Longest-reigning_popes
-anglicanism
-http://schools-wikipedia.org/wp/a/Anglicanism.htm#Doctrine
-nostradamus
-http://schools-wikipedia.org/wp/n/Nostradamus.htm#Sources
-islam
-http://schools-wikipedia.org/wp/i/Islam.htm#Etymology_and_meaning
 pleiades
-http://schools-wikipedia.org/wp/p/Pleiades.htm#Observational_history
+http://schools-wikipedia.org/wp/p/Pleiades.htm
 kampala
 http://schools-wikipedia.org/wp/k/Kampala.htm
-german language
-http://schools-wikipedia.org/wp/g/German_language.htm#Modern_German
-tibet
-http://schools-wikipedia.org/wp/t/Tibet.htm#Culture
-jacobite risings
-http://schools-wikipedia.org/wp/j/Jacobite_risings.htm#The_Rebellion.2FRising_of_1745_.28.27The_Forty-Five.27.29
-jacobite risings
-http://schools-wikipedia.org/wp/j/Jacobite_risings.htm#The_Rebellion.2FRising_of_1715_.28.27The_Fifteen.27.29
-henry vi of england
-http://schools-wikipedia.org/wp/h/Henry_VI_of_England.htm#Readeption_and_death
 the anarchy
 http://schools-wikipedia.org/wp/t/The_Anarchy.htm
 matilda of boulogne
 http://schools-wikipedia.org/wp/m/Matilda_of_Boulogne.htm
-henry v of england
-http://schools-wikipedia.org/wp/h/Henry_V_of_England.htm#Final_words_and_legacy
 newmarket, suffolk
 http://schools-wikipedia.org/wp/n/Newmarket%252C_Suffolk.htm
-family
-http://schools-wikipedia.org/wp/f/Family.htm#Western_kinship_terminology
-monarchy of the united kingdom
-http://schools-wikipedia.org/wp/m/Monarchy_of_the_United_Kingdom.htm#Religious_role
-jacobite risings
-http://schools-wikipedia.org/wp/j/Jacobite_risings.htm#Spanish_supported_Jacobite_invasion
-jacobite risings
-http://schools-wikipedia.org/wp/j/Jacobite_risings.htm#The_.27Fifteen
-edward iii of england
-http://schools-wikipedia.org/wp/e/Edward_III_of_England.htm#Family_tree
-manuel i komnenos
-http://schools-wikipedia.org/wp/m/Manuel_I_Komnenos.htm#Manuel_in_Antioch
-catholic church
-http://schools-wikipedia.org/wp/c/Catholic_Church.htm#Middle_Ages
-cnut the great
-http://schools-wikipedia.org/wp/c/Cnut_the_Great.htm#Ruler_of_the_waves
-cnut the great
-http://schools-wikipedia.org/wp/c/Cnut_the_Great.htm#Conquest_of_England
-cnut the great
-http://schools-wikipedia.org/wp/c/Cnut_the_Great.htm#Affairs_to_the_East
-malcolm ii of scotland
-http://schools-wikipedia.org/wp/m/Malcolm_II_of_Scotland.htm#Cnut
-macbeth, king of scotland
-http://schools-wikipedia.org/wp/m/Macbeth%252C_King_of_Scotland.htm#Mormaer_and_dux
-ostrich
-http://schools-wikipedia.org/wp/o/Ostrich.htm#Cultural_depictions
 tourette syndrome
 http://schools-wikipedia.org/wp/t/Tourette_syndrome.htm
-east india company
-http://schools-wikipedia.org/wp/e/East_India_Company.htm#Charter_Act_1813
 james monroe
 http://schools-wikipedia.org/wp/j/James_Monroe.htm
-tax
-http://schools-wikipedia.org/wp/t/Tax.htm#Tariff
-napoleon
-http://schools-wikipedia.org/wp/n/Napoleon.htm#Legacy
-flinders petrie
-http://schools-wikipedia.org/wp/f/Flinders_Petrie.htm#UCL
-genghis khan
-http://schools-wikipedia.org/wp/g/Genghis_Khan.htm#Name_and_title
-czechoslovakia
-http://schools-wikipedia.org/wp/c/Czechoslovakia.htm#Communist_Czechoslovakia
 dar es salaam
 http://schools-wikipedia.org/wp/d/Dar_es_Salaam.htm
-charles sumner
-http://schools-wikipedia.org/wp/c/Charles_Sumner.htm#Antebellum_career_and_attack_by_Preston_Brooks
 robert stephenson
 http://schools-wikipedia.org/wp/r/Robert_Stephenson.htm
 rutherfordium
 http://schools-wikipedia.org/wp/r/Rutherfordium.htm
 explorer 1
 http://schools-wikipedia.org/wp/e/Explorer_1.htm
-tin
-http://schools-wikipedia.org/wp/t/Tin.htm#Applications
-propeller (marine)
-http://schools-wikipedia.org/wp/p/Propeller_%2528marine%2529.htm#Marine
-palladian architecture
-http://schools-wikipedia.org/wp/p/Palladian_architecture.htm#The_Palladian_window
-pythagoras
-http://schools-wikipedia.org/wp/p/Pythagoras.htm#Musical_theories_and_investigations
-speed of light
-http://schools-wikipedia.org/wp/s/Speed_of_light.htm#Measurement_of_the_speed_of_light
-billie holiday
-http://schools-wikipedia.org/wp/b/Billie_Holiday.htm#Voice
-bob marley
-http://schools-wikipedia.org/wp/b/Bob_Marley.htm#Religion
-mercury (element)
-http://schools-wikipedia.org/wp/m/Mercury_%2528element%2529.htm#Medicine
-glastonbury festival
-http://schools-wikipedia.org/wp/g/Glastonbury_Festival.htm#2003
-high court of justice
-http://schools-wikipedia.org/wp/h/High_Court_of_Justice.htm#Chancery_Division
-richard wagner
-http://schools-wikipedia.org/wp/r/Richard_Wagner.htm#Writings
-symmetry
-http://schools-wikipedia.org/wp/s/Symmetry.htm#Symmetry_in_music
-apartheid in south africa
-http://schools-wikipedia.org/wp/a/Apartheid_in_South_Africa.htm#Sanctions
 jinja, uganda
 http://schools-wikipedia.org/wp/j/Jinja%252C_Uganda.htm
-bank of england
-http://schools-wikipedia.org/wp/b/Bank_of_England.htm#Governors_of_the_Bank_of_England
 martello tower
 http://schools-wikipedia.org/wp/m/Martello_tower.htm
-benazir bhutto
-http://schools-wikipedia.org/wp/b/Benazir_Bhutto.htm#The_Deal_with_the_Musharraf_Government
 harare
 http://schools-wikipedia.org/wp/h/Harare.htm
 stanley, falkland islands
@@ -12240,12 +11386,6 @@ llandudno
 http://schools-wikipedia.org/wp/l/Llandudno.htm
 windhoek
 http://schools-wikipedia.org/wp/w/Windhoek.htm
-book of common prayer
-http://schools-wikipedia.org/wp/b/Book_of_Common_Prayer.htm#United_States_of_America
-labour party (uk)
-http://schools-wikipedia.org/wp/l/Labour_Party_%2528UK%2529.htm#Leaders_of_the_Labour_Party_since_1906
-labour party (uk)
-http://schools-wikipedia.org/wp/l/Labour_Party_%2528UK%2529.htm#.22New_Labour.22_-_in_government_.281997-2010.29
 millard fillmore
 http://schools-wikipedia.org/wp/m/Millard_Fillmore.htm
 john tyler
@@ -12254,28 +11394,14 @@ ho chi minh city
 http://schools-wikipedia.org/wp/h/Ho_Chi_Minh_City.htm
 great yarmouth
 http://schools-wikipedia.org/wp/g/Great_Yarmouth.htm
-donald bradman
-http://schools-wikipedia.org/wp/d/Donald_Bradman.htm#Later_years_and_legacy
 robben island
 http://schools-wikipedia.org/wp/r/Robben_Island.htm
-algerian civil war
-http://schools-wikipedia.org/wp/a/Algerian_Civil_War.htm#Massacres_and_reconciliation
-plutonium
-http://schools-wikipedia.org/wp/p/Plutonium.htm#Explosives
 cape coast
 http://schools-wikipedia.org/wp/c/Cape_Coast.htm
 kumasi
 http://schools-wikipedia.org/wp/k/Kumasi.htm
-civil engineering
-http://schools-wikipedia.org/wp/c/Civil_engineering.htm#Surveying
 black rhinoceros
 http://schools-wikipedia.org/wp/b/Black_rhinoceros.htm
-jorge luis borges
-http://schools-wikipedia.org/wp/j/Jorge_Luis_Borges.htm#Hoaxes_and_forgeries
-rabindranath tagore
-http://schools-wikipedia.org/wp/r/Rabindranath_Tagore.htm#External_links
-the cantos
-http://schools-wikipedia.org/wp/t/The_Cantos.htm#LXXIV.E2.80.93LXXXIV_.28The_Pisan_Cantos.29
 khudai khidmatgar
 http://schools-wikipedia.org/wp/k/Khudai_Khidmatgar.htm
 dodo
@@ -12284,10 +11410,6 @@ aye-aye
 http://schools-wikipedia.org/wp/a/Aye-aye.htm
 weston-super-mare
 http://schools-wikipedia.org/wp/w/Weston-super-Mare.htm
-the mismeasure of man
-http://schools-wikipedia.org/wp/t/The_Mismeasure_of_Man.htm#Craniometry
-hyena
-http://schools-wikipedia.org/wp/h/Hyena.htm#Appearance_and_biology
 western jackdaw
 http://schools-wikipedia.org/wp/w/Western_Jackdaw.htm
 bohrium
@@ -12300,20 +11422,10 @@ cape canaveral
 http://schools-wikipedia.org/wp/c/Cape_Canaveral.htm
 m-theory
 http://schools-wikipedia.org/wp/m/M-theory.htm
-jupiter
-http://schools-wikipedia.org/wp/j/Jupiter.htm#Life_on_Jupiter
-black hole
-http://schools-wikipedia.org/wp/b/Black_hole.htm#Evaporation
-constitutional monarchy
-http://schools-wikipedia.org/wp/c/Constitutional_monarchy.htm#Constitutional_monarchy_in_the_United_Kingdom
 pitcher plant
 http://schools-wikipedia.org/wp/p/Pitcher_plant.htm
 elephant bird
 http://schools-wikipedia.org/wp/e/Elephant_bird.htm
-silent film
-http://schools-wikipedia.org/wp/s/Silent_film.htm#Top_grossing_silent_films
-titanic (1997 film)
-http://schools-wikipedia.org/wp/t/Titanic_%25281997_film%2529.htm#Cast
 achilles tendon
 http://schools-wikipedia.org/wp/a/Achilles_tendon.htm
 weight training
@@ -12324,196 +11436,32 @@ curium
 http://schools-wikipedia.org/wp/c/Curium.htm
 nobelium
 http://schools-wikipedia.org/wp/n/Nobelium.htm
-chlorine
-http://schools-wikipedia.org/wp/c/Chlorine.htm#History
 dormouse
 http://schools-wikipedia.org/wp/d/Dormouse.htm
 mary seacole
 http://schools-wikipedia.org/wp/m/Mary_Seacole.htm
 common cuckoo
 http://schools-wikipedia.org/wp/c/Common_Cuckoo.htm
-hippocrates
-http://schools-wikipedia.org/wp/h/Hippocrates.htm#Legends
-irish sea
-http://schools-wikipedia.org/wp/i/Irish_Sea.htm#Proposed_tunnel_projects
-africa
-http://schools-wikipedia.org/wp/a/Africa.htm#Territories_and_regions
 lerwick
 http://schools-wikipedia.org/wp/l/Lerwick.htm
-women's rights
-http://schools-wikipedia.org/wp/w/Women%2527s_rights.htm#2011_study_of_status_by_country
-economy of the european union
-http://schools-wikipedia.org/wp/e/Economy_of_the_European_Union.htm#Top_10:_economically_strongest_NUTS-1_and_NUTS-2_regions
-economics
-http://schools-wikipedia.org/wp/e/Economics.htm#Specialization
-supply and demand
-http://schools-wikipedia.org/wp/s/Supply_and_demand.htm#vertical_supply_curve
-harry s. truman
-http://schools-wikipedia.org/wp/h/Harry_S._Truman.htm#Truman_committee
-federal reserve system
-http://schools-wikipedia.org/wp/f/Federal_Reserve_System.htm#Monetary_policy
-renewable energy
-http://schools-wikipedia.org/wp/r/Renewable_energy.htm#100.25_renewable_energy
-corporate finance
-http://schools-wikipedia.org/wp/c/Corporate_finance.htm#Valuing_flexibility
-function (mathematics)
-http://schools-wikipedia.org/wp/f/Function_%2528mathematics%2529.htm#Functions_with_multiple_inputs_and_outputs
-monte carlo method
-http://schools-wikipedia.org/wp/m/Monte_Carlo_method.htm#Monte_Carlo_Simulation_versus_.E2.80.9CWhat_If.E2.80.9D_Scenarios
-private foundation
-http://schools-wikipedia.org/wp/p/Private_foundation.htm#Netherlands
-malta
-http://schools-wikipedia.org/wp/m/Malta.htm#Independence_and_Republic
-scottish national party
-http://schools-wikipedia.org/wp/s/Scottish_National_Party.htm#Policy_platform
-terminology of the british isles
-http://schools-wikipedia.org/wp/t/Terminology_of_the_British_Isles.htm#Terminology_in_detail
-television
-http://schools-wikipedia.org/wp/t/Television.htm#Sales_of_televisions
-pound sterling
-http://schools-wikipedia.org/wp/p/Pound_sterling.htm#Subdivisions_and_other_units
-history of south africa
-http://schools-wikipedia.org/wp/h/History_of_South_Africa.htm#Apartheid_era
-marks &amp; spencer
-http://schools-wikipedia.org/wp/m/Marks_%2526_Spencer.htm#M.26S_Simply_Food
-margaret thatcher
-http://schools-wikipedia.org/wp/m/Margaret_Thatcher.htm#Privatisation
-at&amp;t
-http://schools-wikipedia.org/wp/a/AT%2526T.htm#Bell_Operating_Companies
-yahoo!
-http://schools-wikipedia.org/wp/y/Yahoo%2521.htm#Advertising
-palm oil
-http://schools-wikipedia.org/wp/p/Palm_oil.htm#Biodiesel.2C_biomass_and_biogas
-tesco
-http://schools-wikipedia.org/wp/t/Tesco.htm#Corporate_social_responsibility
-intel
-http://schools-wikipedia.org/wp/i/Intel.htm#Advertising_and_brand_management
-tesco
-http://schools-wikipedia.org/wp/t/Tesco.htm#Tesco_Extra
 blackberry 10
 http://schools-wikipedia.org/wp/b/BlackBerry_10.htm
-windows xp
-http://schools-wikipedia.org/wp/w/Windows_XP.htm#Service_Pack_2
-architecture of windows nt
-http://schools-wikipedia.org/wp/a/Architecture_of_Windows_NT.htm#Kernel
 foursquare
 http://schools-wikipedia.org/wp/f/Foursquare.htm
 whatsapp
 http://schools-wikipedia.org/wp/w/WhatsApp.htm
 ios
 http://schools-wikipedia.org/wp/i/iOS.htm
-tex
-http://schools-wikipedia.org/wp/t/TeX.htm#math_mode
-windows 7
-http://schools-wikipedia.org/wp/w/Windows_7.htm#Hardware_requirements
-bioinformatics
-http://schools-wikipedia.org/wp/b/Bioinformatics.htm#Sequence_analysis
-perl
-http://schools-wikipedia.org/wp/p/Perl.htm#Distributions
-data encryption standard
-http://schools-wikipedia.org/wp/d/Data_Encryption_Standard.htm#Chronology
-phishing
-http://schools-wikipedia.org/wp/p/Phishing.htm#Monitoring_and_takedown
-http cookie
-http://schools-wikipedia.org/wp/h/HTTP_cookie.htm#Cookie_attributes
-http cookie
-http://schools-wikipedia.org/wp/h/HTTP_cookie.htm#Expires_and_Max-Age
-open source
-http://schools-wikipedia.org/wp/o/Open_source.htm#The_Open_Source_Definition
-mercator projection
-http://schools-wikipedia.org/wp/m/Mercator_projection.htm#Mathematics_of_the_projection
-dvd
-http://schools-wikipedia.org/wp/d/DVD.htm#Etymology
-bluetooth
-http://schools-wikipedia.org/wp/b/Bluetooth.htm#Bluetooth_v2.1_.2B_EDR
-bluetooth
-http://schools-wikipedia.org/wp/b/Bluetooth.htm#Bluetooth_v4.0
-renaissance music
-http://schools-wikipedia.org/wp/r/Renaissance_music.htm#Theory_and_notation
-middle ages
-http://schools-wikipedia.org/wp/m/Middle_Ages.htm#Periodization_issues
-eurovision song contest
-http://schools-wikipedia.org/wp/e/Eurovision_Song_Contest.htm#Political_and_national_voting
-messiah (handel)
-http://schools-wikipedia.org/wp/m/Messiah_%2528Handel%2529.htm#Hallelujah
-horn (instrument)
-http://schools-wikipedia.org/wp/h/Horn_%2528instrument%2529.htm#Natural_horn
-oboe
-http://schools-wikipedia.org/wp/o/Oboe.htm#baroque_oboe
-piano
-http://schools-wikipedia.org/wp/p/Piano.htm#Grand
-piano
-http://schools-wikipedia.org/wp/p/Piano.htm#Pedals
-double bass
-http://schools-wikipedia.org/wp/d/Double_bass.htm#Tuning
-jazz
-http://schools-wikipedia.org/wp/j/Jazz.htm#1980s.E2.80.932000s
-accordion
-http://schools-wikipedia.org/wp/a/Accordion.htm#History
-accordion
-http://schools-wikipedia.org/wp/a/Accordion.htm#Use_in_popular_music
-recorder
-http://schools-wikipedia.org/wp/r/Recorder.htm#Types_of_recorder
-guitar
-http://schools-wikipedia.org/wp/g/Guitar.htm#Tuning
-oboe
-http://schools-wikipedia.org/wp/o/Oboe.htm#Baroque
-brandenburg concertos
-http://schools-wikipedia.org/wp/b/Brandenburg_concertos.htm#Brandenburg_Concerto_No._6_in_B_flat_major.2C_BWV_1051
-violin
-http://schools-wikipedia.org/wp/v/Violin.htm#Sizes
-piano
-http://schools-wikipedia.org/wp/p/Piano.htm#Standard_pedals
-clarinet
-http://schools-wikipedia.org/wp/c/Clarinet.htm#History
-viola
-http://schools-wikipedia.org/wp/v/Viola.htm#The_form_of_the_viola
-invasion of poland
-http://schools-wikipedia.org/wp/i/Invasion_of_Poland.htm#Misconceptions
-battle of britain
-http://schools-wikipedia.org/wp/b/Battle_of_Britain.htm#The_Dowding_System
-the blitz
-http://schools-wikipedia.org/wp/t/The_Blitz.htm#Loge_and_Seeschlange
-naval battle of guadalcanal
-http://schools-wikipedia.org/wp/n/Naval_Battle_of_Guadalcanal.htm#First_Naval_Battle_of_Guadalcanal.2C_November_13
 valpara&iacute;so
 http://schools-wikipedia.org/wp/v/Valpara%25C3%25ADso.htm
-treaty of versailles
-http://schools-wikipedia.org/wp/t/Treaty_of_Versailles.htm#Territorial_changes
-battle of leyte gulf
-http://schools-wikipedia.org/wp/b/Battle_of_Leyte_Gulf.htm#The_Battle_of_Surigao_Strait_.2825_October.29
-battle of leyte gulf
-http://schools-wikipedia.org/wp/b/Battle_of_Leyte_Gulf.htm#The_Battle_of_Cape_Enga.C3.B1o_.2825.E2.80.9326_October.29
-battle of leyte gulf
-http://schools-wikipedia.org/wp/b/Battle_of_Leyte_Gulf.htm#The_Battle_of_the_Sibuyan_Sea_.2824_October.29
-witold pilecki
-http://schools-wikipedia.org/wp/w/Witold_Pilecki.htm#Arrest_and_execution
-tide
-http://schools-wikipedia.org/wp/t/Tide.htm#Range_variation:_springs_and_neaps
-blitzkrieg
-http://schools-wikipedia.org/wp/b/Blitzkrieg.htm#Luftwaffe_doctrine
-malaria
-http://schools-wikipedia.org/wp/m/Malaria.htm#Classification
 abo blood group system
 http://schools-wikipedia.org/wp/a/ABO_blood_group_system.htm
-history of the panama canal
-http://schools-wikipedia.org/wp/h/History_of_the_Panama_Canal.htm#The_Third_Locks_Scheme
-feather
-http://schools-wikipedia.org/wp/f/Feather.htm#Utilitarian_functions
 fermium
 http://schools-wikipedia.org/wp/f/Fermium.htm
 lithium hydride
 http://schools-wikipedia.org/wp/l/Lithium_hydride.htm
-nuclear power
-http://schools-wikipedia.org/wp/n/Nuclear_power.htm#Reprocessing
-medicine
-http://schools-wikipedia.org/wp/m/Medicine.htm#Modern
 rowan
 http://schools-wikipedia.org/wp/r/Rowan.htm
-turkey
-http://schools-wikipedia.org/wp/t/Turkey.htm#Republic_era
-mosque
-http://schools-wikipedia.org/wp/m/Mosque.htm#Architecture
 huambo
 http://schools-wikipedia.org/wp/h/Huambo.htm
 stag beetle
@@ -12522,22 +11470,6 @@ beira, mozambique
 http://schools-wikipedia.org/wp/b/Beira%252C_Mozambique.htm
 bissau
 http://schools-wikipedia.org/wp/b/Bissau.htm
-geography of egypt
-http://schools-wikipedia.org/wp/g/Geography_of_Egypt.htm#Nile_Valley_and_Delta
-greenhouse gas
-http://schools-wikipedia.org/wp/g/Greenhouse_gas.htm#Cumulative_and_historical_emissions
-ozone depletion
-http://schools-wikipedia.org/wp/o/Ozone_depletion.htm#Ozone_depletion_and_global_warming
-greenhouse gas
-http://schools-wikipedia.org/wp/g/Greenhouse_gas.htm#Regional_and_national_attribution_of_emissions
-effects of global warming
-http://schools-wikipedia.org/wp/e/Effects_of_global_warming.htm#Irreversibilities
-greenhouse gas
-http://schools-wikipedia.org/wp/g/Greenhouse_gas.htm#Anthropogenic_greenhouse_gases
-greenhouse gas
-http://schools-wikipedia.org/wp/g/Greenhouse_gas.htm#Annual_and_per_capita_emissions
-global warming
-http://schools-wikipedia.org/wp/g/Global_warming.htm#Observed_temperature_changes
 eurasian wigeon
 http://schools-wikipedia.org/wp/e/Eurasian_Wigeon.htm
 ethiopian wolf
@@ -12546,120 +11478,30 @@ comet hale&ndash;bopp
 http://schools-wikipedia.org/wp/c/Comet_Hale%25E2%2580%2593Bopp.htm
 scattered disc
 http://schools-wikipedia.org/wp/s/Scattered_disc.htm
-comet
-http://schools-wikipedia.org/wp/c/Comet.htm#Orbital_characteristics
 makemake (dwarf planet)
 http://schools-wikipedia.org/wp/m/Makemake_%2528dwarf_planet%2529.htm
-universe
-http://schools-wikipedia.org/wp/u/Universe.htm#Evolution
-nationalism
-http://schools-wikipedia.org/wp/n/Nationalism.htm#Ultranationalism
-eastern europe
-http://schools-wikipedia.org/wp/e/Eastern_Europe.htm#The_Cold_war_divides_Europe_into_the_Eastern_and_Western_bloc
-olmec
-http://schools-wikipedia.org/wp/o/Olmec.htm#Gallery
-history of iran
-http://schools-wikipedia.org/wp/h/History_of_Iran.htm#The_first_Persian_state:_Achaemenid_Persia_.28648_BC_.E2.80.93_330_BC.29
-world war ii
-http://schools-wikipedia.org/wp/w/World_War_II.htm#Casualties.2C_civilian_impact.2C_and_atrocities
-invasion
-http://schools-wikipedia.org/wp/i/Invasion.htm#Applications_in_fourth_generation_warfare
-history of europe
-http://schools-wikipedia.org/wp/h/History_of_Europe.htm#Political_revolution
-biofuel
-http://schools-wikipedia.org/wp/b/Biofuel.htm#Solid_biofuels
-austria-hungary
-http://schools-wikipedia.org/wp/a/Austria-Hungary.htm#Dissolution
-central europe
-http://schools-wikipedia.org/wp/c/Central_Europe.htm#Current_views_on_Central_Europe
-nikita khrushchev
-http://schools-wikipedia.org/wp/n/Nikita_Khrushchev.htm#Removal
-pleiades
-http://schools-wikipedia.org/wp/p/Pleiades.htm
 orion nebula
 http://schools-wikipedia.org/wp/o/Orion_Nebula.htm
 sputnik program
 http://schools-wikipedia.org/wp/s/Sputnik_program.htm
-slavery
-http://schools-wikipedia.org/wp/s/Slavery.htm#Chattel_slavery
-petroleum
-http://schools-wikipedia.org/wp/p/Petroleum.htm#Biogenic_theory
-sodium sulfate
-http://schools-wikipedia.org/wp/s/Sodium_sulfate.htm#Thermal_storage
-sunlight
-http://schools-wikipedia.org/wp/s/Sunlight.htm#Effects_on_human_health
 sucre
 http://schools-wikipedia.org/wp/s/Sucre.htm
-king arthur
-http://schools-wikipedia.org/wp/k/King_Arthur.htm#Geoffrey_of_Monmouth
 sputnik 2
 http://schools-wikipedia.org/wp/s/Sputnik_2.htm
-spirit of the american doughboy
-http://schools-wikipedia.org/wp/s/Spirit_of_the_American_Doughboy.htm#Variations_on_the_theme
 kigali
 http://schools-wikipedia.org/wp/k/Kigali.htm
-election
-http://schools-wikipedia.org/wp/e/Election.htm#Difficulties_with_elections
 triceratops
 http://schools-wikipedia.org/wp/t/Triceratops.htm
 neptunium
 http://schools-wikipedia.org/wp/n/Neptunium.htm
-ming dynasty
-http://schools-wikipedia.org/wp/m/Ming_Dynasty.htm#Rebellion.2C_invasion.2C_collapse
-tourism
-http://schools-wikipedia.org/wp/t/Tourism.htm#Most_visited_cities
 space shuttle columbia
 http://schools-wikipedia.org/wp/s/Space_Shuttle_Columbia.htm
-rock of gibraltar
-http://schools-wikipedia.org/wp/r/Rock_of_Gibraltar.htm#Upper_Rock_Nature_Reserve
-pound sterling
-http://schools-wikipedia.org/wp/p/Pound_sterling.htm#Bretton_Woods
-europe
-http://schools-wikipedia.org/wp/e/Europe.htm#Territories_and_regions
-slavs
-http://schools-wikipedia.org/wp/s/Slavs.htm#Ethnonym
-middle ages
-http://schools-wikipedia.org/wp/m/Middle_Ages.htm#Early_Middle_Ages
 dire dawa
 http://schools-wikipedia.org/wp/d/Dire_Dawa.htm
-african slave trade
-http://schools-wikipedia.org/wp/a/African_slave_trade.htm#Slavery_in_Somalia
-attribution of recent climate change
-http://schools-wikipedia.org/wp/a/Attribution_of_recent_climate_change.htm#Livestock_and_land_use
 nuclear magnetic resonance spectroscopy
 http://schools-wikipedia.org/wp/n/Nuclear_magnetic_resonance_spectroscopy.htm
-atom
-http://schools-wikipedia.org/wp/a/Atom.htm#Energy_levels
 hubble deep field
 http://schools-wikipedia.org/wp/h/Hubble_Deep_Field.htm
-binary star
-http://schools-wikipedia.org/wp/b/Binary_star.htm#Spectroscopic_binaries
-statistical mechanics
-http://schools-wikipedia.org/wp/s/Statistical_mechanics.htm#Fundamental_postulate
-string theory
-http://schools-wikipedia.org/wp/s/String_theory.htm#Gauge-gravity_duality
-string theory
-http://schools-wikipedia.org/wp/s/String_theory.htm#Extra_dimensions
-mass spectrometry
-http://schools-wikipedia.org/wp/m/Mass_spectrometry.htm#Protein_characterization
-mass spectrometry
-http://schools-wikipedia.org/wp/m/Mass_spectrometry.htm#Protein_identification
-molecule
-http://schools-wikipedia.org/wp/m/Molecule.htm#Molecular_formula
-general relativity
-http://schools-wikipedia.org/wp/g/General_relativity.htm#Gravitational_waves
-general relativity
-http://schools-wikipedia.org/wp/g/General_relativity.htm#Gravitational_time_dilation_and_frequency_shift
-general relativity
-http://schools-wikipedia.org/wp/g/General_relativity.htm#Orbital_decay
-general relativity
-http://schools-wikipedia.org/wp/g/General_relativity.htm#Horizons
-general relativity
-http://schools-wikipedia.org/wp/g/General_relativity.htm#Evolution_equations
-general relativity
-http://schools-wikipedia.org/wp/g/General_relativity.htm#Quantum_field_theory_in_curved_spacetime
-general relativity
-http://schools-wikipedia.org/wp/g/General_relativity.htm#Quantum_gravity
 flerovium
 http://schools-wikipedia.org/wp/f/Flerovium.htm
 darmstadtium
@@ -12670,110 +11512,26 @@ ununtrium
 http://schools-wikipedia.org/wp/u/Ununtrium.htm
 meitnerium
 http://schools-wikipedia.org/wp/m/Meitnerium.htm
-tobacco smoking
-http://schools-wikipedia.org/wp/t/Tobacco_smoking.htm#Health_risks_of_smoking
-radium
-http://schools-wikipedia.org/wp/r/Radium.htm#History
 americium
 http://schools-wikipedia.org/wp/a/Americium.htm
 ununoctium
 http://schools-wikipedia.org/wp/u/Ununoctium.htm
-big bang
-http://schools-wikipedia.org/wp/b/Big_Bang.htm#Theoretical_underpinnings
-hubble's law
-http://schools-wikipedia.org/wp/h/Hubble%2527s_law.htm#Interpretation
 acetylene
 http://schools-wikipedia.org/wp/a/Acetylene.htm
-comet
-http://schools-wikipedia.org/wp/c/Comet.htm#Nomenclature
-ancient greece
-http://schools-wikipedia.org/wp/a/Ancient_Greece.htm#Political_structure
-trinity (nuclear test)
-http://schools-wikipedia.org/wp/t/Trinity_%2528nuclear_test%2529.htm#The_gadget
 holmium
 http://schools-wikipedia.org/wp/h/Holmium.htm
-radar
-http://schools-wikipedia.org/wp/r/Radar.htm#Transit_time
 material properties of diamond
-http://schools-wikipedia.org/wp/m/Material_properties_of_diamond.htm#Optical_properties
+http://schools-wikipedia.org/wp/m/Material_properties_of_diamond.htm
 copper(ii) nitrate
 http://schools-wikipedia.org/wp/c/Copper%2528II%2529_nitrate.htm
-big bang
-http://schools-wikipedia.org/wp/b/Big_Bang.htm#Cosmic_microwave_background_radiation
-observable universe
-http://schools-wikipedia.org/wp/o/Observable_universe.htm#Size
-photon
-http://schools-wikipedia.org/wp/p/Photon.htm#The_photon_as_a_gauge_boson
-photon
-http://schools-wikipedia.org/wp/p/Photon.htm#Second_quantization
-cosmic microwave background radiation
-http://schools-wikipedia.org/wp/c/Cosmic_microwave_background_radiation.htm#Primary_anisotropy
-big bang
-http://schools-wikipedia.org/wp/b/Big_Bang.htm#Horizon_problem
-observable universe
-http://schools-wikipedia.org/wp/o/Observable_universe.htm#Particle_horizon
-momentum
-http://schools-wikipedia.org/wp/m/Momentum.htm#Conservation_of_momentum
-petroleum
-http://schools-wikipedia.org/wp/p/Petroleum.htm#Extraction
-hydrochloric acid
-http://schools-wikipedia.org/wp/h/Hydrochloric_acid.htm#Production
-sodium hydroxide
-http://schools-wikipedia.org/wp/s/Sodium_hydroxide.htm#Methods_of_production
-hawking radiation
-http://schools-wikipedia.org/wp/h/Hawking_radiation.htm#Problems_with_the_theory
-crust (geology)
-http://schools-wikipedia.org/wp/c/Crust_%2528geology%2529.htm#Earth.27s_crust
-oxygen
-http://schools-wikipedia.org/wp/o/Oxygen.htm#Industrial_production
-sulfuric acid
-http://schools-wikipedia.org/wp/s/Sulfuric_acid.htm#Reaction_with_water
 technetium
 http://schools-wikipedia.org/wp/t/Technetium.htm
 dysprosium
 http://schools-wikipedia.org/wp/d/Dysprosium.htm
 promethium
 http://schools-wikipedia.org/wp/p/Promethium.htm
-mecca
-http://schools-wikipedia.org/wp/m/Mecca.htm#Destruction_of_Mecca.27s_historic_and_religious_sites
-milky way
-http://schools-wikipedia.org/wp/m/Milky_Way.htm#Spiral_arms
-galaxy
-http://schools-wikipedia.org/wp/g/Galaxy.htm#Etymology
-centre of mass
-http://schools-wikipedia.org/wp/c/Center_of_mass.htm#Barycenter_in_astrophysics_and_astronomy
-ptolemy
-http://schools-wikipedia.org/wp/p/Ptolemy.htm#Astronomy
-properties of water
-http://schools-wikipedia.org/wp/p/Properties_of_water.htm#Heat_capacity_and_heats_of_vaporization_and_fusion
-tang dynasty
-http://schools-wikipedia.org/wp/t/Tang_Dynasty.htm#Rebuilding_and_recovery
-durham cathedral
-http://schools-wikipedia.org/wp/d/Durham_Cathedral.htm#Saxon
-history of russia (1992&ndash;present)
-http://schools-wikipedia.org/wp/h/History_of_Russia_%25281992%25E2%2580%2593present%2529.htm#Economic_depression_and_social_decay
-slavs
-http://schools-wikipedia.org/wp/s/Slavs.htm#Ethno-cultural_subdivisions
 project vanguard
 http://schools-wikipedia.org/wp/p/Project_Vanguard.htm
-atmosphere of earth
-http://schools-wikipedia.org/wp/a/Atmosphere_of_Earth.htm#Temperature_and_the_atmospheric_layers
-andriyivskyy descent
-http://schools-wikipedia.org/wp/a/Andriyivskyy_Descent.htm#Mikhail_Bulgakov.27s_house
-andriyivskyy descent
-http://schools-wikipedia.org/wp/a/Andriyivskyy_Descent.htm#Castle_of_Richard_the_Lionheart
-kiev
-http://schools-wikipedia.org/wp/k/Kiev.htm#Etymology
-united nations
-http://schools-wikipedia.org/wp/u/United_Nations.htm#Languages
-khazars
-http://schools-wikipedia.org/wp/k/Khazars.htm#Alleged_Khazar_ancestry_of_Ashkenazim
-history of scotland
-http://schools-wikipedia.org/wp/h/History_of_Scotland.htm#The_Glorious_Revolution
-john f. kennedy
-http://schools-wikipedia.org/wp/j/John_F._Kennedy.htm#Space_program
-list of rivers by length
-http://schools-wikipedia.org/wp/l/List_of_rivers_by_length.htm#Amazon-Congo
 yamoussoukro
 http://schools-wikipedia.org/wp/y/Yamoussoukro.htm
 barbary lion
@@ -12784,12 +11542,6 @@ ouagadougou
 http://schools-wikipedia.org/wp/o/Ouagadougou.htm
 bobo-dioulasso
 http://schools-wikipedia.org/wp/b/Bobo-Dioulasso.htm
-maya civilization
-http://schools-wikipedia.org/wp/m/Maya_civilization.htm#Astronomy
-archaeology
-http://schools-wikipedia.org/wp/a/Archaeology.htm#History_of_archaeology
-lake titicaca
-http://schools-wikipedia.org/wp/l/Lake_Titicaca.htm#Isla_del_Sol
 abuja
 http://schools-wikipedia.org/wp/a/Abuja.htm
 freetown
@@ -12812,22 +11564,6 @@ moundou
 http://schools-wikipedia.org/wp/m/Moundou.htm
 douala
 http://schools-wikipedia.org/wp/d/Douala.htm
-zambezi
-http://schools-wikipedia.org/wp/z/Zambezi.htm#Geological_changes_to_the_course
-portugal
-http://schools-wikipedia.org/wp/p/Portugal.htm#Portuguese_Africa_and_the_Overseas_Provinces_.281822-1961.29
-british empire
-http://schools-wikipedia.org/wp/b/British_Empire.htm#Britain_and_the_scramble_for_Africa
-serbia and montenegro
-http://schools-wikipedia.org/wp/s/Serbia_and_Montenegro.htm#History
-sharia
-http://schools-wikipedia.org/wp/s/Sharia.htm#Personal_status_law_only
-pygmy peoples
-http://schools-wikipedia.org/wp/p/Pygmy_peoples.htm#Rampasasa
-berber languages
-http://schools-wikipedia.org/wp/b/Berber_languages.htm#Population
-brussels
-http://schools-wikipedia.org/wp/b/Brussels.htm#Municipalities
 port-gentil
 http://schools-wikipedia.org/wp/p/Port-Gentil.htm
 elephant shrew
@@ -12838,26 +11574,12 @@ hargeisa
 http://schools-wikipedia.org/wp/h/Hargeisa.htm
 salvia officinalis
 http://schools-wikipedia.org/wp/s/Salvia_officinalis.htm
-union jack
-http://schools-wikipedia.org/wp/u/Union_Jack.htm#Scottish_Union_Flag
-old testament
-http://schools-wikipedia.org/wp/o/Old_Testament.htm#Christian_view_of_the_Law
-stephen, king of england
-http://schools-wikipedia.org/wp/s/Stephen%252C_King_of_England.htm#Argument_with_the_church_.281145.E2.80.9352.29
-league of nations
-http://schools-wikipedia.org/wp/l/League_of_Nations.htm#Languages_and_symbols
-colour blindness
-http://schools-wikipedia.org/wp/c/Color_blindness.htm#Red-green_color_blindness
 gr&eacute;vy's zebra
 http://schools-wikipedia.org/wp/g/Gr%25C3%25A9vy%2527s_zebra.htm
 plains zebra
 http://schools-wikipedia.org/wp/p/Plains_zebra.htm
-saudi arabia
-http://schools-wikipedia.org/wp/s/Saudi_Arabia.htm#Government_and_Politics
 gaborone
 http://schools-wikipedia.org/wp/g/Gaborone.htm
-monk
-http://schools-wikipedia.org/wp/m/Monk.htm#Monastery
 snowy owl
 http://schools-wikipedia.org/wp/s/Snowy_Owl.htm
 atlantic herring
@@ -12866,34 +11588,20 @@ harald maddadsson
 http://schools-wikipedia.org/wp/h/Harald_Maddadsson.htm
 snow goose
 http://schools-wikipedia.org/wp/s/Snow_Goose.htm
-augustus
-http://schools-wikipedia.org/wp/a/Augustus.htm#First_settlement
-wool
-http://schools-wikipedia.org/wp/w/Wool.htm#History
-scotland in the high middle ages
-http://schools-wikipedia.org/wp/s/Scotland_in_the_High_Middle_Ages.htm#Ecclesia_Scoticana
 gaur
 http://schools-wikipedia.org/wp/g/Gaur.htm
 definition of planet
 http://schools-wikipedia.org/wp/d/Definition_of_planet.htm
-asteroid
-http://schools-wikipedia.org/wp/a/Asteroid.htm#Naming
-4 vesta
-http://schools-wikipedia.org/wp/4/4_Vesta.htm#Visibility
 3 juno
 http://schools-wikipedia.org/wp/3/3_Juno.htm
 55 cancri
 http://schools-wikipedia.org/wp/5/55_Cancri.htm
-ice
-http://schools-wikipedia.org/wp/i/Ice.htm#In_planetary_science
 mu arae
 http://schools-wikipedia.org/wp/m/Mu_Arae.htm
 herbig&ndash;haro object
 http://schools-wikipedia.org/wp/h/Herbig%25E2%2580%2593Haro_object.htm
 crab nebula
 http://schools-wikipedia.org/wp/c/Crab_Nebula.htm
-uranus
-http://schools-wikipedia.org/wp/u/Uranus.htm#Internal_structure
 hassium
 http://schools-wikipedia.org/wp/h/Hassium.htm
 californium
@@ -12904,80 +11612,24 @@ lawrencium
 http://schools-wikipedia.org/wp/l/Lawrencium.htm
 henipavirus
 http://schools-wikipedia.org/wp/h/Henipavirus.htm
-age of the universe
-http://schools-wikipedia.org/wp/a/Age_of_the_universe.htm#Age_based_on_WMAP
 rose-ringed parakeet
 http://schools-wikipedia.org/wp/r/Rose-ringed_Parakeet.htm
-primary education
-http://schools-wikipedia.org/wp/p/Primary_education.htm#Netherlands
-amsterdam
-http://schools-wikipedia.org/wp/a/Amsterdam.htm#Culture_and_entertainment
 tin(ii) chloride
 http://schools-wikipedia.org/wp/t/Tin%2528II%2529_chloride.htm
-roman empire
-http://schools-wikipedia.org/wp/r/Roman_Empire.htm#Census_rank
 arctic tern
 http://schools-wikipedia.org/wp/a/Arctic_Tern.htm
-north sea
-http://schools-wikipedia.org/wp/n/North_Sea.htm#Geological_history
-world heritage site
-http://schools-wikipedia.org/wp/w/World_Heritage_Site.htm#Convention_and_background
-diamond
-http://schools-wikipedia.org/wp/d/Diamond.htm#Distribution
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#Classifications.2C_terminology.2C_and_naming
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#Intensity_classifications
-history of alaska
-http://schools-wikipedia.org/wp/h/History_of_Alaska.htm#Alaska_Native_Claims_Settlement_Act
-france in the american revolutionary war
-http://schools-wikipedia.org/wp/f/France_in_the_American_Revolutionary_War.htm#French_involvement
-world trade centre
-http://schools-wikipedia.org/wp/w/World_Trade_Center.htm#Top_of_the_World_observation_deck
-right- and left-hand traffic
-http://schools-wikipedia.org/wp/r/Right-_and_left-hand_traffic.htm#Exceptions_to_the_rule
-calligraphy
-http://schools-wikipedia.org/wp/c/Calligraphy.htm#Western_calligraphy
-wool
-http://schools-wikipedia.org/wp/w/Wool.htm#Scouring
-mythology
-http://schools-wikipedia.org/wp/m/Mythology.htm#Term
-athena
-http://schools-wikipedia.org/wp/a/Athena.htm#Athena_Parthenos:_Virgin_Athena
-history of christianity
-http://schools-wikipedia.org/wp/h/History_of_Christianity.htm#Church_of_the_Early_Middle_Ages_.28476.E2.80.93800.29
-munich
-http://schools-wikipedia.org/wp/m/Munich.htm#Sports
-munich
-http://schools-wikipedia.org/wp/m/Munich.htm#the_museums
-transition metal
-http://schools-wikipedia.org/wp/t/Transition_metal.htm#Characteristic_properties
 cochineal
 http://schools-wikipedia.org/wp/c/Cochineal.htm
-colour
-http://schools-wikipedia.org/wp/c/Color.htm#Structural_color
 mbabane
 http://schools-wikipedia.org/wp/m/Mbabane.htm
 maseru
 http://schools-wikipedia.org/wp/m/Maseru.htm
 black wildebeest
 http://schools-wikipedia.org/wp/b/Black_wildebeest.htm
-minoan civilization
-http://schools-wikipedia.org/wp/m/Minoan_civilization.htm#Chronology_and_history
-pakistan
-http://schools-wikipedia.org/wp/p/Pakistan.htm#Culture
-economy of india
-http://schools-wikipedia.org/wp/e/Economy_of_India.htm#Industry_and_services
-school
-http://schools-wikipedia.org/wp/s/School.htm#India
 ganges shark
 http://schools-wikipedia.org/wp/g/Ganges_shark.htm
-indus valley civilization
-http://schools-wikipedia.org/wp/i/Indus_Valley_Civilization.htm#Late_Harappan
 ireland king of arms
 http://schools-wikipedia.org/wp/i/Ireland_King_of_Arms.htm
-history of gwynedd during the high middle ages
-http://schools-wikipedia.org/wp/h/History_of_Gwynedd_during_the_High_Middle_Ages.htm
 d&aacute;l riata
 http://schools-wikipedia.org/wp/d/D%25C3%25A1l_Riata.htm
 prehistoric wales
@@ -12990,90 +11642,16 @@ act for the relief of the poor 1601
 http://schools-wikipedia.org/wp/a/Act_for_the_Relief_of_the_Poor_1601.htm
 english poor laws
 http://schools-wikipedia.org/wp/e/English_Poor_Laws.htm
-second boer war
-http://schools-wikipedia.org/wp/s/Second_Boer_War.htm#Concentration_camps_.281900_-_1902.29
-monarchy of the united kingdom
-http://schools-wikipedia.org/wp/m/Monarchy_of_the_United_Kingdom.htm#After_the_1707_Acts_of_Union
-pretoria
-http://schools-wikipedia.org/wp/p/Pretoria.htm#Change_of_name
 toamasina
 http://schools-wikipedia.org/wp/t/Toamasina.htm
-geography of madagascar
-http://schools-wikipedia.org/wp/g/Geography_of_Madagascar.htm#Tsaratanana_Massif
-south africa
-http://schools-wikipedia.org/wp/s/South_Africa.htm#Politics
-johannesburg
-http://schools-wikipedia.org/wp/j/Johannesburg.htm#Retail
-theatre
-http://schools-wikipedia.org/wp/t/Theatre.htm#Producing_vs._presenting
-tithe
-http://schools-wikipedia.org/wp/t/Tithe.htm#Tithes_and_tithe_law_in_England_before_reform
 common eider
 http://schools-wikipedia.org/wp/c/Common_Eider.htm
-treasure island
-http://schools-wikipedia.org/wp/t/Treasure_Island.htm#Historical_time_frame
-utilitarianism
-http://schools-wikipedia.org/wp/u/Utilitarianism.htm#Higher_and_lower_pleasures
-independent school (united kingdom)
-http://schools-wikipedia.org/wp/i/Independent_school_%2528United_Kingdom%2529.htm#Independent_schools_in_Scotland
-pump
-http://schools-wikipedia.org/wp/p/Pump.htm#Rotary_dynamic_.28centrifugal.29_pump
-olive oil
-http://schools-wikipedia.org/wp/o/Olive_oil.htm#History
-united nations security council
-http://schools-wikipedia.org/wp/u/United_Nations_Security_Council.htm#Veto_power
-stuttgart
-http://schools-wikipedia.org/wp/s/Stuttgart.htm#The_cradle_of_the_automobile
-herbert hoover
-http://schools-wikipedia.org/wp/h/Herbert_Hoover.htm#Economy
 luxembourg (city)
 http://schools-wikipedia.org/wp/l/Luxembourg_%2528city%2529.htm
 phineas gage
 http://schools-wikipedia.org/wp/p/Phineas_Gage.htm
-barcelona
-http://schools-wikipedia.org/wp/b/Barcelona.htm#Trade_fair_and_exhibitions
-barcelona
-http://schools-wikipedia.org/wp/b/Barcelona.htm#Roads_and_highways
-economy of the european union
-http://schools-wikipedia.org/wp/e/Economy_of_the_European_Union.htm#Richest_.26_Poorest_NUTS_Regions_.28GDP_PPP_2008.29
 lubumbashi
 http://schools-wikipedia.org/wp/l/Lubumbashi.htm
-history
-http://schools-wikipedia.org/wp/h/History.htm#Historical_methods
-plutonium
-http://schools-wikipedia.org/wp/p/Plutonium.htm#Characteristics
-nuclear fission
-http://schools-wikipedia.org/wp/n/Nuclear_fission.htm#History
-war in darfur
-http://schools-wikipedia.org/wp/w/War_in_Darfur.htm#Mortality_figures
-lockheed martin f-35 lightning ii
-http://schools-wikipedia.org/wp/l/Lockheed_Martin_F-35_Lightning_II.htm#Canada
-heat
-http://schools-wikipedia.org/wp/h/Heat.htm#Heat_dissipation
-tank
-http://schools-wikipedia.org/wp/t/Tank.htm#Mobility
-netherlands
-http://schools-wikipedia.org/wp/n/Netherlands.htm#Naming_conventions
-history of china
-http://schools-wikipedia.org/wp/h/History_of_China.htm#The_Chinese_Empire
-history of japan
-http://schools-wikipedia.org/wp/h/History_of_Japan.htm#Feudal_Japan_.281185-1603.29
-osama bin laden
-http://schools-wikipedia.org/wp/o/Osama_bin_Laden.htm#Criminal_charges
-lyndon b. johnson
-http://schools-wikipedia.org/wp/l/Lyndon_B._Johnson.htm#Vietnam_War
-nuclear weapon
-http://schools-wikipedia.org/wp/n/Nuclear_weapon.htm#Weapons_delivery
-great moravia
-http://schools-wikipedia.org/wp/g/Great_Moravia.htm#Name
-trojan war
-http://schools-wikipedia.org/wp/t/Trojan_War.htm#The_Iliad
-trojan war
-http://schools-wikipedia.org/wp/t/Trojan_War.htm#Dates_of_the_Trojan_War
-roman law
-http://schools-wikipedia.org/wp/r/Roman_law.htm#Ius_Civile.2C_Ius_Gentium.2C_and_Ius_Naturale
-alexander the great
-http://schools-wikipedia.org/wp/a/Alexander_the_Great.htm#Legacy_and_division_of_the_empire
 ankylosaurus
 http://schools-wikipedia.org/wp/a/Ankylosaurus.htm
 pachycephalosaurus
@@ -13086,146 +11664,42 @@ thulium
 http://schools-wikipedia.org/wp/t/Thulium.htm
 lutetium
 http://schools-wikipedia.org/wp/l/Lutetium.htm
-list of particles
-http://schools-wikipedia.org/wp/l/List_of_particles.htm#Molecules
-momentum
-http://schools-wikipedia.org/wp/m/Momentum.htm#Momentum_in_electromagnetism
-momentum
-http://schools-wikipedia.org/wp/m/Momentum.htm#Momentum_in_quantum_mechanics
-ape
-http://schools-wikipedia.org/wp/a/Ape.htm#History_of_hominoid_taxonomy
-apollo
-http://schools-wikipedia.org/wp/a/Apollo.htm#Attributes_and_symbols
-symmetry
-http://schools-wikipedia.org/wp/s/Symmetry.htm#Symmetry_in_physics
-big bang
-http://schools-wikipedia.org/wp/b/Big_Bang.htm#Standard_Problems
-igneous rock
-http://schools-wikipedia.org/wp/i/Igneous_rock.htm#Decompression
-lava
-http://schools-wikipedia.org/wp/l/Lava.htm#P.C4.81hoehoe
-city status in the united kingdom
-http://schools-wikipedia.org/wp/c/City_status_in_the_United_Kingdom.htm#Northern_Ireland
-lake district
-http://schools-wikipedia.org/wp/l/Lake_District.htm#Climate
-tea
-http://schools-wikipedia.org/wp/t/Tea.htm#Etymology_and_cognates_in_other_languages
-spanish empire
-http://schools-wikipedia.org/wp/s/Spanish_Empire.htm#Territories_in_Africa_.281898.E2.80.931975.29
-ernest rutherford
-http://schools-wikipedia.org/wp/e/Ernest_Rutherford.htm#Scientific_research
-history of china
-http://schools-wikipedia.org/wp/h/History_of_China.htm#Han_Dynasty
-comet hyakutake
-http://schools-wikipedia.org/wp/c/Comet_Hyakutake.htm
 great comet of 1882
 http://schools-wikipedia.org/wp/g/Great_Comet_of_1882.htm
+comet hyakutake
+http://schools-wikipedia.org/wp/c/Comet_Hyakutake.htm
 great comet
 http://schools-wikipedia.org/wp/g/Great_Comet.htm
-asteroid
-http://schools-wikipedia.org/wp/a/Asteroid.htm#Terminology
 paracetamol
 http://schools-wikipedia.org/wp/p/Paracetamol.htm
-cataract surgery
-http://schools-wikipedia.org/wp/c/Cataract_surgery.htm#History
-thomas jefferson
-http://schools-wikipedia.org/wp/t/Thomas_Jefferson.htm#Monticello
-chobe national park
-http://schools-wikipedia.org/wp/c/Chobe_National_Park.htm#Geography_and_ecosystems
 tooth development
 http://schools-wikipedia.org/wp/t/Tooth_development.htm
 copper(ii) chloride
 http://schools-wikipedia.org/wp/c/Copper%2528II%2529_chloride.htm
 copper(i) chloride
 http://schools-wikipedia.org/wp/c/Copper%2528I%2529_chloride.htm
-wessex
-http://schools-wikipedia.org/wp/w/Wessex.htm#Wyvern_or_dragon
-kepler's laws of planetary motion
-http://schools-wikipedia.org/wp/k/Kepler%2527s_laws_of_planetary_motion.htm#Deriving_Kepler.27s_third_law
-albedo
-http://schools-wikipedia.org/wp/a/Albedo.htm#Astronomical_albedo
-temperature
-http://schools-wikipedia.org/wp/t/Temperature.htm#Table_of_common_temperatures
-newton's laws of motion
-http://schools-wikipedia.org/wp/n/Newton%2527s_laws_of_motion.htm#Newton.27s_third_law
-thermodynamic temperature
-http://schools-wikipedia.org/wp/t/Thermodynamic_temperature.htm#Heat_energy_at_absolute_zero
-entropy
-http://schools-wikipedia.org/wp/e/Entropy.htm#Entropy_and_cosmology
-sparta
-http://schools-wikipedia.org/wp/s/Sparta.htm#Prehistory
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Other_characters
-plymouth
-http://schools-wikipedia.org/wp/p/Plymouth.htm#City_Council
-names of god in judaism
-http://schools-wikipedia.org/wp/n/Names_of_God_in_Judaism.htm#Ehyeh-Asher-Ehyeh
-names of god in judaism
-http://schools-wikipedia.org/wp/n/Names_of_God_in_Judaism.htm#YHWH_Tzevaot
-names of god in judaism
-http://schools-wikipedia.org/wp/n/Names_of_God_in_Judaism.htm#El_Shaddai
-alms
-http://schools-wikipedia.org/wp/a/Alms.htm#Islam
 eurasian collared dove
 http://schools-wikipedia.org/wp/e/Eurasian_Collared_Dove.htm
 passenger pigeon
 http://schools-wikipedia.org/wp/p/Passenger_Pigeon.htm
 common wood pigeon
 http://schools-wikipedia.org/wp/c/Common_Wood_Pigeon.htm
-population history of indigenous peoples of the americas
-http://schools-wikipedia.org/wp/p/Population_history_of_indigenous_peoples_of_the_Americas.htm#Depopulation_from_disease
-ordination of women
-http://schools-wikipedia.org/wp/o/Ordination_of_women.htm#Some_beginning_dates_for_ordination_of_women
-feminism
-http://schools-wikipedia.org/wp/f/Feminism.htm#Civil_rights_movement_and_anti-racism
-feminism
-http://schools-wikipedia.org/wp/f/Feminism.htm#Theoretical_schools
-hebrew calendar
-http://schools-wikipedia.org/wp/h/Hebrew_calendar.htm#Conversion_between_Jewish_and_civil_dates
-nun
-http://schools-wikipedia.org/wp/n/Nun.htm#Eastern_Orthodox_Christian
-history of iran
-http://schools-wikipedia.org/wp/h/History_of_Iran.htm#Persia_and_Europe_.281722.E2.80.931914.29
-christian mythology
-http://schools-wikipedia.org/wp/c/Christian_mythology.htm#Mythical_themes_and_types
 caridea
 http://schools-wikipedia.org/wp/c/Caridea.htm
 dendrobranchiata
 http://schools-wikipedia.org/wp/d/Dendrobranchiata.htm
-waste management
-http://schools-wikipedia.org/wp/w/Waste_management.htm#Incineration
 black-backed jackal
 http://schools-wikipedia.org/wp/b/Black-backed_jackal.htm
-africa
-http://schools-wikipedia.org/wp/a/Africa.htm#Demographics
-volcano
-http://schools-wikipedia.org/wp/v/Volcano.htm#Effects_of_volcanoes
-animal
-http://schools-wikipedia.org/wp/a/Animal.htm#Food_and_energy_sourcing
-sugar
-http://schools-wikipedia.org/wp/s/Sugar.htm#Chemistry
 osprey
 http://schools-wikipedia.org/wp/o/Osprey.htm
 bras&iacute;lia
 http://schools-wikipedia.org/wp/b/Bras%25C3%25ADlia.htm
-amazon river
-http://schools-wikipedia.org/wp/a/Amazon_River.htm#Dispute_regarding_length
-hiv
-http://schools-wikipedia.org/wp/h/HIV.htm#Replication_cycle
 zomba, malawi
 http://schools-wikipedia.org/wp/z/Zomba%252C_Malawi.htm
 lilongwe
 http://schools-wikipedia.org/wp/l/Lilongwe.htm
 blantyre
 http://schools-wikipedia.org/wp/b/Blantyre.htm
-list of countries by life expectancy
-http://schools-wikipedia.org/wp/l/List_of_countries_by_life_expectancy.htm#List_by_the_CIA_World_Factbook_.282011_estimates.29
-meteoroid
-http://schools-wikipedia.org/wp/m/Meteoroid.htm#Bolide
-international court of justice
-http://schools-wikipedia.org/wp/i/International_Court_of_Justice.htm#Procedure
-united nations
-http://schools-wikipedia.org/wp/u/United_Nations.htm#Controversy_and_criticism
 plover
 http://schools-wikipedia.org/wp/p/Plover.htm
 carcinus maenas
@@ -13240,18 +11714,12 @@ allosaurus
 http://schools-wikipedia.org/wp/a/Allosaurus.htm
 apatosaurus
 http://schools-wikipedia.org/wp/a/Apatosaurus.htm
-tibet
-http://schools-wikipedia.org/wp/t/Tibet.htm#Status
-eocene
-http://schools-wikipedia.org/wp/e/Eocene.htm#Grande_Coupure
 minmi (dinosaur)
 http://schools-wikipedia.org/wp/m/Minmi_%2528dinosaur%2529.htm
 iguanodon
 http://schools-wikipedia.org/wp/i/Iguanodon.htm
 deinonychus
 http://schools-wikipedia.org/wp/d/Deinonychus.htm
-sediment
-http://schools-wikipedia.org/wp/s/Sediment.htm#Shores_and_shallow_seas
 velociraptor
 http://schools-wikipedia.org/wp/v/Velociraptor.htm
 mamenchisaurus
@@ -13282,132 +11750,26 @@ sauroposeidon
 http://schools-wikipedia.org/wp/s/Sauroposeidon.htm
 compsognathus
 http://schools-wikipedia.org/wp/c/Compsognathus.htm
-iguanodon
-http://schools-wikipedia.org/wp/i/Iguanodon.htm#Gideon_Mantell.2C_Sir_Richard_Owen.2C_and_the_discovery_of_dinosaurs
-thorium
-http://schools-wikipedia.org/wp/t/Thorium.htm#Isotopes
-lead
-http://schools-wikipedia.org/wp/l/Lead.htm#Isotopes
-atmosphere of earth
-http://schools-wikipedia.org/wp/a/Atmosphere_of_Earth.htm#Temperature_and_layers
-islam
-http://schools-wikipedia.org/wp/i/Islam.htm#Law
-victoria falls
-http://schools-wikipedia.org/wp/v/Victoria_Falls.htm#How_the_Victoria_Falls_formed
-david livingstone
-http://schools-wikipedia.org/wp/d/David_Livingstone.htm#Zambezi_expedition
 coconut crab
 http://schools-wikipedia.org/wp/c/Coconut_crab.htm
 port louis
 http://schools-wikipedia.org/wp/p/Port_Louis.htm
-industrial revolution
-http://schools-wikipedia.org/wp/i/Industrial_Revolution.htm#Industrial_Revolution_elsewhere
-isan
-http://schools-wikipedia.org/wp/i/Isan.htm#Culture
-oceanic climate
-http://schools-wikipedia.org/wp/o/Oceanic_climate.htm#Subpolar_variety_.28Cfc.29
-tundra
-http://schools-wikipedia.org/wp/t/Tundra.htm#Climatic_classification
-fault (geology)
-http://schools-wikipedia.org/wp/f/Fault_%2528geology%2529.htm#Listric
 nene (bird)
 http://schools-wikipedia.org/wp/n/Nene_%2528bird%2529.htm
-volcano
-http://schools-wikipedia.org/wp/v/Volcano.htm#Active
 port-au-prince
 http://schools-wikipedia.org/wp/p/Port-au-Prince.htm
 asunci&oacute;n
 http://schools-wikipedia.org/wp/a/Asunci%25C3%25B3n.htm
-rock (geology)
-http://schools-wikipedia.org/wp/r/Rock_%2528geology%2529.htm#Classification
-fertilizer
-http://schools-wikipedia.org/wp/f/Fertilizer.htm#Environmental_effects_of_fertilizer_use
 cane toad
 http://schools-wikipedia.org/wp/c/Cane_toad.htm
-easter island
-http://schools-wikipedia.org/wp/e/Easter_Island.htm#Petroglyphs
-amelia earhart
-http://schools-wikipedia.org/wp/a/Amelia_Earhart.htm#Flights
-time zone
-http://schools-wikipedia.org/wp/t/Time_zone.htm#Nautical_time_zones
-2003 atlantic hurricane season
-http://schools-wikipedia.org/wp/2/2003_Atlantic_hurricane_season.htm#Tropical_Storm_Peter
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#Tropical_storm
-global climate model
-http://schools-wikipedia.org/wp/g/Global_climate_model.htm#Projections_of_future_climate_change
-climate change
-http://schools-wikipedia.org/wp/c/Climate_change.htm#Internal_forcing_mechanisms
-magma
-http://schools-wikipedia.org/wp/m/Magma.htm#Partial_melting
-climate change
-http://schools-wikipedia.org/wp/c/Climate_change.htm#Causes
-effects of global warming
-http://schools-wikipedia.org/wp/e/Effects_of_global_warming.htm#Footnotes
-effects of global warming
-http://schools-wikipedia.org/wp/e/Effects_of_global_warming.htm#Observed_impacts_on_biological_systems
-effects of global warming
-http://schools-wikipedia.org/wp/e/Effects_of_global_warming.htm#Abrupt_or_irreversible_changes
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#Physical_structure
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#structure
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#Mechanics
-cyclone nargis
-http://schools-wikipedia.org/wp/c/Cyclone_Nargis.htm#Military_junta.27s_blockade_of_aid
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#Structure_and_classification
-london bridge
-http://schools-wikipedia.org/wp/l/London_Bridge.htm#New_London_Bridge
-age of discovery
-http://schools-wikipedia.org/wp/a/Age_of_Discovery.htm#Atlantic_Ocean
-mineral
-http://schools-wikipedia.org/wp/m/Mineral.htm#Sulfide_class
-mineral
-http://schools-wikipedia.org/wp/m/Mineral.htm#Sulfate_class
-reaction rate
-http://schools-wikipedia.org/wp/r/Reaction_rate.htm#rate_equation
-eye (cyclone)
-http://schools-wikipedia.org/wp/e/Eye_%2528cyclone%2529.htm#Eyewall_replacement_cycle
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#types_of_tropical_cyclones
-2005 atlantic hurricane season
-http://schools-wikipedia.org/wp/2/2005_Atlantic_hurricane_season.htm#Tropical_Storm_Arlene
-tropical cyclone
-http://schools-wikipedia.org/wp/t/Tropical_cyclone.htm#intensity_classifications
-thunderstorm
-http://schools-wikipedia.org/wp/t/Thunderstorm.htm#Severe_thunderstorms
-eye (cyclone)
-http://schools-wikipedia.org/wp/e/Eye_%2528cyclone%2529.htm#structure
-pine
-http://schools-wikipedia.org/wp/p/Pine.htm#Foliage
 crossbill
 http://schools-wikipedia.org/wp/c/Crossbill.htm
-carbon dioxide
-http://schools-wikipedia.org/wp/c/Carbon_dioxide.htm#Variation_in_the_past
-latitude
-http://schools-wikipedia.org/wp/l/Latitude.htm#Paleolatitude
-cloud
-http://schools-wikipedia.org/wp/c/Cloud.htm#Middle_clouds_.28Family_B.29
-water vapor
-http://schools-wikipedia.org/wp/w/Water_vapor.htm#Radar_and_satellite_imaging
-solar variation
-http://schools-wikipedia.org/wp/s/Solar_variation.htm#Solar_cycles
-kepler's laws of planetary motion
-http://schools-wikipedia.org/wp/k/Kepler%2527s_laws_of_planetary_motion.htm#Third_law
-geography of ghana
-http://schools-wikipedia.org/wp/g/Geography_of_Ghana.htm#Akwapim-Togo_Ranges
-volcano
-http://schools-wikipedia.org/wp/v/Volcano.htm#Extinct
 starling
 http://schools-wikipedia.org/wp/s/Starling.htm
 praia
 http://schools-wikipedia.org/wp/p/Praia.htm
 accra
 http://schools-wikipedia.org/wp/a/Accra.htm
-swaziland
-http://schools-wikipedia.org/wp/s/Swaziland.htm#Health
 pointe-noire
 http://schools-wikipedia.org/wp/p/Pointe-Noire.htm
 lom&eacute;
@@ -13444,20 +11806,12 @@ banjul
 http://schools-wikipedia.org/wp/b/Banjul.htm
 gitega
 http://schools-wikipedia.org/wp/g/Gitega.htm
-plate tectonics
-http://schools-wikipedia.org/wp/p/Plate_tectonics.htm#Convergent_.28destructive.29_boundaries
 bat-eared fox
 http://schools-wikipedia.org/wp/b/Bat-eared_fox.htm
 dik-dik
 http://schools-wikipedia.org/wp/d/Dik-dik.htm
 bushpig
 http://schools-wikipedia.org/wp/b/Bushpig.htm
-submarine
-http://schools-wikipedia.org/wp/s/Submarine.htm#First_military_models
-volcano
-http://schools-wikipedia.org/wp/v/Volcano.htm#Volcanic_activity
-georgia (country)
-http://schools-wikipedia.org/wp/g/Georgia_%2528country%2529.htm#Regions.2C_republics.2C_and_districts
 giant eland
 http://schools-wikipedia.org/wp/g/Giant_eland.htm
 bongo (antelope)
@@ -13470,18 +11824,8 @@ common tern
 http://schools-wikipedia.org/wp/c/Common_Tern.htm
 european herring gull
 http://schools-wikipedia.org/wp/e/European_Herring_Gull.htm
-gull
-http://schools-wikipedia.org/wp/g/Gull.htm#Taxonomy
 great black-backed gull
 http://schools-wikipedia.org/wp/g/Great_Black-backed_Gull.htm
-mineral
-http://schools-wikipedia.org/wp/m/Mineral.htm#Streak
-watch
-http://schools-wikipedia.org/wp/w/Watch.htm#Overview
-material properties of diamond
-http://schools-wikipedia.org/wp/m/Material_properties_of_diamond.htm
-diamond
-http://schools-wikipedia.org/wp/d/Diamond.htm#Natural_history
 wallaby
 http://schools-wikipedia.org/wp/w/Wallaby.htm
 short-beaked echidna
@@ -13498,106 +11842,34 @@ whooping crane
 http://schools-wikipedia.org/wp/w/Whooping_Crane.htm
 myxobolus cerebralis
 http://schools-wikipedia.org/wp/m/Myxobolus_cerebralis.htm
-colorado river
-http://schools-wikipedia.org/wp/c/Colorado_River.htm#Elevation_summary
-geology of the grand canyon area
-http://schools-wikipedia.org/wp/g/Geology_of_the_Grand_Canyon_area.htm#Volcanic_activity_dams_the_new_canyon
-geology of the grand canyon area
-http://schools-wikipedia.org/wp/g/Geology_of_the_Grand_Canyon_area.htm#Supai_Group
 nuthatch
 http://schools-wikipedia.org/wp/n/Nuthatch.htm
-diamond
-http://schools-wikipedia.org/wp/d/Diamond.htm#Surfacing
-channel tunnel
-http://schools-wikipedia.org/wp/c/Channel_Tunnel.htm#2006
-mars reconnaissance orbiter
-http://schools-wikipedia.org/wp/m/Mars_Reconnaissance_Orbiter.htm#Electronic_systems
-baku
-http://schools-wikipedia.org/wp/b/Baku.htm#Governance
-charles i of england
-http://schools-wikipedia.org/wp/c/Charles_I_of_England.htm#Execution
 booby
 http://schools-wikipedia.org/wp/b/Booby.htm
-napoleon
-http://schools-wikipedia.org/wp/n/Napoleon.htm#Exile_on_Saint_Helena
-gross domestic product
-http://schools-wikipedia.org/wp/g/Gross_domestic_product.htm#Cross-border_comparison
 black panther
 http://schools-wikipedia.org/wp/b/Black_panther.htm
-europe
-http://schools-wikipedia.org/wp/e/Europe.htm#Definition
-roman roads
-http://schools-wikipedia.org/wp/r/Roman_roads.htm#Spain
 great bustard
 http://schools-wikipedia.org/wp/g/Great_Bustard.htm
-st buryan
-http://schools-wikipedia.org/wp/s/St_Buryan.htm#Religion
 mistle thrush
 http://schools-wikipedia.org/wp/m/Mistle_Thrush.htm
 saxicola
 http://schools-wikipedia.org/wp/s/Saxicola.htm
 moorhen
 http://schools-wikipedia.org/wp/m/Moorhen.htm
-english law
-http://schools-wikipedia.org/wp/e/English_law.htm#Common_law
-william ii of england
-http://schools-wikipedia.org/wp/w/William_II_of_England.htm#The_Rufus_Stone
-city status in the united kingdom
-http://schools-wikipedia.org/wp/c/City_status_in_the_United_Kingdom.htm#List_of_cities
-lead
-http://schools-wikipedia.org/wp/l/Lead.htm#History
-order of the garter
-http://schools-wikipedia.org/wp/o/Order_of_the_Garter.htm#Garter_service_at_St_George.27s_Chapel
-clock
-http://schools-wikipedia.org/wp/c/Clock.htm#A_new_mechanism
 eurasian sparrowhawk
 http://schools-wikipedia.org/wp/e/Eurasian_Sparrowhawk.htm
 tufted duck
 http://schools-wikipedia.org/wp/t/Tufted_Duck.htm
 common pochard
 http://schools-wikipedia.org/wp/c/Common_Pochard.htm
-rock dove
-http://schools-wikipedia.org/wp/r/Rock_Dove.htm#Human_health
-hundred years' war
-http://schools-wikipedia.org/wp/h/Hundred_Years%2527_War.htm#Resumption_of_the_war_under_Henry_V:_1415.E2.80.931429
-irrigation
-http://schools-wikipedia.org/wp/i/Irrigation.htm#Flood_irrigation
-irrigation
-http://schools-wikipedia.org/wp/i/Irrigation.htm#Overhead_.28sprinkler.29_irrigation
-united states senate
-http://schools-wikipedia.org/wp/u/United_States_Senate.htm#Checks_and_balances
-rome
-http://schools-wikipedia.org/wp/r/Rome.htm#Motor_Traffic_Limited_Zone_.28ZTL.29
-oslo
-http://schools-wikipedia.org/wp/o/Oslo.htm#Road
-alexander graham bell
-http://schools-wikipedia.org/wp/a/Alexander_Graham_Bell.htm#Telephone
-european convention on human rights
-http://schools-wikipedia.org/wp/e/European_Convention_on_Human_Rights.htm#Article_6_-_right_to_a_fair_trial
-pupil
-http://schools-wikipedia.org/wp/p/Pupil.htm#Non-human_animals
 dunnock
 http://schools-wikipedia.org/wp/d/Dunnock.htm
-chordate
-http://schools-wikipedia.org/wp/c/Chordate.htm#Classification
-the marriage of figaro
-http://schools-wikipedia.org/wp/t/The_Marriage_of_Figaro.htm#Characters
 terbium
 http://schools-wikipedia.org/wp/t/Terbium.htm
-solar system
-http://schools-wikipedia.org/wp/s/Solar_System.htm#Inner_planets
 cat's eye nebula
 http://schools-wikipedia.org/wp/c/Cat%2527s_Eye_Nebula.htm
 rhenium
 http://schools-wikipedia.org/wp/r/Rhenium.htm
-dna
-http://schools-wikipedia.org/wp/d/DNA.htm#Strand_direction
-antibody
-http://schools-wikipedia.org/wp/a/Antibody.htm#Fc_region
-atlas experiment
-http://schools-wikipedia.org/wp/a/ATLAS_experiment.htm#Components
-kelvin
-http://schools-wikipedia.org/wp/k/Kelvin.htm#SI_prefixes
 timeline of discovery of solar system planets and their moons
 http://schools-wikipedia.org/wp/t/Timeline_of_discovery_of_Solar_System_planets_and_their_moons.htm
 diffuse interstellar band
@@ -13620,22 +11892,10 @@ comet white&ndash;ortiz&ndash;bolelli
 http://schools-wikipedia.org/wp/c/Comet_White%25E2%2580%2593Ortiz%25E2%2580%2593Bolelli.htm
 shackleton (crater)
 http://schools-wikipedia.org/wp/s/Shackleton_%2528crater%2529.htm
-iron
-http://schools-wikipedia.org/wp/i/Iron.htm#Isotopes
 shenzhou 6
 http://schools-wikipedia.org/wp/s/Shenzhou_6.htm
 shenzhou (spacecraft)
 http://schools-wikipedia.org/wp/s/Shenzhou_%2528spacecraft%2529.htm
-big bang
-http://schools-wikipedia.org/wp/b/Big_Bang.htm#Features.2C_issues.2C_and_problems
-cosmic microwave background radiation
-http://schools-wikipedia.org/wp/c/Cosmic_microwave_background_radiation.htm#Polarization
-big bang
-http://schools-wikipedia.org/wp/b/Big_Bang.htm#Magnetic_monopoles
-observable universe
-http://schools-wikipedia.org/wp/o/Observable_universe.htm#Cosmological_horizon
-hubble's law
-http://schools-wikipedia.org/wp/h/Hubble%2527s_law.htm#Using_Hubble_space_telescope_data
 african clawed frog
 http://schools-wikipedia.org/wp/a/African_clawed_frog.htm
 introduction to evolution
@@ -13698,8 +11958,6 @@ nanomedicine
 http://schools-wikipedia.org/wp/n/Nanomedicine.htm
 trichuris trichiura
 http://schools-wikipedia.org/wp/t/Trichuris_trichiura.htm
-dna repair
-http://schools-wikipedia.org/wp/d/DNA_repair.htm#Medicine_and_DNA_repair_modulation
 black-footed cat
 http://schools-wikipedia.org/wp/b/Black-footed_cat.htm
 nicobar long-tailed macaque
@@ -13872,16 +12130,6 @@ rock bunting
 http://schools-wikipedia.org/wp/r/Rock_Bunting.htm
 african grey parrot
 http://schools-wikipedia.org/wp/a/African_Grey_Parrot.htm
-intelligence
-http://schools-wikipedia.org/wp/i/Intelligence.htm#Human_intelligence
-tin
-http://schools-wikipedia.org/wp/t/Tin.htm#Allotropes
-nitrogen
-http://schools-wikipedia.org/wp/n/Nitrogen.htm#Properties
-strontium
-http://schools-wikipedia.org/wp/s/Strontium.htm#Occurrence
-titanium
-http://schools-wikipedia.org/wp/t/Titanium.htm#Physical
 menthol
 http://schools-wikipedia.org/wp/m/Menthol.htm
 rhodium(iii) chloride
@@ -13900,340 +12148,4 @@ praseodymium
 http://schools-wikipedia.org/wp/p/Praseodymium.htm
 samarium
 http://schools-wikipedia.org/wp/s/Samarium.htm
-aspirin
-http://schools-wikipedia.org/wp/a/Aspirin.htm#Overdose
-headache
-http://schools-wikipedia.org/wp/h/Headache.htm#Classification
-bangalore
-http://schools-wikipedia.org/wp/b/Bangalore.htm#Economy
-frederick sanger
-http://schools-wikipedia.org/wp/f/Frederick_Sanger.htm#Sequencing_insulin
-history of china
-http://schools-wikipedia.org/wp/h/History_of_China.htm#Ancient_history
-ming dynasty
-http://schools-wikipedia.org/wp/m/Ming_Dynasty.htm#Literature_and_arts
-world trade centre
-http://schools-wikipedia.org/wp/w/World_Trade_Center.htm#Rebuilding
-esperanto
-http://schools-wikipedia.org/wp/e/Esperanto.htm#Language_acquisition
-old nubian language
-http://schools-wikipedia.org/wp/o/Old_Nubian_language.htm#Writing
-italian language
-http://schools-wikipedia.org/wp/i/Italian_language.htm#Writing_system
-nahuatl
-http://schools-wikipedia.org/wp/n/Nahuatl.htm#Literature
-scotland
-http://schools-wikipedia.org/wp/s/Scotland.htm#National_symbols
-porgy and bess
-http://schools-wikipedia.org/wp/p/Porgy_and_Bess.htm#1976_Houston_Grand_Opera_production
-the cantos
-http://schools-wikipedia.org/wp/t/The_Cantos.htm#References
-elizabeth ii
-http://schools-wikipedia.org/wp/e/Elizabeth_II.htm#World_War_II
-restoration comedy
-http://schools-wikipedia.org/wp/r/Restoration_comedy.htm#Decline_of_comedy.2C_1678.26ndash.3B90
-stage (theatre)
-http://schools-wikipedia.org/wp/s/Stage_%2528theatre%2529.htm#Proscenium_stage
-theatre
-http://schools-wikipedia.org/wp/t/Theatre.htm#Stage_directions
-stage (theatre)
-http://schools-wikipedia.org/wp/s/Stage_%2528theatre%2529.htm#Stage_directions
-theatre
-http://schools-wikipedia.org/wp/t/Theatre.htm#Parts_of_a_theater
-the chronicles of narnia
-http://schools-wikipedia.org/wp/t/The_Chronicles_of_Narnia.htm#Further_reading
-the chronicles of narnia
-http://schools-wikipedia.org/wp/t/The_Chronicles_of_Narnia.htm#Reading_order
-dr. seuss
-http://schools-wikipedia.org/wp/d/Dr._Seuss.htm#Poetic_meters
-kigo
-http://schools-wikipedia.org/wp/k/Kigo.htm#Common_kigo_in_Japanese_haiku
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Arthur_Shelby
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Anti-Tom_literature
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Simon_Legree
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Major_themes
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Emily_Shelby
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Creation_and_popularization_of_stereotypes
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Eliza
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#George_Shelby
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Augustine_St._Clare
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Eva
-uncle tom's cabin
-http://schools-wikipedia.org/wp/u/Uncle_Tom%2527s_Cabin.htm#Topsy
-rabbit
-http://schools-wikipedia.org/wp/r/Rabbit.htm#Naming
-united states constitution
-http://schools-wikipedia.org/wp/u/United_States_Constitution.htm#Amendments
-fundamental rights, directive principles and fundamental duties of india
-http://schools-wikipedia.org/wp/f/Fundamental_Rights%252C_Directive_Principles_and_Fundamental_Duties_of_India.htm#Directive_Principles_of_State_Policy
-ivory coast
-http://schools-wikipedia.org/wp/i/Ivory_Coast.htm#2002_uprising
-orphan
-http://schools-wikipedia.org/wp/o/Orphan.htm#Orphans_in_literature
-giant panda
-http://schools-wikipedia.org/wp/g/Giant_panda.htm#Conservation
-war in somalia (2006&ndash;2009)
-http://schools-wikipedia.org/wp/w/War_in_Somalia_%25282006%25E2%2580%25932009%2529.htm#Casualties_and_displacement
-benzene
-http://schools-wikipedia.org/wp/b/Benzene.htm#Health_effects
-tuvalu
-http://schools-wikipedia.org/wp/t/Tuvalu.htm#Climate_change
-kyoto protocol
-http://schools-wikipedia.org/wp/k/Kyoto_Protocol.htm#Objectives
-kyoto protocol
-http://schools-wikipedia.org/wp/k/Kyoto_Protocol.htm#Increase_in_greenhouse_gas_emission_since_1990
-kyoto protocol
-http://schools-wikipedia.org/wp/k/Kyoto_Protocol.htm#International_Emissions_Trading
-kyoto protocol
-http://schools-wikipedia.org/wp/k/Kyoto_Protocol.htm#Green_Investment_Scheme
-kyoto protocol
-http://schools-wikipedia.org/wp/k/Kyoto_Protocol.htm#Successor
-kyoto protocol
-http://schools-wikipedia.org/wp/k/Kyoto_Protocol.htm#2000_onwards
-kyoto protocol
-http://schools-wikipedia.org/wp/k/Kyoto_Protocol.htm#Withdrawal_of_Canada
-kyoto protocol
-http://schools-wikipedia.org/wp/k/Kyoto_Protocol.htm#Intergovernmental_Emissions_Trading
-king's college, cambridge
-http://schools-wikipedia.org/wp/k/King%2527s_College%252C_Cambridge.htm#The_College_Chapel
-francis petre
-http://schools-wikipedia.org/wp/f/Francis_Petre.htm#1904_Cathedral_of_the_Blessed_Sacrament.2C_Christchurch
-union jack
-http://schools-wikipedia.org/wp/u/Union_Jack.htm#United_Kingdom
-montreal metro
-http://schools-wikipedia.org/wp/m/Montreal_Metro.htm#Plateau_d.27Youville
-singapore
-http://schools-wikipedia.org/wp/s/Singapore.htm#Domestic
-ig farben building
-http://schools-wikipedia.org/wp/i/IG_Farben_Building.htm#Text_of_memorial_plaque
-ig farben building
-http://schools-wikipedia.org/wp/i/IG_Farben_Building.htm#Quotations
-steam engine
-http://schools-wikipedia.org/wp/s/Steam_engine.htm#Double-acting_engine
-eifel aqueduct
-http://schools-wikipedia.org/wp/e/Eifel_Aqueduct.htm#The_aqueduct_as_a_stone_quarry
-corrosion
-http://schools-wikipedia.org/wp/c/Corrosion.htm#Pitting_corrosion
-johannes kepler
-http://schools-wikipedia.org/wp/j/Johannes_Kepler.htm#Prague_.281600.E2.80.931612.29
-binoculars
-http://schools-wikipedia.org/wp/b/Binoculars.htm#Optical_design
-tay rail bridge
-http://schools-wikipedia.org/wp/t/Tay_Rail_Bridge.htm#The_Tay_Bridge_Disaster
-catalysis
-http://schools-wikipedia.org/wp/c/Catalysis.htm#Heterogeneous_catalysts
-railway coupling
-http://schools-wikipedia.org/wp/r/Railway_coupling.htm#match
-boeing 747
-http://schools-wikipedia.org/wp/b/Boeing_747.htm#747X_and_747X_Stretch
-boeing 787 dreamliner
-http://schools-wikipedia.org/wp/b/Boeing_787_Dreamliner.htm#Operational_problems
-frank whittle
-http://schools-wikipedia.org/wp/f/Frank_Whittle.htm#Power_jets
-boeing 777
-http://schools-wikipedia.org/wp/b/Boeing_777.htm#777_Freighter
-jet engine
-http://schools-wikipedia.org/wp/j/Jet_engine.htm#Thrust
-mini
-http://schools-wikipedia.org/wp/m/Mini.htm#Morris_Mini_Traveller_and_Austin_Mini_Countryman_.281961.E2.80.931969.29
-mini (marque)
-http://schools-wikipedia.org/wp/m/Mini_%2528marque%2529.htm#Mini_Paceman_.282011.29
-fashion
-http://schools-wikipedia.org/wp/f/Fashion.htm#Fashion_and_variation
-buenos aires
-http://schools-wikipedia.org/wp/b/Buenos_Aires.htm#Architecture
-earth
-http://schools-wikipedia.org/wp/e/Earth.htm#Heat
-kuiper belt
-http://schools-wikipedia.org/wp/k/Kuiper_belt.htm#Satellites
-cold war
-http://schools-wikipedia.org/wp/c/Cold_War.htm#End_of_the_Cold_War_.281985.E2.80.9391.29
-climate
-http://schools-wikipedia.org/wp/c/Climate.htm#Climate_classification
-belgrade
-http://schools-wikipedia.org/wp/b/Belgrade.htm#Municipalities
-warren g. harding
-http://schools-wikipedia.org/wp/w/Warren_G._Harding.htm#Administrative_scandals
-chemical synapse
-http://schools-wikipedia.org/wp/c/Chemical_synapse.htm#Receptor_binding
-world health organization
-http://schools-wikipedia.org/wp/w/World_Health_Organization.htm#Regional_Offices
-species
-http://schools-wikipedia.org/wp/s/Species.htm#Definitions_of_species
-sodium chloride
-http://schools-wikipedia.org/wp/s/Sodium_chloride.htm#Crystal_structure
-water
-http://schools-wikipedia.org/wp/w/Water.htm#Chemical_and_physical_properties
-earth
-http://schools-wikipedia.org/wp/e/Earth.htm#Chemical_composition
-alcohol
-http://schools-wikipedia.org/wp/a/Alcohol.htm#Primary.2C_secondary_and_tertiary_drinking_alchohols_as_well_work_alcohols
-acetic acid
-http://schools-wikipedia.org/wp/a/Acetic_acid.htm#Chemical_properties
-chemical formula
-http://schools-wikipedia.org/wp/c/Chemical_formula.htm#Empirical_formula
-atmosphere of earth
-http://schools-wikipedia.org/wp/a/Atmosphere_of_Earth.htm#Composition
-gray wolf
-http://schools-wikipedia.org/wp/g/Gray_wolf.htm#Subspecies
-gray wolf
-http://schools-wikipedia.org/wp/g/Gray_wolf.htm#Communication
-space race
-http://schools-wikipedia.org/wp/s/Space_Race.htm#Humans_in_space
-exploration of mars
-http://schools-wikipedia.org/wp/e/Exploration_of_Mars.htm#Timeline_of_Mars_exploration
-kakapo
-http://schools-wikipedia.org/wp/k/Kakapo.htm#Media
-kakapo
-http://schools-wikipedia.org/wp/k/Kakapo.htm#Reproduction
-almond
-http://schools-wikipedia.org/wp/a/Almond.htm#Sweet_and_bitter_almond
-supermarine spitfire
-http://schools-wikipedia.org/wp/s/Supermarine_Spitfire.htm#Name
-lizard
-http://schools-wikipedia.org/wp/l/Lizard.htm#Classification
-rat
-http://schools-wikipedia.org/wp/r/Rat.htm#Species
-dimetrodon
-http://schools-wikipedia.org/wp/d/Dimetrodon.htm#Species
-feather
-http://schools-wikipedia.org/wp/f/Feather.htm#Evolution
-pterosaur
-http://schools-wikipedia.org/wp/p/Pterosaur.htm#Pycnofibres
-shark
-http://schools-wikipedia.org/wp/s/Shark.htm#Senses
-great white shark
-http://schools-wikipedia.org/wp/g/Great_white_shark.htm#References
-wood fuel
-http://schools-wikipedia.org/wp/w/Wood_fuel.htm#Firewood
-cell (biology)
-http://schools-wikipedia.org/wp/c/Cell_%2528biology%2529.htm#Eukaryotic_cells
-labour party (uk)
-http://schools-wikipedia.org/wp/l/Labour_Party_%2528UK%2529.htm#Labour_Representation_Committee
-calvin coolidge
-http://schools-wikipedia.org/wp/c/Calvin_Coolidge.htm#Administration_and_Cabinet
-stable isotope
-http://schools-wikipedia.org/wp/s/Stable_isotope.htm#.22Magic_numbers.22_and_odd_and_even_proton_and_neutron_count
-anarcho-capitalism
-http://schools-wikipedia.org/wp/a/Anarcho-capitalism.htm#Sources_that_consider_anarcho-capitalism_a_form_of_anarchism
-anarcho-capitalism
-http://schools-wikipedia.org/wp/a/Anarcho-capitalism.htm#Sources_that_do_not_consider_anarcho-capitalism_to_be_a_form_of_anarchism
-iron
-http://schools-wikipedia.org/wp/i/Iron.htm#Mechanical_properties
-lyme disease
-http://schools-wikipedia.org/wp/l/Lyme_disease.htm#Immunological_studies
-fever
-http://schools-wikipedia.org/wp/f/Fever.htm#Types
-cobalt
-http://schools-wikipedia.org/wp/c/Cobalt.htm#Biological_role
-turkey (bird)
-http://schools-wikipedia.org/wp/t/Turkey_%2528bird%2529.htm#History_and_naming
-tower of london
-http://schools-wikipedia.org/wp/t/Tower_of_London.htm#Menagerie
-barbary lion
-http://schools-wikipedia.org/wp/b/Barbary_lion.htm#The_Barbary_Lion_Project
-chernobyl disaster
-http://schools-wikipedia.org/wp/c/Chernobyl_disaster.htm#Conditions_prior_to_the_accident
-colour
-http://schools-wikipedia.org/wp/c/Color.htm#Physics_of_color
-oxygen
-http://schools-wikipedia.org/wp/o/Oxygen.htm#Allotropes
-zinc
-http://schools-wikipedia.org/wp/z/Zinc.htm#Production
-sirius
-http://schools-wikipedia.org/wp/s/Sirius.htm#Red_controversy
-santiago
-http://schools-wikipedia.org/wp/s/Santiago.htm#Political_divisions
-star
-http://schools-wikipedia.org/wp/s/Star.htm#Classification
-nitrogen
-http://schools-wikipedia.org/wp/n/Nitrogen.htm#Reactions
-hippopotamus
-http://schools-wikipedia.org/wp/h/Hippopotamus.htm#Taxonomy_and_origins
-phoenix (spacecraft)
-http://schools-wikipedia.org/wp/p/Phoenix_%2528spacecraft%2529.htm#Robotic_arm_and_camera
-phoenix (spacecraft)
-http://schools-wikipedia.org/wp/p/Phoenix_%2528spacecraft%2529.htm#Surface_stereo_imager
-phoenix (spacecraft)
-http://schools-wikipedia.org/wp/p/Phoenix_%2528spacecraft%2529.htm#Microscopy.2C_electrochemistry.2C_and_conductivity_analyzer
-phoenix (spacecraft)
-http://schools-wikipedia.org/wp/p/Phoenix_%2528spacecraft%2529.htm#Thermal_and_evolved_gas_analyzer
-english civil war
-http://schools-wikipedia.org/wp/e/English_Civil_War.htm#Aftermath
-tang dynasty
-http://schools-wikipedia.org/wp/t/Tang_Dynasty.htm#Maritime_trade_abroad
-geologic time scale
-http://schools-wikipedia.org/wp/g/Geologic_time_scale.htm#Terminology
-superconductivity
-http://schools-wikipedia.org/wp/s/Superconductivity.htm#Meissner_effect
-krypton
-http://schools-wikipedia.org/wp/k/Krypton.htm#Metric_role
-kilogram
-http://schools-wikipedia.org/wp/k/Kilogram.htm#International_prototype_kilogram
-welsh law
-http://schools-wikipedia.org/wp/w/Welsh_law.htm#Manuscripts
-grover cleveland
-http://schools-wikipedia.org/wp/g/Grover_Cleveland.htm#Economic_panic_and_the_silver_issue
-vietnam war
-http://schools-wikipedia.org/wp/v/Vietnam_War.htm#Exit_of_the_Americans:_1973.E2.80.931975
-isotope
-http://schools-wikipedia.org/wp/i/Isotope.htm#Notation
-pound sterling
-http://schools-wikipedia.org/wp/p/Pound_sterling.htm#Pre-decimal_2
-world heritage site
-http://schools-wikipedia.org/wp/w/World_Heritage_Site.htm#Chile
-stroke
-http://schools-wikipedia.org/wp/s/Stroke.htm#Ischemic_stroke
-neptune
-http://schools-wikipedia.org/wp/n/Neptune.htm#Formation_and_migration
-space shuttle columbia disaster
-http://schools-wikipedia.org/wp/s/Space_Shuttle_Columbia_disaster.htm#Memorials
-time zone
-http://schools-wikipedia.org/wp/t/Time_zone.htm#UTC-5_.28EST_-_Eastern_Standard_Time.29
-redshift
-http://schools-wikipedia.org/wp/r/Redshift.htm#Expansion_of_space
-burkina faso
-http://schools-wikipedia.org/wp/b/Burkina_Faso.htm#Geography_and_climate
-victoria falls
-http://schools-wikipedia.org/wp/v/Victoria_Falls.htm#Tourism_since_1900
-planet
-http://schools-wikipedia.org/wp/p/Planet.htm#Within_the_Solar_System
-neptune
-http://schools-wikipedia.org/wp/n/Neptune.htm#Observation
-supernova
-http://schools-wikipedia.org/wp/s/Supernova.htm#Type_II
-ganges
-http://schools-wikipedia.org/wp/g/Ganges.htm#Pollution
-beetle
-http://schools-wikipedia.org/wp/b/Beetle.htm#Development
-1975
-http://schools-wikipedia.org/wp/1/1975.htm#July
-fishing
-http://schools-wikipedia.org/wp/f/Fishing.htm#Recreational_fishing
-natural selection
-http://schools-wikipedia.org/wp/n/Natural_selection.htm#Fitness
-frog
-http://schools-wikipedia.org/wp/f/Frog.htm#Reproduction_of_frogs
-drosera
-http://schools-wikipedia.org/wp/d/Drosera.htm#Habit
-vaccination
-http://schools-wikipedia.org/wp/v/Vaccination.htm#Types_of_vaccinations
-fetal alcohol spectrum disorder
-http://schools-wikipedia.org/wp/f/Fetal_alcohol_spectrum_disorder.htm#Ten_Brain_Domains
-autostereogram
-http://schools-wikipedia.org/wp/a/Autostereogram.htm#Random-dot
-autostereogram
-http://schools-wikipedia.org/wp/a/Autostereogram.htm#Simple_wallpaper
-frog
-http://schools-wikipedia.org/wp/f/Frog.htm#Digestion_and_excretion
-total number of pages = 7119
+total number of pages = 6075
