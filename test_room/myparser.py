@@ -59,7 +59,7 @@ class MyParser():
         curr = re.findall('href=[\'"]?([^\'" >]+)', text)
         for url in curr:
             links.add(self.gen_full_url(cur, url))
-            text.replace(' href=\"'+url+'\"','')
+            text.replace(' href="'+url+'"','')
         text = text.replace('<a>','').replace('</a>','').lower()
         return text
 
