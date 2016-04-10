@@ -99,6 +99,7 @@ class MyParser():
                 cur = line[lp+3:rp] # get text
                 for pat in toRem:
                     cur = cur.replace(pat,'') # remove tags
+                cur = cur.replace('\\','')
                 text += ' ' + self.filter_links(links, cur, url)
 
         text = re.sub(r'\&lt\;ref.*?\&lt\;\/ref\&gt\;', '', text, flags=re.DOTALL)
