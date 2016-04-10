@@ -59,7 +59,13 @@ class MyParser():
         curr = re.findall('href=[\'"]?([^\'" >]+)', text)
         for url in curr:
             links.add(self.gen_full_url(cur, url))
-            text.replace(' href="'+url+'"','')
+            text = text.replace(' href="'+url+'"','')
+        curr = re.findall('title=[\'"]?([^\'">]+)', text)
+        for ttl in curr:
+            text = text.replace(' title="'+ttl+'"','')
+        curr = re.findall('class=[\'"]?([^\'">]+)', text)
+        for cls in curr:
+            text = text.replace(' class="'+cls+'"','')
         text = text.replace('<a>','').replace('</a>','').lower()
         return text
 
