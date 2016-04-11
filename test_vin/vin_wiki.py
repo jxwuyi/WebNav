@@ -86,20 +86,20 @@ class vin(NNobj):
         f.close()
 
         self.wk = wiki.Wiki(prm.pages_path)
-        self.idx = wk.get_titles_pos()
+        self.idx = self.wk.get_titles_pos()
 
         ptr = 0
         row_idx = []
         col_idx = []
         self.rev_idx = []
         for i in range(self.N):
-            urls = wk.get_article_links(i)
+            urls = self.wk.get_article_links(i)
             if (not i in urls):
                 urls.append(i)
             rev = {}
             for x, y in enumerate(urls):
                 rev[y] = x
-            rev_idx.append(rev)
+            self.rev_idx.append(rev)
             n = len(urls)
             row_idx += range(ptr, ptr + n)
             col_idx += urls
