@@ -287,14 +287,19 @@ class VinBlockWiki(object):
         self.V = self.R
 
         # transition param
-        self.w = init_weights_T(1, D, A)
-        self.params.append(self.w)
+        if (prm.diagonal_action_mat): # use simple diagonal matrix for transition
+            A = D
+            #self.w = T.eye(D, D, dtype = theano.config.floatX)
+        else:
+            self.w = init_weights_T(1, D, A)
+            self.params.append(self.w)
         
         self.w_local = init_weights_T(1, 1, A)
         self.params.append(self.w_local)
 
         #self.full_w = self.w.dimshuffle('x', 0, 1);
-        self.full_w = T.extra_ops.repeat(self.w, batchsize, axis = 0) # batchsize * D * A
+        if (not prm.diagonal_action_mat):
+            self.full_w = T.extra_ops.repeat(self.w, batchsize, axis = 0) # batchsize * D * A
 
         #self.full_w_local = self.w_local.dimshuffle('x', 'x', 0);
         self.full_w_local = T.extra_ops.repeat(self.w_local, batchsize, axis = 0) # batchsize * 1 * A
@@ -308,7 +313,8 @@ class VinBlockWiki(object):
             self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
 	    self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
             self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
-	    self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
+            if (not prm.diagonal_action_mat):
+                self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
             self.q = self.q + self.add_R
             self.V = T.max(self.q, axis=2, keepdims=False) # batchsize * N
 
@@ -316,7 +322,8 @@ class VinBlockWiki(object):
         self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
 	self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
 	self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
-	self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
+	if (not prm.diagonal_action_mat):
+            self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
 	self.q = self.q + self.add_R
 	
 
@@ -324,9 +331,17 @@ class VinBlockWiki(object):
         # (B * H) * A
         self.q_out = self.q[T.extra_ops.repeat(T.arange(batchsize), maxhops), S_in.flatten(), :]
 
-        # softmax output weights
-        self.w_o = init_weights_T(A, D)
-        self.params.append(self.w_o)
-        # (Batch * Hops) * D
-        self.output = T.nnet.softmax(T.dot(self.q_out, self.w_o)) 
+        if (prm.diagonal_action_mat): # simple diagonal transition matrix
+            if (prm.final_scale):
+                self.w_o = init_weights_T(1, D)
+                self.params.append(self.w_o)
+                self.full_w_o = .extra_ops.repeat(self.w_o, batchsize * maxhops, axis = 0) # (B * H) * A
+                self.q_out = self.q_out * self.full_out
+            self.output = T.nnet.softmax(self.q_out) 
+        else:
+            # softmax output weights
+            self.w_o = init_weights_T(A, D)
+            self.params.append(self.w_o)
+            # (Batch * Hops) * D
+            self.output = T.nnet.softmax(T.dot(self.q_out, self.w_o)) 
 

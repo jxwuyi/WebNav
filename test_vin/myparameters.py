@@ -43,6 +43,8 @@ cat_pages_path = '../data/cat_pages.pkl' # Path to save the dictionary that stor
 query_map_linear = True
 query_weight_diag = True
 query_tanh = True
+diagonal_action_mat = True
+final_scale = True
 
 
 
