@@ -50,6 +50,8 @@ class vin(NNobj):
         #l_h = 150  # channels in initial hidden layer
         #l_q = 10   # channels in q layer (~actions)
 
+        print 'building model ...'
+
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in=self.S_in,
                                     N = self.N, D = self.D, emb_dim = self.emb_dim,
                                     page_emb = self.page_emb, edges = self.edges,
@@ -112,6 +114,8 @@ class vin(NNobj):
                      grad_check=True,
                      profile=False):
 
+        print 'Training Start ...'
+
         batch_size = self.batchsize
 
         train_queries = self.q.get_train_queries()
@@ -163,7 +167,7 @@ class vin(NNobj):
             num = 0
             for start in xrange(0, test_n, batch_size):
                 end = start+batch_size
-                if end <= test_n:
+                if end <= test_n:  # assert(text_n <= train_n)
                     num += 1
                     # prepare training data
                     for i in xrange(start, end):
@@ -174,7 +178,7 @@ class vin(NNobj):
                     trainerr_, trainloss_ = self.computeloss(Q_dat, S_dat, y_dat)
                     # prepare testing data
                     for i in xrange(start, end):
-                        q_i, s_i, y_i = test_entry[inds[i]]
+                        q_i, s_i, y_i = test_entry[i]
                         Q_dat[i, :] = test_queries[q_i, :]
                         S_dat[i, 0] = s_i
                         y_dat[i, 0] = y_i
@@ -268,7 +272,7 @@ class VinBlock(object):
         # add bias
         self.q_bias = init_weights_T(emb_dim)
         self.params.append(self.q_bias)
-        self.q = self.q + self.q_bias.dimshuffle('x', 0)
+        self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
         # non-linear transformation
         if (prm.query_tanh):
             self.q = T.tanh(self.q)
@@ -318,6 +322,6 @@ class VinBlock(object):
         # softmax output weights
         self.w_o = init_weights_T(A, D)
         self.params.append(self.w_o)
-        # (B * H) * D
+        # (Batch * Hops) * D
         self.output = T.nnet.softmax(T.dot(self.q_out, self.w_o)) 
 
