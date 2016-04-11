@@ -140,7 +140,7 @@ class vin(NNobj):
         Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX)
         S_dat = np.zeros((batch_size, 1), dtype = np.int32) # for convinence, maxhops = 1
         y_dat = np.zeros(batch_size*1, dtype = np.int32) # for convinence, maxhops = 1
-        
+         
         print fmt_row(10, ["Epoch", "Train NLL", "Train Err", "Test NLL", "Test Err", "Epoch Time"])
         for i_epoch in xrange(int(epochs)):
             tstart = time.time()
@@ -161,7 +161,9 @@ class vin(NNobj):
                         y_dat[i-start] = y_i
                     
                     self.train(Q_dat, S_dat, y_dat)
-                    
+		if ((start / batch_size) % 500 == 0):
+			print '>> finished batch %d / %d ... elapsed = %f' % (end/batch_size, train_n/batch_size, time.time()-tstart)             	
+        
             elapsed = time.time() - tstart
             # compute losses
             trainerr = 0.
