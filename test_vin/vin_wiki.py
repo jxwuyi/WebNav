@@ -216,7 +216,7 @@ class vin(NNobj):
     def save_weights(self, outfile="weight_dump.pk"):
         pickle.dump([n.get_value() for n in self.params], open(outfile, 'w'))
 
-class VinBlock(object):
+class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
     def __init__(self, Q_in, S_in, N, D, emb_dim,
                  page_emb, edges,
