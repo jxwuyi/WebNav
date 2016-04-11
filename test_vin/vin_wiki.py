@@ -80,7 +80,7 @@ class vin(NNobj):
         :param edges: adjacency matrix, of shape [N_pages, N_pages * D], column sparse
         """
         f = h5py.File(prm.pages_emb_path, 'r', driver='core')
-        self.page_emb = np.random.random((self.emb_dim, self.N), dtype=theano.config.floatX)
+        self.page_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         for i in range(self.N):
             self.page_emb[:, i] = f['emb'][i]
         f.close()
