@@ -106,7 +106,7 @@ class vin(NNobj):
             ptr += self.D
         n = len(row_idx)
         dat_arr = np.ones(n, dtype=theano.config.floatX)     
-        self.edges = SS.csc_matrix((dat_arr, (row_idx, col_idx)), shape=(self.N, self.N * D))
+        self.edges = SS.csc_matrix((dat_arr, (row_idx, col_idx)), shape=(self.N, self.N * self.D))
 
         self.q = qp.QP(prm.curr_query_path)
 
