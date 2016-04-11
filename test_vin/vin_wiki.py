@@ -139,7 +139,7 @@ class vin(NNobj):
 
         Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX)
         S_dat = np.zeros((batch_size, 1), dtype = np.int32) # for convinence, maxhops = 1
-        y_dat = np.zeros((batch_size, 1), dtype = np.int32) # for convinence, maxhops = 1
+        y_dat = np.zeros(batch_size*1, dtype = np.int32) # for convinence, maxhops = 1
         
         print fmt_row(10, ["Epoch", "Train NLL", "Train Err", "Test NLL", "Test Err", "Epoch Time"])
         for i_epoch in xrange(int(epochs)):
@@ -155,7 +155,7 @@ class vin(NNobj):
                         q_i, s_i, y_i = train_entry[inds[i]]
                         Q_dat[i, :] = train_queries[q_i, :]
                         S_dat[i, 0] = s_i
-                        y_dat[i, 0] = y_i
+                        y_dat[i] = y_i
                     
                     self.train(Q_dat, S_dat, y_dat)
                     
@@ -175,14 +175,14 @@ class vin(NNobj):
                         q_i, s_i, y_i = train_entry[inds[i]]
                         Q_dat[i, :] = train_queries[q_i, :]
                         S_dat[i, 0] = s_i
-                        y_dat[i, 0] = y_i
+                        y_dat[i] = y_i
                     trainerr_, trainloss_ = self.computeloss(Q_dat, S_dat, y_dat)
                     # prepare testing data
                     for i in xrange(start, end):
                         q_i, s_i, y_i = test_entry[i]
                         Q_dat[i, :] = test_queries[q_i, :]
                         S_dat[i, 0] = s_i
-                        y_dat[i, 0] = y_i
+                        y_dat[i] = y_i
                     testerr_, testloss_ = self.computeloss(Q_dat, S_dat, y_dat)
                     trainerr += trainerr_
                     trainloss += trainloss_
