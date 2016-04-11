@@ -20,22 +20,22 @@ class QP():
         self.path_valid = outs[1]
         self.path_test = outs[2]
 
-    def get_train_queries():
+    def get_train_queries(self):
         return self.q_train
 
-    def get_valid_queries():
+    def get_valid_queries(self):
         return self.q_valid
 
-    def get_test_queries():
+    def get_test_queries(self):
         return self.q_test
 
-    def get_train_paths():
+    def get_train_paths(self):
         return self.path_train
 
-    def get_valid_paths():
+    def get_valid_paths(self):
         return self.path_valid
 
-    def get_test_paths():
+    def get_test_paths(self):
         return self.path_test
 
     def get_queries(self, dset=['train', 'valid', 'test']):
