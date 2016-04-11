@@ -63,7 +63,7 @@ class vin(NNobj):
         # Total 1910 parameters ?????
 
         self.cost = -T.mean(T.log(self.p_of_y)[T.arange(self.y.shape[0]),
-                                               self.y], dtype=theano.config.floatX)
+                                               self.y.flatten()], dtype=theano.config.floatX)
         self.y_pred = T.argmax(self.p_of_y, axis=1)
         self.err = T.mean(T.neq(self.y_pred, self.y.flatten()), dtype=theano.config.floatX)
 
@@ -80,7 +80,7 @@ class vin(NNobj):
         :param edges: adjacency matrix, of shape [N_pages, N_pages * D], column sparse
         """
         f = h5py.File(prm.pages_emb_path, 'r', driver='core')
-        self.page_emb = np.random.random((self.emb_dim, self.N))
+        self.page_emb = np.random.random((self.emb_dim, self.N), dtype=theano.config.floatX)
         for i in range(self.N):
             self.page_emb[:, i] = f['emb'][i]
         f.close()
@@ -106,11 +106,11 @@ class vin(NNobj):
             ptr += self.D
         n = len(col_idx)
         dat_arr = np.ones(n, dtype=theano.config.floatX)     
-        self.edges = SS.csc_matrix((dat_arr, (row_idx, col_idx)), shape=(self.N, self.N * self.D))
+        self.edges = SS.csc_matrix((dat_arr, (row_idx, col_idx)), shape=(self.N, self.N * self.D), dtype=theano.config.floatX)
 
         self.q = qp.QP(prm.curr_query_path)
 
-    # TODO
+
     def run_training(self, stepsize=0.01, epochs=10, output='None',
                      grad_check=True,
                      profile=False):
