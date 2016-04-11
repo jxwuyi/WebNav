@@ -4,6 +4,7 @@ Class to access queries and paths stored in the hdf5 file.
 import h5py
 import utils
 import myparameters as prm
+import cPickle as pkl
 
 class QP():
 
