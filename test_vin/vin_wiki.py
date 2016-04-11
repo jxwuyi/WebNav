@@ -304,9 +304,9 @@ class VinBlockWiki(object):
         
         # Value Iteration
         for i in range(k - 1):
-            self.q = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
-            self.q = T.reshape(self.q, (batchsize, N, D)) # batchsize * N * D
-            self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
+            self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
+            self.nq = T.reshape(self.tq, (batchsize, N, D)) # batchsize * N * D
+            self.q = T.batched_dot(self.nq, self.full_w) # batchsize * N * A
             self.q = self.q + self.add_R
             self.V = T.max(self.q, axis=2, keepdims=False) # batchsize * N
 
