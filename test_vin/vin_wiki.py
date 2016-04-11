@@ -5,6 +5,7 @@ import myparameters as prm
 import wiki
 import scipy.sparse as SS
 import qp
+import h5py
 
 
 class vin(NNobj):
