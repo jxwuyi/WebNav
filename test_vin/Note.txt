@@ -1,0 +1,7 @@
+running script
+
+THEANO_FLAGS='mode=FAST_RUN,device=cpu,floatX=float32' python NN_run_training.py --output ~/WebNav/temp/wiki-school/WikiVIN.pk --epochs 30 --model valIterWiki --stepsize 0.01 --reg 0.0 --k 8 --batchsize 50 --A 300
+
+### WarmStart
+
+THEANO_FLAGS='mode=FAST_RUN,device=cpu,floatX=float32' python NN_run_training.py --output ~/WebNav/temp/wiki-school/WikiVIN.pk --epochs 30 --model valIterWiki --stepsize 0.01 --reg 0.0 --k 8 --batchsize 50 --A 300 --warmstart ~/WebNav/temp/wiki-school/WikiVIN.pk
