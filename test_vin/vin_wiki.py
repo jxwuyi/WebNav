@@ -162,7 +162,7 @@ class vin(NNobj):
                     
                     self.train(Q_dat, S_dat, y_dat)
 		if ((start / batch_size) % 50 == 0):
-			print '>> finished batch %d / %d ... elapsed = %f' % (end/batch_size, train_n/batch_size, time.time()-tstart)             	
+			print '>> finished batch %d / %d ... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, time.time()-tstart)             	
         
             elapsed = time.time() - tstart
             # compute losses
