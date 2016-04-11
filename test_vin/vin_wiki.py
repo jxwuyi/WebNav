@@ -101,10 +101,10 @@ class vin(NNobj):
                 rev[y] = x
             self.rev_idx.append(rev)
             n = len(urls)
-            row_idx += range(ptr, ptr + n)
-            col_idx += urls
+            col_idx += range(ptr, ptr + n)
+            row_idx += urls
             ptr += self.D
-        n = len(row_idx)
+        n = len(col_idx)
         dat_arr = np.ones(n, dtype=theano.config.floatX)     
         self.edges = SS.csc_matrix((dat_arr, (row_idx, col_idx)), shape=(self.N, self.N * self.D))
 
