@@ -153,9 +153,9 @@ class vin(NNobj):
                     # prepare training data
                     for i in xrange(start, end):
                         q_i, s_i, y_i = train_entry[inds[i]]
-                        Q_dat[i, :] = train_queries[q_i, :]
-                        S_dat[i, 0] = s_i
-                        y_dat[i] = y_i
+                        Q_dat[i-start, :] = train_queries[q_i, :]
+                        S_dat[i-start, 0] = s_i
+                        y_dat[i-start] = y_i
                     
                     self.train(Q_dat, S_dat, y_dat)
                     
@@ -173,16 +173,16 @@ class vin(NNobj):
                     # prepare training data
                     for i in xrange(start, end):
                         q_i, s_i, y_i = train_entry[inds[i]]
-                        Q_dat[i, :] = train_queries[q_i, :]
-                        S_dat[i, 0] = s_i
-                        y_dat[i] = y_i
+                        Q_dat[i-start, :] = train_queries[q_i, :]
+                        S_dat[i-start, 0] = s_i
+                        y_dat[i-start] = y_i
                     trainerr_, trainloss_ = self.computeloss(Q_dat, S_dat, y_dat)
                     # prepare testing data
                     for i in xrange(start, end):
                         q_i, s_i, y_i = test_entry[i]
-                        Q_dat[i, :] = test_queries[q_i, :]
-                        S_dat[i, 0] = s_i
-                        y_dat[i] = y_i
+                        Q_dat[i-start, :] = test_queries[q_i, :]
+                        S_dat[i-start, 0] = s_i
+                        y_dat[i-start] = y_i
                     testerr_, testloss_ = self.computeloss(Q_dat, S_dat, y_dat)
                     trainerr += trainerr_
                     trainloss += trainloss_
@@ -287,34 +287,38 @@ class VinBlockWiki(object):
         self.V = self.R
 
         # transition param
-        self.w = init_weights_T(D, A)
+        self.w = init_weights_T(1, D, A)
         self.params.append(self.w)
         
-        self.w_local = init_weights_T(A)
+        self.w_local = init_weights_T(1, 1, A)
         self.params.append(self.w_local)
 
-        self.full_w = self.w.dimshuffle('x', 0, 1);
-        self.full_w = T.extra_ops.repeat(self.full_w, batchsize, axis = 0) # batchsize * D * A
+        #self.full_w = self.w.dimshuffle('x', 0, 1);
+        self.full_w = T.extra_ops.repeat(self.w, batchsize, axis = 0) # batchsize * D * A
 
-        self.full_w_local = self.w_local.dimshuffle('x', 'x', 0);
-        self.full_w_local = T.extra_ops.repeat(self.full_w_local, batchsize, axis = 0) # batchsize * 1 * A
+        #self.full_w_local = self.w_local.dimshuffle('x', 'x', 0);
+        self.full_w_local = T.extra_ops.repeat(self.w_local, batchsize, axis = 0) # batchsize * 1 * A
 
         self.R_full = self.R.dimshuffle(0, 1, 'x') # batchsize * N * 1
         self.add_R = T.batched_dot(self.R_full, self.full_w_local) # batchsize * N * A
         
+	self.dense_q = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
         # Value Iteration
         for i in range(k - 1):
             self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
-            self.nq = T.reshape(self.tq.flatten(), (batchsize, N, D)) # batchsize * N * D
-            self.q = T.batched_dot(self.nq, self.full_w) # batchsize * N * A
+	    self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
+            self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
+	    self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
             self.q = self.q + self.add_R
             self.V = T.max(self.q, axis=2, keepdims=False) # batchsize * N
 
         # Do last Conv Step
-        self.q = TS.basic.dot(self.V, edges) # batchsize * (N * D)
-        self.q = T.reshape(self.q, (batchsize, N, D)) # batchsize * N * D
-        self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
-        self.q = self.q + self.add_R
+        self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
+	self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
+	self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
+	self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
+	self.q = self.q + self.add_R
+	
 
         # fetch values for each state in S_in
         # (B * H) * A
