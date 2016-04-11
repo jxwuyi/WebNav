@@ -1,7 +1,7 @@
 # VI network using THEANO, takes batches of state input
 from NNobj import *
 from theano_utils import *
-import myparameter as prm
+import myparameters as prm
 import wiki
 import scipy.sparse as SS
 import qp
