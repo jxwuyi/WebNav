@@ -146,10 +146,13 @@ class vin(NNobj):
             tstart = time.time()
             # shuffle training index
             inds = np.random.permutation(train_n)
+            train_n_curr = train_n
+            if (prm.select_subset_data > 0):
+                train_n_curr = train_n / prm.select_subset_data
             # do training
-            for start in xrange(0, train_n, batch_size):
+            for start in xrange(0, train_n_curr, batch_size):
                 end = start+batch_size
-                if end <= train_n:
+                if end <= train_n_curr:
                     # prepare training data
                     for i in xrange(start, end):
                         q_i, s_i, y_i = train_entry[inds[i]]

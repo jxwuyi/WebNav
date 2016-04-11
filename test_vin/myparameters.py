@@ -45,6 +45,7 @@ query_weight_diag = True
 query_tanh = True
 diagonal_action_mat = True
 final_scale = True
+select_subset_data = 10
 
 
 
