@@ -148,8 +148,10 @@ class vin(NNobj):
 
 
         ############################
-        print 'Performing Sanity Checking ....'
+        print 'Performing Sanity Checking on Training Data....'
         self.reward_checking(train_queries, train_paths, self.page_emb)
+        print 'Performing Sanity Checking on Testing Data....'
+        self.reward_checking(test_queries, test_paths, self.page_emb)
         ############################
         
 
