@@ -157,13 +157,13 @@ class vin(NNobj):
                 if end <= train_n_curr:
                     # prepare training data
                     for i in xrange(start, end):
-                        k = i
+                        k = inds[i]
                         Q_dat[i-start, :] = train_queries[k, :]
                         y_dat[i-start] = train_paths[k][-1]
                     
                     self.train(Q_dat, y_dat)
-                if ((start / batch_size) % 200 == 0):
-                    print '>> finished batch %d / %d ... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, time.time()-tstart)             	
+                #if ((start / batch_size) % 200 == 0):
+                #    print '>> finished batch %d / %d ... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, time.time()-tstart)             	
         
             elapsed = time.time() - tstart
             # compute losses
@@ -184,8 +184,8 @@ class vin(NNobj):
                     trainerr_, trainloss_ = self.sanity_loss(Q_dat, y_dat)
                     # prepare testing data
                     for i in xrange(start, end):
-                        Q_dat[i-start, :] = test_queries[k, :]
-                        y_dat[i-start] = test_paths[k][-1]
+                        Q_dat[i-start, :] = test_queries[i, :]
+                        y_dat[i-start] = test_paths[i][-1]
                     testerr_, testloss_ = self.sanity_loss(Q_dat, y_dat)
                     trainerr += trainerr_
                     trainloss += trainloss_
