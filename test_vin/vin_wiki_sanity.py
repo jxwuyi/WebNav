@@ -281,8 +281,8 @@ class VinBlockWiki(object):
         self.params.append(self.q_bias)
         self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
         # non-linear transformation
-        if (prm.query_tanh):
-            self.q = T.tanh(self.q)
+#        if (prm.query_tanh):
+#            self.q = T.tanh(self.q)
 
         
         # create reword: R: [batchsize, N_pages]
