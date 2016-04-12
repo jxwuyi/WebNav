@@ -197,9 +197,9 @@ class vin(NNobj):
                                 print 'current query :'
                                 print text
                                 print 'target page : '
-                                print self.wk.get_article_links(y_dat[j])
+                                print self.wk.get_article_title(y_dat[j])
                                 print 'predicted page : '
-                                print self.wk.get_article_links(pred[j])
+                                print self.wk.get_article_title(pred[j])
                                 ps = raw_input('press enter ....')
                     
                     # prepare testing data
