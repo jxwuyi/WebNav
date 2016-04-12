@@ -58,6 +58,7 @@ class vin(NNobj):
                                     k=self.k, A=self.A)
         self.sanity_output = self.vin_net.R
         self.sanity_params = self.vin_net.params
+        self.params = self.sanity_params
         self.sanity_cost = -T.mean(T.log(self.sanity_output)[T.arange(self.y.shape[0]),
                                                              self.y.flatten()], dtype=theano.config.floatX)
         self.sanity_y_pred = T.argmax(self.sanity_output, axis=1)
