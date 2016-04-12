@@ -27,9 +27,10 @@ def main():
     parser.add_argument("--maxhops", type=int, default=1)
     parser.add_argument("--stepdecreaserate", type=float, default=1.0)
     parser.add_argument("--stepdecreasetime", type=int, default=10000)
+    parser.add_argument("--sanity_check", default="None")
     args = parser.parse_args()
 
-    if args.model == "valIterWiki":
+    if (args.model == "valIterWiki"):
         # VI network
         my_nn = vin(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
@@ -40,8 +41,11 @@ def main():
     if args.warmstart != "None":
         print('warmstarting...')
         my_nn.load_weights(args.warmstart)
-    my_nn.run_training(stepsize=args.stepsize, epochs=args.epochs,
-                       grad_check=args.grad_check)
+    if args.sanity_check != "None":
+        my_nn.run_training_sanity_check(stepsize=args.stepsize,  epochs=args.epochs)
+    else:
+        my_nn.run_training(stepsize=args.stepsize, epochs=args.epochs,
+                           grad_check=args.grad_check)
     my_nn.save_weights(outfile=str(args.output))
 
 if __name__ == "__main__":
