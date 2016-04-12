@@ -157,7 +157,7 @@ class vin(NNobj):
                 if end <= train_n_curr:
                     # prepare training data
                     for i in xrange(start, end):
-                        k = inds[i]
+                        k = i
                         Q_dat[i-start, :] = train_queries[k, :]
                         y_dat[i-start] = train_paths[k][-1]
                     
