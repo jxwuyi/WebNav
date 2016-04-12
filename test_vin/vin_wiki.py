@@ -75,7 +75,7 @@ class vin(NNobj):
         self.sanity_output = self.vin_net.R
         self.sanity_params = self.vin_net.sanity_params
         self.sanity_cost = -T.mean(T.log(self.sanity_output)[T.arange(self.y.shape[0]),
-                                                 self.y.flatten()], dtype=theano.config.floatX)
+                                                             self.y.flatten()], dtype=theano.config.floatX)
         self.sanity_y_pred = T.argmax(self.sanity_output, axis=1)
         self.sanity_err = T.mean(T.neq(self.sanity_y_pred, self.y.flatten()), dtype=theano.config.floatX)
         
@@ -202,7 +202,7 @@ class vin(NNobj):
                     for i in xrange(start, end):
                         Q_dat[i-start, :] = test_queries[k, :]
                         y_dat[i-start] = test_paths[k][-1]
-                    testerr_, testloss_ = self.sanity_loss(Q_dat, S_dat, y_dat)
+                    testerr_, testloss_ = self.sanity_loss(Q_dat, y_dat)
                     trainerr += trainerr_
                     trainloss += trainloss_
                     testerr += testerr_
