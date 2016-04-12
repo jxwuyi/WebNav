@@ -132,7 +132,8 @@ class vin(NNobj):
 
         train_n = len(train_entry)
         valid_n = len(valid_entry)
-        test_n = len(test_entry)
+        #test_n = len(test_entry)
+	test_n = len(test_entry) / 4 # current hack, to make things faster
 
         self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
         self.train = theano.function(inputs=[self.Q_in, self.S_in, self.y], outputs=[], updates=self.updates)

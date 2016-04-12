@@ -82,7 +82,7 @@ class QP():
         outs = []
         for i in xrange(len(paths)):
             n = len(paths[i])
-            for j in range(n):
+            for j in range(n - 1):
                 if (j == n - 1):
                     outs.append((i, paths[i][j], 0))
                 else:
