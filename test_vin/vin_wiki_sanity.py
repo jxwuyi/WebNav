@@ -66,6 +66,8 @@ class vin(NNobj):
         
         self.sanity_loss = theano.function(inputs=[self.Q_in, self.y],
                                            outputs=[self.sanity_err, self.sanity_cost])
+        self.sanity_pred = theano.function(inputs=[self.Q_in],
+                                           outputs=[self.sanity_y_pred])
 
 #######################
         
@@ -126,8 +128,7 @@ class vin(NNobj):
         print " >>> Result: accuracy = %d / %d (%f percent) ..." % (correct, n, correct * 100.0 / n)
 
 
-######################################################################################
-
+######################################################################################    
     def run_training_sanity_check(self, stepsize=0.01, epochs=10):
         print 'Training for sanity check starts ...'
         train_queries = self.q.get_train_queries()
@@ -183,6 +184,22 @@ class vin(NNobj):
                         Q_dat[i-start, :] = train_queries[k, :]
                         y_dat[i-start] = train_paths[k][-1]
                     trainerr_, trainloss_ = self.sanity_loss(Q_dat, y_dat)
+
+                    # output wrong labels
+                    if (i_epoch == int(epochs) - 1):
+                        pred = self.sanity_pred(Q_dat)
+                        for j in xrange(batch_size):
+                            if (pred[j] != y_dat[j]):
+                                k = inds[start + j]
+                                text = self.get_train_query_texts()[k]
+                                print 'current query :'
+                                print text
+                                print 'target page : '
+                                print self.wk.get_article_links(y_dat[j])
+                                print 'predicted page : '
+                                print self.wk.get_article_links(pred[j])
+                                ps = raw_input('press enter ....')
+                    
                     # prepare testing data
                     for i in xrange(start, end):
                         Q_dat[i-start, :] = test_queries[i, :]
@@ -281,8 +298,8 @@ class VinBlockWiki(object):
         self.params.append(self.q_bias)
         self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
         # non-linear transformation
-#        if (prm.query_tanh):
-#            self.q = T.tanh(self.q)
+        if (prm.query_tanh):
+            self.q = T.tanh(self.q)
 
         
         # create reword: R: [batchsize, N_pages]

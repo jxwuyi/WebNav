@@ -19,9 +19,13 @@ class QP():
         self.path_train = outs[0]
         self.path_valid = outs[1]
         self.path_test = outs[2]
+        self.query_texts = self.get_queries()
 
     def get_train_queries(self):
         return self.q_train
+
+    def get_train_query_texts(self):
+        return self.query_texts[0]
 
     def get_valid_queries(self):
         return self.q_valid
