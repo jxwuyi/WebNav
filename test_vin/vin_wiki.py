@@ -183,12 +183,12 @@ class vin(NNobj):
                         k = inds[i]
                         Q_dat[i-start, :] = train_queries[k, :]
                         y_dat[i-start] = train_paths[k][-1]
-                    trainerr_, trainloss_ = self.computeloss(Q_dat, y_dat)
+                    trainerr_, trainloss_ = self.sanity_loss(Q_dat, y_dat)
                     # prepare testing data
                     for i in xrange(start, end):
                         Q_dat[i-start, :] = test_queries[k, :]
                         y_dat[i-start] = test_paths[k][-1]
-                    testerr_, testloss_ = self.computeloss(Q_dat, S_dat, y_dat)
+                    testerr_, testloss_ = self.sanity_loss(Q_dat, S_dat, y_dat)
                     trainerr += trainerr_
                     trainloss += trainloss_
                     testerr += testerr_
@@ -278,14 +278,14 @@ class vin(NNobj):
                         Q_dat[i-start, :] = train_queries[q_i, :]
                         S_dat[i-start, 0] = s_i
                         y_dat[i-start] = y_i
-                    trainerr_, trainloss_ = self.sanity_loss(Q_dat, S_dat, y_dat)
+                    trainerr_, trainloss_ = self.computeloss(Q_dat, S_dat, y_dat)
                     # prepare testing data
                     for i in xrange(start, end):
                         q_i, s_i, y_i = test_entry[i]
                         Q_dat[i-start, :] = test_queries[q_i, :]
                         S_dat[i-start, 0] = s_i
                         y_dat[i-start] = y_i
-                    testerr_, testloss_ = self.sanity_loss(Q_dat, S_dat, y_dat)
+                    testerr_, testloss_ = self.computeloss(Q_dat, S_dat, y_dat)
                     trainerr += trainerr_
                     trainloss += trainloss_
                     testerr += testerr_
