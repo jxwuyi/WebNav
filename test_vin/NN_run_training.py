@@ -1,5 +1,5 @@
 from NNobj import *
-from vin_wiki import vin
+from vin_wiki_sanity import vin
 import myparameters as prm
 
 
