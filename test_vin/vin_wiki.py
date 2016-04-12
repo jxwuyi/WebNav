@@ -71,6 +71,20 @@ class vin(NNobj):
                                            outputs=[self.err, self.cost])
         self.y_out = theano.function(inputs=[self.Q_in, self.S_in], outputs=[self.y_pred])
 
+
+        self.sanity_output = self.vin_net.R
+        self.sanity_params = self.vin_net.sanity_params
+        self.sanity_cost = -T.mean(T.log(self.sanity_output)[T.arange(self.y.shape[0]),
+                                                 self.y.flatten()], dtype=theano.config.floatX)
+        self.sanity_y_pred = T.argmax(self.sanity_output, axis=1)
+        self.sanity_err = T.mean(T.neq(self.sanity_y_pred, self.y.flatten()), dtype=theano.config.floatX)
+        
+        self.sanity_loss = theano.function(inputs=[self.Q_in, self.y],
+                                           outputs=[self.sanity_err, self.sanity_cost])
+
+#######################
+        
+
     def load_graph(self):  
         """
         :type page_emb: np.fmatrix
@@ -137,16 +151,6 @@ class vin(NNobj):
         test_paths = self.q.get_test_paths()
         train_n = len(train_paths)
         test_n = len(test_paths)
-
-        self.output = self.vin_net.R
-        self.sanity_params = self.vin_net.sanity_params
-        self.sanity_cost = -T.mean(T.log(self.output)[T.arange(self.y.shape[0]),
-                                                 self.y.flatten()], dtype=theano.config.floatX)
-        self.sanity_y_pred = T.argmax(self.output, axis=1)
-        self.sanity_err = T.mean(T.neq(self.sanity_y_pred, self.y.flatten()), dtype=theano.config.floatX)
-        
-        self.sanity_loss = theano.function(inputs=[self.Q_in, self.y],
-                                           outputs=[self.sanity_err, self.sanity_cost])
         
         self.updates = rmsprop_updates_T(self.sanity_cost, self.sanity_params, stepsize=stepsize)
         self.train = theano.function(inputs=[self.Q_in, self.y], outputs=[], updates=self.updates)
