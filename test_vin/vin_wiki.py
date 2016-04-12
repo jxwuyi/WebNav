@@ -124,7 +124,7 @@ class vin(NNobj):
             ans = paths[i][-1]
             if (cur == ans):
                 correct += 1
-        print " >>> Result: accuracy = %d / %d (%f percent) ..." % (correct, n, correct * 1.0 / ans)
+        print " >>> Result: accuracy = %d / %d (%f percent) ..." % (correct, n, correct * 100.0 / n)
         
 
     def run_training(self, stepsize=0.01, epochs=10, output='None',
