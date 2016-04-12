@@ -110,6 +110,22 @@ class vin(NNobj):
 
         self.q = qp.QP(prm.curr_query_path)
 
+    def reward_checking(self, queries, paths, page_emb):
+        """
+        queries: M * emb_dim
+        page_emb: emb_dim * N
+        """
+        reward = np.dot(queries, page_emb) # M * N
+        target = np.argmax(reward, axis = 1) # M * array
+        n = len(paths)
+        correct = 0
+        for i in xrange(n):
+            cur = target[i]
+            ans = paths[i][-1]
+            if (cur == ans):
+                correct += 1
+        print " >>> Result: accuracy = %d / %d (%f percent) ..." % (correct, n, correct * 1.0 / ans)
+        
 
     def run_training(self, stepsize=0.01, epochs=10, output='None',
                      grad_check=True,
@@ -129,6 +145,13 @@ class vin(NNobj):
         train_entry = self.q.get_tuples(train_paths, self.rev_idx)
         valid_entry = self.q.get_tuples(valid_paths, self.rev_idx)
         test_entry = self.q.get_tuples(test_paths, self.rev_idx)
+
+
+        ############################
+        print 'Performing Sanity Checking ....'
+        self.reward_checking(train_queries, train_paths, self.page_emb)
+        ############################
+        
 
         train_n = len(train_entry)
         valid_n = len(valid_entry)
