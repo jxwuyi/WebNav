@@ -51,7 +51,7 @@ class vin(NNobj):
 
         print 'building model ...'
 
-        self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in=self.S_in,
+        self.vin_net = VinBlockWiki(Q_in=self.Q_in,
                                     N = self.N, D = self.D, emb_dim = self.emb_dim,
                                     page_emb = self.page_emb, edges = self.edges,
                                     batchsize=self.batchsize, maxhops=self.maxhops, 
@@ -223,7 +223,7 @@ class vin(NNobj):
 
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
-    def __init__(self, Q_in, S_in, N, D, emb_dim,
+    def __init__(self, Q_in, N, D, emb_dim,
                  page_emb, edges,
                  batchsize, maxhops,
                  k, A):
