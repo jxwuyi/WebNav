@@ -109,7 +109,7 @@ class vin(NNobj):
         dat_arr = np.ones(n, dtype=theano.config.floatX)     
         self.edges = SS.csc_matrix((dat_arr, (row_idx, col_idx)), shape=(self.N, self.N * self.D), dtype=theano.config.floatX)
 
-        self.q = qp.QP(prm.curr_query_path)
+        self.qq = qp.QP(prm.curr_query_path)
 
     def reward_checking(self, queries, paths, page_emb):
         """
@@ -131,10 +131,10 @@ class vin(NNobj):
 ######################################################################################    
     def run_training_sanity_check(self, stepsize=0.01, epochs=10):
         print 'Training for sanity check starts ...'
-        train_queries = self.q.get_train_queries()
-        train_paths = self.q.get_train_paths()
-        test_queries = self.q.get_test_queries()
-        test_paths = self.q.get_test_paths()
+        train_queries = self.qq.get_train_queries()
+        train_paths = self.qq.get_train_paths()
+        test_queries = self.qq.get_test_queries()
+        test_paths = self.qq.get_test_paths()
         train_n = len(train_paths)
         test_n = len(test_paths)
         
@@ -187,11 +187,13 @@ class vin(NNobj):
 
                     # output wrong labels
                     if (i_epoch == int(epochs) - 1):
-                        pred = self.sanity_pred(Q_dat)
+                        pred = self.sanity_pred(Q_dat)[0]
+                        print y_dat.shape
+                        print pred.shape
                         for j in xrange(batch_size):
                             if (pred[j] != y_dat[j]):
                                 k = inds[start + j]
-                                text = self.get_train_query_texts()[k]
+                                text = self.qq.get_train_query_texts()[k]
                                 print 'current query :'
                                 print text
                                 print 'target page : '
