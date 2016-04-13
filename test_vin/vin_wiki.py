@@ -369,10 +369,3 @@ class VinBlockWiki(object):
             self.params.append(self.w_o)
             # (Batch * Hops) * D
             self.output = T.nnet.softmax(T.dot(self.q_out, self.w_o))
-
-
-        ############## Sanity Check BLOCK
-        # Q_in : batch_size * emb_dim
-        # y    : batch_size * 1
-        self.sanity_params = [self.W, self.q_bias]
-
