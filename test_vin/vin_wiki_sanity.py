@@ -112,7 +112,7 @@ class vin(NNobj):
         self.qq = qp.QP(prm.curr_query_path)
         self.title_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         for i in range(self.N):
-            self.title_emb = [:, i] = self.qq.get_content_embed(self.wk.get_article_content(i))
+            self.title_emb[:, i] = self.qq.get_content_embed(self.wk.get_article_content(i))
 
     def reward_checking(self, queries, paths, page_emb):
         """
