@@ -186,7 +186,7 @@ class vin(NNobj):
                     trainerr_, trainloss_ = self.sanity_loss(Q_dat, y_dat)
 
                     # output wrong labels
-                    if (i_epoch == int(epochs) - 1):
+                    if (prm.output_wrong_predict and (i_epoch == int(epochs) - 1)):
                         pred = self.sanity_pred(Q_dat)[0]
                         print y_dat.shape
                         print pred.shape
@@ -292,9 +292,19 @@ class VinBlockWiki(object):
             self.W = T.extra_ops.repeat(self.W, batchsize, axis = 0)
             self.q = Q_in * self.W
         else:
-            self.W = init_weights_T(emb_dim, emb_dim)
-            self.params.append(self.W)
-            self.q = T.dot(Q_in, self.W)
+            self.sub_W = init_weights_T(emb_dim, prm.query_weight_rank)
+            self.params.append(self.sub_W)
+            self.sub_W_t = self.sub_W.T.dimshuffle(1, 0)
+            self.W = T.dot(self.sub_W, self.sub_W_t)
+            
+            self.Sig = T.dot(Q_in, self.W)  # batchsize * emb_dim
+            self.sig_bias = init_weights_T(emb_dim)
+            self.params.append(self.sig_bias)
+            self.Sig = self.Sig + self.sig_bias.dimshuffle('x', 0)
+            self.Sig = T.nnet.sigmoid(self.Sig)
+            
+            self.q = Q_in * self.Sig
+            
         # add bias
         self.q_bias = init_weights_T(emb_dim)
         self.params.append(self.q_bias)
