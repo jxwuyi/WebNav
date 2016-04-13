@@ -96,7 +96,7 @@ class QP():
                     x = paths[i][j]
                     y = paths[i][j + 1]
                     k = inv_idx[x][y]
-                    outs.append((i, x, k + 1))
+                    outs.append((i, x, k))
         return outs
 
     def tolist(self, text):

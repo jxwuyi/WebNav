@@ -70,19 +70,6 @@ class vin(NNobj):
         self.computeloss = theano.function(inputs=[self.Q_in, self.S_in, self.y],
                                            outputs=[self.err, self.cost])
         self.y_out = theano.function(inputs=[self.Q_in, self.S_in], outputs=[self.y_pred])
-
-
-        self.sanity_output = self.vin_net.R
-        self.sanity_params = self.vin_net.sanity_params
-        self.sanity_cost = -T.mean(T.log(self.sanity_output)[T.arange(self.y.shape[0]),
-                                                             self.y.flatten()], dtype=theano.config.floatX)
-        self.sanity_y_pred = T.argmax(self.sanity_output, axis=1)
-        self.sanity_err = T.mean(T.neq(self.sanity_y_pred, self.y.flatten()), dtype=theano.config.floatX)
-        
-        self.sanity_loss = theano.function(inputs=[self.Q_in, self.y],
-                                           outputs=[self.sanity_err, self.sanity_cost])
-
-#######################
         
 
     def load_graph(self):  
@@ -108,8 +95,11 @@ class vin(NNobj):
         self.rev_idx = []
         for i in range(self.N):
             urls = self.wk.get_article_links(i)
-            if (not i in urls):
-                urls.append(i)
+            if (not (i in urls)):
+                urls.append(0, i)
+            else:
+                urls.remove(i)
+                urls.append(0, i) # keep self in the beginning of the url list
             rev = {}
             for x, y in enumerate(urls):
                 rev[y] = x
@@ -140,78 +130,6 @@ class vin(NNobj):
                 correct += 1
         print " >>> Result: accuracy = %d / %d (%f percent) ..." % (correct, n, correct * 100.0 / n)
 
-
-######################################################################################
-
-    def run_training_sanity_check(self, stepsize=0.01, epochs=10):
-        print 'Training for sanity check starts ...'
-        train_queries = self.q.get_train_queries()
-        train_paths = self.q.get_train_paths()
-        test_queries = self.q.get_test_queries()
-        test_paths = self.q.get_test_paths()
-        train_n = len(train_paths)
-        test_n = len(test_paths)
-        
-        self.updates = rmsprop_updates_T(self.sanity_cost, self.sanity_params, stepsize=stepsize)
-        self.train = theano.function(inputs=[self.Q_in, self.y], outputs=[], updates=self.updates)
-
-        # Training
-        batch_size = self.batchsize
-
-        Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX)
-        y_dat = np.zeros(batch_size*1, dtype = np.int32) # for convinence, maxhops = 1
-
-        print fmt_row(10, ["Epoch", "Train NLL", "Train Err", "Test NLL", "Test Err", "Epoch Time"])
-        for i_epoch in xrange(int(epochs)):
-            tstart = time.time()
-            # shuffle training index
-            inds = np.random.permutation(train_n)
-            train_n_curr = train_n
-            # do training
-            for start in xrange(0, train_n_curr, batch_size):
-                end = start+batch_size
-                if end <= train_n_curr:
-                    # prepare training data
-                    for i in xrange(start, end):
-                        k = inds[i]
-                        Q_dat[i-start, :] = train_queries[k, :]
-                        y_dat[i-start] = train_paths[k][-1]
-                    
-                    self.train(Q_dat, y_dat)
-                if ((start / batch_size) % 200 == 0):
-                    print '>> finished batch %d / %d ... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, time.time()-tstart)             	
-        
-            elapsed = time.time() - tstart
-            # compute losses
-            trainerr = 0.
-            trainloss = 0.
-            testerr = 0.
-            testloss = 0.
-            num = 0
-            for start in xrange(0, test_n, batch_size):
-                end = start+batch_size
-                if end <= test_n:  # assert(text_n <= train_n)
-                    num += 1
-                    # prepare training data
-                    for i in xrange(start, end):
-                        k = inds[i]
-                        Q_dat[i-start, :] = train_queries[k, :]
-                        y_dat[i-start] = train_paths[k][-1]
-                    trainerr_, trainloss_ = self.sanity_loss(Q_dat, y_dat)
-                    # prepare testing data
-                    for i in xrange(start, end):
-                        Q_dat[i-start, :] = test_queries[k, :]
-                        y_dat[i-start] = test_paths[k][-1]
-                    testerr_, testloss_ = self.sanity_loss(Q_dat, y_dat)
-                    trainerr += trainerr_
-                    trainloss += trainloss_
-                    testerr += testerr_
-                    testloss += testloss_
-            print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
-
-######################################################################################
-        
-
     def run_training(self, stepsize=0.01, epochs=10, output='None',
                      grad_check=True,
                      profile=False):
@@ -230,15 +148,6 @@ class vin(NNobj):
         train_entry = self.q.get_tuples(train_paths, self.rev_idx)
         valid_entry = self.q.get_tuples(valid_paths, self.rev_idx)
         test_entry = self.q.get_tuples(test_paths, self.rev_idx)
-
-
-        ############################
-        print 'Performing Sanity Checking on Training Data....'
-        self.reward_checking(train_queries, train_paths, self.page_emb)
-        print 'Performing Sanity Checking on Testing Data....'
-        self.reward_checking(test_queries, test_paths, self.page_emb)
-        ############################
-        
 
         train_n = len(train_entry)
         valid_n = len(valid_entry)
