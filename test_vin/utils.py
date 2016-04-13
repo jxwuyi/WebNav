@@ -62,9 +62,9 @@ def Sent2Vec_encode(text, wemb): # compute embedding of a single sentence
     n = 0.
     for word in words:
         if word in wemb:
-            out[i,:] += wemb[word]
+            out += wemb[word]
             n += 1.
-    out[i] /= max(1.,n)
+    out /= max(1.,n)
 
     return out
 
