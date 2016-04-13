@@ -302,9 +302,9 @@ class VinBlockWiki(object):
             self.params.append(self.sig_bias)
             self.Sig = self.Sig + self.sig_bias.dimshuffle('x', 0)
             
-            self.Sig = T.nnet.sigmoid(self.Sig)
-            
-            self.q = Q_in * self.Sig
+            self.Sig = T.nnet.tanh(self.Sig)
+            self.q = self.Sig
+            #self.q = Q_in * self.Sig
             
         # add bias
         self.q_bias = init_weights_T(emb_dim)
