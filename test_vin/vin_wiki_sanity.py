@@ -296,11 +296,12 @@ class VinBlockWiki(object):
             self.params.append(self.sub_W)
             self.W = T.dot(self.sub_W, self.sub_W.T)
             
-            self.Sig = T.dot(Q_in, self.W)  # batchsize * emb_dim
-            self.sig_bias = init_weights_T(emb_dim)
-            self.params.append(self.sig_bias)
-            self.Sig = self.Sig + self.sig_bias.dimshuffle('x', 0)
-            self.Sig = T.nnet.sigmoid(self.Sig)
+            #self.Sig = T.dot(Q_in, self.W)  # batchsize * emb_dim
+            #self.sig_bias = init_weights_T(emb_dim)
+            #self.params.append(self.sig_bias)
+            #self.Sig = self.Sig + self.sig_bias.dimshuffle('x', 0)
+            
+            self.Sig = T.nnet.sigmoid(self.W)
             
             self.q = Q_in * self.Sig
             
