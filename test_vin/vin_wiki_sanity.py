@@ -53,7 +53,7 @@ class vin(NNobj):
 
         self.vin_net = VinBlockWiki(Q_in=self.Q_in,
                                     N = self.N, D = self.D, emb_dim = self.emb_dim,
-                                    page_emb = self.page_emb, edges = self.edges,
+                                    page_emb = self.page_emb, title_emb = self.title_emb, edges = self.edges,
                                     batchsize=self.batchsize, maxhops=self.maxhops, 
                                     k=self.k, A=self.A)
         self.sanity_output = self.vin_net.R
@@ -110,6 +110,9 @@ class vin(NNobj):
         self.edges = SS.csc_matrix((dat_arr, (row_idx, col_idx)), shape=(self.N, self.N * self.D), dtype=theano.config.floatX)
 
         self.qq = qp.QP(prm.curr_query_path)
+        self.title_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
+        for i in range(self.N):
+            self.title_emb = [:, i] = self.qq.get_content_embed(self.wk.get_article_content(i))
 
     def reward_checking(self, queries, paths, page_emb):
         """
@@ -244,7 +247,7 @@ class vin(NNobj):
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
     def __init__(self, Q_in, N, D, emb_dim,
-                 page_emb, edges,
+                 page_emb, title_emb, edges,
                  batchsize, maxhops,
                  k, A):
         """
@@ -291,7 +294,15 @@ class VinBlockWiki(object):
             self.params.append(self.W)
             self.W = T.extra_ops.repeat(self.W, batchsize, axis = 0)
             self.q = Q_in * self.W
+
+            ###########################
+            self.W_t = init_weights_T(1, emb_dim);
+            self.params.append(self.W_t)
+            self.W_t = T.extra_ops.repeat(self.W_t, batchsize, axis = 0)
+            self.q_t = Q_in * self.W_t
         else:
+            #######
+            print 'currently we only support diagonal matrix ...'
             self.W = init_weights_T(1, emb_dim);
             self.params.append(self.W)
             self.W = T.extra_ops.repeat(self.W, batchsize, axis = 0)
@@ -310,6 +321,12 @@ class VinBlockWiki(object):
         self.q_bias = init_weights_T(emb_dim)
         self.params.append(self.q_bias)
         self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
+
+        # self.q_t = self.q
+        self.q_t_bias = init_weights_T(emb_dim)
+        self.params.append(self.q_t_bias)
+        self.q_t = self.q_t + self.q_t_bias.dimshuffle('x', 0) # batch * emb_dim
+        
         # non-linear transformation
         #if (prm.query_tanh):
         #    self.q = T.tanh(self.q)
@@ -318,6 +335,7 @@ class VinBlockWiki(object):
         # create reword: R: [batchsize, N_pages]
         #   q: [batchsize, emb_dim]
         #   page_emb: [emb_dim, N_pages]
-        self.R = T.nnet.softmax(T.dot(self.q, page_emb))
+        self.R = T.dot(self.q, page_emb) + T.dot(self.q_t, title_emb)
+        self.R = T.nnet.softmax(self.R)
         
 
