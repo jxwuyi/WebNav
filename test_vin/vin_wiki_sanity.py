@@ -304,7 +304,7 @@ class VinBlockWiki(object):
             
             self.Sig = T.nnet.sigmoid(self.W)
             
-            self.q = T.dot(Q_in,self.W)
+            self.q = Q_in * self.Sig
             
         # add bias
         self.q_bias = init_weights_T(emb_dim)
