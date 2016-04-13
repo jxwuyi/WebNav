@@ -55,6 +55,19 @@ def Word2Vec_encode(texts, wemb):
 
     return out
 
+def Sent2Vec_encode(text, wemb): # compute embedding of a single sentence
+    
+    out = np.zeros(prm.dim_emb, dtype=np.float32)
+    words = wordpunct_tokenize(text.lower())
+    n = 0.
+    for word in words:
+        if word in wemb:
+            out[i,:] += wemb[word]
+            n += 1.
+    out[i] /= max(1.,n)
+
+    return out
+
 
 def text2idx2(texts, vocab, dim):
     '''

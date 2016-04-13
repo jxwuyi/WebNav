@@ -155,12 +155,14 @@ fout = h5py.File(prm.pages_path,'w')
 dt = h5py.special_dtype(vlen=bytes)
 articles = fout.create_dataset("text", (len(pages),), dtype=dt)
 titles = fout.create_dataset("title", (len(pages),), dtype=dt)
+contents = fout.create_dataset("content", (len(pages),), dtype=dt)
 i=0
 n_links = 0
 title_idx = {}
 for title, article in pages.items():
     articles[i] =  article['text']
     titles[i] =  title
+    contents[i] = article['title'] # actually <title> means url while article['title'] means true title
     title_idx[title] = i
     i += 1
     n_links += len(article['text'])

@@ -16,6 +16,8 @@ class Wiki():
     def get_article_title(self, article_id):
         return self.f['title'][article_id]
 
+    def get_article_content(self, article_id):
+        return self.f['content'][article_id]
 
     def get_article_links(self, article_id):       
         links = self.f['links'][article_id].strip().split(' ')

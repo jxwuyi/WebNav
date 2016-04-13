@@ -66,6 +66,9 @@ class QP():
 
         return outs   # 3 * n_queries * n_dim
 
+    def get_content_embed(self, text):
+        return utils.Sent2Vec_encode(text, self.wemb)
+    
 
     def get_paths(self, dset=['train', 'valid', 'test']):
         '''
