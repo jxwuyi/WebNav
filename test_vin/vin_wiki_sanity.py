@@ -294,8 +294,7 @@ class VinBlockWiki(object):
         else:
             self.sub_W = init_weights_T(emb_dim, prm.query_weight_rank)
             self.params.append(self.sub_W)
-            self.sub_W_t = self.sub_W.T.dimshuffle(1, 0)
-            self.W = T.dot(self.sub_W, self.sub_W_t)
+            self.W = T.dot(self.sub_W, self.sub_W.T)
             
             self.Sig = T.dot(Q_in, self.W)  # batchsize * emb_dim
             self.sig_bias = init_weights_T(emb_dim)
