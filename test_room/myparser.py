@@ -60,13 +60,14 @@ class MyParser():
         for url in curr:
             links.add(self.gen_full_url(cur, url))
             text = text.replace(' href="'+url+'"','')
-        curr = re.findall('title=[\'"]?([^\'">]+)', text)
-        for ttl in curr:
-            text = text.replace(' title="'+ttl+'"','')
-        curr = re.findall('class=[\'"]?([^\'">]+)', text)
-        for cls in curr:
-            text = text.replace(' class="'+cls+'"','')
-        text = text.replace('<a>','').replace('</a>','').lower()
+        # remove all the tags
+        curr = re.findall('<([^>]+)',text)
+        for sub in curr:
+            text = text.replace('<'+sub+'>','')
+        # remove all the non-alphabet words
+        curr = re.findall('&([^;]+)',text)
+        for sub in curr:
+            text = text.replace('&'+sub+';',' ')
         return text
 
     def parse(self, url):
