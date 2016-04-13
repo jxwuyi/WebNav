@@ -302,7 +302,7 @@ class VinBlockWiki(object):
             self.params.append(self.sig_bias)
             self.Sig = self.Sig + self.sig_bias.dimshuffle('x', 0)
             
-            self.Sig = T.nnet.sigmoid(self.W)
+            self.Sig = T.nnet.sigmoid(self.Sig)
             
             self.q = Q_in * self.Sig
             
