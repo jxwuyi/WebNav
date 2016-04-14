@@ -343,7 +343,7 @@ class VinBlockWiki(object):
             self.w = init_weights_T(1, D, A)
             self.params.append(self.w)
         
-        self.w_local = theano.shared((np.ones((1, 1, A))).astype(theano.config.floatX))#init_weights_T(1, 1, A)
+        self.w_local = theano.shared((np.ones((1, 1, A))*0.01).astype(theano.config.floatX))#init_weights_T(1, 1, A)
         self.params.append(self.w_local)
 
         #self.full_w = self.w.dimshuffle('x', 0, 1);
@@ -382,7 +382,7 @@ class VinBlockWiki(object):
 
         if (prm.diagonal_action_mat): # simple diagonal transition matrix
             if (prm.final_scale):
-                self.w_o = theano.shared((np.ones((1, D))).astype(theano.config.floatX))#init_weights_T(1, D)
+                self.w_o = theano.shared((np.ones((1, D))*0.01).astype(theano.config.floatX))#init_weights_T(1, D)
                 self.params.append(self.w_o)
                 self.full_w_o = T.extra_ops.repeat(self.w_o, batchsize * maxhops, axis = 0) # (B * H) * A
                 self.q_out = self.q_out * self.full_w_o
