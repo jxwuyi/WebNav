@@ -55,7 +55,7 @@ class vin(NNobj):
 
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in=self.S_in,
                                     N = self.N, D = self.D, emb_dim = self.emb_dim,
-                                    page_emb = self.page_emb, edges = self.edges,
+                                    page_emb = self.page_emb, title_emb = self.title_emb, edges = self.edges,
                                     batchsize=self.batchsize, maxhops=self.maxhops, 
                                     k=self.k, A=self.A)
         self.p_of_y = self.vin_net.output
@@ -113,6 +113,9 @@ class vin(NNobj):
         self.edges = SS.csc_matrix((dat_arr, (row_idx, col_idx)), shape=(self.N, self.N * self.D), dtype=theano.config.floatX)
 
         self.q = qp.QP(prm.curr_query_path)
+        self.title_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
+        for i in range(self.N):
+            self.title_emb[:, i] = self.q.get_content_embed(self.wk.get_article_content(i))
 
     def reward_checking(self, queries, paths, page_emb):
         """
@@ -244,7 +247,7 @@ class vin(NNobj):
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
     def __init__(self, Q_in, S_in, N, D, emb_dim,
-                 page_emb, edges,
+                 page_emb, title_emb, edges,
                  batchsize, maxhops,
                  k, A):
         """
@@ -291,7 +294,15 @@ class VinBlockWiki(object):
             self.params.append(self.W)
             self.W = T.extra_ops.repeat(self.W, batchsize, axis = 0)
             self.q = Q_in * self.W
+
+            ###########################
+            self.W_t = init_weights_T(1, emb_dim);
+            self.params.append(self.W_t)
+            self.W_t = T.extra_ops.repeat(self.W_t, batchsize, axis = 0)
+            self.q_t = Q_in * self.W_t
         else:
+            #######
+            print 'currently we only support diagonal matrix ...'
             self.W = init_weights_T(emb_dim, emb_dim)
             self.params.append(self.W)
             self.q = T.dot(Q_in, self.W)
@@ -299,6 +310,12 @@ class VinBlockWiki(object):
         self.q_bias = init_weights_T(emb_dim)
         self.params.append(self.q_bias)
         self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
+
+        # self.q_t = self.q
+        self.q_t_bias = init_weights_T(emb_dim)
+        self.params.append(self.q_t_bias)
+        self.q_t = self.q_t + self.q_t_bias.dimshuffle('x', 0) # batch * emb_dim
+
         # non-linear transformation
         if (prm.query_tanh):
             self.q = T.tanh(self.q)
@@ -307,7 +324,14 @@ class VinBlockWiki(object):
         # create reword: R: [batchsize, N_pages]
         #   q: [batchsize, emb_dim]
         #   page_emb: [emb_dim, N_pages]
-        self.R = T.nnet.softmax(T.dot(self.q, page_emb))
+        self.alpha = theano.shared((np.random.random((1, 1)) * 0.1).astype(theano.config.floatX))
+	self.params.append(self.alpha)
+	self.alpha_full = T.extra_ops.repeat(self.alpha,batchsize, axis = 0)
+	self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
+        self.R = T.dot(self.q, page_emb) + self.alpha_full * T.dot(self.q_t, title_emb)
+        #self.R = T.dot(self.q_t, title_emb)
+	self.R = T.nnet.softmax(self.R)
+	
         # initial value
         self.V = self.R
 
@@ -319,7 +343,7 @@ class VinBlockWiki(object):
             self.w = init_weights_T(1, D, A)
             self.params.append(self.w)
         
-        self.w_local = init_weights_T(1, 1, A)
+        self.w_local = theano.shared((np.ones((1, 1, A))).astype(theano.config.floatX))#init_weights_T(1, 1, A)
         self.params.append(self.w_local)
 
         #self.full_w = self.w.dimshuffle('x', 0, 1);
@@ -358,7 +382,7 @@ class VinBlockWiki(object):
 
         if (prm.diagonal_action_mat): # simple diagonal transition matrix
             if (prm.final_scale):
-                self.w_o = init_weights_T(1, D)
+                self.w_o = theano.shared((np.ones((1, D))).astype(theano.config.floatX))#init_weights_T(1, D)
                 self.params.append(self.w_o)
                 self.full_w_o = T.extra_ops.repeat(self.w_o, batchsize * maxhops, axis = 0) # (B * H) * A
                 self.q_out = self.q_out * self.full_w_o

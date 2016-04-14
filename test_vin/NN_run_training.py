@@ -1,5 +1,6 @@
 from NNobj import *
-from vin_wiki_sanity import vin
+import vin_wiki_sanity as vn_san
+import vin_wiki as vn
 import myparameters as prm
 
 
@@ -30,13 +31,21 @@ def main():
     parser.add_argument("--sanity_check", default="None")
     args = parser.parse_args()
 
-    if (args.model == "valIterWiki"):
-        # VI network
-        my_nn = vin(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
+    if (args.sanity_check == "None" and args.model == "valIterWiki"):
+        # VI network Sanity Check
+        my_nn = vn_san.vin(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     k=args.k, A=args.A,
                     batchsize=args.batchsize, maxhops=args.maxhops)
+    else:
+        # VI network
+        my_nn = vn.vin(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
+                    emb_dim = prm.dim_emb, dropout=args.dropout,
+                    devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
+                    k=args.k, A=args.A,
+                    batchsize=args.batchsize, maxhops=args.maxhops)
+        
         
     if args.warmstart != "None":
         print('warmstarting...')
