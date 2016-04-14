@@ -51,7 +51,7 @@ class vin(NNobj):
         #l_h = 150  # channels in initial hidden layer
         #l_q = 10   # channels in q layer (~actions)
 
-        print 'building model ...'
+        print 'building Full VIN model ...'
 
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in=self.S_in,
                                     N = self.N, D = self.D, emb_dim = self.emb_dim,
@@ -137,7 +137,7 @@ class vin(NNobj):
                      grad_check=True,
                      profile=False):
 
-        print 'Training Start ...'
+        print 'Training on full VIN start ...'
 
         batch_size = self.batchsize
 
