@@ -96,10 +96,10 @@ class vin(NNobj):
         for i in range(self.N):
             urls = self.wk.get_article_links(i)
             if (not (i in urls)):
-                urls.append(0, i)
+                urls.insert(0, i)
             else:
                 urls.remove(i)
-                urls.append(0, i) # keep self in the beginning of the url list
+                urls.insert(0, i) # keep self in the beginning of the url list
             rev = {}
             for x, y in enumerate(urls):
                 rev[y] = x
