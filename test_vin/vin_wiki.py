@@ -317,8 +317,8 @@ class VinBlockWiki(object):
         self.q_t = self.q_t + self.q_t_bias.dimshuffle('x', 0) # batch * emb_dim
 
         # non-linear transformation
-        if (prm.query_tanh):
-            self.q = T.tanh(self.q)
+        #if (prm.query_tanh):
+        #    self.q = T.tanh(self.q)
 
         
         # create reword: R: [batchsize, N_pages]
@@ -343,19 +343,20 @@ class VinBlockWiki(object):
             self.w = init_weights_T(1, D, A)
             self.params.append(self.w)
         
-        self.w_local = theano.shared((np.ones((1, 1, A))*0.1).astype(theano.config.floatX))#init_weights_T(1, 1, A)
-        self.params.append(self.w_local)
+        #self.w_local = theano.shared((np.ones((1, 1, A))*0.1).astype(theano.config.floatX))#init_weights_T(1, 1, A)
+        #self.params.append(self.w_local)
 
         #self.full_w = self.w.dimshuffle('x', 0, 1);
         if (not prm.diagonal_action_mat):
             self.full_w = T.extra_ops.repeat(self.w, batchsize, axis = 0) # batchsize * D * A
 
         #self.full_w_local = self.w_local.dimshuffle('x', 'x', 0);
-        self.full_w_local = T.extra_ops.repeat(self.w_local, batchsize, axis = 0) # batchsize * 1 * A
+        #self.full_w_local = T.extra_ops.repeat(self.w_local, batchsize, axis = 0) # batchsize * 1 * A
 
-        self.R_full = self.R.dimshuffle(0, 1, 'x') # batchsize * N * 1
-        self.add_R = T.batched_dot(self.R_full, self.full_w_local) # batchsize * N * A
-        
+        #self.R_full = self.R.dimshuffle(0, 1, 'x') # batchsize * N * 1
+        #self.add_R = T.batched_dot(self.R_full, self.full_w_local) # batchsize * N * A
+	#self.add_R = T.extra_ops.repeat(self.R_full, A, axis = 2)        
+
         self.dense_q = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
         # Value Iteration
         for i in range(k - 1):
@@ -364,8 +365,9 @@ class VinBlockWiki(object):
             self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
             if (not prm.diagonal_action_mat):
                 self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
-            self.q = self.q + self.add_R
+            #self.q = self.q + self.add_R
             self.V = T.max(self.q, axis=2, keepdims=False) # batchsize * N
+	    self.V = self.V + self.R
 
         # Do last Conv Step
         self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
@@ -373,7 +375,7 @@ class VinBlockWiki(object):
         self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
         if (not prm.diagonal_action_mat):
             self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
-        self.q = self.q + self.add_R
+        #self.q = self.q + self.add_R
 	
 
         # fetch values for each state in S_in

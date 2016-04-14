@@ -41,11 +41,11 @@ cat_pages_path = '../data/cat_pages.pkl' # Path to save the dictionary that stor
 #  VIN parameters  #
 ####################
 query_map_linear = True
-query_weight_diag = False
+query_weight_diag = True
 query_weight_rank = 10
-query_tanh = True
+query_tanh = False
 diagonal_action_mat = True
-final_scale = True
+final_scale = False
 select_subset_data = 10
 output_wrong_predict = False
 
