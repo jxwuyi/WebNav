@@ -335,7 +335,12 @@ class VinBlockWiki(object):
         # create reword: R: [batchsize, N_pages]
         #   q: [batchsize, emb_dim]
         #   page_emb: [emb_dim, N_pages]
-        self.R = T.dot(self.q, page_emb) + T.dot(self.q_t, title_emb)
-        self.R = T.nnet.softmax(self.R)
+	self.alpha = theano.shared((np.random.random((1, 1)) * 0.1).astype(theano.config.floatX))
+	self.params.append(self.alpha)
+	self.alpha_full = T.extra_ops.repeat(self.alpha,batchsize, axis = 0)
+	self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
+        self.R = T.dot(self.q, page_emb) + self.alpha_full * T.dot(self.q_t, title_emb)
+        #self.R = T.dot(self.q_t, title_emb)
+	self.R = T.nnet.softmax(self.R)
         
 
