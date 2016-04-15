@@ -73,7 +73,7 @@ class vin(NNobj):
                                            outputs=[self.err, self.cost])
         self.y_out = theano.function(inputs=[self.Q_in, self.S_in], outputs=[self.y_pred])
 
-        self.y_full_out = theano.function(inputs=[Self.Q_in, self.S_in], outputs=[self.y_inc_order])
+        self.y_full_out = theano.function(inputs=[self.Q_in, self.S_in], outputs=[self.y_inc_order])
         
 
     def load_graph(self):  
