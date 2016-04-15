@@ -239,7 +239,7 @@ class vin(NNobj):
                             if (y_dat[i] in y_full[i][-prm.top_k_accuracy:]):
                                 tmp_err -= 1
                                 if (prm.perform_full_inference):
-                                    q_i, _, _ = test_entry[i + start]
+                                    q_i, s_i, y_i = test_entry[i + start]
                                     test_fail[q_i] -=1
                                     if (test_fail[q_i] == 0):
                                         test_success += 1
