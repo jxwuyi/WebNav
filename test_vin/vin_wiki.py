@@ -158,8 +158,8 @@ class vin(NNobj):
 
         train_n = len(train_entry)
         valid_n = len(valid_entry)
-        #test_n = len(test_entry)
-	test_n = len(test_entry) / 4 # current hack, to make things faster
+        test_n = len(test_entry)
+	#test_n = len(test_entry) / 4 # current hack, to make things faster
 
         self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
         self.train = theano.function(inputs=[self.Q_in, self.S_in, self.y], outputs=[], updates=self.updates)
@@ -202,9 +202,10 @@ class vin(NNobj):
             ##############
             if (prm.perform_full_inference):
                 total_trial = len(test_paths)
-                test_fail = [len(test_paths[j]) - 1 for j in xrange(total_trial)]
+                test_fail = [len(test_paths[j])-1 for j in xrange(total_trial)]
                 test_success = 0
             ##############
+            print 'test_n = %d ...' % (test_n)
             
             for start in xrange(0, test_n, batch_size):
                 end = start+batch_size
@@ -239,10 +240,11 @@ class vin(NNobj):
                             if (y_dat[i] in y_full[i][-prm.top_k_accuracy:]):
                                 tmp_err -= 1
                                 if (prm.perform_full_inference):
-                                    q_i, s_i, y_i = test_entry[i + start]
+                                    q_i, _, _ = test_entry[i + start]
                                     test_fail[q_i] -=1
                                     if (test_fail[q_i] == 0):
                                         test_success += 1
+   
                         testerr_ = tmp_err * 1.0 / batch_size
 
                     
