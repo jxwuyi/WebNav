@@ -65,11 +65,15 @@ class vin(NNobj):
         self.cost = -T.mean(T.log(self.p_of_y)[T.arange(self.y.shape[0]),
                                                self.y.flatten()], dtype=theano.config.floatX)
         self.y_pred = T.argmax(self.p_of_y, axis=1)
+        self.y_inc_order = T.argsort(self.p_of_y, axis = 1)
+        
         self.err = T.mean(T.neq(self.y_pred, self.y.flatten()), dtype=theano.config.floatX)
 
         self.computeloss = theano.function(inputs=[self.Q_in, self.S_in, self.y],
                                            outputs=[self.err, self.cost])
         self.y_out = theano.function(inputs=[self.Q_in, self.S_in], outputs=[self.y_pred])
+
+        self.y_full_out = theano.function(inputs=[Self.Q_in, self.S_in], outputs=[self.y_inc_order])
         
 
     def load_graph(self):  
@@ -173,21 +177,21 @@ class vin(NNobj):
             if (prm.select_subset_data > 0):
                 train_n_curr = train_n / prm.select_subset_data
             # do training
-            for start in xrange(0, train_n_curr, batch_size):
-                end = start+batch_size
-                if end <= train_n_curr:
-                    # prepare training data
-                    for i in xrange(start, end):
-                        q_i, s_i, y_i = train_entry[inds[i]]
-                        Q_dat[i-start, :] = train_queries[q_i, :]
-                        S_dat[i-start, 0] = s_i
-                        y_dat[i-start] = y_i
-                    
-                    self.train(Q_dat, S_dat, y_dat)
-		if ((start / batch_size) % 50 == 0):
-			print '>> finished batch %d / %d ... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, time.time()-tstart)             	
-        
-            elapsed = time.time() - tstart
+            if (not prm.only_predict): # we do need to perform training
+                for start in xrange(0, train_n_curr, batch_size):
+                    end = start+batch_size
+                    if end <= train_n_curr:
+                        # prepare training data
+                        for i in xrange(start, end):
+                            q_i, s_i, y_i = train_entry[inds[i]]
+                            Q_dat[i-start, :] = train_queries[q_i, :]
+                            S_dat[i-start, 0] = s_i
+                            y_dat[i-start] = y_i
+                        
+                        self.train(Q_dat, S_dat, y_dat)
+                    if ((start / batch_size) % 50 == 0):
+                            print '>> finished batch %d / %d ... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, time.time()-tstart)             	
+            
             # compute losses
             trainerr = 0.
             trainloss = 0.
@@ -205,6 +209,14 @@ class vin(NNobj):
                         S_dat[i-start, 0] = s_i
                         y_dat[i-start] = y_i
                     trainerr_, trainloss_ = self.computeloss(Q_dat, S_dat, y_dat)
+                    if (prm.top_k_accuracy != 1):  # compute top-k accuracy
+                        y_full = self.y_full_out(Q_dat, S_dat)[0]
+                        tmp_err = batch_size
+                        for i in xrange(start, end):
+                            if (y_dat[i] in y_full[i][-prm.top_k_accuracy:]):
+                                tmp_err -= 1
+                        trainerr_ = tmp_err * 1.0 / batch_size
+                    
                     # prepare testing data
                     for i in xrange(start, end):
                         q_i, s_i, y_i = test_entry[i]
@@ -212,10 +224,20 @@ class vin(NNobj):
                         S_dat[i-start, 0] = s_i
                         y_dat[i-start] = y_i
                     testerr_, testloss_ = self.computeloss(Q_dat, S_dat, y_dat)
+                    if (prm.top_k_accuracy != 1): # compute top-k accuracy
+                        y_full = self.y_full_out(Q_dat, S_dat)[0]
+                        tmp_err = batch_size
+                        for i in xrange(start, end):
+                            if (y_dat[i] in y_full[i][-prm.top_k_accuracy:]):
+                                tmp_err -= 1
+                        testerr_ = tmp_err * 1.0 / batch_size
+
+                    
                     trainerr += trainerr_
                     trainloss += trainloss_
                     testerr += testerr_
                     testloss += testloss_
+            elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
 
     # TODO

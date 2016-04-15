@@ -48,6 +48,8 @@ diagonal_action_mat = True
 final_scale = False
 select_subset_data = 10
 output_wrong_predict = False
+only_predict = True
+top_k_accuracy = 4
 
 
 
