@@ -212,7 +212,7 @@ class vin(NNobj):
                     if (prm.top_k_accuracy != 1):  # compute top-k accuracy
                         y_full = self.y_full_out(Q_dat, S_dat)[0]
                         tmp_err = batch_size
-                        for i in xrange(start, end):
+                        for i in xrange(batch_size):
                             if (y_dat[i] in y_full[i][-prm.top_k_accuracy:]):
                                 tmp_err -= 1
                         trainerr_ = tmp_err * 1.0 / batch_size
@@ -227,7 +227,7 @@ class vin(NNobj):
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
                         y_full = self.y_full_out(Q_dat, S_dat)[0]
                         tmp_err = batch_size
-                        for i in xrange(start, end):
+                        for i in xrange(batch_size):
                             if (y_dat[i] in y_full[i][-prm.top_k_accuracy:]):
                                 tmp_err -= 1
                         testerr_ = tmp_err * 1.0 / batch_size
