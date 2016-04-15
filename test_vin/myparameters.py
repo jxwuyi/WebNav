@@ -50,6 +50,7 @@ select_subset_data = 10
 output_wrong_predict = False
 only_predict = True
 top_k_accuracy = 4
+perform_full_inference = True
 
 
 

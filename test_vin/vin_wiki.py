@@ -198,6 +198,14 @@ class vin(NNobj):
             testerr = 0.
             testloss = 0.
             num = 0
+
+            ##############
+            if (prm.perform_full_inference):
+                total_trial = len(test_paths)
+                test_fail = [len(test_paths[j]) - 1 for j in xrange(total_trial)]
+                test_success = 0
+            ##############
+            
             for start in xrange(0, test_n, batch_size):
                 end = start+batch_size
                 if end <= test_n:  # assert(text_n <= train_n)
@@ -230,6 +238,11 @@ class vin(NNobj):
                         for i in xrange(batch_size):
                             if (y_dat[i] in y_full[i][-prm.top_k_accuracy:]):
                                 tmp_err -= 1
+                                if (prm.perform_full_inference):
+                                    q_i, _, _ = test_entry[i + start]
+                                    test_fail[q_i] -=1
+                                    if (test_fail[q_i] == 0):
+                                        test_success += 1
                         testerr_ = tmp_err * 1.0 / batch_size
 
                     
@@ -237,6 +250,10 @@ class vin(NNobj):
                     trainloss += trainloss_
                     testerr += testerr_
                     testloss += testloss_
+
+                    if (prm.perform_full_inference):
+                        print 'total sucess trails = %d over %d (percent: %f) ...' %(test_success, total_trial, (test_success*1.0 / total_trail))
+                        
             elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
 
