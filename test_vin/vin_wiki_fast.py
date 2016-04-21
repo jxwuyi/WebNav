@@ -109,8 +109,8 @@ class vin(NNobj):
             self.rev_idx.append(rev)
             n = len(urls)
             self.edge[0,ptr:ptr+n] = urls
-            if (n < D):
-                self.edge[0, ptr+n:ptr+D] = i
+            if (n < self.D):
+                self.edge[0, ptr+n:ptr+self.D] = i
             ptr += self.D
         
         self.q = qp.QP(prm.curr_query_path)
