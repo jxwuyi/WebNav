@@ -325,7 +325,7 @@ class VinBlockWiki(object):
 
         """
 
-        self.edge = np.repeat(edge, batchsize, axis = 0)
+        self.edge = np.repeat(edges, batchsize, axis = 0)
 
         self.params = []
         if (not prm.query_map_linear):
