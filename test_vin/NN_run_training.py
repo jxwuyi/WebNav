@@ -1,6 +1,6 @@
 from NNobj import *
 import vin_wiki_sanity as vn_san
-import vin_wiki as vn
+import vin_wiki_fast as vn
 import myparameters as prm
 
 
