@@ -94,7 +94,7 @@ class vin(NNobj):
         self.idx = self.wk.get_titles_pos()
 
         ptr = 0
-        self.edge = np.zeros((1,self.N * self.D), dtype = np.int32)
+        self.edges = np.zeros((1, self.N * self.D), dtype = np.int32)
         self.rev_idx = []
         for i in range(self.N):
             urls = self.wk.get_article_links(i)
@@ -108,9 +108,9 @@ class vin(NNobj):
                 rev[y] = x
             self.rev_idx.append(rev)
             n = len(urls)
-            self.edge[0,ptr:ptr+n] = urls
+            self.edges[0,ptr:ptr+n] = urls
             if (n < self.D):
-                self.edge[0, ptr+n:ptr+self.D] = i
+                self.edges[0, ptr+n:ptr+self.D] = i
             ptr += self.D
         
         self.q = qp.QP(prm.curr_query_path)
