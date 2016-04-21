@@ -326,6 +326,7 @@ class VinBlockWiki(object):
         """
 
         self.edge = np.repeat(edges, batchsize, axis = 0)
+        self.edge = self.edge.flatten()
 
         self.params = []
         if (not prm.query_map_linear):
@@ -416,7 +417,7 @@ class VinBlockWiki(object):
         # Do last Conv Step
         #self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
         #self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
-        self.nq = self.V[T.extra_ops.repeat(T.arange(batchsize), N * D), self.edge.flatten()] # (batchsize * N * D)
+        self.nq = self.V[T.extra_ops.repeat(T.arange(batchsize), N * D), self.edge] # (batchsize * N * D)
         self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
         if (not prm.diagonal_action_mat):
             self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
