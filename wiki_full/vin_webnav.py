@@ -445,7 +445,7 @@ class VinBlockWiki(object):
         self.H = T.concatenate([Q_in, S_in], axis = 1) # combined vector for query and local page, 1 * (emb_dim * 2)
 
         # now only a single tanh layer
-        self.proj_dim = self.emb_dim # probably larger proj dim??????
+        self.proj_dim = emb_dim # probably larger proj dim??????
         
         self.H_W = init_weights_T(2 * emb_dim, emb_dim)
         self.params.append(self.H_W)
