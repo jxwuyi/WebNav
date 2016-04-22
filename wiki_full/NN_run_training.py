@@ -32,7 +32,7 @@ def main():
 
     if (args.model == "valIterWebNav"):
         # VI network
-        my_nn = vn.vin(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
+        my_nn = vn.vin_web(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     k=args.k)
@@ -44,7 +44,7 @@ def main():
 
     #try
     
-        my_nn.run_training(stepsize=args.stepsize, epochs=args.epochs,
+    my_nn.run_training(stepsize=args.stepsize, epochs=args.epochs,
                            grad_check=args.grad_check)
     #except KeyboardInterrupt:
     #    print "Training interupted!!!"
