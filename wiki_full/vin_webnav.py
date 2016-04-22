@@ -39,7 +39,7 @@ class vin_web(NNobj):
         # A input: embedding for adjacent pages to the current state
         self.A_in = T.fmatrix('A_in')  # emb_dim * max_degree
         # output action
-        self.y = T.iscalar("y")        # 
+        self.y = T.ivector("y")        # actuall 1 * 1
 
         #l = 2   # channels in input layer
         #l_h = 150  # channels in initial hidden layer
@@ -167,7 +167,7 @@ class vin_web(NNobj):
 
         Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
         S_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim  
-
+        y_dat = np.zeros((1, 1), dtype = np.int32)
 
         fs = h5py.File(prm.pages_emb_path, 'r', driver='core')
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
@@ -196,10 +196,10 @@ class vin_web(NNobj):
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
                     for _k, _v in enumerate(links_dat):
                         if (_v == y_i):
-                            k_i = _k
+                            y_dat[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]
 
-                    self.train(Q_dat, S_dat, A_dat, k_i)
+                    self.train(Q_dat, S_dat, A_dat, y_dat)
                     end = start + batch_size
                     
                     if (start % 1000 == 0):
@@ -233,8 +233,9 @@ class vin_web(NNobj):
                     for _k, _v in enumerate(links_dat):
                         if (_v == y_i):
                             k_i = _k
+                            y_dat[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]         
-                    trainerr_, trainloss_ = self.computeloss(Q_dat, S_dat, A_dat, k_i)
+                    trainerr_, trainloss_ = self.computeloss(Q_dat, S_dat, A_dat, y_dat)
                     if (prm.top_k_accuracy != 1):  # compute top-k accuracy
                         y_full = self.y_full_out(Q_dat, S_dat, A_dat)[0]
                         tmp_err = 1
@@ -252,8 +253,9 @@ class vin_web(NNobj):
                     for _k, _v in enumerate(links_dat):
                         if (_v == y_i):
                             k_i = _k
+                            y_dat[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]         
-                    testerr_, testloss_ = self.computeloss(Q_dat, S_dat, A_dat, k_i)
+                    testerr_, testloss_ = self.computeloss(Q_dat, S_dat, A_dat, y_dat)
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
                         y_full = self.y_full_out(Q_dat, S_dat)[0]
                         tmp_err = 1
