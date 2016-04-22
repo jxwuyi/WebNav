@@ -430,8 +430,8 @@ class VinBlockWiki(object):
         # compute mapping from wiki_school reward to page reward
         self.p_W = init_weights_T(1, emb_dim);
         self.params.append(self.p_W);
-        self.page_W = T.extra_ops.repeat(self.p_W, self.A_in.shape[1], axis = 0) # deg * emb_dim
-        self.coef_A = self.A_in * self.page_W.T # emb_dim * deg
+        self.page_W = T.extra_ops.repeat(self.p_W, A_in.shape[1], axis = 0) # deg * emb_dim
+        self.coef_A = A_in * self.page_W.T # emb_dim * deg
         self.p_bias = init_weights_T(emb_dim)
         self.params.append(self.p_bias)
         self.coef_A = self.coef_A + self.p_bias.dimshuffle(0, 'x') # emb_dim * deg
@@ -471,7 +471,7 @@ class VinBlockWiki(object):
         self.params.append(self.alpha_bias2)
         self.alpha = T.nnet.sigmoid(T.dot(self.a_hid, self.alpha_W2) + self.alpha_bias2) # 1 * 1
         # repeat
-        self.alpha_full = T.extra_ops.repeat(self.alpha, self.A_in.shape[1], axis = 1) # 1 * deg
+        self.alpha_full = T.extra_ops.repeat(self.alpha, A_in.shape[1], axis = 1) # 1 * deg
         self.page_extra = self.page_R * self.alpha_full
 
 
