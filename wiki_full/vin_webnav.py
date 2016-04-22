@@ -78,6 +78,8 @@ class vin_web(NNobj):
         :type edges: scipy.sparse.csc_matrix
         :param edges: adjacency matrix, of shape [N_pages, N_pages * D], column sparse
         """
+        tstart = time.time()
+        
         fs = h5py.File(prm.school_pages_emb_path, 'r', driver='core')
         self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         for i in range(self.N):
@@ -109,6 +111,9 @@ class vin_web(NNobj):
         self.school_title_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         for i in range(self.N):
             self.school_title_emb[:, i] = self.q.get_content_embed(self.wk.get_article_content(i))
+
+        elap = time.time() - tstart
+        print ' >>> time elapsed: %f' % (elap)
 
     def reward_checking(self, queries, paths, page_emb):
         """
