@@ -244,7 +244,7 @@ class vin_web(NNobj):
                         trainerr_ = tmp_err * 1.0 / batch_size
                     
                     # prepare testing data
-                    q_i, s_i, y_i = test_entry[start]
+                    q_i, s_i, y_i = test_entry[inds[start]]
                     Q_dat[0, :] = test_queries[q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
