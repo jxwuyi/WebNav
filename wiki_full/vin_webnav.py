@@ -469,7 +469,7 @@ class VinBlockWiki(object):
         #  another layer to a scalar
         self.alpha_W2 = init_weights_T(self.alpha_dim, 1)
         self.params.append(self.alpha_W2)
-        self.alpha_bias2 = init_weights_T(self.alpha_dim, 1)
+        self.alpha_bias2 = init_weights_T(1, 1)
         self.params.append(self.alpha_bias2)
         self.alpha = T.nnet.sigmoid(T.dot(self.a_hid, self.alpha_W2) + self.alpha_bias2) # 1 * 1
         # repeat
