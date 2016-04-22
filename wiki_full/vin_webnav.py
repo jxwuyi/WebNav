@@ -451,7 +451,7 @@ class VinBlockWiki(object):
         self.params.append(self.H_W)
         self.H_bias = init_weights_T(1, emb_dim)
         self.params.append(self.H_bias)
-        self.H_proj = T.nnet.tanh(T.dot(self.H, self.H_W) + self.H_bias)
+        self.H_proj = T.tanh(T.dot(self.H, self.H_W) + self.H_bias)
         # do we need one more layer here???
 
         self.orig_R = T.dot(self.H_proj, A_in)  # 1 * deg
