@@ -46,11 +46,11 @@ query_weight_rank = 10
 query_tanh = False
 diagonal_action_mat = True
 final_scale = False
-select_subset_data = 10
+select_subset_data = 0
 output_wrong_predict = False
-only_predict = True
-top_k_accuracy = 4
-perform_full_inference = True
+only_predict = False
+top_k_accuracy = 1
+perform_full_inference = False
 
 
 
