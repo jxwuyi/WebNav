@@ -49,7 +49,7 @@ class vin_web(NNobj):
 
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in=self.S_in, A_in=self.A_in,
                                     N = self.N, D = self.D, emb_dim = self.emb_dim,
-                                    page_emb = self.page_emb, title_emb = self.title_emb,
+                                    page_emb = self.school_emb, title_emb = self.school_title_emb,
                                     edges = self.edges,
                                     k=self.k)
         self.p_of_y = self.vin_net.output
