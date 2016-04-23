@@ -203,7 +203,7 @@ class vin_web(NNobj):
                     end = start + batch_size
                     
                     if (start % 1000 == 0):
-                            print '>> finished batch %d / %d (%f percent)... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, (1.0 * end) / batch_size, time.time()-tstart)             	
+                            print '>> finished batch %d / %d (%f percent)... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, (100.0 * end) / train_n_curr, time.time()-tstart)             	
             
             # compute losses
             trainerr = 0.
