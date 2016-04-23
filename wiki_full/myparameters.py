@@ -53,7 +53,7 @@ output_wrong_predict = False
 only_predict = False
 top_k_accuracy = 1
 perform_full_inference = False
-report_elap_gap = 5000
+report_elap_gap = 20000
 
 
 
