@@ -42,12 +42,12 @@ def main():
         print('warmstarting...')
         my_nn.load_weights(args.warmstart)
 
-    #try
+    try
     
-    my_nn.run_training(stepsize=args.stepsize, epochs=args.epochs,
+        my_nn.run_training(stepsize=args.stepsize, epochs=args.epochs,
                            grad_check=args.grad_check)
-    #except KeyboardInterrupt:
-    #    print "Training interupted!!!"
+    except KeyboardInterrupt:
+        print "Training interupted!!!"
 
     print "Saving Weights ..."
         

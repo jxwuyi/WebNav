@@ -202,7 +202,8 @@ class vin_web(NNobj):
                     self.train(Q_dat, S_dat, A_dat, y_dat)
                     end = start + batch_size
                     
-                    if (start % 1000 == 0):
+                    if ((prm.report_elap_gap > 0)
+                        and (start % prm.report_elap_gap == 0)):
                             print '>> finished batch %d / %d (%f percent)... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, (100.0 * end) / train_n_curr, time.time()-tstart)             	
             
             # compute losses
