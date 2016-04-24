@@ -21,6 +21,7 @@ def main():
     parser.add_argument("--warmstart", default="None")
     parser.add_argument("--reg", type=float, default=.0)
     parser.add_argument("--imsize", type=int, default=28)
+    parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--k", type=int, default=10)
     parser.add_argument("--A", type=int, default=300)
     parser.add_argument("--batchsize", type=int, default=128)
@@ -35,7 +36,7 @@ def main():
         my_nn = vn.vin_web(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
-                    k=args.k)
+                    k=args.k, seed = args.seed)
         
         
     if args.warmstart != "None":

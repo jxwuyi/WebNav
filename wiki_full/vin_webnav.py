@@ -12,7 +12,7 @@ class vin_web(NNobj):
     "Class for a neural network that does k iterations of value iteration"
     def __init__(self, model="valIterWebNav", N = 6072, D = 279, emb_dim = 300,
                  dropout=False, devtype="cpu",
-                 grad_check=False, reg=0, k=10):
+                 grad_check=False, reg=0, k=10, seed = 0):
         self.N = N                            # Number of pages
         self.D = D + 1                        # Number of max outgoing links per page + 1 (including self)
         self.emb_dim = emb_dim                # Dimension of word embedding
@@ -24,7 +24,7 @@ class vin_web(NNobj):
         #self.batchsize = batchsize            # batch size for training
         #self.maxhops = maxhops+1              # number of state inputs for every query,
                                               #     here simply the number of hops per query + 1 (including stop)
-        np.random.seed(0)
+        np.random.seed(seed)
         print(model)
         #theano.config.blas.ldflags = "-L/usr/local/lib -lopenblas"
 
