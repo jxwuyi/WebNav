@@ -10,3 +10,14 @@ THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32' python NN_run_training.py
 
 THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32' python NN_run_training.py --output ~/WebNav/temp/wiki_full/WebNavVIN.pk --epochs 10 --model valIterWebNav --stepsize 0.001 --reg 0.0 --k 5 --warmstart ~/WebNav/temp/wiki_full/WebNavVIN.pk
 
+
+
+>>>>>>>>>>>>>>>>>>>>>>>
+
+runnning baseline model
+
+THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32' python NN_run_training.py --output ~/WebNav/temp/wiki_full/WebNavBSL.pk --epochs 10 --model WikiBaseLine --stepsize 0.01 --reg 0.0 -- seed 0
+
+###### WarmStart
+
+THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32' python NN_run_training.py --output ~/WebNav/temp/wiki_full/WebNavBSL.pk --epochs 10 --model WikiBaseLine --stepsize 0.01 --reg 0.0 -- seed 0 --warmstart ~/WebNav/temp/wiki_full/WebNavBSL.pk
