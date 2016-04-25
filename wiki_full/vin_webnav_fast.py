@@ -50,7 +50,7 @@ class vin_web(NNobj):
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in=self.S_in, A_in=self.A_in,
                                     N = self.N, D = self.D, emb_dim = self.emb_dim,
                                     page_emb = self.school_emb, title_emb = self.school_title_emb,
-                                    edges = self.edges,
+                                    l_idx=self.l_idx,r_row=self.r_row,r_col=self.r_col,
                                     k=self.k)
         self.p_of_y = self.vin_net.output
         self.params = self.vin_net.params
@@ -315,7 +315,8 @@ class vin_web(NNobj):
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
     def __init__(self, Q_in, S_in, A_in, N, D, emb_dim,
-                 page_emb, title_emb, edges,
+                 page_emb, title_emb,
+                 l_idx, r_row, r_col,
                  k):
         """
         Allocate a VIN block with shared variable internal parameters.
@@ -331,9 +332,6 @@ class VinBlockWiki(object):
 
         :type page_emb: np.fmatrix
         :param page_emb: input data, embedding for each page, of shape [emb_dim, N_pages]
-
-        :type edges: scipy.sparse.csc_matrix
-        :param edges: adjacency matrix, of shape [N_pages, N_pages * D], column sparse
 
         :type N: int32
         :param N: number of pages
@@ -427,7 +425,7 @@ class VinBlockWiki(object):
         for i in range(k):
             #self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
             #self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
-            self.nq = T.set_subtensor(self.dense_q[self.l_idx], self.V[self.r_row, self.r_col])
+            self.nq = T.set_subtensor(self.dense_q[l_idx], self.V[r_row, r_col])
             self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
             #if (not prm.diagonal_action_mat):
             #    self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
