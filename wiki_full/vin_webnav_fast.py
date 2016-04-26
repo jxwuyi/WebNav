@@ -80,7 +80,7 @@ class vin_web(NNobj):
         """
         tstart = time.time()
         
-        fs = h5py.File(prm.school_pages_emb_path, 'r', driver='core')
+        fs = h5py.File(prm.school_pages_emb_path, 'r')
         self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         for i in range(self.N):
             self.school_emb[:, i] = fs['emb'][i]
@@ -110,6 +110,10 @@ class vin_web(NNobj):
         #n = len(col_idx)
         #dat_arr = np.ones(n, dtype=theano.config.floatX)     
         #self.edges = SS.csc_matrix((dat_arr, (row_idx, col_idx)), shape=(self.N, self.N * self.D), dtype=theano.config.floatX)
+
+        self.l_idx = np.asarray(self.l_idx, dtype = np.int32)
+        self.r_row = np.asarray(self.r_row, dtype = np.int32)
+        self.r_col = np.asarray(self.r_col, dtype = np.int32)
 
         self.q = qp.QP(prm.curr_query_path) # query for webnav task
         self.school_title_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
@@ -347,11 +351,11 @@ class VinBlockWiki(object):
 
         """
 
-        self.page_emb = T.as_tensor_variable(page_emb, name='page_emb', dtype = theano.config.floatX)
-        self.title_emb = T.as_tensor_variable(title_emb, name='title_emb', dtype = theano.config.floatX)
-        self.l_idx = T.as_tensor_variable(l_idx, name='l_idx', dtype = np.int32)
-        self.r_row = T.as_tensor_variable(r_row, name='r_row', dtype = np.int32)
-        self.r_col = T.as_tensor_variable(r_col, name='r_col', dtype = np.int32)
+        self.page_emb = T.as_tensor_variable(page_emb, name='page_emb')
+        self.title_emb = T.as_tensor_variable(title_emb, name='title_emb')
+        self.l_idx = T.as_tensor_variable(l_idx, name='l_idx')
+        self.r_row = T.as_tensor_variable(r_row, name='r_row')
+        self.r_col = T.as_tensor_variable(r_col, name='r_col')
 
         batchsize = 1
         self.params = []
