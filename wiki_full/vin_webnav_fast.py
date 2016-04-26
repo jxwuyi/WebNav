@@ -435,8 +435,8 @@ class VinBlockWiki(object):
         # Value Iteration
         for i in range(k):
             #self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
-            self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
-            #self.nq = T.set_subtensor(self.nq[self.l_idx], self.V[self.r_row, self.r_col])
+            #self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
+            self.nq = T.set_subtensor(self.dense_q[self.l_idx], self.V[self.r_row, self.r_col])
             self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
             #if (not prm.diagonal_action_mat):
             #    self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
