@@ -347,5 +347,5 @@ class BaseLineBlockWiki(object):
 
         self.R = T.dot(self.H_proj, A_in)  # batchsize * deg
 
-        self.output = T.nnet.softmax(self.reward)
+        self.output = T.nnet.softmax(self.R)
         
