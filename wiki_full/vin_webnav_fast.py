@@ -351,11 +351,11 @@ class VinBlockWiki(object):
 
         """
 
-        self.page_emb = theano.sandbox.cuda.var.float32_shared_constructor(page_emb)
-        self.title_emb = theano.sandbox.cuda.var.float32_shared_constructor(title_emb)
-        self.l_idx = theano.sandbox.cuda.var.float32_shared_constructor(l_idx)
-        self.r_row = theano.sandbox.cuda.var.float32_shared_constructor(r_row)
-        self.r_col = theano.sandbox.cuda.var.float32_shared_constructor(r_col)
+        self.page_emb = theano.sandbox.cuda.var.CudaNdarrayConstant(type=theano.config.floatX,value=page_emb,name='page_emb')
+        self.title_emb = theano.sandbox.cuda.var.CudaNdarrayConstant(type=theano.config.floatX,value=title_emb,name='title_emb')
+        self.l_idx = theano.sandbox.cuda.var.CudaNdarrayConstant(type=np.int32, value=np.asarray(l_idx,dtype=int32), name='l_idx')
+        self.r_row = theano.sandbox.cuda.var.CudaNdarrayConstant(type=np.int32, value=np.asarray(r_row,dtype=int32), name='r_row')
+        self.r_col = theano.sandbox.cuda.var.CudaNdarrayConstant(type=np.int32, value=np.asarray(r_col,dtype=int32), name='r_col')
 
         batchsize = 1
         self.params = []
@@ -431,7 +431,7 @@ class VinBlockWiki(object):
 	#self.add_R = T.extra_ops.repeat(self.R_full, A, axis = 2)        
 
         #self.dense_q = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
-        self.dense_q = theano.sandbox.cuda.CudaNdarray.zeros((batchsize * N * D), theano.config.floatX)
+        self.dense_q = theano.sandbox.cuda.var.float32_shared_constructor(np.zeros(batchsize * N * D).astype(np.float32))
         # Value Iteration
         for i in range(k):
             #self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
