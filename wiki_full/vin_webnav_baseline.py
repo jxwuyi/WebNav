@@ -342,7 +342,7 @@ class BaseLineBlockWiki(object):
         self.S = T.extra_ops.repeat(S_in, Q_in.shape[0], axis = 0) # batchsize * emb_dim
 
         # tanh layer for local information 
-        self.H = T.concatenate([Q_in, S_in], axis = 1) # combined vector for query and local page, batchsize * (emb_dim * 2)
+        self.H = T.concatenate([Q_in, self.S], axis = 1) # combined vector for query and local page, batchsize * (emb_dim * 2)
 
         # now only a single tanh layer
         self.proj_dim = emb_dim # probably larger proj dim??????
