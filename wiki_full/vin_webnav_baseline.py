@@ -119,17 +119,31 @@ class vin_web(NNobj):
         for x in train_entry:
             if (x[1] in cnt):
                 cnt[x[1]] += 1
-                ver_pos[x[1]] = m
-                m += 1
             else:
                 cnt[x[1]] = 1
+		ver_pos[x[1]] = m
+                m += 1
 
         full_wk = wiki.Wiki(prm.pages_path)
+
+
+	fs = h5py.File(prm.pages_emb_path, 'r', driver='core')
 
         tmp_elap = time.time() - tmp_tstart
         print ' >>> time elapsed: %f' % (tmp_elap)
 
-        print 'Training on baseline wiki model starts ...'
+	
+	print 'Allocate Memory ...'
+	tmp_tstart = time.time()
+
+	Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # batchsize * emb_dim
+        Q_sig = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
+        S_dat = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
+        y_sig = np.zeros(1, dtype = np.int32) # 1
+
+	tmp_elap = time.time() - tmp_tstart
+        print ' >>> time elapsed: %f' % (tmp_elap)
+
 
         #valid_n = len(valid_entry)
         if (prm.only_predict):
@@ -140,16 +154,11 @@ class vin_web(NNobj):
         self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
         self.train = theano.function(inputs=[self.Q_in, self.S_in, self.A_in, self.y], outputs=[], updates=self.updates)
 
-        Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # batchsize * emb_dim
-        Q_sig = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
-        S_dat = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
-        y_sig = np.zeros(1, dtype = np.int32) # 1
-
-        fs = h5py.File(prm.pages_emb_path, 'r', driver='core')
+       
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         #for i in range(self.N):
         #    self.school_emb[:, i] = fs['emb'][i]
-        
+        print 'Training on baseline wiki model starts ...'
         print 'train_n = %d ...' % (train_n)
         print 'test_n = %d ...' % (test_n)
          
