@@ -351,7 +351,7 @@ class VinBlockWiki(object):
 
         """
 
-        self.page_emb = theano.shared(page_emb, borrow=False)
+        self.page_emb = theano.sandbox.cuda.var.CudaNdarrayConstant(page_emb)
         self.title_emb = theano.shared(title_emb, borrow=False)
         self.l_idx = theano.shared(l_idx, borrow=False)
         self.r_row = theano.shared(r_row, borrow=False)
