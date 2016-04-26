@@ -351,11 +351,17 @@ class VinBlockWiki(object):
 
         """
 
-        self.page_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=page_emb,name='page_emb',strict=False)
-        self.title_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=title_emb,name='title_emb',strict=False)
-        self.l_idx = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(l_idx,dtype=int32), name='l_idx',strict=False)
-        self.r_row = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(r_row,dtype=int32), name='r_row',strict=False)
-        self.r_col = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(r_col,dtype=int32), name='r_col',strict=False)
+        #self.page_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=page_emb,name='page_emb',strict=False)
+        #self.title_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=title_emb,name='title_emb',strict=False)
+        #self.l_idx = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(l_idx,dtype=int32), name='l_idx',strict=False)
+        #self.r_row = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(r_row,dtype=int32), name='r_row',strict=False)
+        #self.r_col = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(r_col,dtype=int32), name='r_col',strict=False)
+
+        self.page_emb = theano.shared(page_emb, borrow=False)
+        self.title_emb = theano.shared(title_emb, borrow=False)
+        self.l_idx = theano.shared(l_idx, borrow=False)
+        self.r_row = theano.shared(r_row, borrow=False)
+        self.r_col = theano.shared(r_col, borrow=False)
 
         batchsize = 1
         self.params = []
@@ -430,8 +436,8 @@ class VinBlockWiki(object):
         #self.add_R = T.batched_dot(self.R_full, self.full_w_local) # batchsize * N * A
 	#self.add_R = T.extra_ops.repeat(self.R_full, A, axis = 2)        
 
-        #self.dense_q = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
-        self.dense_q = theano.sandbox.cuda.var.float32_shared_constructor(np.zeros(batchsize * N * D).astype(np.float32))
+        self.dense_q = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
+        #self.dense_q = theano.sandbox.cuda.var.float32_shared_constructor(np.zeros(batchsize * N * D).astype(np.float32))
         # Value Iteration
         for i in range(k):
             #self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
