@@ -127,7 +127,7 @@ class vin_web(NNobj):
         full_wk = wiki.Wiki(prm.pages_path)
 
 
-	fs = h5py.File(prm.pages_emb_path, 'r', driver='core')
+	fs = h5py.File(prm.pages_emb_path, 'r')
 
         tmp_elap = time.time() - tmp_tstart
         print ' >>> time elapsed: %f' % (tmp_elap)
@@ -169,6 +169,8 @@ class vin_web(NNobj):
             ver_prior = np.random.permutation(m)
             inds = sorted(np.random.permutation(train_n), key=lambda x:ver_prior[ver_pos[train_entry[x][1]]])
             
+	    print ' >> sort time : %f s' %(time.time() - tstart)
+
             train_n_curr = train_n
             if (prm.select_subset_data > 0):
                 train_n_curr = train_n / prm.select_subset_data
@@ -186,7 +188,7 @@ class vin_web(NNobj):
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
                     adj_ind = {}
                     for _k, _v in enumerate(links_dat):
-                        adj[_v] = _k
+                        adj_ind[_v] = _k
                         A_dat[:, _k] = fs['emb'][_v]
                     
                     n = cnt[s]
