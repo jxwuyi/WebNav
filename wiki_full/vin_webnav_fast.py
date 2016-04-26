@@ -430,8 +430,8 @@ class VinBlockWiki(object):
         #self.add_R = T.batched_dot(self.R_full, self.full_w_local) # batchsize * N * A
 	#self.add_R = T.extra_ops.repeat(self.R_full, A, axis = 2)        
 
-        #self.dense_q = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
-        self.nq = theano.shared(np.zeros(batchsize * N * D).astype(theano.config.floatX))
+        self.nq = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
+        #self.nq = theano.shared(np.zeros(batchsize * N * D).astype(theano.config.floatX))
         # Value Iteration
         for i in range(k):
             #self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
