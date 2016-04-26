@@ -362,9 +362,9 @@ class VinBlockWiki(object):
 
         self.page_emb = theano.shared(page_emb, borrow=False)
         self.title_emb = theano.shared(title_emb, borrow=False)
-        self.l_idx = theano.shared(l_idx, borrow=False)
-        self.r_row = theano.shared(r_row, borrow=False)
-        self.r_col = theano.shared(r_col, borrow=False)
+        self.l_idx = theano.shared(np.asarray(l_idx).astype(theano.config.floatX), borrow=False)
+        self.r_row = theano.shared(np.asarray(r_row).astype(theano.config.floatX), borrow=False)
+        self.r_col = theano.shared(np.asarray(r_col).astype(theano.config.floatX), borrow=False)
         self.dense_q = theano.shared(np.zeros(batchsize * N * D).astype(theano.config.floatX), borrow=False)
         self.subset = self.dense_q[l_idx]
 
