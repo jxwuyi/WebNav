@@ -351,11 +351,11 @@ class VinBlockWiki(object):
 
         """
 
-        self.page_emb = T.as_tensor_variable(page_emb, name='page_emb')
-        self.title_emb = T.as_tensor_variable(title_emb, name='title_emb')
-        self.l_idx = T.as_tensor_variable(l_idx, name='l_idx')
-        self.r_row = T.as_tensor_variable(r_row, name='r_row')
-        self.r_col = T.as_tensor_variable(r_col, name='r_col')
+        self.page_emb = theano.shared(page_emb, borrow=False)
+        self.title_emb = theano.shared(title_emb, borrow=False)
+        self.l_idx = theano.shared(l_idx, borrow=False)
+        self.r_row = theano.shared(r_row, borrow=False)
+        self.r_col = theano.shared(r_col, borrow=False)
 
         batchsize = 1
         self.params = []
@@ -430,13 +430,13 @@ class VinBlockWiki(object):
         #self.add_R = T.batched_dot(self.R_full, self.full_w_local) # batchsize * N * A
 	#self.add_R = T.extra_ops.repeat(self.R_full, A, axis = 2)        
 
-        self.dense_q = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
-        #self.nq = theano.shared(np.zeros(batchsize * N * D).astype(theano.config.floatX))
+        #self.dense_q = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
+        self.nq = theano.shared(np.zeros(batchsize * N * D).astype(theano.config.floatX), borrow = False)
         # Value Iteration
         for i in range(k):
             #self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
             #self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
-            self.nq = T.set_subtensor(self.dense_q[self.l_idx], self.V[self.r_row, self.r_col])
+            self.nq = T.set_subtensor(self.nq[self.l_idx], self.V[self.r_row, self.r_col])
             self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
             #if (not prm.diagonal_action_mat):
             #    self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
