@@ -351,6 +351,9 @@ class VinBlockWiki(object):
 
         """
 
+        batchsize = 1
+        self.params = []
+
         #self.page_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=page_emb,name='page_emb',strict=False)
         #self.title_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=title_emb,name='title_emb',strict=False)
         #self.l_idx = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(l_idx,dtype=int32), name='l_idx',strict=False)
@@ -365,8 +368,7 @@ class VinBlockWiki(object):
         self.dense_q = theano.shared(np.zeros(batchsize * N * D).astype(theano.config.floatX), borrow=False)
         self.subset = self.dense_q[l_idx]
 
-        batchsize = 1
-        self.params = []
+        
         if (not prm.query_map_linear):
             print 'Now we only support linear transformation over query embedding'
         # Q_in * W
