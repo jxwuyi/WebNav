@@ -362,6 +362,8 @@ class VinBlockWiki(object):
         self.l_idx = theano.shared(l_idx, borrow=False)
         self.r_row = theano.shared(r_row, borrow=False)
         self.r_col = theano.shared(r_col, borrow=False)
+        self.dense_q = theano.shared(np.zeros(batchsize * N * D).astype(theano.config.floatX), borrow=False)
+        self.subset = self.dense_q[l_idx]
 
         batchsize = 1
         self.params = []
@@ -436,13 +438,13 @@ class VinBlockWiki(object):
         #self.add_R = T.batched_dot(self.R_full, self.full_w_local) # batchsize * N * A
 	#self.add_R = T.extra_ops.repeat(self.R_full, A, axis = 2)        
 
-        self.dense_q = T.zeros(batchsize * N * D, dtype = theano.config.floatX)
+        self.rhs = self.V[self.r_row, self.r_col]
         #self.dense_q = theano.sandbox.cuda.var.float32_shared_constructor(np.zeros(batchsize * N * D).astype(np.float32))
         # Value Iteration
         for i in range(k):
             #self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
             #self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
-            self.nq = T.set_subtensor(self.dense_q[self.l_idx], self.V[self.r_row, self.r_col])
+            self.nq = T.set_subtensor(self.subset, self.rhs)
             self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
             #if (not prm.diagonal_action_mat):
             #    self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
