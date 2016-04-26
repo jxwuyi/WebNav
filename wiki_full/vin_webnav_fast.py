@@ -173,7 +173,7 @@ class vin_web(NNobj):
         S_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim  
         y_dat = np.zeros(1, dtype = np.int32)
 
-        fs = h5py.File(prm.pages_emb_path, 'r', driver='core')
+        fs = h5py.File(prm.pages_emb_path, 'r')
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         #for i in range(self.N):
         #    self.school_emb[:, i] = fs['emb'][i]
@@ -347,6 +347,12 @@ class VinBlockWiki(object):
 
         """
 
+        self.page_emb = T.TensorConstant(page_emb, dtype = theano.config.floatX)
+        self.title_emb = T.TensorConstant(title_emb, dtype = theano.config.floatX)
+        self.l_idx = T.TensorConstant(l_idx, dtype = np.int32)
+        self.r_row = T.TensorConstant(r_row, dtype = np.int32)
+        self.r_col = T.TensorConstant(r_col, dtype = np.int32)
+
         batchsize = 1
         self.params = []
         if (not prm.query_map_linear):
@@ -391,7 +397,7 @@ class VinBlockWiki(object):
 	self.params.append(self.alpha)
 	self.alpha_full = T.extra_ops.repeat(self.alpha,batchsize, axis = 0)
 	self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
-        self.R = T.dot(self.q, page_emb) + self.alpha_full * T.dot(self.q_t, title_emb)
+        self.R = T.dot(self.q, self.page_emb) + self.alpha_full * T.dot(self.q_t, self.title_emb)
         #self.R = T.dot(self.q_t, title_emb)
 	self.R = T.nnet.softmax(self.R)
 	
@@ -425,7 +431,7 @@ class VinBlockWiki(object):
         for i in range(k):
             #self.tq = TS.basic.structured_dot(self.V, edges) # batchsize * (N * D)
             #self.nq = T.set_subtensor(self.dense_q[:], self.tq.flatten())
-            self.nq = T.set_subtensor(self.dense_q[l_idx], self.V[r_row, r_col])
+            self.nq = T.set_subtensor(self.dense_q[self.l_idx], self.V[self.r_row, self.r_col])
             self.q = T.reshape(self.nq, (batchsize, N, D)) # batchsize * N * D
             #if (not prm.diagonal_action_mat):
             #    self.q = T.batched_dot(self.q, self.full_w) # batchsize * N * A
@@ -442,7 +448,7 @@ class VinBlockWiki(object):
         self.params.append(self.p_bias)
         self.coef_A = self.coef_A + self.p_bias.dimshuffle(0, 'x') # emb_dim * deg
         
-        self.page_R = T.dot(self.coef_A.T, page_emb)  # deg * N
+        self.page_R = T.dot(self.coef_A.T, self.page_emb)  # deg * N
         self.page_R = T.nnet.softmax(self.page_R)  # deg * N
         self.page_R = T.dot(self.page_R,self.V.T) # deg * 1
         self.page_R = self.page_R.T # 1 * deg

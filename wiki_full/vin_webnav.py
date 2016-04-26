@@ -169,7 +169,7 @@ class vin_web(NNobj):
         S_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim  
         y_dat = np.zeros(1, dtype = np.int32)
 
-        fs = h5py.File(prm.pages_emb_path, 'r', driver='core')
+        fs = h5py.File(prm.pages_emb_path, 'r')
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         #for i in range(self.N):
         #    self.school_emb[:, i] = fs['emb'][i]
