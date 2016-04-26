@@ -366,7 +366,6 @@ class VinBlockWiki(object):
         self.r_row = theano.shared(np.asarray(r_row).astype(theano.config.floatX), borrow=False)
         self.r_col = theano.shared(np.asarray(r_col).astype(theano.config.floatX), borrow=False)
         self.dense_q = theano.shared(np.zeros(batchsize * N * D).astype(theano.config.floatX), borrow=False)
-        self.subset = self.dense_q[l_idx]
 
         
         if (not prm.query_map_linear):
@@ -440,7 +439,14 @@ class VinBlockWiki(object):
         #self.add_R = T.batched_dot(self.R_full, self.full_w_local) # batchsize * N * A
 	#self.add_R = T.extra_ops.repeat(self.R_full, A, axis = 2)        
 
-        self.rhs = self.V[self.r_row, self.r_col]
+        sz = len(r_col)
+        self.rhs = []
+        self.subset = []
+        for i in xrange(sz):
+            self.rhs.append(self.V[r_row[i], r_col[i]])
+            self.subset.append(self.dense_q[l_idx[i]])
+        #self.rhs = self.V[self.r_row, self.r_col]
+        #self.subset = self.dense_q
         #self.dense_q = theano.sandbox.cuda.var.float32_shared_constructor(np.zeros(batchsize * N * D).astype(np.float32))
         # Value Iteration
         for i in range(k):
