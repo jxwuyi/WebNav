@@ -351,11 +351,11 @@ class VinBlockWiki(object):
 
         """
 
-        self.page_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=page_emb,name='page_emb')
-        self.title_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=title_emb,name='title_emb')
-        self.l_idx = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(l_idx,dtype=int32), name='l_idx')
-        self.r_row = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(r_row,dtype=int32), name='r_row')
-        self.r_col = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(r_col,dtype=int32), name='r_col')
+        self.page_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=page_emb,name='page_emb',strict=False)
+        self.title_emb = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=theano.config.floatX,value=title_emb,name='title_emb',strict=False)
+        self.l_idx = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(l_idx,dtype=int32), name='l_idx',strict=False)
+        self.r_row = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(r_row,dtype=int32), name='r_row',strict=False)
+        self.r_col = theano.sandbox.cuda.var.CudaNdarraySharedVariable(type=np.int32, value=np.asarray(r_col,dtype=int32), name='r_col',strict=False)
 
         batchsize = 1
         self.params = []
