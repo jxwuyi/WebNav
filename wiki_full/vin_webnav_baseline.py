@@ -119,17 +119,31 @@ class vin_web(NNobj):
         for x in train_entry:
             if (x[1] in cnt):
                 cnt[x[1]] += 1
-                ver_pos[x[1]] = m
-                m += 1
             else:
                 cnt[x[1]] = 1
+		ver_pos[x[1]] = m
+                m += 1
 
         full_wk = wiki.Wiki(prm.pages_path)
+
+
+	fs = h5py.File(prm.pages_emb_path, 'r')
 
         tmp_elap = time.time() - tmp_tstart
         print ' >>> time elapsed: %f' % (tmp_elap)
 
-        print 'Training on baseline wiki model starts ...'
+	
+	print 'Allocate Memory ...'
+	tmp_tstart = time.time()
+
+	Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # batchsize * emb_dim
+        Q_sig = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
+        S_dat = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
+        y_sig = np.zeros(1, dtype = np.int32) # 1
+
+	tmp_elap = time.time() - tmp_tstart
+        print ' >>> time elapsed: %f' % (tmp_elap)
+
 
         #valid_n = len(valid_entry)
         if (prm.only_predict):
@@ -140,16 +154,11 @@ class vin_web(NNobj):
         self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
         self.train = theano.function(inputs=[self.Q_in, self.S_in, self.A_in, self.y], outputs=[], updates=self.updates)
 
-        Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # batchsize * emb_dim
-        Q_sig = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
-        S_dat = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
-        y_sig = np.zeros(1, dtype = np.int32) # 1
-
-        fs = h5py.File(prm.pages_emb_path, 'r', driver='core')
+       
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         #for i in range(self.N):
         #    self.school_emb[:, i] = fs['emb'][i]
-        
+        print 'Training on baseline wiki model starts ...'
         print 'train_n = %d ...' % (train_n)
         print 'test_n = %d ...' % (test_n)
          
@@ -160,6 +169,8 @@ class vin_web(NNobj):
             ver_prior = np.random.permutation(m)
             inds = sorted(np.random.permutation(train_n), key=lambda x:ver_prior[ver_pos[train_entry[x][1]]])
             
+	    print ' >> sort time : %f s' %(time.time() - tstart)
+
             train_n_curr = train_n
             if (prm.select_subset_data > 0):
                 train_n_curr = train_n / prm.select_subset_data
@@ -177,7 +188,7 @@ class vin_web(NNobj):
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
                     adj_ind = {}
                     for _k, _v in enumerate(links_dat):
-                        adj[_v] = _k
+                        adj_ind[_v] = _k
                         A_dat[:, _k] = fs['emb'][_v]
                     
                     n = cnt[s]
@@ -331,7 +342,7 @@ class BaseLineBlockWiki(object):
         self.S = T.extra_ops.repeat(S_in, Q_in.shape[0], axis = 0) # batchsize * emb_dim
 
         # tanh layer for local information 
-        self.H = T.concatenate([Q_in, S_in], axis = 1) # combined vector for query and local page, batchsize * (emb_dim * 2)
+        self.H = T.concatenate([Q_in, self.S], axis = 1) # combined vector for query and local page, batchsize * (emb_dim * 2)
 
         # now only a single tanh layer
         self.proj_dim = emb_dim # probably larger proj dim??????
@@ -347,5 +358,5 @@ class BaseLineBlockWiki(object):
 
         self.R = T.dot(self.H_proj, A_in)  # batchsize * deg
 
-        self.output = T.nnet.softmax(self.reward)
+        self.output = T.nnet.softmax(self.R)
         

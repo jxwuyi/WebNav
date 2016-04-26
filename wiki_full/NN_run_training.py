@@ -44,7 +44,7 @@ def main():
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     k=args.k, seed = args.seed)
-    elif (args.model == "WikiBaseLine")
+    elif (args.model == "WikiBaseLine"):
         my_nn = bsl.vin_web(model=args.model,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
