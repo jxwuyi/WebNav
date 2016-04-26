@@ -347,11 +347,11 @@ class VinBlockWiki(object):
 
         """
 
-        self.page_emb = T.TensorConstant(page_emb, dtype = theano.config.floatX)
-        self.title_emb = T.TensorConstant(title_emb, dtype = theano.config.floatX)
-        self.l_idx = T.TensorConstant(l_idx, dtype = np.int32)
-        self.r_row = T.TensorConstant(r_row, dtype = np.int32)
-        self.r_col = T.TensorConstant(r_col, dtype = np.int32)
+        self.page_emb = T.as_tensor_variable(page_emb, name='page_emb', dtype = theano.config.floatX)
+        self.title_emb = T.as_tensor_variable(title_emb, name='title_emb', dtype = theano.config.floatX)
+        self.l_idx = T.as_tensor_variable(l_idx, name='l_idx', dtype = np.int32)
+        self.r_row = T.as_tensor_variable(r_row, name='r_row', dtype = np.int32)
+        self.r_col = T.as_tensor_variable(r_col, name='r_col', dtype = np.int32)
 
         batchsize = 1
         self.params = []
