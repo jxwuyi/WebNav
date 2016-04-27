@@ -13,7 +13,7 @@ class vin_web(NNobj):
     def __init__(self, model="WikiCombine_Test", N = 6072, D = 279, emb_dim = 300,
                  dropout=False, devtype="cpu",
                  grad_check=False, reg=0, k=10, seed = 0, batchsize = 32,
-                 report_gap = 100):
+                 report_gap = 40000, data_select = 20):
         self.N = N                            # Number of pages
         #self.D = D + 1                        # Number of max outgoing links per page + 1 (including self)
         self.emb_dim = emb_dim                # Dimension of word embedding
@@ -21,6 +21,7 @@ class vin_web(NNobj):
         self.reg = reg                        # regularization (currently not implemented)
         self.k = k                            # number of VI iterations
         self.report_gap = report_gap
+        self.data_select = data_select
         # We assume BatchSize = 1
         self.batchsize = batchsize            # batch size for training
         #self.maxhops = maxhops+1              # number of state inputs for every query,
@@ -205,8 +206,8 @@ class vin_web(NNobj):
 	    print ' >> sort time : %f s' %(time.time() - tstart)
 
             train_n_curr = train_n
-            if (prm.select_subset_data > 0):
-                train_n_curr = train_n / prm.select_subset_data
+            if (self.data_select > 0):
+                train_n_curr = train_n / self.data_select
             # do training
             if (not prm.only_predict): # we do need to perform training
                 start = 0
