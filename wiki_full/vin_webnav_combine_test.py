@@ -398,10 +398,10 @@ class VinBlockWiki(object):
 	self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
         self.R = T.dot(self.q, self.page_emb) + self.alpha_full * T.dot(self.q_t, self.title_emb)
         #self.R = T.dot(self.q_t, title_emb)
-	self.R = T.nnet.softmax(self.R, keepdims = False) # [N_pages]
-	
+	self.R = T.nnet.softmax(self.R) # [1 * N_pages]
+	self.R = self.R.flatten()
         # initial value
-        self.V = self.R  # [1, N_pages]
+        self.V = self.R  # [N_pages]
 
         # transition param
         #if (prm.diagonal_action_mat): # use simple diagonal matrix for transition
