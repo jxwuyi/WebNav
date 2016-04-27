@@ -129,8 +129,10 @@ class vin_web(NNobj):
 
         
         print 'Prepare Training Data ...'
-        #batch_size = self.batchsize
-        batch_size = 1
+
+        tmp_tstart = time.time()
+        
+        batch_size = self.batchsize
 
         train_queries = self.q.get_train_queries()
         #valid_queries = self.q.get_valid_queries()
@@ -143,11 +145,39 @@ class vin_web(NNobj):
         #valid_entry = self.q.get_tuples(valid_paths)
         test_entry = self.q.get_tuples(test_paths)
 
+        train_n = len(train_entry)
+        cnt = {}
+        ver_pos = {}
+        m = 0
+        for x in train_entry:
+            if (x[1] in cnt):
+                cnt[x[1]] += 1
+            else:
+                cnt[x[1]] = 1
+		ver_pos[x[1]] = m
+                m += 1
+
         full_wk = wiki.Wiki(prm.pages_path)
 
-        print 'Training on full VIN with Pretrained Weights ...'
 
-        train_n = len(train_entry)
+	fs = h5py.File(prm.pages_emb_path, 'r')
+
+        tmp_elap = time.time() - tmp_tstart
+        print ' >>> time elapsed: %f' % (tmp_elap)
+
+	
+	print 'Allocate Memory ...'
+	tmp_tstart = time.time()
+
+	Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # batchsize * emb_dim
+        Q_sig = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
+        S_dat = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
+        y_sig = np.zeros(1, dtype = np.int32) # 1
+
+	tmp_elap = time.time() - tmp_tstart
+        print ' >>> time elapsed: %f' % (tmp_elap)
+
+
         #valid_n = len(valid_entry)
         if (prm.only_predict):
             test_n = len(test_entry)
@@ -157,15 +187,11 @@ class vin_web(NNobj):
         self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
         self.train = theano.function(inputs=[self.Q_in, self.S_in, self.A_in, self.y], outputs=[], updates=self.updates)
 
-        Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
-        S_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim  
-        y_dat = np.zeros(1, dtype = np.int32)
-
-        fs = h5py.File(prm.pages_emb_path, 'r')
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         #for i in range(self.N):
         #    self.school_emb[:, i] = fs['emb'][i]
         
+        print 'Training on full VIN with Pretrained Weights ...'
         print 'train_n = %d ...' % (train_n)
         print 'test_n = %d ...' % (test_n)
          
@@ -173,30 +199,56 @@ class vin_web(NNobj):
         for i_epoch in xrange(int(epochs)):
             tstart = time.time()
             # shuffle training index
-            inds = np.random.permutation(train_n)
+            ver_prior = np.random.permutation(m)
+            inds = sorted(np.random.permutation(train_n), key=lambda x:ver_prior[ver_pos[train_entry[x][1]]])
+            
+	    print ' >> sort time : %f s' %(time.time() - tstart)
+
             train_n_curr = train_n
             if (prm.select_subset_data > 0):
                 train_n_curr = train_n / prm.select_subset_data
             # do training
             if (not prm.only_predict): # we do need to perform training
-                for start in xrange(train_n_curr):  # batch_size = 1
-                    q_i, s_i, y_i = train_entry[inds[start]]
-                    Q_dat[0, :] = train_queries[q_i, :]
-                    S_dat[0, :] = fs['emb'][s_i]
-                    links_dat = full_wk.get_article_links(s_i)
+                start = 0
+                total_proc = 0
+                total_out = 0
+                
+                while (start < train_n_curr):
+                    s = train_entry[inds[start]][1]
+                    S_dat[0, :] = fs['emb'][s]
+                    links_dat = full_wk.get_article_links(s)
                     deg = len(links_dat)
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
+                    adj_ind = {}
                     for _k, _v in enumerate(links_dat):
-                        if (_v == y_i):
-                            y_dat[0] = _k
+                        adj_ind[_v] = _k
                         A_dat[:, _k] = fs['emb'][_v]
-
-                    self.train(Q_dat, S_dat, A_dat, y_dat)
-                    end = start + batch_size
                     
-                    if (start % self.report_gap == 0):
-                            print '>> finished batch %d / %d (%f percent)... elapsed = %f' % (end/batch_size, train_n_curr/batch_size, (100.0 * end) / train_n_curr, time.time()-tstart)             	
-            
+                    n = cnt[s]
+                    end = min(start + n, train_n_curr)
+                    ptr = start
+                    while(ptr < end):
+                        det = min(end - ptr, batch_size)
+                        y_dat = np.zeros(det, dtype = np.int32)
+                        if (det == batch_size):
+                            Q_now = Q_dat
+                        else:
+                            Q_now = np.zeros((det,self.emb_dim), dtype = theano.config.floatX)
+                        for i in xrange(det):
+                            q_i, _, y_i = train_entry[inds[ptr + i]]
+                            Q_now[i, :] = train_queries[q_i, :]
+                            y_dat[i] = adj_ind[y_i]
+
+                        self.train(Q_now, S_dat, A_dat, y_dat)
+                        total_proc += det
+                        if ((prm.report_elap_gap > 0)
+                                and (total_proc > total_out * prm.report_elap_gap)):
+                            total_out += 1
+                            print '>> finished samples %d / %d (%f percent)... elapsed = %f' % (total_proc, train_n_curr, (100.0 * total_proc) / train_n_curr, time.time()-tstart)             	
+                        
+                        ptr += batch_size
+                    start = end
+                
             # compute losses
             trainerr = 0.
             trainloss = 0.
@@ -210,14 +262,14 @@ class vin_web(NNobj):
                 test_fail = [len(test_paths[j])-1 for j in xrange(total_trial)]
                 test_success = 0
             ##############
-            
-            for start in xrange(0, test_n, batch_size):
-                end = start+batch_size   #batch_size = 1
+
+            for start in xrange(0, test_n):  # assume batch_size = 1
+                end = start+1   #batch_size = 1
                 if end <= test_n:  # assert(text_n <= train_n)
                     num += 1
                     # prepare training data
                     q_i, s_i, y_i = train_entry[inds[start]]
-                    Q_dat[0, :] = train_queries[q_i, :]
+                    Q_sig[0, :] = train_queries[q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
                     deg = len(links_dat)
@@ -225,19 +277,19 @@ class vin_web(NNobj):
                     for _k, _v in enumerate(links_dat):
                         if (_v == y_i):
                             k_i = _k
-                            y_dat[0] = _k
+                            y_sig[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]         
-                    trainerr_, trainloss_ = self.computeloss(Q_dat, S_dat, A_dat, y_dat)
+                    trainerr_, trainloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
                     if (prm.top_k_accuracy != 1):  # compute top-k accuracy
-                        y_full = self.y_full_out(Q_dat, S_dat, A_dat)[0]
+                        y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0 
-                        trainerr_ = tmp_err * 1.0 / batch_size
+                        trainerr_ = tmp_err * 1.0
                     
                     # prepare testing data
                     q_i, s_i, y_i = test_entry[start]
-                    Q_dat[0, :] = test_queries[q_i, :]
+                    Q_sig[0, :] = test_queries[q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
                     deg = len(links_dat)
@@ -245,11 +297,11 @@ class vin_web(NNobj):
                     for _k, _v in enumerate(links_dat):
                         if (_v == y_i):
                             k_i = _k
-                            y_dat[0] = _k
+                            y_sig[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]         
-                    testerr_, testloss_ = self.computeloss(Q_dat, S_dat, A_dat, y_dat)
+                    testerr_, testloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
-                        y_full = self.y_full_out(Q_dat, S_dat)[0]
+                        y_full = self.y_full_out(Q_sig, S_dat)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0
@@ -257,7 +309,7 @@ class vin_web(NNobj):
                         if (test_fail[q_i] == 0):
                             test_success += 1
    
-                        testerr_ = tmp_err * 1.0 / batch_size
+                        testerr_ = tmp_err * 1.0
                     
                     trainerr += trainerr_
                     trainloss += trainloss_
