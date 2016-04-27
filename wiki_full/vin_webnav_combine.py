@@ -303,8 +303,8 @@ class vin_web(NNobj):
         out = self.y_out(x_test, s1_test, s2_test)
         return out[0][0]
 
-    def load_pretrained(self, vin_file="~/WebNav/pretrain/WikiVIN-sanity.pk",
-                              bsl_file="~/WebNav/pretrain/WebNavBSL.pk"):
+    def load_pretrained(self, vin_file="../pretrain/WikiVIN-sanity.pk",
+                              bsl_file="../pretrain/WebNavBSL.pk"):
         dump_vin = pickle.load(open(vin_file, 'r'))
         [n.set_value(p) for n, p in zip(self.vin_params, dump_vin)]
         dump_bsl = pickle.load(open(bsl_file, 'r'))
