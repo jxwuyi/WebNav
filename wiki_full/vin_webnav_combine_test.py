@@ -406,17 +406,17 @@ class VinBlockWiki(object):
             print 'Now we only support linear transformation over query embedding'
         # Q_in * W
         if (prm.query_weight_diag):
-            self.W = init_weights_T(1, emb_dim);
+            self._W = init_weights_T(1, emb_dim);
             #self.params.append(self.W)
-            self.vin_params.append(self.W)
-            self.W = T.extra_ops.repeat(self.W, Q_in.shape[0], axis = 0)
+            self.vin_params.append(self._W)
+            self.W = T.extra_ops.repeat(self._W, Q_in.shape[0], axis = 0)
             self.q = Q_in * self.W
 
             ###########################
-            self.W_t = init_weights_T(1, emb_dim);
+            self._W_t = init_weights_T(1, emb_dim);
             #self.params.append(self.W_t)
-            self.vin_params.append(self.W_t)
-            self.W_t = T.extra_ops.repeat(self.W_t, Q_in.shape[0], axis = 0)
+            self.vin_params.append(self._W_t)
+            self.W_t = T.extra_ops.repeat(self._W_t, Q_in.shape[0], axis = 0)
             self.q_t = Q_in * self.W_t
         else:
             #######
@@ -447,8 +447,8 @@ class VinBlockWiki(object):
         self.alpha = theano.shared((np.random.random((1, 1)) * 0.1).astype(theano.config.floatX))
 	#self.params.append(self.alpha)
         self.vin_params.append(self.alpha)
-	self.alpha_full = T.extra_ops.repeat(self.alpha.flatten(), N, axis = 0)
-	self.alpha_full = self.alpha_full.dimshuffle('x', 0) # x * N
+	self.alpha_full = T.extra_ops.repeat(self.alpha, N, axis = 1)
+	self.alpha_full = T.extra_ops.repeat(self.alpha_full, Q_in.shape[0], axis = 0) # batchsize * N
         self.R = T.dot(self.q, self.page_emb) + self.alpha_full * T.dot(self.q_t, self.title_emb)
         #self.R = T.dot(self.q_t, title_emb)
 	self.R = T.nnet.softmax(self.R) # [batchsize * N_pages]
@@ -524,22 +524,24 @@ class VinBlockWiki(object):
 
         # compute beta
         self.beta_dim = 20
-        self.beta_W = init_weights_T(2 * emb_dim, self.beta_dim)
+        self.beta_W = init_weights_T(2 * emb_dim, self.beta_dim)  # (2*dim) * beta_dim
         self.params.append(self.beta_W)
-        self.beta_bias = init_weights_T(1, self.beta_dim)
+        self.beta_bias = init_weights_T(self.beta_dim) # beta_dim
         self.params.append(self.beta_bias)
-        self.b_hid = T.nnet.relu(T.dot(self.H, self.beta_W) + self.beta_bias)  # 1 * alpha_dim
+        self.beta_bias_full = self.beta_bias.dimshuffle('x', 0)  # x * beta_dim
+        self.b_hid = T.nnet.relu(T.dot(self.H, self.beta_W) + self.beta_bias_full)  # batchsize * beta_dim
         #  another layer to a scalar
         self.beta_W2 = init_weights_T(self.beta_dim, 1)
         self.params.append(self.beta_W2)
-        self.beta_bias2 = init_weights_T(1, 1)
+        self.beta_bias2 = init_weights_T(1)
         self.params.append(self.beta_bias2)
-        self.beta = T.nnet.sigmoid(T.dot(self.b_hid, self.beta_W2) + self.beta_bias2) # 1 * 1
-        self.beta = self.beta.flatten()
+        self.beta_bias2_full = self.beta_bias2.dimshuffle('x', 0)
+        self.beta = T.nnet.sigmoid(T.dot(self.b_hid, self.beta_W2) + self.beta_bias2_full) # batchsize * 1
+        self.beta = self.beta.flatten() # batchsize
         # repeat
-        self.beta_full = self.beta.dimshuffle(0,'x') # 1 * x
+        self.beta_full = self.beta.dimshuffle(0,'x') # batchsize * x
         #T.extra_ops.repeat(self.alpha, A_in.shape[1], axis = 1) # 1 * deg
-        self.page_extra = self.page_R * self.beta_full
+        self.page_extra = self.page_R * self.beta_full  # batchsize * deg
 
 
         # compute final reward for every function
