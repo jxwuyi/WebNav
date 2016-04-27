@@ -341,9 +341,9 @@ class VinBlockWiki(object):
 
         """
 
-        self.page_emb = T.as_tensor(page_emb, borrow = False)
-        self.title_emb = T.as_tensor(title_emb, borrow = False)
-        self.adj_mat = T.as_tensor(adj_mat, borrow = False)
+        self.page_emb = T.as_tensor(page_emb)
+        self.title_emb = T.as_tensor(title_emb)
+        self.adj_mat = T.as_tensor(adj_mat)
 
         batchsize = 1
         self.params = []
