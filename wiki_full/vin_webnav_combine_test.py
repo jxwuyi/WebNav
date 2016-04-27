@@ -12,7 +12,7 @@ class vin_web(NNobj):
     "Class for a neural network that does k iterations of value iteration"
     def __init__(self, model="WikiCombine_Test", N = 6072, D = 279, emb_dim = 300,
                  dropout=False, devtype="cpu",
-                 grad_check=False, reg=0, k=10, seed = 0,
+                 grad_check=False, reg=0, k=10, seed = 0, batchsize = 32
                  report_gap = 100):
         self.N = N                            # Number of pages
         #self.D = D + 1                        # Number of max outgoing links per page + 1 (including self)
@@ -22,7 +22,7 @@ class vin_web(NNobj):
         self.k = k                            # number of VI iterations
         self.report_gap = report_gap
         # We assume BatchSize = 1
-        #self.batchsize = batchsize            # batch size for training
+        self.batchsize = batchsize            # batch size for training
         #self.maxhops = maxhops+1              # number of state inputs for every query,
                                               #     here simply the number of hops per query + 1 (including stop)
         np.random.seed(seed)
