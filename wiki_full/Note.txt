@@ -24,8 +24,8 @@ THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32,force_device=True,allow_gc
 
 runnning baseline model
 
-THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32' python NN_run_training.py --output ~/WebNav/temp/wiki_full/WebNavBSL.pk --epochs 10 --model WikiBaseLine --batchsize 128 --stepsize 0.01 --reg 0.0 --seed 0
+THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32' python NN_run_training.py --output /media/aviv/OS/webnav/WebNav-yiwu/temp/WebNavNSL.pk --epochs 20 --model WikiBaseLine --batchsize 128 --stepsize 0.001 --reg 0.0 --seed 0
 
 ###### WarmStart
 
-THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32' python NN_run_training.py --output ~/WebNav/temp/wiki_full/WebNavBSL.pk --epochs 10 --model WikiBaseLine --batchsize 128 --stepsize 0.01 --reg 0.0 --seed 0 --warmstart ~/WebNav/temp/wiki_full/WebNavBSL.pk
+THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32' python NN_run_training.py --output ../temp/wiki_full/WebNavBSL.pk --epochs 10 --model WikiBaseLine --batchsize 128 --stepsize 0.01 --reg 0.0 --seed 0 --warmstart ../temp/wiki_full/WebNavBSL.pk
