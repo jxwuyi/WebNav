@@ -241,8 +241,8 @@ class vin_web(NNobj):
 
                         self.train(Q_now, S_dat, A_dat, y_dat)
                         total_proc += det
-                        if ((prm.report_elap_gap > 0)
-                                and (total_proc > total_out * prm.report_elap_gap)):
+                        if ((self.report_gap > 0)
+                                and (total_proc > total_out * self.report_gap)):
                             total_out += 1
                             print '>> finished samples %d / %d (%f percent)... elapsed = %f' % (total_proc, train_n_curr, (100.0 * total_proc) / train_n_curr, time.time()-tstart)             	
                         
