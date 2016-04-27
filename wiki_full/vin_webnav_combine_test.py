@@ -398,7 +398,7 @@ class VinBlockWiki(object):
 	self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
         self.R = T.dot(self.q, self.page_emb) + self.alpha_full * T.dot(self.q_t, self.title_emb)
         #self.R = T.dot(self.q_t, title_emb)
-	self.R = T.nnet.softmax(self.R)
+	self.R = T.nnet.softmax(self.R, keepdims = False) # [N_pages]
 	
         # initial value
         self.V = self.R  # [1, N_pages]
@@ -427,11 +427,14 @@ class VinBlockWiki(object):
 
         # Value Iteration
         for i in range(k):
-            self.tV = T.extra_ops.repeat(self.V, N, axis = 0)  # N * N
+            self.tV = self.V.dimshuffle('x', 0) # <> * N
+            #self.tV = T.extra_ops.repeat(self.V, N, axis = 0)  # N * N
             self.q = self.tV * self.adj_mat  # N * N
             #self.q = self.q + self.add_R
-            self.V = T.max(self.q, axis=0, keepdims=True) # 1 * N
-	    self.V = self.V + self.R # R: [1, N_pages]
+            self.V = T.max(self.q, axis=0, keepdims=False) # N
+	    self.V = self.V + self.R # R: N_Pages
+
+	self.V = self.V.dimshuffle('x', 0) # 1 * N_pages
 
         # compute mapping from wiki_school reward to page reward
         self.p_W = init_weights_T(1, emb_dim);

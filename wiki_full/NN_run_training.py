@@ -50,7 +50,7 @@ def main():
         my_nn = bsl.vin_web(model=args.model,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
-                    seed = args.seed)
+                    seed = args.seed, batchsize = batchsize)
     elif (args.model == "WikiCombine"):
         my_nn = cmb.vin_web(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
@@ -61,7 +61,7 @@ def main():
         my_nn = cmbt.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
-                    k=args.k, seed = args.seed)
+                    k=args.k, seed = args.seed, batchsize = batchsize)
         my_nn.load_pretrained()
         
         
