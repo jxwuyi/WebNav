@@ -409,7 +409,7 @@ class VinBlockWiki(object):
         # Q_in * W
         if (prm.query_weight_diag):
             self._W = init_weights_T(1, emb_dim);
-            self.params.append(self.W)
+            self.params.append(self._W)
             #self.vin_params.append(self._W)
             self.W = T.extra_ops.repeat(self._W, Q_in.shape[0], axis = 0)
             self.q = Q_in * self.W
@@ -428,8 +428,8 @@ class VinBlockWiki(object):
             self.q = T.dot(Q_in, self.W)
         # add bias
         self.q_bias = init_weights_T(emb_dim)
-        #self.params.append(self.q_bias)
-        self.vin_params.append(self.q_bias)
+        self.params.append(self.q_bias)
+        #self.vin_params.append(self.q_bias)
         self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
 
         # self.q_t = self.q
