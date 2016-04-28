@@ -13,7 +13,7 @@ class vin_web(NNobj):
     def __init__(self, model="WikiCombine_Test", N = 6072, D = 279, emb_dim = 300,
                  dropout=False, devtype="cpu",
                  grad_check=False, reg=0, k=10, seed = 0, batchsize = 32,
-                 report_gap = 40000, data_select = 20):
+                 report_gap = 100, data_select = 20):
         self.N = N                            # Number of pages
         #self.D = D + 1                        # Number of max outgoing links per page + 1 (including self)
         self.emb_dim = emb_dim                # Dimension of word embedding
@@ -394,10 +394,11 @@ class VinBlockWiki(object):
 
         """
 
-        self.page_emb = T.as_tensor(page_emb)
-        self.title_emb = T.as_tensor(title_emb)
-        self.adj_mat = T.as_tensor(adj_mat)
+        self.page_emb = theano.sandbox.cuda.var.float32_shared_constructor(page_emb)
+        self.title_emb = theano.sandbox.cuda.var.float32_shared_constructor(title_emb)
+        self.adj_mat = theano.sandbox.cuda.var.float32_shared_constructor(adj_mat)
         self.adj_mat = self.adj_mat.dimshuffle('x', 0, 1) # x * N * N
+
 
         self.params = []
         self.vin_params = []
