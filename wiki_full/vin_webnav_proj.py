@@ -520,12 +520,12 @@ class VinBlockWiki(object):
         self.H_bias_full = T.extra_ops.repeat(self.H_bias, Q_in.shape[0], axis = 0) # batchsize * emb_dim+1
         self.H_proj_full = T.tanh(T.dot(self.H, self.H_W) + self.H_bias_full) # batchsize * emb_dim+1
         self.H_proj = self.H_proj_full[:, 1:] # batchsize * emb_dim
-        self.beta = self.H_proj_full[:, 0] # batchsize * 1
+        self.beta = self.H_proj_full[:, 0] # batchsize
         # do we need one more layer here???
 
         self.orig_R = T.dot(self.H_proj, A_in)  # batchsize * deg
 
-        self.beta_full = T.extra_ops.repeat(self.beta, A_in.shape[1], axis = 1) # batchsize * deg
+        self.beta_full = self.beta.dimshuffle(0, 'x') # batchsize * deg
 
         # compute final reward for every function
         # .... Do we need an extra scalar??????
