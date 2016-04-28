@@ -351,6 +351,7 @@ class vin_web(NNobj):
         #[n.set_value(p) for n, p in zip(self.vin_params, dump_vin)]
         #dump_bsl = pickle.load(open(bsl_file, 'r'))
         #[n.set_value(p) for n, p in zip(self.bsl_params, dump_bsl)]
+        pass
 
     def load_weights(self, infile="weight_dump.pk"):
         dump = pickle.load(open(infile, 'r'))
