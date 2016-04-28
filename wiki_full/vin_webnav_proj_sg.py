@@ -360,14 +360,14 @@ class VinBlockWiki(object):
         # Q_in * W
         if (prm.query_weight_diag):
             self.W = init_weights_T(1, emb_dim);
-            #self.params.append(self.W)
+            self.params.append(self.W)
             self.vin_params.append(self.W)
             self.W = T.extra_ops.repeat(self.W, batchsize, axis = 0)
             self.q = Q_in * self.W
 
             ###########################
             self.W_t = init_weights_T(1, emb_dim);
-            #self.params.append(self.W_t)
+            self.params.append(self.W_t)
             self.vin_params.append(self.W_t)
             self.W_t = T.extra_ops.repeat(self.W_t, batchsize, axis = 0)
             self.q_t = Q_in * self.W_t
@@ -379,13 +379,13 @@ class VinBlockWiki(object):
             self.q = T.dot(Q_in, self.W)
         # add bias
         self.q_bias = init_weights_T(emb_dim)
-        #self.params.append(self.q_bias)
+        self.params.append(self.q_bias)
         self.vin_params.append(self.q_bias)
         self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
 
         # self.q_t = self.q
         self.q_t_bias = init_weights_T(emb_dim)
-        #self.params.append(self.q_t_bias)
+        self.params.append(self.q_t_bias)
         self.vin_params.append(self.q_t_bias)
         self.q_t = self.q_t + self.q_t_bias.dimshuffle('x', 0) # batch * emb_dim
 
@@ -398,7 +398,7 @@ class VinBlockWiki(object):
         #   q: [batchsize, emb_dim]
         #   page_emb: [emb_dim, N_pages]
         self.alpha = theano.shared((np.random.random((1, 1)) * 0.1).astype(theano.config.floatX))
-	#self.params.append(self.alpha)
+	self.params.append(self.alpha)
         self.vin_params.append(self.alpha)
 	self.alpha_full = T.extra_ops.repeat(self.alpha,batchsize, axis = 0)
 	self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
