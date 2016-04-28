@@ -304,8 +304,9 @@ class vin_web(NNobj):
         return out[0][0]
 
     def load_pretrained(self, vin_file="../pretrain/WikiVIN-sanity.pk"):
-        dump_vin = pickle.load(open(vin_file, 'r'))
-        [n.set_value(p) for n, p in zip(self.vin_params, dump_vin)]
+        #dump_vin = pickle.load(open(vin_file, 'r'))
+        #[n.set_value(p) for n, p in zip(self.vin_params, dump_vin)]
+        pass
 
     def load_weights(self, infile="weight_dump.pk"):
         dump = pickle.load(open(infile, 'r'))
@@ -353,7 +354,7 @@ class VinBlockWiki(object):
 
         batchsize = 1
         self.params = []
-        self.vin_params = []
+        #self.vin_params = []
         #self.top_params = []
         if (not prm.query_map_linear):
             print 'Now we only support linear transformation over query embedding'
@@ -361,16 +362,16 @@ class VinBlockWiki(object):
         if (prm.query_weight_diag):
             self.W = init_weights_T(1, emb_dim);
             self.params.append(self.W)
-            self.vin_params.append(self.W)
+            #self.vin_params.append(self.W)
             self.W = T.extra_ops.repeat(self.W, batchsize, axis = 0)
             self.q = Q_in * self.W
 
             ###########################
-            self.W_t = init_weights_T(1, emb_dim);
-            self.params.append(self.W_t)
-            self.vin_params.append(self.W_t)
-            self.W_t = T.extra_ops.repeat(self.W_t, batchsize, axis = 0)
-            self.q_t = Q_in * self.W_t
+            #self.W_t = init_weights_T(1, emb_dim);
+            #self.params.append(self.W_t)
+            #self.vin_params.append(self.W_t)
+            #self.W_t = T.extra_ops.repeat(self.W_t, batchsize, axis = 0)
+            #self.q_t = Q_in * self.W_t
         else:
             #######
             print 'currently we only support diagonal matrix ...'
@@ -384,10 +385,10 @@ class VinBlockWiki(object):
         self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
 
         # self.q_t = self.q
-        self.q_t_bias = init_weights_T(emb_dim)
-        self.params.append(self.q_t_bias)
-        self.vin_params.append(self.q_t_bias)
-        self.q_t = self.q_t + self.q_t_bias.dimshuffle('x', 0) # batch * emb_dim
+        #self.q_t_bias = init_weights_T(emb_dim)
+        #self.params.append(self.q_t_bias)
+        #self.vin_params.append(self.q_t_bias)
+        #self.q_t = self.q_t + self.q_t_bias.dimshuffle('x', 0) # batch * emb_dim
 
         # non-linear transformation
         #if (prm.query_tanh):
@@ -397,12 +398,12 @@ class VinBlockWiki(object):
         # create reword: R: [batchsize, N_pages]
         #   q: [batchsize, emb_dim]
         #   page_emb: [emb_dim, N_pages]
-        self.alpha = theano.shared((np.random.random((1, 1)) * 0.1).astype(theano.config.floatX))
-	self.params.append(self.alpha)
-        self.vin_params.append(self.alpha)
-	self.alpha_full = T.extra_ops.repeat(self.alpha,batchsize, axis = 0)
-	self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
-        self.R = T.dot(self.q, page_emb) + self.alpha_full * T.dot(self.q_t, title_emb)
+        #self.alpha = theano.shared((np.random.random((1, 1)) * 0.1).astype(theano.config.floatX))
+	#self.params.append(self.alpha)
+        #self.vin_params.append(self.alpha)
+	#self.alpha_full = T.extra_ops.repeat(self.alpha,batchsize, axis = 0)
+	#self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
+        self.R = T.dot(self.q, page_emb)# + self.alpha_full * T.dot(self.q_t, title_emb)
         #self.R = T.dot(self.q_t, title_emb)
 	self.R = T.nnet.softmax(self.R)
 	
