@@ -69,7 +69,7 @@ def main():
         my_nn = prj_sg.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
-                    k=args.k, seed = args.seed, batchsize = args.batchsize)
+                    k=args.k, seed = args.seed)
         my_nn.load_pretrained()
     elif (args.model == "WikiProj"):
         my_nn = prj.vin_web(model=args.model, N = prm.total_pages,
