@@ -531,7 +531,7 @@ class VinBlockWiki(object):
 
         # compute final reward for every function
         # .... Do we need an extra scalar??????
-        self.reward = self.orig_R + self.beta_full * self.page_extra
+        self.reward = self.orig_R + self.beta_full * self.page_R
 
         self.output = T.nnet.softmax(self.reward)
         
