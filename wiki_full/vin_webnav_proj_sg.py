@@ -54,7 +54,7 @@ class vin_web(NNobj):
                                     k=self.k)
         self.p_of_y = self.vin_net.output
         self.params = self.vin_net.params
-        self.vin_params = self.vin_net.vin_params
+        #self.vin_params = self.vin_net.vin_params
         #self.bsl_params = self.vin_net.bsl_params
         # Total 1910 parameters ?????
 
