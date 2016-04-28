@@ -367,8 +367,8 @@ class VinBlockWiki(object):
 
             ###########################
             self.W_t = init_weights_T(1, emb_dim);
-            self.params.append(self.W_t)
-            #self.vin_params.append(self.W_t)
+            #self.params.append(self.W_t)
+            self.vin_params.append(self.W_t)
             self.W_t = T.extra_ops.repeat(self.W_t, batchsize, axis = 0)
             self.q_t = Q_in * self.W_t
         else:
