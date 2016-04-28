@@ -381,7 +381,7 @@ class VinBlockWiki(object):
         # add bias
         self.q_bias = init_weights_T(emb_dim)
         self.params.append(self.q_bias)
-        self.vin_params.append(self.q_bias)
+        #self.vin_params.append(self.q_bias)
         self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
 
         # self.q_t = self.q
