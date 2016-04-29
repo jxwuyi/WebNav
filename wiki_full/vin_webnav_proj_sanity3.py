@@ -488,7 +488,7 @@ class VinBlockWiki(object):
         
         self.page_map = T.dot(self.coef_A.T, self.page_emb)  # deg * N
         #self.page_map = T.nnet.softmax(self.page_map)  # deg * N
-	self.page_map = T.sigmoid(self.page_map)
+	self.page_map = T.nnet.sigmoid(self.page_map)
         self.page_R = T.dot(self.V,self.page_map.T) # batchsize * deg
 
         # tanh layer for local information
