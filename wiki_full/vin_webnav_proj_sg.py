@@ -405,7 +405,8 @@ class VinBlockWiki(object):
 	#self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
         self.R = T.dot(self.q, page_emb)# + self.alpha_full * T.dot(self.q_t, title_emb)
         #self.R = T.dot(self.q_t, title_emb)
-	self.R = T.nnet.softmax(self.R)
+	#self.R = T.nnet.softmax(self.R)
+	self.R = T.nnet.relu(self.R)
 	
         # initial value
         self.V = self.R
@@ -455,7 +456,8 @@ class VinBlockWiki(object):
         #self.coef_A = A_in
         
         self.page_R = T.dot(self.coef_A.T, page_emb)  # deg * N
-        self.page_R = T.nnet.softmax(self.page_R)  # deg * N
+        #self.page_R = T.nnet.softmax(self.page_R)  # deg * N
+	self.page_R = T.nnet.relu(self.page_R)
         self.page_R = T.dot(self.V, self.page_R.T) # 1 * deg
 
         # compute final reward for every function
