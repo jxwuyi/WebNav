@@ -440,7 +440,8 @@ class VinBlockWiki(object):
 	#self.alpha_full = T.extra_ops.repeat(self.alpha_full, Q_in.shape[0], axis = 0) # batchsize * N
         self.R = T.dot(self.q, self.page_emb) #+ self.alpha_full * T.dot(self.q_t, self.title_emb)
         #self.R = T.dot(self.q_t, title_emb)
-	self.R = T.nnet.softmax(self.R) # [batchsize * N_pages]
+	#self.R = T.nnet.softmax(self.R) # [batchsize * N_pages]
+        self.R = T.nnet.relu(self.R)
         # initial value
         self.V = self.R  # [batchsize * N_pages]
 
@@ -486,7 +487,8 @@ class VinBlockWiki(object):
         self.coef_A = self.coef_A + self.p_bias.dimshuffle(0, 'x') # emb_dim * deg
         
         self.page_map = T.dot(self.coef_A.T, self.page_emb)  # deg * N
-        self.page_map = T.nnet.softmax(self.page_map)  # deg * N
+        #self.page_map = T.nnet.softmax(self.page_map)  # deg * N
+	self.page_map = T.nnet.relu(self.page_map)
         self.page_R = T.dot(self.V,self.page_map.T) # batchsize * deg
 
         # tanh layer for local information
