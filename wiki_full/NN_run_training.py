@@ -84,7 +84,7 @@ def main():
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     seed = args.seed, batchsize = args.batchsize)
-     elif (args.model == "WikiProjSanity2"):
+    elif (args.model == "WikiProjSanity2"):
         my_nn = prj_san2.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
