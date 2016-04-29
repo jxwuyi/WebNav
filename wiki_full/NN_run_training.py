@@ -7,6 +7,7 @@ import vin_webnav_combine_test as cmbt
 import vin_webnav_proj as prj
 import vin_webnav_proj_sg as prj_sg
 import vin_webnav_proj_sanity as prj_san
+import vin_webnav_proj_sanity2 as prj_san2
 import myparameters as prm
 
 
@@ -20,7 +21,7 @@ def main():
     parser.add_argument("--dropout", action="store_true")
     parser.add_argument("--stepsize", type=float, default=.0002)
     parser.add_argument("--model",
-                        choices=["dense1", "dense2", "dense3", "conv", "WikiBaseLine", "WikiProj","WikiProjSanity","WikiProjSG", "WikiCombine", "WikiCombineTest","valIterWiki", "valIterWebNav","valIterWebNavFast", "valIterBatch", "CBvalIterBatch", "valIterMars", "valIterMarsSingle"],
+                        choices=["dense1", "dense2", "dense3", "conv", "WikiBaseLine", "WikiProj","WikiProjSanity","WikiProjSanity2","WikiProjSG", "WikiCombine", "WikiCombineTest","valIterWiki", "valIterWebNav","valIterWebNavFast", "valIterBatch", "CBvalIterBatch", "valIterMars", "valIterMarsSingle"],
                         default="valIterWebNav")
     parser.add_argument("--unittest", action="store_true")
     parser.add_argument("--grad_check", action="store_true")
@@ -80,6 +81,11 @@ def main():
         my_nn.load_pretrained()
     elif (args.model == "WikiProjSanity"):
         my_nn = prj_san.vin_web(model=args.model, N = prm.total_pages,
+                    emb_dim = prm.dim_emb, dropout=args.dropout,
+                    devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
+                    seed = args.seed, batchsize = args.batchsize)
+     elif (args.model == "WikiProjSanity2"):
+        my_nn = prj_san2.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     seed = args.seed, batchsize = args.batchsize)
