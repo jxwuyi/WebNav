@@ -9,6 +9,7 @@ import vin_webnav_proj_sg as prj_sg
 import vin_webnav_proj_sanity as prj_san
 import vin_webnav_proj_sanity2 as prj_san2
 import vin_webnav_proj_sanity3 as prj_san3
+import vin_webnav_proj_sanity_full as prj_sanF
 import vin_webnav_proj_sanity_att as prj_att
 import vin_webnav_proj_sanity_att2 as prj_att2
 import myparameters as prm
@@ -24,7 +25,7 @@ def main():
     parser.add_argument("--dropout", action="store_true")
     parser.add_argument("--stepsize", type=float, default=.0002)
     parser.add_argument("--model",
-                        choices=["dense1", "dense2", "dense3", "conv", "WikiBaseLine", "WikiProj","WikiProjAtt","WikiProjAtt2","WikiProjSanity","WikiProjSanity3","WikiProjSanity2","WikiProjSG", "WikiCombine", "WikiCombineTest","valIterWiki", "valIterWebNav","valIterWebNavFast", "valIterBatch", "CBvalIterBatch", "valIterMars", "valIterMarsSingle"],
+                        choices=["dense1", "dense2", "dense3", "conv", "WikiBaseLine", "WikiProj","WikiProjAtt","WikiProjAtt2","WikiProjSanityFull","WikiProjSanity","WikiProjSanity3","WikiProjSanity2","WikiProjSG", "WikiCombine", "WikiCombineTest","valIterWiki", "valIterWebNav","valIterWebNavFast", "valIterBatch", "CBvalIterBatch", "valIterMars", "valIterMarsSingle"],
                         default="valIterWebNav")
     parser.add_argument("--unittest", action="store_true")
     parser.add_argument("--grad_check", action="store_true")
@@ -94,6 +95,11 @@ def main():
                     seed = args.seed, batchsize = args.batchsize)
     elif (args.model == "WikiProjSanity3"):
         my_nn = prj_san3.vin_web(model=args.model, N = prm.total_pages,
+                    emb_dim = prm.dim_emb, dropout=args.dropout,
+                    devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
+                    seed = args.seed, batchsize = args.batchsize)
+    elif (args.model == "WikiProjSanityFull"):
+        my_nn = prj_sanF.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     seed = args.seed, batchsize = args.batchsize)
