@@ -97,12 +97,12 @@ def main():
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     seed = args.seed, batchsize = args.batchsize)
-     elif (args.model == "WikiProjAtt"):
+    elif (args.model == "WikiProjAtt"):
         my_nn = prj_att.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     seed = args.seed, batchsize = args.batchsize)
-      elif (args.model == "WikiProjAtt2"):
+    elif (args.model == "WikiProjAtt2"):
         my_nn = prj_att2.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
