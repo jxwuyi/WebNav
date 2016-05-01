@@ -4,6 +4,7 @@ import vin_webnav_fast as vnf
 import vin_webnav_baseline as bsl
 import vin_webnav_combine as cmb
 import vin_webnav_combine_sanity as cmb_san
+import vin_webnav_combine_joint as cmb_jt
 import vin_webnav_combine_test as cmbt
 import vin_webnav_proj as prj
 import vin_webnav_proj_sg as prj_sg
@@ -27,7 +28,7 @@ def main():
     parser.add_argument("--dropout", action="store_true")
     parser.add_argument("--stepsize", type=float, default=.0002)
     parser.add_argument("--model",
-                        choices=["dense1", "dense2", "dense3", "conv", "WikiBaseLine", "WikiProj","WikiProjAtt","WikiProjAtt2","WikiProjSanityFull","WikiProjSanity","WikiProjSanityBias","WikiProjSanity3","WikiProjSanity2","WikiProjSG", "WikiCombine","WikiCombineSanity", "WikiCombineTest","valIterWiki", "valIterWebNav","valIterWebNavFast", "valIterBatch", "CBvalIterBatch", "valIterMars", "valIterMarsSingle"],
+                        choices=["dense1", "dense2", "dense3", "conv", "WikiBaseLine", "WikiProj","WikiProjAtt","WikiProjAtt2","WikiProjSanityFull","WikiProjSanity","WikiProjSanityBias","WikiProjSanity3","WikiProjSanity2","WikiProjSG", "WikiCombine","WikiCombineJoint","WikiCombineSanity", "WikiCombineTest","valIterWiki", "valIterWebNav","valIterWebNavFast", "valIterBatch", "CBvalIterBatch", "valIterMars", "valIterMarsSingle"],
                         default="valIterWebNav")
     parser.add_argument("--unittest", action="store_true")
     parser.add_argument("--grad_check", action="store_true")
@@ -73,6 +74,13 @@ def main():
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     seed = args.seed)
         my_nn.load_pretrained()
+    elif (args.model == "WikiCombineJoint"):
+        my_nn = cmb_jt.vin_web(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
+                    emb_dim = prm.dim_emb, dropout=args.dropout,
+                    devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
+                    seed = args.seed)
+        if (args.warmstart != "None"):
+            my_nn.load_pretrained()
     elif (args.model == "WikiCombineTest"):
         my_nn = cmbt.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
