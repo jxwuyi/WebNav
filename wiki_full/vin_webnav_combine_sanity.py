@@ -361,7 +361,7 @@ class vin_web(NNobj):
 
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
-    def __init__(self, Q_in, A_in, N, emb_dim,
+    def __init__(self, Q_in, S_in, A_in, N, emb_dim,
                  page_emb, title_emb):
         """
         Allocate a VIN block with shared variable internal parameters.
