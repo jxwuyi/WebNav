@@ -47,7 +47,7 @@ class vin_web(NNobj):
         #l_h = 150  # channels in initial hidden layer
         #l_q = 10   # channels in q layer (~actions)
 
-        print 'building Sanity Checking model with attention...'
+        print 'building combined model with pretrained mapping...'
 
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in = self.S_in, A_in=self.A_in,
                                     N = self.N, emb_dim = self.emb_dim,
@@ -183,7 +183,7 @@ class vin_web(NNobj):
             test_n = len(test_entry) / 10 # to make things faster
 
         self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
-        self.train = theano.function(inputs=[self.Q_in, self.A_in, self.y], outputs=[], updates=self.updates)
+        self.train = theano.function(inputs=[self.Q_in, self.S_in, self.A_in, self.y], outputs=[], updates=self.updates)
 
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         #for i in range(self.N):
@@ -498,7 +498,7 @@ class VinBlockWiki(object):
         self.page_R = T.dot(self.V,self.page_map.T) # batchsize * deg
 
         # tanh layer for local information
-        self.S = T.extra_ops.repeat(S_in, Q_in.shape[0], axis = 0) # batchsize * deg
+        self.S = T.extra_ops.repeat(S_in, Q_in.shape[0], axis = 0) # batchsize * dim
         # combined vector for query and local page, batchsize * (emb_dim * 2)
         self.H = T.concatenate([Q_in, self.S], axis = 1) 
 
