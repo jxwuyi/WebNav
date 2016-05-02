@@ -419,11 +419,11 @@ class VinBlockWiki(object):
             self.q = Q_in * self.W
 
             ###########################
-            self._W_t = init_weights_T(1, emb_dim);
+            #self._W_t = init_weights_T(1, emb_dim);
             #self.params.append(self.W_t)
-            self.vin_params.append(self._W_t)
-            self.W_t = T.extra_ops.repeat(self._W_t, Q_in.shape[0], axis = 0)
-            self.q_t = Q_in * self.W_t
+            #self.vin_params.append(self._W_t)
+            #self.W_t = T.extra_ops.repeat(self._W_t, Q_in.shape[0], axis = 0)
+            #self.q_t = Q_in * self.W_t
         else:
             #######
             print 'currently we only support diagonal matrix ...'
