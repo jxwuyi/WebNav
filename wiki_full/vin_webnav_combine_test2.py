@@ -10,10 +10,10 @@ import h5py
 
 class vin_web(NNobj):
     "Class for a neural network that does k iterations of value iteration"
-    def __init__(self, model="WikiCombine_Test", N = 6072, D = 279, emb_dim = 300,
+    def __init__(self, model="WikiCombine_Test2", N = 6072, D = 279, emb_dim = 300,
                  dropout=False, devtype="cpu",
                  grad_check=False, reg=0, k=10, seed = 0, batchsize = 32,
-                 report_gap = 45000, data_select = 50):
+                 report_gap = 23000, data_select = 50):
         self.N = N                            # Number of pages
         #self.D = D + 1                        # Number of max outgoing links per page + 1 (including self)
         self.emb_dim = emb_dim                # Dimension of word embedding
@@ -492,7 +492,7 @@ class VinBlockWiki(object):
             self.V = T.max(self.q, axis=1, keepdims=False) # batchsize * N
 	    self.V = self.V + self.R # batchsize * N
 
-        self.V = self.V / k
+        self.V = self.V / (k+1)
 
         # compute mapping from wiki_school reward to page reward
         self.p_W = init_weights_T(emb_dim); 
