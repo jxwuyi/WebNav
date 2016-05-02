@@ -10,7 +10,7 @@ import h5py
 
 class vin_web(NNobj):
     "Class for a neural network that does k iterations of value iteration"
-    def __init__(self, model="WikiProj-Sanity-Att2", N = 6072, D = 279, emb_dim = 300,
+    def __init__(self, model="WikiCombineSanity", N = 6072, D = 279, emb_dim = 300,
                  dropout=False, devtype="cpu",
                  grad_check=False, reg=0, seed = 0, batchsize = 32,
                  report_gap = 1200000, data_select = 1):
@@ -128,6 +128,7 @@ class vin_web(NNobj):
         
         print 'Prepare Training Data ...'
 
+        best = 1
         tmp_tstart = time.time()
         
         batch_size = self.batchsize
@@ -320,6 +321,11 @@ class vin_web(NNobj):
                 print 'total sucess trails = %d over %d (percent: %f) ...' %(test_success, total_trial, (test_success*1.0 / total_trial))
                 
             elapsed = time.time() - tstart
+
+            if (testerr/num < best):
+                best = testerr / num
+                self.save_weights(self.model + '_best.pk')
+            
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
 
         fs.close()
@@ -356,7 +362,7 @@ class vin_web(NNobj):
         dump = pickle.load(open(infile, 'r'))
         [n.set_value(p) for n, p in zip(self.params, dump)]
 
-    def save_weights(self, outfile="weight_dump.pk"):
+    def save_weights(self, outfile="cmb_sanity_best_model.pk"):
         pickle.dump([n.get_value() for n in self.params], open(outfile, 'w'))
 
 class VinBlockWiki(object):
