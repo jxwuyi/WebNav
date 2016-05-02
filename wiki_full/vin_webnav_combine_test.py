@@ -128,7 +128,7 @@ class vin_web(NNobj):
                      grad_check=True,
                      profile=False):
 
-        
+        best = 1
         print 'Prepare Training Data ...'
 
         tmp_tstart = time.time()
@@ -319,6 +319,10 @@ class vin_web(NNobj):
             
             if (prm.perform_full_inference):
                 print 'total sucess trails = %d over %d (percent: %f) ...' %(test_success, total_trial, (test_success*1.0 / total_trial))
+
+            if (testerr / num < best):
+                best = testerr / num
+                self.save_weights(self.model + '_best.pk')
                 
             elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
@@ -345,8 +349,8 @@ class vin_web(NNobj):
         out = self.y_out(x_test, s1_test, s2_test)
         return out[0][0]
 
-    def load_pretrained(self, vin_file="../pretrain/WikiVIN-sanity.pk",
-                              bsl_file="../pretrain/WebNavBSL.pk"):
+    def load_pretrained(self, vin_file="../pretrain/WebNavVIN-map.pk",
+                              bsl_file="../pretrain/WebNavCMB_SAN.pk"):
         dump_vin = pickle.load(open(vin_file, 'r'))
         [n.set_value(p) for n, p in zip(self.vin_params, dump_vin)]
         dump_bsl = pickle.load(open(bsl_file, 'r'))
@@ -433,10 +437,10 @@ class VinBlockWiki(object):
         self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
 
         # self.q_t = self.q
-        self.q_t_bias = init_weights_T(emb_dim)
+        #self.q_t_bias = init_weights_T(emb_dim)
         #self.params.append(self.q_t_bias)
-        self.vin_params.append(self.q_t_bias)
-        self.q_t = self.q_t + self.q_t_bias.dimshuffle('x', 0) # batch * emb_dim
+        #self.vin_params.append(self.q_t_bias)
+        #self.q_t = self.q_t + self.q_t_bias.dimshuffle('x', 0) # batch * emb_dim
 
         # non-linear transformation
         #if (prm.query_tanh):
@@ -446,14 +450,14 @@ class VinBlockWiki(object):
         # create reword: R: [batchsize, N_pages]
         #   q: [batchsize, emb_dim]
         #   page_emb: [emb_dim, N_pages]
-        self.alpha = theano.shared((np.random.random((1, 1)) * 0.1).astype(theano.config.floatX))
+        #self.alpha = theano.shared((np.random.random((1, 1)) * 0.1).astype(theano.config.floatX))
 	#self.params.append(self.alpha)
-        self.vin_params.append(self.alpha)
-	self.alpha_full = T.extra_ops.repeat(self.alpha, N, axis = 1)
-	self.alpha_full = T.extra_ops.repeat(self.alpha_full, Q_in.shape[0], axis = 0) # batchsize * N
-        self.R = T.dot(self.q, self.page_emb) + self.alpha_full * T.dot(self.q_t, self.title_emb)
+        #self.vin_params.append(self.alpha)
+	#self.alpha_full = T.extra_ops.repeat(self.alpha, N, axis = 1)
+	#self.alpha_full = T.extra_ops.repeat(self.alpha_full, Q_in.shape[0], axis = 0) # batchsize * N
+        self.R = T.dot(self.q, self.page_emb)# + self.alpha_full * T.dot(self.q_t, self.title_emb)
         #self.R = T.dot(self.q_t, title_emb)
-	self.R = T.nnet.softmax(self.R) # [batchsize * N_pages]
+	self.R = T.tanh(self.R) # [batchsize * N_pages]
         # initial value
         self.V = self.R  # [batchsize * N_pages]
 
@@ -480,7 +484,7 @@ class VinBlockWiki(object):
 	#self.add_R = T.extra_ops.repeat(self.R_full, A, axis = 2)        
 
         # Value Iteration
-        for i in range(k):
+        for i in xrange(k):
             self.tV = self.V.dimshuffle(0, 'x', 1) # batchsize * x * N
             #self.tV = T.extra_ops.repeat(self.V, N, axis = 0)  # N * N
             self.q = self.tV * self.adj_mat  # batchsize * N * N
@@ -490,17 +494,21 @@ class VinBlockWiki(object):
 
         # compute mapping from wiki_school reward to page reward
         self.p_W = init_weights_T(emb_dim); 
-        self.params.append(self.p_W);
+        #self.params.append(self.p_W);
+        self.vin_params.append(self.p_W)
+        
         #self.page_W = T.extra_ops.repeat(self.p_W, A_in.shape[1], axis = 0) # deg * emb_dim
         self.page_W = self.p_W.dimshuffle(0, 'x')  # emb_dim * &
         self.coef_A = A_in * self.page_W   # emb_dim * deg
         self.p_bias = init_weights_T(emb_dim)
-        self.params.append(self.p_bias)
+        #self.params.append(self.p_bias)
+        self.vin_params.append(self.p_bias)
+        
         self.coef_A = self.coef_A + self.p_bias.dimshuffle(0, 'x') # emb_dim * deg
         
-        self.page_R = T.dot(self.coef_A.T, self.page_emb)  # deg * N
-        self.page_R = T.nnet.softmax(self.page_R)  # deg * N
-        self.page_R = T.dot(self.V,self.page_R.T) # batchsize * deg
+        self.page_map = T.dot(self.coef_A.T, self.page_emb)  # deg * N
+	self.page_map = T.nnet.sigmoid(self.page_map)
+        self.page_R = T.dot(self.V,self.page_map.T) # batchsize * deg
 
         # tanh layer for local information
         self.S = T.extra_ops.repeat(S_in, Q_in.shape[0], axis = 0) # batchsize * deg
@@ -510,45 +518,28 @@ class VinBlockWiki(object):
         # now only a single tanh layer
         self.proj_dim = emb_dim # probably larger proj dim??????
         
-        self.H_W = init_weights_T(2 * emb_dim, emb_dim)
-        #self.params.append(self.H_W)
+        self.H_W = init_weights_T(2 * emb_dim, emb_dim + 1)
+        self.params.append(self.H_W)
         self.bsl_params.append(self.H_W)
-        self.H_bias = init_weights_T(1, emb_dim)
-        #self.params.append(self.H_bias)
+        
+        self.H_bias = init_weights_T(1, emb_dim + 1)
+        self.params.append(self.H_bias)
         self.bsl_params.append(self.H_bias)
         
-        self.H_bias_full = T.extra_ops.repeat(self.H_bias, Q_in.shape[0], axis = 0) # batchsize * emb_dim
-        self.H_proj = T.tanh(T.dot(self.H, self.H_W) + self.H_bias_full) # batchsize * emb_dim
+        self.H_bias_full = T.extra_ops.repeat(self.H_bias, Q_in.shape[0], axis = 0) # batchsize * emb_dim+1
+        self.H_proj_full = T.tanh(T.dot(self.H, self.H_W) + self.H_bias_full) # batchsize * emb_dim+1
+        self.H_proj = self.H_proj_full[:, 1:] # batchsize * emb_dim
+        self.beta = self.H_proj_full[:, 0] # batchsize
         # do we need one more layer here???
 
         self.orig_R = T.dot(self.H_proj, A_in)  # batchsize * deg
 
-
-        # compute beta
-        self.beta_dim = 20
-        self.beta_W = init_weights_T(2 * emb_dim, self.beta_dim)  # (2*dim) * beta_dim
-        self.params.append(self.beta_W)
-        self.beta_bias = init_weights_T(self.beta_dim) # beta_dim
-        self.params.append(self.beta_bias)
-        self.beta_bias_full = self.beta_bias.dimshuffle('x', 0)  # x * beta_dim
-        self.b_hid = T.nnet.relu(T.dot(self.H, self.beta_W) + self.beta_bias_full)  # batchsize * beta_dim
-        #  another layer to a scalar
-        self.beta_W2 = init_weights_T(self.beta_dim, 1)
-        self.params.append(self.beta_W2)
-        self.beta_bias2 = init_weights_T(1)
-        self.params.append(self.beta_bias2)
-        self.beta_bias2_full = self.beta_bias2.dimshuffle('x', 0)
-        self.beta = T.nnet.sigmoid(T.dot(self.b_hid, self.beta_W2) + self.beta_bias2_full) # batchsize * 1
-        self.beta = self.beta.flatten() # batchsize
-        # repeat
-        self.beta_full = self.beta.dimshuffle(0,'x') # batchsize * x
-        #T.extra_ops.repeat(self.alpha, A_in.shape[1], axis = 1) # 1 * deg
-        self.page_extra = self.page_R * self.beta_full  # batchsize * deg
-
+        self.beta_full = self.beta.dimshuffle(0, 'x') # batchsize * deg
 
         # compute final reward for every function
         # .... Do we need an extra scalar??????
-        self.reward = self.orig_R + self.page_extra
+        self.reward = self.orig_R + self.beta_full * self.page_R
+        #self.reward = self.page_R
 
         self.output = T.nnet.softmax(self.reward)
         
