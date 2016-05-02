@@ -179,7 +179,7 @@ class vin_web(NNobj):
         print ' >>> time elapsed: %f' % (tmp_elap)
 
         test_ind = np.random.permutation(len(test_entry))
-        train_ind = np.random_permutation(len(train_entry))
+        train_ind = np.random.permutation(len(train_entry))
 
         #valid_n = len(valid_entry)
         if (prm.only_predict):
