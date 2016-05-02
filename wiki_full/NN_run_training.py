@@ -79,7 +79,7 @@ def main():
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     seed = args.seed)
-        if (args.warmstart != "None"):
+        if (args.warmstart == "None"):
             my_nn.load_pretrained()
     elif (args.model == "WikiCombineTest"):
         my_nn = cmbt.vin_web(model=args.model, N = prm.total_pages,
