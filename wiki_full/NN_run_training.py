@@ -89,6 +89,8 @@ def main():
                     k=args.k, seed = args.seed, batchsize = args.batchsize)
         if (args.warmstart == "None"):
             my_nn.load_pretrained()
+        else
+            my_nn.load_pretrained(bsl_file = 'NA')
     elif (args.model == "WikiCombineTest2"):
         my_nn = cmbt2.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
@@ -96,6 +98,8 @@ def main():
                     k=args.k, seed = args.seed, batchsize = args.batchsize)
         if (args.warmstart == "None"):
             my_nn.load_pretrained()
+        else
+            my_nn.load_pretrained(bsl_file = 'NA')
     elif (args.model == "WikiProjSG"):
         my_nn = prj_sg.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,

@@ -178,6 +178,8 @@ class vin_web(NNobj):
 	tmp_elap = time.time() - tmp_tstart
         print ' >>> time elapsed: %f' % (tmp_elap)
 
+        test_ind = np.random.permutation(len(test_entry))
+        train_ind = np.random_permutation(len(train_entry))
 
         #valid_n = len(valid_entry)
         if (prm.only_predict):
@@ -269,7 +271,7 @@ class vin_web(NNobj):
                 if end <= test_n:  # assert(text_n <= train_n)
                     num += 1
                     # prepare training data
-                    q_i, s_i, y_i = train_entry[inds[start]]
+                    q_i, s_i, y_i = train_entry[train_ind[start]]
                     Q_sig[0, :] = train_queries[q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
@@ -289,7 +291,7 @@ class vin_web(NNobj):
                         trainerr_ = tmp_err * 1.0
                     
                     # prepare testing data
-                    q_i, s_i, y_i = test_entry[start]
+                    q_i, s_i, y_i = test_entry[test_ind[start]]
                     Q_sig[0, :] = test_queries[q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
@@ -353,8 +355,9 @@ class vin_web(NNobj):
                               bsl_file="../pretrain/WebNavCMB_SAN.pk"):
         dump_vin = pickle.load(open(vin_file, 'r'))
         [n.set_value(p) for n, p in zip(self.vin_params, dump_vin)]
-        dump_bsl = pickle.load(open(bsl_file, 'r'))
-        [n.set_value(p) for n, p in zip(self.bsl_params, dump_bsl)]
+        if (bsl_file != 'NA'):
+            dump_bsl = pickle.load(open(bsl_file, 'r'))
+            [n.set_value(p) for n, p in zip(self.bsl_params, dump_bsl)]
 
     def load_weights(self, infile="weight_dump.pk"):
         dump = pickle.load(open(infile, 'r'))
