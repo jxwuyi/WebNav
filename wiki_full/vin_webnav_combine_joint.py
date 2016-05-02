@@ -126,7 +126,7 @@ class vin_web(NNobj):
                      grad_check=True,
                      profile=False):
 
-        
+        best = 1
         print 'Prepare Training Data ...'
 
         tmp_tstart = time.time()
@@ -319,7 +319,11 @@ class vin_web(NNobj):
             
             if (prm.perform_full_inference):
                 print 'total sucess trails = %d over %d (percent: %f) ...' %(test_success, total_trial, (test_success*1.0 / total_trial))
-                
+
+            if (testerr/num < best):
+                best = testerr / num
+                self.save_weights(self.model + '_best.pk')
+            
             elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
 
