@@ -49,8 +49,8 @@ class vin_web(NNobj):
         
         self.V = self.vin_net.output # output value function for every wiki-school page, batchsize * N
 
-        self.compute = theano.function(inputs=self.Q_in,
-                                        outputs=self.V)
+        self.compute = theano.function(inputs=[self.Q_in],
+                                        outputs=[self.V])
         
 
     def load_graph(self):  
@@ -121,7 +121,7 @@ class vin_web(NNobj):
             det = end - ptr
             for i in xrange(det):
                 Q_dat[i, :] = train_queries[ptr + i, :]
-            V_dat = self.compute(Q_dat)
+            V_dat = self.compute(Q_dat)[0]
             for i in xrange(det):
                 v_train[ptr + i, :] = V_dat[i, :]
             ptr += batch_size
@@ -141,7 +141,7 @@ class vin_web(NNobj):
             det = end - ptr
             for i in xrange(det):
                 Q_dat[i, :] = test_queries[ptr + i, :]
-            V_dat = self.compute(Q_dat)
+            V_dat = self.compute(Q_dat)[0]
             for i in xrange(det):
                 v_test[ptr + i, :] = V_dat[i, :]
             ptr += batch_size
