@@ -312,7 +312,7 @@ class vin_web(NNobj):
 
             if (testerr / num < best):
                 best = testerr / num
-                self.save_weights(self.model + '_best.pk')
+                self.save_weights(self.model + '_R' + str(int(self.reg))+'_best.pk')
                 
             elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
