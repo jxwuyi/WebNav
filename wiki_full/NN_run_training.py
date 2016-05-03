@@ -44,6 +44,7 @@ def main():
     parser.add_argument("--maxhops", type=int, default=1)
     parser.add_argument("--stepdecreaserate", type=float, default=1.0)
     parser.add_argument("--stepdecreasetime", type=int, default=10000)
+    parser.add_argument("--reportgap", type=int, default=50000)
     parser.add_argument("--sanity_check", default="None")
     args = parser.parse_args()
 
@@ -95,11 +96,9 @@ def main():
         my_nn = cmbt2.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
-                    k=args.k, seed = args.seed, batchsize = args.batchsize)
-        if (args.warmstart == "None"):
-            my_nn.load_pretrained()
-        else:
-            my_nn.load_pretrained(bsl_file = 'NA')
+                    k=args.k, seed = args.seed, batchsize = args.batchsize,
+                    report_gap = args.reportgap)
+        my_nn.load_pretrained()
     elif (args.model == "WikiProjSG"):
         my_nn = prj_sg.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
