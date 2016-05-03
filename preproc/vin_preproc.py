@@ -190,6 +190,8 @@ class VinBlockWiki(object):
         self.page_emb = theano.sandbox.cuda.var.float32_shared_constructor(page_emb)
         self.adj_mat = theano.sandbox.cuda.var.float32_shared_constructor(adj_mat)
         self.adj_mat = self.adj_mat.dimshuffle('x', 0, 1) # x * N * N
+
+        self.vin_params = []
         
         # Q_in * W
         self._W = init_weights_T(1, emb_dim);
