@@ -322,7 +322,7 @@ class vin_web(NNobj):
    
     def load_pretrained(self, vin_file="../pretrain/WebNavVIN-map.pk"):
         dump_vin = pickle.load(open(vin_file, 'r'))
-        for n, p in zip(self.vin_params, dump_vin)
+        for n, p in zip(self.vin_params, dump_vin):
             if (n != None):
                 n.set_value(p)
 
