@@ -40,7 +40,7 @@ class vin_web(NNobj):
         # A input: embedding for adjacent pages to the current state
         self.A_in = T.fmatrix('A_in')  # emb_dim * max_degree
         # V input: value function computed for the query on the wikiSchool pages
-        self.V_in = T.fmaatrix('V_in')
+        self.V_in = T.fmatrix('V_in')
         # output action
         self.y = T.ivector("y")        # actuall 1 * 1
 
