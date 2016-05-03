@@ -101,8 +101,8 @@ class vin_web(NNobj):
         
 
         f = h5py.File(output, 'w')
-        v_train = f.create_dataset('train',(train_n, dim),dtype='float32')
-        v_test = f.create_dataset('test',(test_n,dim),dtype='float32')
+        v_train = f.create_dataset('train',(train_n, self.N),dtype='float32')
+        v_test = f.create_dataset('test',(test_n, self.N),dtype='float32')
 
 	Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # batchsize * emb_dim
         V_dat = np.zeros((batch_size,self.N), dtype = theano.config.floatX) # batchsize * emb_dim
