@@ -79,7 +79,7 @@ class vin_web(NNobj):
             urls = self.wk.get_article_links(i)
             for j in urls:
                 self.adj_mat[j, i] = 1
-                self.sht_mat[j, i] = 0
+                self.shft_mat[j, i] = 0
         
         self.q = qp.QP(prm.curr_query_path) # query for webnav task
 
