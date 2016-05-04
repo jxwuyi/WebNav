@@ -42,7 +42,7 @@ class vin_web(NNobj):
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, batchsize = self.batchsize, 
                                     N = self.N, emb_dim = self.emb_dim,
                                     page_emb = self.school_emb,
-                                    adj_mat = self.adj_mat,
+                                    adj_mat = self.adj_mat, shft_mat = self.shft_mat,
                                     k=self.k)
         
         self.vin_params = self.vin_net.vin_params
@@ -73,11 +73,13 @@ class vin_web(NNobj):
         self.idx = self.wk.get_titles_pos()
 
         self.adj_mat = np.zeros((self.N, self.N), dtype = theano.config.floatX)
+        self.shft_mat = -10 * np.ones((self.N, self.N), dtype = theano.config.floatX)
         for i in range(self.N):
             self.adj_mat[i,i] = 1
             urls = self.wk.get_article_links(i)
             for j in urls:
                 self.adj_mat[j, i] = 1
+                self.sht_mat[j, i] = 0
         
         self.q = qp.QP(prm.curr_query_path) # query for webnav task
 
@@ -161,7 +163,7 @@ class vin_web(NNobj):
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
     def __init__(self, Q_in, N, emb_dim, batchsize,
-                 page_emb, adj_mat,
+                 page_emb, adj_mat, shft_mat,
                  k):
         """
         Allocate a VIN block with shared variable internal parameters.
@@ -190,6 +192,8 @@ class VinBlockWiki(object):
         self.page_emb = theano.sandbox.cuda.var.float32_shared_constructor(page_emb)
         self.adj_mat = theano.sandbox.cuda.var.float32_shared_constructor(adj_mat)
         self.adj_mat = self.adj_mat.dimshuffle('x', 0, 1) # x * N * N
+        self.shft_mat = theano.sandbox.cuda.var.float32_shared_constructor(shft_mat)
+        self.shft_mat = self.shft_mat.dimshuffle('x', 0, 1) # x * N * N
 
         self.vin_params = []
         
@@ -215,7 +219,7 @@ class VinBlockWiki(object):
         for i in xrange(k):
             self.tV = self.V.dimshuffle(0, 'x', 1) # batchsize * x * N
             #self.tV = T.extra_ops.repeat(self.V, N, axis = 0)  # N * N
-            self.q = self.tV * self.adj_mat  # batchsize * N * N
+            self.q = self.tV * self.adj_mat + self.shft_mat # batchsize * N * N
             #self.q = self.q + self.add_R
             self.V = T.max(self.q, axis=1, keepdims=False) # batchsize * N
 	    self.V = self.V + self.R # batchsize * N
