@@ -29,12 +29,13 @@ def main():
     parser.add_argument("--stepdecreaserate", type=float, default=1.0)
     parser.add_argument("--stepdecreasetime", type=int, default=10000)
     parser.add_argument("--sanity_check", default="None")
+    parser.add_argument("--reportgap", type=int, default=100)
     args = parser.parse_args()
 
     my_nn = vin.vin_web(N = prm.total_pages, D=prm.max_links_per_page,
                     emb_dim = prm.dim_emb, 
                     devtype=args.devtype, 
-                    k=args.k)
+                    k=args.k, report_gap=args.reportgap)
     my_nn.load_pretrained()
     try:
     
