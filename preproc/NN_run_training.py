@@ -35,7 +35,8 @@ def main():
     my_nn = vin.vin_web(N = prm.total_pages, D=prm.max_links_per_page,
                     emb_dim = prm.dim_emb, 
                     devtype=args.devtype, 
-                    k=args.k, report_gap=args.reportgap)
+                    k=args.k, report_gap=args.reportgap,
+                    batchsize=args.batchsize)
     my_nn.load_pretrained()
     try:
     
