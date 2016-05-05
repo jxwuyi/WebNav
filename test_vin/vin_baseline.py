@@ -8,7 +8,7 @@ import qp_bsl as qp
 import h5py
 
 
-class vin_web(NNobj):
+class vin(NNobj):
     "Class for a neural network that does k iterations of value iteration"
     def __init__(self, model="valIterWikiBSL", emb_dim = 500,
                  dropout=False, devtype="cpu", batchsize = 128, 
