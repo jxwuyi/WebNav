@@ -85,7 +85,7 @@ class QP():
 
         return outs  # 3 * n_queries * n_length
 
-    def get_tuples(self, paths, inv_idx):
+    def get_tuples(self, paths):
         outs = []
         for i in xrange(len(paths)):
             n = len(paths[i])
