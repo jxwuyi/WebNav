@@ -13,7 +13,7 @@ class vin(NNobj):
     def __init__(self, model="valIterWikiBSL", emb_dim = 500,
                  dropout=False, devtype="cpu", batchsize = 128, 
                  grad_check=False, reg=0, seed = 0,
-                 data_select = 1, report_gap = 10000):
+                 data_select = 0, report_gap = 10000):
         self.emb_dim = emb_dim                # Dimension of word embedding
         self.batchsize = batchsize            # maximum batchsize
         self.model = model
@@ -136,7 +136,7 @@ class vin(NNobj):
         if (prm.only_predict):
             test_n = len(test_entry)
         else:
-            test_n = len(test_entry) / 10 # to make things faster
+            test_n = len(test_entry)# / 10 # to make things faster
 
         perm_train = np.random.permutation(len(train_entry))
         perm_test = np.random.permutation(len(test_entry))
