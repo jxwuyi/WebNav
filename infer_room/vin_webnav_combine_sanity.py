@@ -283,7 +283,7 @@ class vin_web(NNobj):
                         A_dat[:, _k] = fs['emb'][_v]         
                     trainerr_, trainloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
                     if (prm.top_k_accuracy != 1):  # compute top-k accuracy
-                        y_full = self.y_full_out(Q_sig, A_dat)[0]
+                        y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0 
@@ -303,13 +303,14 @@ class vin_web(NNobj):
                         A_dat[:, _k] = fs['emb'][_v]         
                     testerr_, testloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
-                        y_full = self.y_full_out(Q_sig, S_dat)[0]
+                        y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0
-                        test_fail[q_i] -= 1
-                        if (test_fail[q_i] == 0):
-                            test_success += 1
+                            if (prm.perform_full_inference)
+                                test_fail[q_i] -= 1
+                                if (test_fail[q_i] == 0):
+                                    test_success += 1
    
                         testerr_ = tmp_err * 1.0
                     
