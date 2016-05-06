@@ -22,7 +22,6 @@ class vin_web(NNobj):
         #self.k = k                            # number of VI iterations
         self.report_gap = report_gap
         self.data_select = data_select
-        # We assume BatchSize = 1
         self.batchsize = batchsize            # batch size for training
         #self.maxhops = maxhops+1              # number of state inputs for every query,
                                               #     here simply the number of hops per query + 1 (including stop)
@@ -40,6 +39,8 @@ class vin_web(NNobj):
         #self.S_in = T.fmatrix("S_in")  # 1 * emb_dim
         # A input: embedding for adjacent pages to the current state
         self.A_in = T.fmatrix('A_in')  # emb_dim * max_degree
+        # V input: value function computed for the query on the wikiSchool pages
+        self.V_in = T.fmatrix('V_in')
         # output action
         self.y = T.ivector("y")        # actuall 1 * 1
 
@@ -49,9 +50,9 @@ class vin_web(NNobj):
 
         print 'building Full VIN model ...'
 
-        self.vin_net = VinBlockWiki(Q_in=self.Q_in, A_in=self.A_in,
+        self.vin_net = VinBlockWiki(Q_in=self.Q_in, A_in=self.A_in, V_in=self.V_in,
                                     N = self.N, emb_dim = self.emb_dim,
-                                    page_emb = self.school_emb, title_emb = self.school_title_emb)
+                                    page_emb = self.school_emb)
         self.p_of_y = self.vin_net.output
         self.params = self.vin_net.params
         # Total 1910 parameters ?????
@@ -63,14 +64,14 @@ class vin_web(NNobj):
         
         self.err = T.mean(T.neq(self.y_pred, self.y.flatten()), dtype=theano.config.floatX)
 
-        self.computeloss = theano.function(inputs=[self.Q_in, self.A_in, self.y],
+        self.computeloss = theano.function(inputs=[self.Q_in, self.A_in, self.V_in, self.y],
                                            outputs=[self.err, self.cost])
-        self.y_out = theano.function(inputs=[self.Q_in, self.A_in], outputs=[self.y_pred])
+        self.y_out = theano.function(inputs=[self.Q_in, self.A_in, self.V_in], outputs=[self.y_pred])
 
-        self.y_full_out = theano.function(inputs=[self.Q_in, self.A_in], outputs=[self.y_inc_order])
+        self.y_full_out = theano.function(inputs=[self.Q_in, self.A_in, self.V_in], outputs=[self.y_inc_order])
         
 
-    def load_graph(self):  
+    def load_graph(self, value_file = "../pretrain/WebNavVAL_PreCalc_New.hdf5"):  
         """
         :type page_emb: np.fmatrix
         :param page_emb: input data, embedding for each page, of shape [emb_dim, N_pages]
@@ -86,6 +87,8 @@ class vin_web(NNobj):
             self.school_emb[:, i] = fs['emb'][i]
         fs.close()
 
+        self.fval = h5py.File(value_file, 'r')
+
         self.wk = wiki.Wiki(prm.school_pages_path)
         self.idx = self.wk.get_titles_pos()
 
@@ -97,34 +100,15 @@ class vin_web(NNobj):
         #        self.adj_mat[j, i] = 1
         
         self.q = qp.QP(prm.curr_query_path) # query for webnav task
-        self.school_title_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
-        for i in range(self.N):
-            self.school_title_emb[:, i] = self.q.get_content_embed(self.wk.get_article_content(i))
-
+        
         elap = time.time() - tstart
         print ' >>> time elapsed: %f' % (elap)
-
-    def reward_checking(self, queries, paths, page_emb):
-        """
-        queries: M * emb_dim
-        page_emb: emb_dim * N
-        """
-        reward = np.dot(queries, page_emb) # M * N
-        target = np.argmax(reward, axis = 1) # M * array
-        n = len(paths)
-        correct = 0
-        for i in xrange(n):
-            cur = target[i]
-            ans = paths[i][-1]
-            if (cur == ans):
-                correct += 1
-        print " >>> Result: accuracy = %d / %d (%f percent) ..." % (correct, n, correct * 100.0 / n)
 
     def run_training(self, stepsize=0.01, epochs=10, output='None',
                      grad_check=True,
                      profile=False):
 
-        
+        best = 1
         print 'Prepare Training Data ...'
 
         tmp_tstart = time.time()
@@ -168,12 +152,15 @@ class vin_web(NNobj):
 
 	Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # batchsize * emb_dim
         Q_sig = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
-        S_dat = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
         y_sig = np.zeros(1, dtype = np.int32) # 1
+        V_dat = np.zeros((batch_size, self.N), dtype = theano.config.floatX) # batchsize * N
+        V_sig = np.zeros((1, self.N), dtype = theano.config.floatX) # 1 * N
 
 	tmp_elap = time.time() - tmp_tstart
         print ' >>> time elapsed: %f' % (tmp_elap)
 
+        test_order = np.random.permutation(len(test_entry))
+        train_order = np.random.permutation(len(train_entry))
 
         #valid_n = len(valid_entry)
         if (prm.only_predict):
@@ -182,7 +169,7 @@ class vin_web(NNobj):
             test_n = len(test_entry) / 10 # to make things faster
 
         self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
-        self.train = theano.function(inputs=[self.Q_in, self.A_in, self.y], outputs=[], updates=self.updates)
+        self.train = theano.function(inputs=[self.Q_in, self.A_in, self.V_in, self.y], outputs=[], updates=self.updates)
 
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         #for i in range(self.N):
@@ -192,8 +179,6 @@ class vin_web(NNobj):
         print 'train_n = %d ...' % (train_n)
         print 'test_n = %d ...' % (test_n)
 
-        eval_order = np.random.permutation(train_n)
-         
         print fmt_row(10, ["Epoch", "Train NLL", "Train Err", "Test NLL", "Test Err", "Epoch Time"])
         for i_epoch in xrange(int(epochs)):
             tstart = time.time()
@@ -231,14 +216,17 @@ class vin_web(NNobj):
                         y_dat = np.zeros(det, dtype = np.int32)
                         if (det == batch_size):
                             Q_now = Q_dat
+                            V_now = V_dat
                         else:
                             Q_now = np.zeros((det,self.emb_dim), dtype = theano.config.floatX)
+                            V_now = np.zeros((det,self.N), dtype = theano.config.floatX)
                         for i in xrange(det):
                             q_i, _, y_i = train_entry[inds[ptr + i]]
                             Q_now[i, :] = train_queries[q_i, :]
+                            V_now[i, :] = self.fval['train'][q_i, :]
                             y_dat[i] = adj_ind[y_i]
 
-                        self.train(Q_now, A_dat, y_dat)
+                        self.train(Q_now, A_dat, V_now, y_dat)
                         total_proc += det
                         if ((self.report_gap > 0)
                                 and (total_proc > total_out * self.report_gap)):
@@ -269,6 +257,7 @@ class vin_web(NNobj):
                     # prepare training data
                     q_i, s_i, y_i = train_entry[eval_order[start]]
                     Q_sig[0, :] = train_queries[q_i, :]
+                    V_sig[0, :] = self.fval['train'][q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
                     deg = len(links_dat)
@@ -278,9 +267,9 @@ class vin_web(NNobj):
                             k_i = _k
                             y_sig[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]         
-                    trainerr_, trainloss_ = self.computeloss(Q_sig, A_dat, y_sig)
+                    trainerr_, trainloss_ = self.computeloss(Q_sig, A_dat, V_sig, y_sig)
                     if (prm.top_k_accuracy != 1):  # compute top-k accuracy
-                        y_full = self.y_full_out(Q_sig, A_dat)[0]
+                        y_full = self.y_full_out(Q_sig, A_dat, V_sig)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0 
@@ -289,6 +278,7 @@ class vin_web(NNobj):
                     # prepare testing data
                     q_i, s_i, y_i = test_entry[start]
                     Q_sig[0, :] = test_queries[q_i, :]
+                    V_sig[0, :] = self.fval['test'][q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
                     deg = len(links_dat)
@@ -304,9 +294,10 @@ class vin_web(NNobj):
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0
-                        test_fail[q_i] -= 1
-                        if (test_fail[q_i] == 0):
-                            test_success += 1
+                            if (prm.perform_full_inference):
+                                test_fail[q_i] -= 1
+                                if (test_fail[q_i] == 0):
+                                    test_success += 1
    
                         testerr_ = tmp_err * 1.0
                     
@@ -317,6 +308,10 @@ class vin_web(NNobj):
             
             if (prm.perform_full_inference):
                 print 'total sucess trails = %d over %d (percent: %f) ...' %(test_success, total_trial, (test_success*1.0 / total_trial))
+
+            if (testerr / num < best):
+                best = testerr / num
+                self.save_weights(self.model + '_k4_best.pk')
                 
             elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
@@ -360,8 +355,8 @@ class vin_web(NNobj):
 
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
-    def __init__(self, Q_in, A_in, N, emb_dim,
-                 page_emb, title_emb):
+    def __init__(self, Q_in, A_in, V_in, N, emb_dim,
+                 page_emb):
         """
         Allocate a VIN block with shared variable internal parameters.
 
@@ -370,6 +365,9 @@ class VinBlockWiki(object):
 
         :type A_in: theano.tensor.fmatrix
         :param A_in: symbolic input embedding of adjacent pages, of shape [emb_dim, 1~max_deg]
+
+        :type V_in: theano.tensor.fmatrix
+        :param V_in: symbolic input values of the query on the wiki-school pages, of shape [batchsize, N]
 
         :type page_emb: np.fmatrix
         :param page_emb: input data, embedding for each page, of shape [emb_dim, N_pages]
@@ -391,17 +389,17 @@ class VinBlockWiki(object):
         #self.vin_params = []
         #self.bsl_params = []
         
-        if (not prm.query_map_linear):
-            print 'Now we only support linear transformation over query embedding'
+        #if (not prm.query_map_linear):
+        #    print 'Now we only support linear transformation over query embedding'
         # Q_in * W
-        self.W = init_weights_T(emb_dim, emb_dim)
-        self.params.append(self.W)
-        self.q = T.dot(Q_in, self.W)
+        #self.W = init_weights_T(emb_dim, emb_dim)
+        #self.params.append(self.W)
+        #self.q = T.dot(Q_in, self.W)
         # add bias
-        self.q_bias = init_weights_T(emb_dim)
-        self.params.append(self.q_bias)
+        #self.q_bias = init_weights_T(emb_dim)
+        #self.params.append(self.q_bias)
         #self.vin_params.append(self.q_bias)
-        self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
+        #self.q = self.q + self.q_bias.dimshuffle('x', 0) # batch * emb_dim
 
         # self.q_t = self.q
         #self.q_t_bias = init_weights_T(emb_dim)
@@ -422,12 +420,13 @@ class VinBlockWiki(object):
         #self.vin_params.append(self.alpha)
 	#self.alpha_full = T.extra_ops.repeat(self.alpha, N, axis = 1)
 	#self.alpha_full = T.extra_ops.repeat(self.alpha_full, Q_in.shape[0], axis = 0) # batchsize * N
-        self.R = T.dot(self.q, self.page_emb) #+ self.alpha_full * T.dot(self.q_t, self.title_emb)
+        #self.R = T.dot(self.q, self.page_emb) #+ self.alpha_full * T.dot(self.q_t, self.title_emb)
         #self.R = T.dot(self.q_t, title_emb)
 	#self.R = T.nnet.softmax(self.R) # [batchsize * N_pages]
-        self.R = T.tanh(self.R)
+        #self.R = T.tanh(self.R)
         # initial value
-        self.V = self.R  # [batchsize * N_pages]
+        #self.V = self.R  # [batchsize * N_pages]
+        self.V = V_in
 
         # transition param
         #if (prm.diagonal_action_mat): # use simple diagonal matrix for transition
@@ -461,8 +460,8 @@ class VinBlockWiki(object):
 	#    self.V = self.V + self.R # batchsize * N
 
         # compute mapping from wiki_school reward to page reward
-        self.p_W = init_weights_T(emb_dim); 
-        self.params.append(self.p_W);
+        self.p_W = init_weights_T(emb_dim) 
+        self.params.append(self.p_W)
         #self.page_W = T.extra_ops.repeat(self.p_W, A_in.shape[1], axis = 0) # deg * emb_dim
         self.page_W = self.p_W.dimshuffle(0, 'x')  # emb_dim * &
         self.coef_A = A_in * self.page_W   # emb_dim * deg
