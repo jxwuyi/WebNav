@@ -51,7 +51,7 @@ class vin_web(NNobj):
 
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in = self.S_in, A_in=self.A_in,
                                     N = self.N, emb_dim = self.emb_dim,
-                                    page_emb = self.school_emb, title_emb = self.school_title_emb)
+                                    page_emb = self.school_emb)
         self.p_of_y = self.vin_net.output
         self.params = self.vin_net.params
         self.vin_params = self.vin_net.vin_params
@@ -98,9 +98,9 @@ class vin_web(NNobj):
         #        self.adj_mat[j, i] = 1
         
         self.q = qp.QP(prm.curr_query_path) # query for webnav task
-        self.school_title_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
-        for i in range(self.N):
-            self.school_title_emb[:, i] = self.q.get_content_embed(self.wk.get_article_content(i))
+        #self.school_title_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
+        #for i in range(self.N):
+        #    self.school_title_emb[:, i] = self.q.get_content_embed(self.wk.get_article_content(i))
 
         elap = time.time() - tstart
         print ' >>> time elapsed: %f' % (elap)
@@ -368,7 +368,7 @@ class vin_web(NNobj):
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
     def __init__(self, Q_in, S_in, A_in, N, emb_dim,
-                 page_emb, title_emb):
+                 page_emb):
         """
         Allocate a VIN block with shared variable internal parameters.
 
