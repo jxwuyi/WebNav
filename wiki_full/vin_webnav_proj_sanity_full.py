@@ -255,7 +255,7 @@ class vin_web(NNobj):
                 if end <= test_n:  # assert(text_n <= train_n)
                     num += 1
                     # prepare training data
-                    q_i, s_i, y_i = train_entry[eval_order[start]]
+                    q_i, s_i, y_i = train_entry[train_order[start]]
                     #Q_sig[0, :] = train_queries[q_i, :]
                     V_sig[0, :] = self.fval['train'][q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
@@ -269,14 +269,14 @@ class vin_web(NNobj):
                         A_dat[:, _k] = fs['emb'][_v]         
                     trainerr_, trainloss_ = self.computeloss(A_dat, V_sig, y_sig)
                     if (prm.top_k_accuracy != 1):  # compute top-k accuracy
-                        y_full = self.y_full_out(Q_sig, A_dat, V_sig)[0]
+                        y_full = self.y_full_out(A_dat, V_sig)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0 
                         trainerr_ = tmp_err * 1.0
                     
                     # prepare testing data
-                    q_i, s_i, y_i = test_entry[start]
+                    q_i, s_i, y_i = test_entry[test_order[start]]
                     #Q_sig[0, :] = test_queries[q_i, :]
                     V_sig[0, :] = self.fval['test'][q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
@@ -290,7 +290,7 @@ class vin_web(NNobj):
                         A_dat[:, _k] = fs['emb'][_v]         
                     testerr_, testloss_ = self.computeloss(A_dat, y_sig)
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
-                        y_full = self.y_full_out(Q_sig, S_dat)[0]
+                        y_full = self.y_full_out(A_dat, V_sig)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0
