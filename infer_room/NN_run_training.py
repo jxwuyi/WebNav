@@ -1,23 +1,9 @@
 from NNobj import *
 import vin_webnav as vn
-import vin_webnav_fast as vnf
 import vin_webnav_baseline as bsl
-import vin_webnav_combine as cmb
 import vin_webnav_combine_sanity as cmb_san
-import vin_webnav_combine_joint as cmb_jt
-import vin_webnav_combine_test as cmbt
 import vin_webnav_combine_test2 as cmbt2
 import vin_webnav_combine_test2_new as cmbt2n
-import vin_webnav_combine_test3 as cmbt3
-import vin_webnav_proj as prj
-import vin_webnav_proj_sg as prj_sg
-import vin_webnav_proj_sanity as prj_san
-import vin_webnav_proj_sanity_bias as prj_san_b
-import vin_webnav_proj_sanity2 as prj_san2
-import vin_webnav_proj_sanity3 as prj_san3
-import vin_webnav_proj_sanity_full as prj_sanF
-import vin_webnav_proj_sanity_att as prj_att
-import vin_webnav_proj_sanity_att2 as prj_att2
 import myparameters as prm
 
 
