@@ -194,7 +194,8 @@ class vin_web(NNobj):
         print 'train_n = %d ...' % (train_n)
         print 'test_n = %d ...' % (test_n)
 
-        eval_order = np.random.permutation(train_n)
+        train_order = np.random.permutation(len(train_entry))
+        test_order = np.random.permutation(len(test_entry))
          
         print fmt_row(10, ["Epoch", "Train NLL", "Train Err", "Test NLL", "Test Err", "Epoch Time"])
         for i_epoch in xrange(int(epochs)):
@@ -269,7 +270,7 @@ class vin_web(NNobj):
                 if end <= test_n:  # assert(text_n <= train_n)
                     num += 1
                     # prepare training data
-                    q_i, s_i, y_i = train_entry[eval_order[start]]
+                    q_i, s_i, y_i = train_entry[train_order[start]]
                     Q_sig[0, :] = train_queries[q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
@@ -289,7 +290,7 @@ class vin_web(NNobj):
                         trainerr_ = tmp_err * 1.0
                     
                     # prepare testing data
-                    q_i, s_i, y_i = test_entry[start]
+                    q_i, s_i, y_i = test_entry[test_order[start]]
                     Q_sig[0, :] = test_queries[q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
