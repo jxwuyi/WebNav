@@ -34,7 +34,7 @@ class vin_web(NNobj):
         self.load_graph()
 
         # query input: input embedding vector of query
-        self.Q_in = T.fmatrix('Q_in')  # 1 * emb_dim
+        #self.Q_in = T.fmatrix('Q_in')  # 1 * emb_dim
         # S input: embedding for the current state
         #self.S_in = T.fmatrix("S_in")  # 1 * emb_dim
         # A input: embedding for adjacent pages to the current state
@@ -50,7 +50,7 @@ class vin_web(NNobj):
 
         print 'building Full VIN model ...'
 
-        self.vin_net = VinBlockWiki(Q_in=self.Q_in, A_in=self.A_in, V_in=self.V_in,
+        self.vin_net = VinBlockWiki(A_in=self.A_in, V_in=self.V_in,
                                     N = self.N, emb_dim = self.emb_dim,
                                     page_emb = self.school_emb)
         self.p_of_y = self.vin_net.output
@@ -64,11 +64,11 @@ class vin_web(NNobj):
         
         self.err = T.mean(T.neq(self.y_pred, self.y.flatten()), dtype=theano.config.floatX)
 
-        self.computeloss = theano.function(inputs=[self.Q_in, self.A_in, self.V_in, self.y],
+        self.computeloss = theano.function(inputs=[self.A_in, self.V_in, self.y],
                                            outputs=[self.err, self.cost])
-        self.y_out = theano.function(inputs=[self.Q_in, self.A_in, self.V_in], outputs=[self.y_pred])
+        self.y_out = theano.function(inputs=[self.A_in, self.V_in], outputs=[self.y_pred])
 
-        self.y_full_out = theano.function(inputs=[self.Q_in, self.A_in, self.V_in], outputs=[self.y_inc_order])
+        self.y_full_out = theano.function(inputs=[self.A_in, self.V_in], outputs=[self.y_inc_order])
         
 
     def load_graph(self, value_file = "../pretrain/WebNavVAL_PreCalc_New.hdf5"):  
@@ -150,8 +150,8 @@ class vin_web(NNobj):
 	print 'Allocate Memory ...'
 	tmp_tstart = time.time()
 
-	Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # batchsize * emb_dim
-        Q_sig = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
+	#Q_dat = np.zeros((batch_size,self.emb_dim), dtype = theano.config.floatX) # batchsize * emb_dim
+        #Q_sig = np.zeros((1,self.emb_dim), dtype = theano.config.floatX) # 1 * emb_dim
         y_sig = np.zeros(1, dtype = np.int32) # 1
         V_dat = np.zeros((batch_size, self.N), dtype = theano.config.floatX) # batchsize * N
         V_sig = np.zeros((1, self.N), dtype = theano.config.floatX) # 1 * N
@@ -169,7 +169,7 @@ class vin_web(NNobj):
             test_n = len(test_entry) / 10 # to make things faster
 
         self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
-        self.train = theano.function(inputs=[self.Q_in, self.A_in, self.V_in, self.y], outputs=[], updates=self.updates)
+        self.train = theano.function(inputs=[self.A_in, self.V_in, self.y], outputs=[], updates=self.updates)
 
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
         #for i in range(self.N):
@@ -215,18 +215,18 @@ class vin_web(NNobj):
                         det = min(end - ptr, batch_size)
                         y_dat = np.zeros(det, dtype = np.int32)
                         if (det == batch_size):
-                            Q_now = Q_dat
+                            #Q_now = Q_dat
                             V_now = V_dat
                         else:
-                            Q_now = np.zeros((det,self.emb_dim), dtype = theano.config.floatX)
+                            #Q_now = np.zeros((det,self.emb_dim), dtype = theano.config.floatX)
                             V_now = np.zeros((det,self.N), dtype = theano.config.floatX)
                         for i in xrange(det):
                             q_i, _, y_i = train_entry[inds[ptr + i]]
-                            Q_now[i, :] = train_queries[q_i, :]
+                            #Q_now[i, :] = train_queries[q_i, :]
                             V_now[i, :] = self.fval['train'][q_i, :]
                             y_dat[i] = adj_ind[y_i]
 
-                        self.train(Q_now, A_dat, V_now, y_dat)
+                        self.train(A_dat, V_now, y_dat)
                         total_proc += det
                         if ((self.report_gap > 0)
                                 and (total_proc > total_out * self.report_gap)):
@@ -256,7 +256,7 @@ class vin_web(NNobj):
                     num += 1
                     # prepare training data
                     q_i, s_i, y_i = train_entry[eval_order[start]]
-                    Q_sig[0, :] = train_queries[q_i, :]
+                    #Q_sig[0, :] = train_queries[q_i, :]
                     V_sig[0, :] = self.fval['train'][q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
@@ -267,7 +267,7 @@ class vin_web(NNobj):
                             k_i = _k
                             y_sig[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]         
-                    trainerr_, trainloss_ = self.computeloss(Q_sig, A_dat, V_sig, y_sig)
+                    trainerr_, trainloss_ = self.computeloss(A_dat, V_sig, y_sig)
                     if (prm.top_k_accuracy != 1):  # compute top-k accuracy
                         y_full = self.y_full_out(Q_sig, A_dat, V_sig)[0]
                         tmp_err = 1
@@ -277,7 +277,7 @@ class vin_web(NNobj):
                     
                     # prepare testing data
                     q_i, s_i, y_i = test_entry[start]
-                    Q_sig[0, :] = test_queries[q_i, :]
+                    #Q_sig[0, :] = test_queries[q_i, :]
                     V_sig[0, :] = self.fval['test'][q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
@@ -288,7 +288,7 @@ class vin_web(NNobj):
                             k_i = _k
                             y_sig[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]         
-                    testerr_, testloss_ = self.computeloss(Q_sig, A_dat, y_sig)
+                    testerr_, testloss_ = self.computeloss(A_dat, y_sig)
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
                         y_full = self.y_full_out(Q_sig, S_dat)[0]
                         tmp_err = 1
@@ -355,7 +355,7 @@ class vin_web(NNobj):
 
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
-    def __init__(self, Q_in, A_in, V_in, N, emb_dim,
+    def __init__(self, A_in, V_in, N, emb_dim,
                  page_emb):
         """
         Allocate a VIN block with shared variable internal parameters.
