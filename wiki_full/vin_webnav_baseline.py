@@ -12,11 +12,15 @@ class vin_web(NNobj):
     "Class for a neural network that does k iterations of value iteration"
     def __init__(self, model="valIterWebNavBL", emb_dim = 300,
                  dropout=False, devtype="cpu", batchsize = 128, 
-                 grad_check=False, reg=0, seed = 0):
+                 grad_check=False, reg=0, seed = 0,
+                 data_select=0, reportgap=700000):
         self.emb_dim = emb_dim                # Dimension of word embedding
         self.batchsize = batchsize            # maximum batchsize
         self.model = model
         self.reg = reg                        # regularization (currently not implemented)
+
+        self.data_select = data_select
+        self.report_gap = reportgap
 
         np.random.seed(seed)
         print(model)
@@ -94,7 +98,7 @@ class vin_web(NNobj):
                      grad_check=True,
                      profile=False):
 
-        
+        best = 1;
         print 'Prepare Training Data ...'
 
         tmp_tstart = time.time()
@@ -144,6 +148,8 @@ class vin_web(NNobj):
 	tmp_elap = time.time() - tmp_tstart
         print ' >>> time elapsed: %f' % (tmp_elap)
 
+        train_perm = np.random.permutation(len(train_entry))
+        test_perm = np.random.permutation(len(test_entry))
 
         #valid_n = len(valid_entry)
         if (prm.only_predict):
@@ -172,8 +178,8 @@ class vin_web(NNobj):
 	    print ' >> sort time : %f s' %(time.time() - tstart)
 
             train_n_curr = train_n
-            if (prm.select_subset_data > 0):
-                train_n_curr = train_n / prm.select_subset_data
+            if (self.data_select > 0):
+                train_n_curr = train_n / sef.data_select
             # do training
             if (not prm.only_predict): # we do need to perform training
                 start = 0
@@ -208,8 +214,8 @@ class vin_web(NNobj):
 
                         self.train(Q_now, S_dat, A_dat, y_dat)
                         total_proc += det
-                        if ((prm.report_elap_gap > 0)
-                                and (total_proc > total_out * prm.report_elap_gap)):
+                        if ((self.report_gap > 0)
+                                and (total_proc > total_out * self.report_gap)):
                             total_out += 1
                             print '>> finished samples %d / %d (%f percent)... elapsed = %f' % (total_proc, train_n_curr, (100.0 * total_proc) / train_n_curr, time.time()-tstart)             	
                         
@@ -235,7 +241,7 @@ class vin_web(NNobj):
                 if end <= test_n:  # assert(text_n <= train_n)
                     num += 1
                     # prepare training data
-                    q_i, s_i, y_i = train_entry[inds[start]]
+                    q_i, s_i, y_i = train_entry[train_perm[start]]
                     Q_sig[0, :] = train_queries[q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
@@ -255,7 +261,7 @@ class vin_web(NNobj):
                         trainerr_ = tmp_err * 1.0
                     
                     # prepare testing data
-                    q_i, s_i, y_i = test_entry[start]
+                    q_i, s_i, y_i = test_entry[test_perm[start]]
                     Q_sig[0, :] = test_queries[q_i, :]
                     S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
@@ -285,7 +291,11 @@ class vin_web(NNobj):
             
             if (prm.perform_full_inference):
                 print 'total sucess trails = %d over %d (percent: %f) ...' %(test_success, total_trial, (test_success*1.0 / total_trial))
-                
+
+            if (testerr / num < best):
+                best = testerr / num
+                self.save_weights(self.model+'_best.pk')
+            
             elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
 

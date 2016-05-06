@@ -65,7 +65,8 @@ def main():
         my_nn = bsl.vin_web(model=args.model,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
-                    seed = args.seed, batchsize = args.batchsize)
+                    seed = args.seed, batchsize = args.batchsize,
+                    reportgap=args.reportgap)
     elif (args.model == "WikiCombine"):
         my_nn = cmb.vin_web(model=args.model, N = prm.total_pages, D=prm.max_links_per_page,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
