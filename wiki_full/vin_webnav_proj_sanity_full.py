@@ -199,7 +199,7 @@ class vin_web(NNobj):
                 
                 while (start < train_n_curr):
                     s = train_entry[inds[start]][1]
-                    S_dat[0, :] = fs['emb'][s]
+                    #S_dat[0, :] = fs['emb'][s]
                     links_dat = full_wk.get_article_links(s)
                     deg = len(links_dat)
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
@@ -258,7 +258,7 @@ class vin_web(NNobj):
                     q_i, s_i, y_i = train_entry[train_order[start]]
                     #Q_sig[0, :] = train_queries[q_i, :]
                     V_sig[0, :] = self.fval['train'][q_i, :]
-                    S_dat[0, :] = fs['emb'][s_i]
+                    #S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
                     deg = len(links_dat)
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
@@ -279,7 +279,7 @@ class vin_web(NNobj):
                     q_i, s_i, y_i = test_entry[test_order[start]]
                     #Q_sig[0, :] = test_queries[q_i, :]
                     V_sig[0, :] = self.fval['test'][q_i, :]
-                    S_dat[0, :] = fs['emb'][s_i]
+                    #S_dat[0, :] = fs['emb'][s_i]
                     links_dat = full_wk.get_article_links(s_i)
                     deg = len(links_dat)
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
