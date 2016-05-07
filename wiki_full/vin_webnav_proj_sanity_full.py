@@ -471,12 +471,7 @@ class VinBlockWiki(object):
         
         self.page_map = T.dot(self.coef_A.T, self.page_emb)  # deg * N
         #self.page_map = T.nnet.softmax(self.page_map)  # deg * N
-
-	self.last_bias = init_weights_T(1)
-	self.params.append(self.last_bias)
-	self.last_bias_full = T.extra_ops.repeat(self.last_bias, A_in.shape[1], axis=0)
-	self.last_bias_full = self.last_bias_full.dimshuffle(0, 'x')
-	self.page_map = T.nnet.relu(self.page_map+self.last_bias_full)
+        self.page_map = T.nnet.sigmoid(self.page_map)
         self.page_R = T.dot(self.V,self.page_map.T) # batchsize * deg
 
         # tanh layer for local information
