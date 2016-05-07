@@ -47,6 +47,7 @@ def main():
     parser.add_argument("--stepdecreaserate", type=float, default=1.0)
     parser.add_argument("--stepdecreasetime", type=int, default=10000)
     parser.add_argument("--reportgap", type=int, default=50000)
+    parser.add_argument("--dataselect", type=int, default=1)
     parser.add_argument("--sanity_check", default="None")
     args = parser.parse_args()
 
@@ -151,7 +152,8 @@ def main():
         my_nn = prj_sanF.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
-                    seed = args.seed, batchsize = args.batchsize)
+                    seed = args.seed, batchsize = args.batchsize,
+                    data_select=args.dataselect)
     elif (args.model == "WikiProjAtt"):
         my_nn = prj_att.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,

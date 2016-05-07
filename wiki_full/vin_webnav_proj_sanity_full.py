@@ -166,7 +166,7 @@ class vin_web(NNobj):
         if (prm.only_predict):
             test_n = len(test_entry)
         else:
-            test_n = len(test_entry) / 10 # to make things faster
+            test_n = len(test_entry) / 20 # to make things faster
 
         self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
         self.train = theano.function(inputs=[self.A_in, self.V_in, self.y], outputs=[], updates=self.updates)
