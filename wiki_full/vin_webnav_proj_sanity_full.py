@@ -288,7 +288,7 @@ class vin_web(NNobj):
                             k_i = _k
                             y_sig[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]         
-                    testerr_, testloss_ = self.computeloss(A_dat, y_sig)
+                    testerr_, testloss_ = self.computeloss(A_dat, V_sig, y_sig)
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
                         y_full = self.y_full_out(A_dat, V_sig)[0]
                         tmp_err = 1
