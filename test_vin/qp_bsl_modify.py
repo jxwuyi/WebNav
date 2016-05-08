@@ -23,9 +23,9 @@ class QP():
         self.path_test = outs[2]
         #self.query_texts = self.get_queries()
 
-        self.add_extra(self.q_train, self.path_train)
-        self.add_extra(self.q_valid, self.path_valid)
-        self.add_extra(self.q_test, self.path_test)
+        self.q_train = self.add_extra(self.q_train, self.path_train)
+        self.q_valid = self.add_extra(self.q_valid, self.path_valid)
+        self.q_test = self.add_extra(self.q_test, self.path_test)
 
     def add_extra(self, query, paths):
         n = len(paths)
@@ -39,7 +39,7 @@ class QP():
                     extra_path[0] = paths[p][-1] # random starting point
                     paths.append(extra_path)
                     break
-        query = np.append(query, extra, axis=0)
+        return np.append(query, extra, axis=0)
 
     def get_train_queries(self):
         return self.q_train
