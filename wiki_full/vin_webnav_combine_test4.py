@@ -50,17 +50,13 @@ class vin_web(NNobj):
 
         print 'building Full VIN model ...'
 
-        if (self.reg < 0.000001):
-            self.reg = 0
-        else:
-            self.reg = 1.0 / self.reg
-
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in=self.S_in, A_in=self.A_in, V_in = self.V_in,
                                     N = self.N, emb_dim = self.emb_dim,
                                     page_emb = self.school_emb, k=self.k, reg = self.reg)
         self.p_of_y = self.vin_net.output
         self.params = self.vin_net.params
         self.vin_params = self.vin_net.vin_params
+        self.bsl_params = self.vin_net.bsl_params
         # Total 1910 parameters ?????
 
         self.cost = -T.mean(T.log(self.p_of_y)[T.arange(self.y.shape[0]),
@@ -326,9 +322,13 @@ class vin_web(NNobj):
         fs.close()
         self.fval.close()
    
-    def load_pretrained(self, vin_file="../pretrain/WebNavVIN-map-k4.pk"):
+    def load_pretrained(self, vin_file="../pretrain/WebNavVIN-map-k4.pk",
+                              bsl_file="../pretrain/WebNavBSL_best.pk"):
         dump_vin = pickle.load(open(vin_file, 'r'))
         for n, p in zip(self.vin_params, dump_vin):
+            n.set_value(p)
+        dump_bsl = pickle.load(open(bsl_file, 'r'))
+        for n, p in zip(self.bsl_params, dump_bsl):
             n.set_value(p)
 
     def load_weights(self, infile="weight_dump.pk"):
@@ -378,6 +378,7 @@ class VinBlockWiki(object):
 
         self.params = []
         self.vin_params = []
+        self.bsl_params = []
   
         #self._W = init_weights_T(1, emb_dim);
         #self.params.append(self.W)
@@ -443,23 +444,31 @@ class VinBlockWiki(object):
         # now only a single tanh layer
         self.proj_dim = emb_dim # probably larger proj dim??????
         
-        self.H_W = init_weights_T(2 * emb_dim, emb_dim + 1)
-        self.params.append(self.H_W)
-        #self.bsl_params.append(self.H_W)
+        self.H_W = init_weights_T(2 * emb_dim, emb_dim)
+        #self.params.append(self.H_W)
+        self.bsl_params.append(self.H_W)
         
-        self.H_bias = init_weights_T(1, emb_dim + 1)
-        self.params.append(self.H_bias)
-        #self.bsl_params.append(self.H_bias)
+        self.H_bias = init_weights_T(1, emb_dim)
+        #self.params.append(self.H_bias)
+        self.bsl_params.append(self.H_bias)
         
-        self.H_bias_full = T.extra_ops.repeat(self.H_bias, Q_in.shape[0], axis = 0) # batchsize * emb_dim+1
-        self.H_proj_full = T.tanh(T.dot(self.H, self.H_W) + self.H_bias_full) # batchsize * emb_dim+1
-        self.H_proj = self.H_proj_full[:, 1:] # batchsize * emb_dim
-        self.beta = self.H_proj_full[:, 0] # batchsize
+        self.H_bias_full = T.extra_ops.repeat(self.H_bias, Q_in.shape[0], axis = 0) # batchsize * emb_dim
+        self.H_proj = T.tanh(T.dot(self.H, self.H_W) + self.H_bias_full) # batchsize * emb_dim
+        #self.H_proj = self.H_proj_full[:, 1:] # batchsize * emb_dim
+
+        self.beta_W = init_weights_T(2 * emb_dim, 1)
+        self.params.append(self.beta_W)
+        self.beta_bias = init_weights(1)
+        self.params.append(self.beta_bias)
+        self.beta_bias_full = self.beta_bias.dimshuffle('x', 0) # batchsize * 1
+        self.beta = T.tanh(T.dot(self.H, self.beta_W) + self.beta_bias_full) # batchsize * 1
         # do we need one more layer here???
+
+        self.beta_flat = self.beta.flatten() # batchsize
 
         self.orig_R = T.dot(self.H_proj, A_in)  # batchsize * deg
 
-        self.beta_full = self.beta.dimshuffle(0, 'x') # batchsize * deg
+        self.beta_full = self.beta_flat.dimshuffle(0, 'x') # batchsize * deg
 
         # compute final reward for every function
         # .... Do we need an extra scalar??????
