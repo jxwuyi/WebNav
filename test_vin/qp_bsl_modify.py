@@ -39,7 +39,7 @@ class QP():
                     extra_path[0] = paths[p][-1] # random starting point
                     paths.append(extra_path)
                     break
-        query = np.append(query, extra)
+        query = np.append(query, extra, axis=0)
 
     def get_train_queries(self):
         return self.q_train
