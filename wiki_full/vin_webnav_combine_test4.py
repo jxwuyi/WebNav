@@ -458,7 +458,7 @@ class VinBlockWiki(object):
 
         self.beta_W = init_weights_T(2 * emb_dim, 1)
         self.params.append(self.beta_W)
-        self.beta_bias = init_weights(1)
+        self.beta_bias = init_weights_T(1)
         self.params.append(self.beta_bias)
         self.beta_bias_full = self.beta_bias.dimshuffle('x', 0) # batchsize * 1
         self.beta = T.tanh(T.dot(self.H, self.beta_W) + self.beta_bias_full) # batchsize * 1
