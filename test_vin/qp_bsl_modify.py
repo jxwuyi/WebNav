@@ -6,6 +6,7 @@ import utils
 import myparameters as prm
 import cPickle as pkl
 import random
+import numpy as np
 
 class QP():
 
