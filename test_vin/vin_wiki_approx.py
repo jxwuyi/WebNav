@@ -8,7 +8,7 @@ import qp
 import h5py
 
 
-class vin_web(NNobj):
+class vin(NNobj):
     "Class for a neural network that does k iterations of value iteration"
     def __init__(self, model="WikiCombineSANJoint", N = 6072, D = 279, emb_dim = 300,
                  dropout=False, devtype="cpu",
