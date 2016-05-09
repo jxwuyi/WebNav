@@ -99,6 +99,19 @@ class QP():
                     outs.append((i, x, k))
         return outs
 
+    def get_tuples_raw(self, paths):
+        outs = []
+        for i in xrange(len(paths)):
+            n = len(paths[i])
+            for j in range(n - 1):
+                if (j == n - 1):
+                    outs.append((i, paths[i][j], i))
+                else:
+                    x = paths[i][j]
+                    y = paths[i][j + 1]
+                    outs.append((i, x, y))
+        return outs
+
     def tolist(self, text):
         '''
         Convert a string whose elements are separated by a space to a list of integers.

@@ -133,9 +133,9 @@ class vin(NNobj):
         #valid_paths = self.q.get_valid_paths()
         test_paths = self.q.get_test_paths()
 
-        train_entry = self.q.get_tuples(train_paths)
-        #valid_entry = self.q.get_tuples(valid_paths)
-        test_entry = self.q.get_tuples(test_paths)
+        train_entry = self.q.get_tuples_raw(train_paths)
+        #valid_entry = self.q.get_tuples_raw(valid_paths)
+        test_entry = self.q.get_tuples_raw(test_paths)
 
         train_n = len(train_entry)
         cnt = {}
