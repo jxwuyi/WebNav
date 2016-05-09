@@ -8,6 +8,12 @@ class Wiki():
     def __init__(self, path):
         self.f = h5py.File(path, 'r')
 
+    def get_index_pages(self, N):
+        A = []
+        for i in xrange(N):
+            if ('index' in self.f['content'][i]):
+                A.append(i)
+        return A
 
     def get_article_text(self, article_id):
         return self.f['text'][article_id]

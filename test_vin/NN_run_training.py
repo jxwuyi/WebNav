@@ -3,6 +3,7 @@ import vin_wiki_sanity as vn_san
 import vin_wiki_fast as vn
 import vin_baseline as bsl
 import vin_baseline2 as bsl2
+import vin_wiki_approx.py as vn_apx
 import myparameters as prm
 
 
@@ -16,7 +17,10 @@ def main():
     parser.add_argument("--dropout", action="store_true")
     parser.add_argument("--stepsize", type=float, default=.0002)
     parser.add_argument("--model",
-                        choices=["dense1", "dense2", "dense3", "conv","WikiBaseline","WikiBaseline2", "valIterWiki", "valIterMultiBatch", "valIterBatch", "CBvalIterBatch", "valIterMars", "valIterMarsSingle"],
+                        choices=["dense1", "dense2", "dense3", "conv",
+                                 "WikiBaseline","WikiBaseline2", "WikiApprox","valIterWiki",
+                                 "valIterMultiBatch", "valIterBatch", "CBvalIterBatch",
+                                 "valIterMars", "valIterMarsSingle"],
                         default="valIterWiki")
     parser.add_argument("--unittest", action="store_true")
     parser.add_argument("--grad_check", action="store_true")
@@ -59,6 +63,11 @@ def main():
         my_nn = bsl2.vin(model=args.model, emb_dim=prm.dim_emb, devtype=args.devtype,
                         batchsize=args.batchsize, seed=args.seed,
                         report_gap = args.reportgap)
+    elif (args.model == "WikiApprox"):
+        # Baseline model with augumented training/testing data
+        my_nn = vn_apx.vin(model=args.model, emb_dim=prm.dim_emb, devtype=args.devtype,
+                           batchsize=args.batchsize, seed=args.seed,
+                           report_gap = args.reportgap, k = args.k)
         
         
     if args.warmstart != "None":
