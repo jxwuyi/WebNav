@@ -52,7 +52,7 @@ select_subset_data = 50
 output_wrong_predict = False
 only_predict = True
 top_k_accuracy = 4
-perform_full_inference = False
+perform_full_inference = True
 report_elap_gap = 20000
 
 
