@@ -108,6 +108,7 @@ def main():
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     k=args.k, seed = args.seed, batchsize = args.batchsize,
                     report_gap = args.reportgap)
+        my_nn.load_pretrained()
     elif (args.model == "WikiProjSG"):
         my_nn = prj_sg.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
