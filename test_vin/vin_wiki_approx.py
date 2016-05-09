@@ -317,8 +317,6 @@ class vin(NNobj):
             elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
 
-        fs.close()
-
     #TODO
     def load_pretrained(self, vin_file="../pretrain/WebNavVIN-map.pk",
                               bsl_file="../pretrain/WebNavCMB_SAN.pk"):
