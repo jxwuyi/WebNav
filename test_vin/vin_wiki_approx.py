@@ -10,7 +10,7 @@ import h5py
 
 class vin(NNobj):
     "Class for a neural network that does k iterations of value iteration"
-    def __init__(self, model="WikiCombineSANJoint", N = 6072, D = 279, emb_dim = 300,
+    def __init__(self, model="WikiCombineSANJoint", N = 6072, D = 279, emb_dim = 300, k = 0,
                  dropout=False, devtype="cpu",
                  grad_check=False, reg=0, seed = 0, batchsize = 32,
                  report_gap = 1200000, data_select = 1):
