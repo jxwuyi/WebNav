@@ -47,7 +47,7 @@ class vin(NNobj):
         #l_h = 150  # channels in initial hidden layer
         #l_q = 10   # channels in q layer (~actions)
 
-        print 'building combined model with pretrained mapping...'
+        print 'building combined model with VIN on approx graph (indexing pages)...'
 
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in = self.S_in, A_in=self.A_in,
                                     N = self.M, emb_dim = self.emb_dim,
@@ -163,6 +163,8 @@ class vin(NNobj):
         print ' >>> time elapsed: %f' % (tmp_elap)
 
 
+        print 'Compiling ...'
+
         #valid_n = len(valid_entry)
         if (prm.only_predict):
             test_n = len(test_entry)
@@ -176,7 +178,7 @@ class vin(NNobj):
         #for i in range(self.N):
         #    self.school_emb[:, i] = fs['emb'][i]
         
-        print 'Training on Mappings Starts ...'
+        print 'Training Starts ...'
         print 'train_n = %d ...' % (train_n)
         print 'test_n = %d ...' % (test_n)
 
