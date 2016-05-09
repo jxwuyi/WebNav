@@ -4,6 +4,7 @@ import vin_webnav_baseline as bsl
 import vin_webnav_combine_sanity as cmb_san
 import vin_webnav_combine_test2 as cmbt2
 import vin_webnav_combine_test2_new as cmbt2n
+import vin_webnav_combine_test4 as cmbt4
 import myparameters as prm
 
 
@@ -17,7 +18,7 @@ def main():
     parser.add_argument("--dropout", action="store_true")
     parser.add_argument("--stepsize", type=float, default=.0002)
     parser.add_argument("--model",
-                        choices=["dense1", "dense2", "dense3", "conv", "WikiBaseLine", "WikiProj","WikiProjAtt","WikiProjAtt2","WikiProjSanityFull","WikiProjSanity","WikiProjSanityBias","WikiProjSanity3","WikiProjSanity2","WikiProjSG", "WikiCombine","WikiCombineJoint","WikiCombineSanity", "WikiCombineTest","WikiCombineTest2","WikiCombineTest2New","WikiCombineTest3","valIterWiki", "valIterWebNav","valIterWebNavFast", "valIterBatch", "CBvalIterBatch", "valIterMars", "valIterMarsSingle"],
+                        choices=["dense1", "dense2", "dense3", "conv", "WikiBaseLine", "WikiProj","WikiProjAtt","WikiProjAtt2","WikiProjSanityFull","WikiProjSanity","WikiProjSanityBias","WikiProjSanity3","WikiProjSanity2","WikiProjSG", "WikiCombine","WikiCombineJoint","WikiCombineSanity", "WikiCombineTest","WikiCombineTest2","WikiCombineTest2New","WikiCombineTest3","WikiCombineTest4","valIterWiki", "valIterWebNav","valIterWebNavFast", "valIterBatch", "CBvalIterBatch", "valIterMars", "valIterMarsSingle"],
                         default="valIterWebNav")
     parser.add_argument("--unittest", action="store_true")
     parser.add_argument("--grad_check", action="store_true")
@@ -97,6 +98,12 @@ def main():
         my_nn.load_pretrained()
     elif (args.model == "WikiCombineTest3"):
         my_nn = cmbt3.vin_web(model=args.model, N = prm.total_pages,
+                    emb_dim = prm.dim_emb, dropout=args.dropout,
+                    devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
+                    k=args.k, seed = args.seed, batchsize = args.batchsize,
+                    report_gap = args.reportgap)
+    elif (args.model == "WikiCombineTest4"):
+        my_nn = cmbt4.vin_web(model=args.model, N = prm.total_pages,
                     emb_dim = prm.dim_emb, dropout=args.dropout,
                     devtype=args.devtype, grad_check=args.grad_check, reg=args.reg,
                     k=args.k, seed = args.seed, batchsize = args.batchsize,
