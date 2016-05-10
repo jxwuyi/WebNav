@@ -383,8 +383,8 @@ class VinBlockWiki(object):
 	self.alpha_full = T.extra_ops.repeat(self.alpha_full, N, axis = 1)
         self.R = T.dot(self.q, page_emb) + self.alpha_full * T.dot(self.q_t, title_emb)
         #self.R = T.dot(self.q_t, title_emb)
-	#self.R = T.nnet.softmax(self.R)
-        self.R = T.nnet.sigmoid(self.R)
+	self.R = T.nnet.softmax(self.R)
+        #self.R = T.tanh(self.R)
         
         # initial value
         self.V = self.R
