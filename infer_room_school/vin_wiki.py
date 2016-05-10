@@ -384,7 +384,8 @@ class VinBlockWiki(object):
         self.R = T.dot(self.q, page_emb) + self.alpha_full * T.dot(self.q_t, title_emb)
         #self.R = T.dot(self.q_t, title_emb)
 	#self.R = T.nnet.softmax(self.R)
-	
+        self.R = T.tanh(self.R)
+        
         # initial value
         self.V = self.R
 
