@@ -69,6 +69,13 @@ class vin(NNobj):
         :param page_emb: input data, embedding for each page, of shape [emb_dim, N_pages]
         """
         tstart = time.time()
+
+        fs = h5py.File(prm.pages_emb_path, 'r')
+        self.full_page_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
+        for i in range(self.N):
+            self.full_page_emb[:, i] = fs['emb'][i]
+
+        fs.close()
         
         self.q = qp.QP(prm.curr_query_path) # query for wiki
 
@@ -112,9 +119,6 @@ class vin(NNobj):
                 m += 1
 
         full_wk = wiki.Wiki(prm.pages_path)
-
-
-	fs = h5py.File(prm.pages_emb_path, 'r')
 
         tmp_elap = time.time() - tmp_tstart
         print ' >>> time elapsed: %f' % (tmp_elap)
@@ -172,14 +176,14 @@ class vin(NNobj):
                 
                 while (start < train_n_curr):
                     s = train_entry[inds[start]][1]
-                    S_dat[0, :] = fs['emb'][s]
+                    S_dat[0, :] = self.full_page_emb[:,s]
                     links_dat = full_wk.get_article_links(s)
                     deg = len(links_dat)
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
                     adj_ind = {}
                     for _k, _v in enumerate(links_dat):
                         adj_ind[_v] = _k
-                        A_dat[:, _k] = fs['emb'][_v]
+                        A_dat[:, _k] = self.full_page_emb[:,_v]
                     
                     n = cnt[s]
                     end = min(start + n, train_n_curr)
@@ -227,7 +231,7 @@ class vin(NNobj):
                     # prepare training data
                     q_i, s_i, y_i = train_entry[perm_train[start]]
                     Q_sig[0, :] = train_queries[q_i, :]
-                    S_dat[0, :] = fs['emb'][s_i]
+                    S_dat[0, :] = self.full_page_emb[:,s_i]
                     links_dat = full_wk.get_article_links(s_i)
                     deg = len(links_dat)
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
@@ -235,7 +239,7 @@ class vin(NNobj):
                         if (_v == y_i):
                             k_i = _k
                             y_sig[0] = _k
-                        A_dat[:, _k] = fs['emb'][_v]         
+                        A_dat[:, _k] = self.full_page_emb[:,_v]         
                     trainerr_, trainloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
                     if (prm.top_k_accuracy != 1):  # compute top-k accuracy
                         y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
@@ -247,7 +251,7 @@ class vin(NNobj):
                     # prepare testing data
                     q_i, s_i, y_i = test_entry[perm_test[start]]
                     Q_sig[0, :] = test_queries[q_i, :]
-                    S_dat[0, :] = fs['emb'][s_i]
+                    S_dat[0, :] = self.full_page_emb[:,s_i]
                     links_dat = full_wk.get_article_links(s_i)
                     deg = len(links_dat)
                     A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
@@ -255,7 +259,7 @@ class vin(NNobj):
                         if (_v == y_i):
                             k_i = _k
                             y_sig[0] = _k
-                        A_dat[:, _k] = fs['emb'][_v]         
+                        A_dat[:, _k] = self.full_page_emb[:,_v]         
                     testerr_, testloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
                         y_full = self.y_full_out(Q_sig, S_dat)[0]
@@ -283,7 +287,6 @@ class vin(NNobj):
             elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
 
-        fs.close()
         
 
     # TODO
@@ -353,4 +356,3 @@ class BaseLineBlockWiki(object):
         self.R = T.dot(self.H_proj, A_in)  # batchsize * deg
 
         self.output = T.nnet.softmax(self.R)
-        
