@@ -229,6 +229,8 @@ class vin(NNobj):
                 end = start+1   #batch_size = 1
                 if end <= test_n:  # assert(text_n <= train_n)
                     num += 1
+                    trainerr_ = 0.0
+                    trainloss_ = 0.0
                     if (not prm.perform_full_inference):
                         # prepare training data
                         q_i, s_i, y_i = train_entry[perm_train[start]]
