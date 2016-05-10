@@ -265,7 +265,7 @@ class vin(NNobj):
         
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
                         testloss_ = 0.
-                        y_full = self.y_full_out(Q_sig, S_dat)[0]
+                        y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-1:]):
                             top1good += 1
