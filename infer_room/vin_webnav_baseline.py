@@ -227,6 +227,7 @@ class vin_web(NNobj):
             trainloss = 0.
             testerr = 0.
             testloss = 0.
+            top1good = 0.
             num = 0
 
             ##############
@@ -240,25 +241,29 @@ class vin_web(NNobj):
                 end = start+1   #batch_size = 1
                 if end <= test_n:  # assert(text_n <= train_n)
                     num += 1
-                    # prepare training data
-                    q_i, s_i, y_i = train_entry[train_perm[start]]
-                    Q_sig[0, :] = train_queries[q_i, :]
-                    S_dat[0, :] = fs['emb'][s_i]
-                    links_dat = full_wk.get_article_links(s_i)
-                    deg = len(links_dat)
-                    A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
-                    for _k, _v in enumerate(links_dat):
-                        if (_v == y_i):
-                            k_i = _k
-                            y_sig[0] = _k
-                        A_dat[:, _k] = fs['emb'][_v]         
-                    trainerr_, trainloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
-                    if (prm.top_k_accuracy != 1):  # compute top-k accuracy
-                        y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
-                        tmp_err = 1
-                        if (k_i in y_full[0][-prm.top_k_accuracy:]):
-                            tmp_err = 0 
-                        trainerr_ = tmp_err * 1.0
+                    if (prm.perform_full_inference):
+                        trainerr_=0
+                        trainloss_=0
+                    else:
+                        # prepare training data
+                        q_i, s_i, y_i = train_entry[train_perm[start]]
+                        Q_sig[0, :] = train_queries[q_i, :]
+                        S_dat[0, :] = fs['emb'][s_i]
+                        links_dat = full_wk.get_article_links(s_i)
+                        deg = len(links_dat)
+                        A_dat = np.zeros((self.emb_dim, deg), dtype = theano.config.floatX)
+                        for _k, _v in enumerate(links_dat):
+                            if (_v == y_i):
+                                k_i = _k
+                                y_sig[0] = _k
+                            A_dat[:, _k] = fs['emb'][_v]         
+                        trainerr_, trainloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
+                        if (prm.top_k_accuracy != 1):  # compute top-k accuracy
+                            y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
+                            tmp_err = 1
+                            if (k_i in y_full[0][-prm.top_k_accuracy:]):
+                                tmp_err = 0 
+                            trainerr_ = tmp_err * 1.0
                     
                     # prepare testing data
                     q_i, s_i, y_i = test_entry[test_perm[start]]
@@ -272,10 +277,13 @@ class vin_web(NNobj):
                             k_i = _k
                             y_sig[0] = _k
                         A_dat[:, _k] = fs['emb'][_v]         
-                    testerr_, testloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
+                    
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
+                        testloss_ = 0.
                         y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
                         tmp_err = 1
+                        if (k_i in y_full[0][-1:]):
+                            top1good += 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0
                             if (prm.perform_full_inference):
@@ -284,6 +292,8 @@ class vin_web(NNobj):
                                     test_success += 1
    
                         testerr_ = tmp_err * 1.0
+                    else:
+                        testerr_, testloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
                     
                     trainerr += trainerr_
                     trainloss += trainloss_
@@ -292,8 +302,9 @@ class vin_web(NNobj):
             
             if (prm.perform_full_inference):
                 print 'total sucess trails = %d over %d (percent: %f) ...' %(test_success, total_trial, (test_success*1.0 / total_trial))
+                print 'Top-1 choice error rate = percent: %f ...' %((num-top1good)*1.0 / num)
 
-            if (testerr / num < best):
+            if (not prm.only_predict):
                 best = testerr / num
                 self.save_weights(self.model+'_best.pk')
             
