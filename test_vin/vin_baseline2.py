@@ -10,7 +10,7 @@ import h5py
 
 class vin(NNobj):
     "Class for a neural network that does k iterations of value iteration"
-    def __init__(self, model="valIterWikiBSL", emb_dim = 500,
+    def __init__(self, model="valIterWikiBSL", N=6072, emb_dim = 500,
                  dropout=False, devtype="cpu", batchsize = 128, 
                  grad_check=False, reg=0, seed = 0,
                  data_select = 0, report_gap = 10000):
@@ -18,7 +18,7 @@ class vin(NNobj):
         self.batchsize = batchsize            # maximum batchsize
         self.model = model
         self.reg = reg                        # regularization (currently not implemented)
-
+        self.N = N
         self.data_select = data_select
         self.report_gap = report_gap
 
