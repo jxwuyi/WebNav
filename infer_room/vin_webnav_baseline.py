@@ -305,8 +305,9 @@ class vin_web(NNobj):
                 print 'Top-1 choice error rate = percent: %f ...' %((num-top1good)*1.0 / num)
 
             if (not prm.only_predict):
-                best = testerr / num
-                self.save_weights(self.model+'_best.pk')
+                if (testerr/num < best):
+                    best = testerr / num
+                    self.save_weights(self.model+'_best.pk')
             
             elapsed = time.time() - tstart
             print fmt_row(10, [i_epoch, trainloss/num, trainerr/num, testloss/num, testerr/num, elapsed])
