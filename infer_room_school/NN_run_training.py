@@ -1,9 +1,6 @@
 from NNobj import *
-import vin_wiki_sanity as vn_san
-import vin_wiki_fast as vn
+import vin_wiki as vn
 import vin_baseline as bsl
-import vin_baseline2 as bsl2
-import vin_wiki_approx as vn_apx
 import myparameters as prm
 
 
