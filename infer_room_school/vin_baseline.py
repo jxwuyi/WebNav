@@ -4,7 +4,8 @@ from theano_utils import *
 import myparameters as prm
 import wiki
 import scipy.sparse as SS
-import qp_bsl_modify as qp
+#import qp_bsl_modify as qp
+import qp_bsl as qp
 import h5py
 
 
