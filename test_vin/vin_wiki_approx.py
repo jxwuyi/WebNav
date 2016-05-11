@@ -52,7 +52,9 @@ class vin(NNobj):
         self.vin_net = VinBlockWiki(Q_in=self.Q_in, S_in = self.S_in, A_in=self.A_in,
                                     N = self.M, emb_dim = self.emb_dim,
                                     page_emb = self.school_emb,
-                                    adj_mat = self.adj_mat, k = self.k)
+                                    adj_mat = self.adj_mat,
+                                    adj_shft = self.adj_shft,
+                                    k = self.k)
         self.p_of_y = self.vin_net.output
         self.params = self.vin_net.params
         self.vin_params = self.vin_net.vin_params
@@ -99,14 +101,17 @@ class vin(NNobj):
 
         # Approximation Graph with only indexing pages        
         self.adj_mat = np.zeros((self.M, self.M), dtype = theano.config.floatX)
+        self.adj_shft = np.ones((self.M, self.M), dtype = theano.config.floatX) * -100 # - infinity
         self.school_emb = np.zeros((self.emb_dim, self.M), dtype=theano.config.floatX)
         for i in range(self.M):
             self.school_emb[:, i] = self.full_page_emb[:,self.idx[i]]
             self.adj_mat[i,i] = 1
+            self.adj_shft[i,i] = 0
             urls = self.wk.get_article_links(self.idx[i])
             for j in urls:
                 if (j in self.idx_rank):
                     self.adj_mat[self.idx_rank[j], i] = 1
+                    self.adj_shft[self.idx_rank[j], i] = 0
 
         
         
@@ -336,7 +341,7 @@ class vin(NNobj):
 class VinBlockWiki(object):
     """VIN block for wiki-school dataset"""
     def __init__(self, Q_in, S_in, A_in, N, emb_dim,
-                 page_emb, adj_mat, k):
+                 page_emb, adj_mat, adj_shft, k):
         """
         Allocate a VIN block with shared variable internal parameters.
 
@@ -365,6 +370,8 @@ class VinBlockWiki(object):
         if (k > 0):
             self.adj_mat = theano.sandbox.cuda.var.float32_shared_constructor(adj_mat)
             self.adj_mat = self.adj_mat.dimshuffle('x', 0, 1) # x * N * N
+            self.adj_shft = theano.sandbox.cuda.var.float32_shared_constructor(adj_shft) # ensure -infinity
+            self.adj_shft = self.adj_shft.dimshuffle('x', 0, 1) # x * N * N
 
         self.params = []
         self.vin_params = []
@@ -398,7 +405,7 @@ class VinBlockWiki(object):
             for i in range(k):
                 self.tV = self.V.dimshuffle(0, 'x', 1) # batchsize * x * N
                 #self.tV = T.extra_ops.repeat(self.V, N, axis = 0)  # N * N
-                self.q = self.tV * self.adj_mat  # batchsize * N * N
+                self.q = self.tV * self.adj_mat + self.adj_shft # batchsize * N * N
                 #self.q = self.q + self.add_R
                 self.V = T.max(self.q, axis=1, keepdims=False) # batchsize * N
                 self.V = self.V + self.R # batchsize * N
