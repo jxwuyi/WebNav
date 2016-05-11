@@ -5,7 +5,11 @@ import theano.tensor as T
 import theano.sparse as TS
 
 def init_weights_T(*shape):
-    return theano.shared((np.random.randn(*shape) * 0.01).astype(theano.config.floatX))
+    return theano.shared((np.random.randn(*shape) * 0.01 ).astype(theano.config.floatX))
+
+
+def init_weights_one_T(*shape):
+    return theano.shared((np.random.randn(*shape) * 0.01 + 1.0).astype(theano.config.floatX))
 
 
 def conv2D_keep_shape(x, w, image_shape, filter_shape, subsample=(1, 1)):

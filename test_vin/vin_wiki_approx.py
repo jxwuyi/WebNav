@@ -373,7 +373,7 @@ class VinBlockWiki(object):
         if (not prm.query_map_linear):
             print 'Now we only support linear transformation over query embedding'
         # Q_in * W
-        self._W = init_weights_T(1, emb_dim);
+        self._W = init_weights_one_T(1, emb_dim);
         self.params.append(self._W)
         self.vin_params.append(self._W) # mapping params
         
@@ -388,7 +388,7 @@ class VinBlockWiki(object):
 
         
         self.R = T.dot(self.q, self.page_emb)
-        self.R = T.tanh(self.R)
+        self.R = T.nnet.softmax(self.R)  # T.tanh(self.R)
         # initial value
         self.V = self.R  # [batchsize * N_pages]
     
@@ -404,7 +404,7 @@ class VinBlockWiki(object):
                 self.V = self.V + self.R # batchsize * N
 
         # compute mapping from wiki_school reward to page reward
-        self.p_W = init_weights_T(emb_dim); 
+        self.p_W = init_weights_one_T(emb_dim); 
         self.params.append(self.p_W);
         self.vin_params.append(self.p_W)
         
