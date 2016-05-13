@@ -37,6 +37,8 @@ def main():
     parser.add_argument("--reportgap", type=int, default=10000)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--sanity_check", default="None")
+    parser.add_argument("--pretrain_vin", default="None")
+    parser.add_argument("--pretrain_bsl", default="None")
     args = parser.parse_args()
 
     if (args.sanity_check != "None" and args.model == "valIterWiki"):
@@ -69,7 +71,12 @@ def main():
                            batchsize=args.batchsize, seed=args.seed,
                            report_gap = args.reportgap, k = args.k)
         
-        
+    if args.pretrain_vin != "None":
+        print('loading pretrained vin weights')
+        my_nn.load_pretrained_vin(args.pretrain_vin)
+    if args.pretrain_bsl != "None":
+        print('loading pretrained baseline weights')
+        my_nn.load_pretrained_bsl(args.pretrain_bsl)
     if args.warmstart != "None":
         print('warmstarting...')
         my_nn.load_weights(args.warmstart)
