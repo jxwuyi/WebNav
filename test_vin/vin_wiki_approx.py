@@ -4,7 +4,8 @@ from theano_utils import *
 import myparameters as prm
 import wiki
 import scipy.sparse as SS
-import qp
+#import qp
+import qp_bsl_modify as qp
 import h5py
 
 
@@ -26,13 +27,14 @@ class vin(NNobj):
         self.batchsize = batchsize            # batch size for training
         #self.maxhops = maxhops+1              # number of state inputs for every query,
                                               #     here simply the number of hops per query + 1 (including stop)
-        np.random.seed(seed)
+        # np.random.seed(seed)
         print(model)
         #theano.config.blas.ldflags = "-L/usr/local/lib -lopenblas"
 
         # initial self.wk, self.idx, self.rev_idx, self.edges, self.page_emb, self.q
         print 'load graph data ...'
         self.load_graph()
+        np.random.seed(seed) # load_graph resets seed to 0
 
         # query input: input embedding vector of query
         self.Q_in = T.fmatrix('Q_in')  # 1 * emb_dim
@@ -138,9 +140,9 @@ class vin(NNobj):
         #valid_paths = self.q.get_valid_paths()
         test_paths = self.q.get_test_paths()
 
-        train_entry = self.q.get_tuples_raw(train_paths)
+        train_entry = self.q.get_tuples(train_paths)
         #valid_entry = self.q.get_tuples_raw(valid_paths)
-        test_entry = self.q.get_tuples_raw(test_paths)
+        test_entry = self.q.get_tuples(test_paths)
 
         train_n = len(train_entry)
         cnt = {}
@@ -176,7 +178,8 @@ class vin(NNobj):
         else:
             test_n = len(test_entry) / 10 # to make things faster
 
-        self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
+        #self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
+        self.updates = rmsprop_updates_T(self.cost, self.bsl_params, stepsize=stepsize)
         self.train = theano.function(inputs=[self.Q_in, self.S_in, self.A_in, self.y], outputs=[], updates=self.updates)
 
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
@@ -276,7 +279,7 @@ class vin(NNobj):
                         A_dat[:, _k] = self.full_page_emb[:,_v]         
                     trainerr_, trainloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
                     if (prm.top_k_accuracy != 1):  # compute top-k accuracy
-                        y_full = self.y_full_out(Q_sig, A_dat)[0]
+                        y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0 
@@ -296,7 +299,7 @@ class vin(NNobj):
                         A_dat[:, _k] = self.full_page_emb[:,_v]         
                     testerr_, testloss_ = self.computeloss(Q_sig, S_dat, A_dat, y_sig)
                     if (prm.top_k_accuracy != 1): # compute top-k accuracy
-                        y_full = self.y_full_out(Q_sig, S_dat)[0]
+                        y_full = self.y_full_out(Q_sig, S_dat, A_dat)[0]
                         tmp_err = 1
                         if (k_i in y_full[0][-prm.top_k_accuracy:]):
                             tmp_err = 0
@@ -330,6 +333,14 @@ class vin(NNobj):
         dump_bsl = pickle.load(open(bsl_file, 'r'))
         [n.set_value(p) for n, p in zip(self.bsl_params, dump_bsl)]
         #pass
+
+    def load_pretrained_vin(self, vin_file="../pretrain/WebNavVIN-map.pk"):
+        dump_vin = pickle.load(open(vin_file, 'r'))
+        [n.set_value(p) for n, p in zip(self.vin_params, dump_vin)]
+
+    def load_pretrained_bsl(self, bsl_file="../pretrain/WebNavCMB_SAN.pk"):
+        dump_bsl = pickle.load(open(bsl_file, 'r'))
+        [n.set_value(p) for n, p in zip(self.bsl_params, dump_bsl)]
 
     def load_weights(self, infile="weight_dump.pk"):
         dump = pickle.load(open(infile, 'r'))
@@ -395,7 +406,7 @@ class VinBlockWiki(object):
 
         
         self.R = T.dot(self.q, self.page_emb)
-        self.R = T.nnet.softmax(self.R)  # T.tanh(self.R)
+        self.R = T.nnet.softmax(5*self.R)  # T.tanh(self.R)
         # initial value
         self.V = self.R  # [batchsize * N_pages]
     
@@ -426,7 +437,7 @@ class VinBlockWiki(object):
         self.coef_A = self.coef_A + self.p_bias.dimshuffle(0, 'x') # emb_dim * deg
         
         self.page_map = T.dot(self.coef_A.T, self.page_emb)  # deg * N
-	self.page_map = T.nnet.sigmoid(self.page_map)
+	self.page_map = T.nnet.softmax(5*self.page_map)  # T.nnet.sigmoid(self.page_map)
 	
         self.page_R = T.dot(self.V,self.page_map.T) # batchsize * deg
 
@@ -437,18 +448,27 @@ class VinBlockWiki(object):
 
         # now only a single tanh layer
         
-        self.H_W = init_weights_T(2 * emb_dim, emb_dim + 1)
+        #self.H_W = init_weights_T(2 * emb_dim, emb_dim + 1)
+        self.H_W = init_weights_T(2 * emb_dim, emb_dim)
         self.params.append(self.H_W)
         self.bsl_params.append(self.H_W)
-        
-        self.H_bias = init_weights_T(1, emb_dim + 1)
+      
+        #self.H_bias = init_weights_T(1, emb_dim + 1)
+        self.H_bias = init_weights_T(1, emb_dim)
         self.params.append(self.H_bias)
         self.bsl_params.append(self.H_bias)
-        
-        self.H_bias_full = T.extra_ops.repeat(self.H_bias, Q_in.shape[0], axis = 0) # batchsize * emb_dim+1
-        self.H_proj_full = T.tanh(T.dot(self.H, self.H_W) + self.H_bias_full) # batchsize * emb_dim+1
-        self.H_proj = self.H_proj_full[:, 1:] # batchsize * emb_dim
-        self.beta = self.H_proj_full[:, 0] # batchsize
+
+        self.beta_W = init_weights_T(2 * emb_dim)
+        self.beta_bias = init_weights_T(1)
+        self.params.append(self.beta_W)
+        self.params.append(self.beta_bias)
+
+        self.H_bias_full = T.extra_ops.repeat(self.H_bias, Q_in.shape[0], axis = 0) # batchsize * emb_dim
+        self.beta_bias_full = T.extra_ops.repeat(self.beta_bias, Q_in.shape[0], axis = 0) # batchsize * 1
+        self.H_proj_full = T.tanh(T.dot(self.H, self.H_W) + self.H_bias_full) # batchsize * emb_dim
+        self.H_proj = self.H_proj_full #[:, 1:] # batchsize * emb_dim
+        self.beta = T.tanh(T.dot(self.H, self.beta_W) + self.beta_bias_full) # batchsize * 1
+        # self.beta = self.H_proj_full[:, 0] # batchsize
         # do we need one more layer here???
 
         self.orig_R = T.dot(self.H_proj, A_in)  # batchsize * deg
