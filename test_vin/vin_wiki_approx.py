@@ -141,8 +141,10 @@ class vin(NNobj):
         test_paths = self.q.get_test_paths()
 
         train_entry = self.q.get_tuples(train_paths)
+        #train_entry = self.q.get_tuples_raw(train_paths)
         #valid_entry = self.q.get_tuples_raw(valid_paths)
         test_entry = self.q.get_tuples(test_paths)
+        #test_entry = self.q.get_tuples_raw(test_paths)
 
         train_n = len(train_entry)
         cnt = {}
@@ -176,10 +178,10 @@ class vin(NNobj):
         if (prm.only_predict):
             test_n = len(test_entry)
         else:
-            test_n = len(test_entry) / 10 # to make things faster
+            test_n = len(test_entry) / 2 # to make things faster
 
-        #self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
-        self.updates = rmsprop_updates_T(self.cost, self.bsl_params, stepsize=stepsize)
+        self.updates = rmsprop_updates_T(self.cost, self.params, stepsize=stepsize)
+        #self.updates = rmsprop_updates_T(self.cost, self.bsl_params, stepsize=stepsize)
         self.train = theano.function(inputs=[self.Q_in, self.S_in, self.A_in, self.y], outputs=[], updates=self.updates)
 
         #self.school_emb = np.zeros((self.emb_dim, self.N), dtype=theano.config.floatX)
@@ -406,7 +408,7 @@ class VinBlockWiki(object):
 
         
         self.R = T.dot(self.q, self.page_emb)
-        self.R = T.nnet.softmax(5*self.R)  # T.tanh(self.R)
+        # self.R = T.tanh(self.R) # T.nnet.softmax(5*self.R)  
         # initial value
         self.V = self.R  # [batchsize * N_pages]
     
@@ -437,47 +439,47 @@ class VinBlockWiki(object):
         self.coef_A = self.coef_A + self.p_bias.dimshuffle(0, 'x') # emb_dim * deg
         
         self.page_map = T.dot(self.coef_A.T, self.page_emb)  # deg * N
-	self.page_map = T.nnet.softmax(5*self.page_map)  # T.nnet.sigmoid(self.page_map)
+	self.page_map = T.nnet.sigmoid(self.page_map) # T.nnet.softmax(5*self.page_map) 
 	
         self.page_R = T.dot(self.V,self.page_map.T) # batchsize * deg
 
         # tanh layer for local information
-        self.S = T.extra_ops.repeat(S_in, Q_in.shape[0], axis = 0) # batchsize * dim
+        #self.S = T.extra_ops.repeat(S_in, Q_in.shape[0], axis = 0) # batchsize * dim
         # combined vector for query and local page, batchsize * (emb_dim * 2)
-        self.H = T.concatenate([Q_in, self.S], axis = 1) 
+        #self.H = T.concatenate([Q_in, self.S], axis = 1) 
 
         # now only a single tanh layer
         
         #self.H_W = init_weights_T(2 * emb_dim, emb_dim + 1)
-        self.H_W = init_weights_T(2 * emb_dim, emb_dim)
-        self.params.append(self.H_W)
-        self.bsl_params.append(self.H_W)
+        #self.H_W = init_weights_T(2 * emb_dim, emb_dim)
+        #self.params.append(self.H_W)
+        #self.bsl_params.append(self.H_W)
       
         #self.H_bias = init_weights_T(1, emb_dim + 1)
-        self.H_bias = init_weights_T(1, emb_dim)
-        self.params.append(self.H_bias)
-        self.bsl_params.append(self.H_bias)
+        #self.H_bias = init_weights_T(1, emb_dim)
+        #self.params.append(self.H_bias)
+        #self.bsl_params.append(self.H_bias)
 
-        self.beta_W = init_weights_T(2 * emb_dim)
-        self.beta_bias = init_weights_T(1)
-        self.params.append(self.beta_W)
-        self.params.append(self.beta_bias)
+        #self.beta_W = init_weights_T(2 * emb_dim)
+        #self.beta_bias = init_weights_T(1)
+        #self.params.append(self.beta_W)
+        #self.params.append(self.beta_bias)
 
-        self.H_bias_full = T.extra_ops.repeat(self.H_bias, Q_in.shape[0], axis = 0) # batchsize * emb_dim
-        self.beta_bias_full = T.extra_ops.repeat(self.beta_bias, Q_in.shape[0], axis = 0) # batchsize * 1
-        self.H_proj_full = T.tanh(T.dot(self.H, self.H_W) + self.H_bias_full) # batchsize * emb_dim
-        self.H_proj = self.H_proj_full #[:, 1:] # batchsize * emb_dim
-        self.beta = T.tanh(T.dot(self.H, self.beta_W) + self.beta_bias_full) # batchsize * 1
+        #self.H_bias_full = T.extra_ops.repeat(self.H_bias, Q_in.shape[0], axis = 0) # batchsize * emb_dim
+        #self.beta_bias_full = T.extra_ops.repeat(self.beta_bias, Q_in.shape[0], axis = 0) # batchsize * 1
+        #self.H_proj_full = T.tanh(T.dot(self.H, self.H_W) + self.H_bias_full) # batchsize * emb_dim
+        #self.H_proj = self.H_proj_full #[:, 1:] # batchsize * emb_dim
+        #self.beta = T.tanh(T.dot(self.H, self.beta_W) + self.beta_bias_full) # batchsize * 1
         # self.beta = self.H_proj_full[:, 0] # batchsize
         # do we need one more layer here???
 
-        self.orig_R = T.dot(self.H_proj, A_in)  # batchsize * deg
+        #self.orig_R = T.dot(self.H_proj, A_in)  # batchsize * deg
 
-        self.beta_full = self.beta.dimshuffle(0, 'x') # batchsize * deg
+        #self.beta_full = self.beta.dimshuffle(0, 'x') # batchsize * deg
 
         # compute final reward for every function
-        self.reward = self.orig_R + self.beta_full * self.page_R
-        #self.reward = self.page_R
+        #self.reward = self.orig_R + self.beta_full * self.page_R
+        self.reward = self.page_R
 
         self.output = T.nnet.softmax(self.reward)
         
