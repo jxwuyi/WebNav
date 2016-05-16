@@ -27,7 +27,7 @@ class vin(NNobj):
                                               #     here simply the number of hops per query + 1 (including stop)
         np.random.seed(0)
         print(model)
-        theano.config.blas.ldflags = "-L/usr/local/lib -lopenblas"
+        #theano.config.blas.ldflags = "-L/usr/local/lib -lopenblas"
 
         # initial self.wk, self.idx, self.rev_idx, self.edges, self.page_emb, self.q
         print 'load graph data ...'
