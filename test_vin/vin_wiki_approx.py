@@ -288,7 +288,7 @@ class vin(NNobj):
                         trainerr_ = tmp_err * 1.0
                     
                     # prepare testing data
-                    q_i, s_i, y_i = test_entry[start]
+                    q_i, s_i, y_i = test_entry[test_order[start]]
                     Q_sig[0, :] = test_queries[q_i, :]
                     S_dat[0, :] = self.full_page_emb[:,s_i]
                     links_dat = full_wk.get_article_links(s_i)
