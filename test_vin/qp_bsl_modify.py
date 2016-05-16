@@ -35,7 +35,7 @@ class QP():
             while (True):
                 p = random.randint(0, n-1)
                 if (paths[p][1] != paths[i][1]):
-                    extra[i,:] = query[p,:]
+                    extra[i,:] = query[i,:]
                     extra_path = paths[i]
                     extra_path[0] = paths[p][-1] # random starting point
                     paths.append(extra_path)
