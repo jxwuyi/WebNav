@@ -269,7 +269,7 @@ class vin(NNobj):
                             if (prm.perform_full_inference):
                             	test_fail[q_i] -= 1
                                 if (test_fail[q_i] == 0):
-                                test_success += 1
+                                    test_success += 1
    
                         testerr_ = tmp_err * 1.0
                     
